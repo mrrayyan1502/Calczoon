@@ -241,7 +241,7 @@ const ShareResults = ({ title, text, url }) => {
       <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
         <div className="space-y-1 text-center lg:text-left">
           <h4 className="text-lg font-bold text-white flex items-center gap-2 justify-center lg:justify-start">
-            Share Results & Help Others! 🤝
+            Share & Support CalcZoon! 🤝
           </h4>
           <p className="text-xs text-slate-400">Share your calculation or download a premium card for your social media story.</p>
         </div>
