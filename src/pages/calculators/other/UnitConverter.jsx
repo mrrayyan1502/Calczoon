@@ -338,7 +338,7 @@ const UnitConverter = () => {
                 </div>
               </CardContent>
             </Card>
-            <RelatedTools />
+            <RelatedTools category="lifestyle" />
           </aside>
         </div>
 

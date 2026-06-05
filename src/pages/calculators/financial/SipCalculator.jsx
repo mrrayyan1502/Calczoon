@@ -267,7 +267,7 @@ const SipCalculator = () => {
               </CardContent>
             </Card>
 
-            <RelatedTools />
+            <RelatedTools category="financial" />
           </aside>
         </div>
 

@@ -170,7 +170,7 @@ const PercentageCalculator = () => {
             </Card>
           </div>
           <aside className="lg:col-span-1 space-y-6">
-            <RelatedTools />
+            <RelatedTools category="math" />
           </aside>
         </div>
 

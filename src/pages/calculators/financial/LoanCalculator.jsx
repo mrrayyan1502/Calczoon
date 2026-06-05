@@ -245,7 +245,7 @@ const LoanCalculator = () => {
             </Card>
           </div>
           <aside className="lg:col-span-1 space-y-6">
-            <RelatedTools />
+            <RelatedTools category="financial" />
           </aside>
         </div>
 
