@@ -160,11 +160,11 @@ const AgeCalculator = () => {
                         <span className="text-slate-400">Total Days Lived:</span>
                         <span className="font-bold text-emerald-400 ml-2">{result.totalDays.toLocaleString()} days</span>
                       </div>
-                      <div className="mt-4 flex justify-center pt-2">
+                      <div className="mt-4 w-full">
                         <ShareResults
-                          title="My Age Calculation"
-                          text={`I calculated my age on Calczoon! I am exactly ${result.years} years, ${result.months} months, and ${result.days} days old.`}
-                          url="https://calczoon.com/lifestyle/age-calculator"
+                          title="Age Calculation"
+                          text={`Calculated my exact age on CalcZoon! I am exactly ${result.years} years, ${result.months} months, and ${result.days} days old. Find your age down to the day:`}
+                          url="/lifestyle/age-calculator"
                         />
                       </div>
                     </div>

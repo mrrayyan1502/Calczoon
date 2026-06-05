@@ -162,8 +162,7 @@ a.style.display = 'none';
                 <div className="flex flex-wrap items-center justify-between gap-4">
                     <CardTitle className="text-2xl text-white">Your Calorie &amp; Goal Breakdown</CardTitle>
                     <div className="flex gap-2">
-                        <Button onClick={handleDownload} variant="outline" size="sm" className="border-slate-600 text-slate-300 hover:bg-slate-700"><Download className="w-4 h-4 mr-2" />Download</Button>
-                        <ShareResults title="My TDEE Results" text={shareText} url="https://calczoon.com/health/tdee-calculator" />
+                        <Button onClick={handleDownload} variant="outline" size="sm" className="border-slate-600 text-slate-300 hover:bg-slate-700"><Download className="w-4 h-4 mr-2" />Download Results (.txt)</Button>
                     </div>
                 </div>
             </CardHeader>
@@ -220,6 +219,7 @@ a.style.display = 'none';
                     </TabsContent>
                 </Tabs>
                 <SaveResultsForm />
+                <ShareResults title="TDEE Calculation" text={`Estimated my daily calorie burn on CalcZoon! My TDEE: ${results.tdee} calories/day. Figure out your daily calories here:`} url="/health/tdee-calculator" />
             </CardContent>
         </Card>
     );

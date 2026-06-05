@@ -122,8 +122,15 @@ const PercentageCalculator = () => {
                         Calculate Percentage
                       </Button>
                       {result1 && (
-                        <div className="text-center text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-sky-400 pt-4 border-t border-slate-800">
-                          Result: {result1}
+                        <div className="space-y-4 pt-4 border-t border-slate-800">
+                          <div className="text-center text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-sky-400">
+                            Result: {result1}
+                          </div>
+                          <ShareResults
+                            title="Percentage Calculation"
+                            text={`Solved my percentage calculation on CalcZoon! ${p1}% of ${x1} is equal to ${result1}. Solve math percentages online:`}
+                            url="/math/percentage-calculator"
+                          />
                         </div>
                       )}
                     </form>
@@ -140,8 +147,15 @@ const PercentageCalculator = () => {
                         Calculate Percentage
                       </Button>
                       {result2 && (
-                        <div className="text-center text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-sky-400 pt-4 border-t border-slate-800">
-                          Result: {result2}%
+                        <div className="space-y-4 pt-4 border-t border-slate-800">
+                          <div className="text-center text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-sky-400">
+                            Result: {result2}%
+                          </div>
+                          <ShareResults
+                            title="Percentage Calculation"
+                            text={`Solved my percentage calculation on CalcZoon! ${x2} is exactly ${result2}% of ${y2}. Solve yours online for free:`}
+                            url="/math/percentage-calculator"
+                          />
                         </div>
                       )}
                     </form>
@@ -159,8 +173,15 @@ const PercentageCalculator = () => {
                         Calculate Change
                       </Button>
                       {result3 && (
-                        <div className={`text-center text-3xl font-extrabold pt-4 border-t border-slate-800 ${parseFloat(result3) >= 0 ? 'text-green-400' : 'text-red-400'}`}>
-                          Result: {result3}% {parseFloat(result3) >= 0 ? 'increase' : 'decrease'}
+                        <div className="space-y-4 pt-4 border-t border-slate-800">
+                          <div className={`text-center text-3xl font-extrabold ${parseFloat(result3) >= 0 ? 'text-green-400' : 'text-red-400'}`}>
+                            Result: {result3}% {parseFloat(result3) >= 0 ? 'increase' : 'decrease'}
+                          </div>
+                          <ShareResults
+                            title="Percentage Change"
+                            text={`Calculated percentage change from ${x3} to ${y3} on CalcZoon! The result is a ${Math.abs(parseFloat(result3))}% ${parseFloat(result3) >= 0 ? 'increase' : 'decrease'}. Check your numbers:`}
+                            url="/math/percentage-calculator"
+                          />
                         </div>
                       )}
                     </form>

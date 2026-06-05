@@ -164,8 +164,8 @@ const BMICalculator = () => {
                   <h3 className="text-xl font-bold">Your BMI is:</h3>
                   <p className={`text-6xl font-bold ${result.color}`}>{result.bmi}</p>
                   <p className={`text-xl font-semibold ${result.color}`}>{result.category}</p>
-                   <div className="mt-4">
-                        <ShareResults title="My BMI Result" text={`I calculated my BMI on Calczoon and it's ${result.bmi} (${result.category}).`} url={canonicalUrl} />
+                   <div className="mt-4 w-full">
+                        <ShareResults title="BMI Calculation" text={`Just got my BMI results from CalcZoon! My score: ${result.bmi} (${result.category}). Highly recommend this free tool:`} url="/health/bmi-calculator" />
                     </div>
                 </CardFooter>
               )}

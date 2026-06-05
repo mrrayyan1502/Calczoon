@@ -227,12 +227,12 @@ const LoanCalculator = () => {
                         <p className="font-semibold text-slate-200">{getCurrencySymbol()}{Number(result.totalPayment).toLocaleString()}</p>
                       </div>
                     </div>
-                    <div className="mt-4 flex justify-center pt-2">
-                      <ShareResults
-                        title="My Loan Calculation"
-                        text={`My estimated monthly loan payment is ${getCurrencySymbol()}${result.monthlyPayment} for a ${getCurrencySymbol()}${Number(result.loanAmount).toLocaleString()} loan.`}
-                        url="https://calczoon.com/financial/loan-calculator"
-                      />
+                    <div className="mt-4 w-full">
+                        <ShareResults
+                            title="Loan Payment Calculation"
+                            text={`Calculated my monthly loan payment on CalcZoon! Estimated payment: ${getCurrencySymbol()}${Number(result.monthlyPayment).toLocaleString()}/month for a principal of ${getCurrencySymbol()}${Number(result.loanAmount).toLocaleString()}. Try this tool:`}
+                            url="/financial/loan-calculator"
+                        />
                     </div>
                   </div>
                 </CardFooter>

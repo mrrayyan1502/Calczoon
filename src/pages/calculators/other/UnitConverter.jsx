@@ -228,10 +228,10 @@ const UnitConverter = () => {
                         <p className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-sky-400">
                           {inputValue} {fromUnit} = {result} {toUnit}
                         </p>
-                        <div className="pt-2 flex justify-center">
+                        <div className="pt-2 w-full">
                           <ShareResults
-                            title="Length Conversion Result"
-                            text={`I converted ${inputValue} ${fromUnit} to ${toUnit} and got ${result} using Calczoon's Unit Converter!`}
+                            title="Length Conversion"
+                            text={`Converted length on CalcZoon! ${inputValue} ${fromUnit} is equal to ${result} ${toUnit}. Convert weight and length online for free:`}
                             url="/lifestyle/unit-converter"
                           />
                         </div>
@@ -299,10 +299,10 @@ const UnitConverter = () => {
                         <p className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-sky-400">
                           {weightInputValue} {fromWeightUnit} = {weightResult} {toWeightUnit}
                         </p>
-                        <div className="pt-2 flex justify-center">
+                        <div className="pt-2 w-full">
                           <ShareResults
-                            title="Weight Conversion Result"
-                            text={`I converted ${weightInputValue} ${fromWeightUnit} to ${toWeightUnit} and got ${weightResult} using Calczoon's Unit Converter!`}
+                            title="Weight Conversion"
+                            text={`Converted weight on CalcZoon! ${weightInputValue} ${fromWeightUnit} is equal to ${weightResult} ${toWeightUnit}. Try this easy converter:`}
                             url="/lifestyle/unit-converter"
                           />
                         </div>

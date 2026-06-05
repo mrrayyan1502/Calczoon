@@ -73,7 +73,9 @@ const BodyFatResults = ({ result }) => {
                         <p className="text-xs text-slate-500 mt-1">(Muscle, Bone, Organs, and Water)</p>
                     </div>
                     <ShareResults
-                        textToShare={`I just calculated my body fat percentage using CalcZoon! My result: ${bodyFatPercentage.toFixed(1)}% (${category}). Check yours out!`}
+                        title="Body Fat Calculation"
+                        text={`Estimated my body fat percentage on CalcZoon! My result: ${bodyFatPercentage.toFixed(1)}% (${category}). Check yours online for free:`}
+                        url="/health/body-fat-calculator"
                     />
                 </CardContent>
             </Card>
