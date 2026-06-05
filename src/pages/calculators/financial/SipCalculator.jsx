@@ -12,6 +12,7 @@ import { useToast } from '@/components/ui/use-toast';
 import { saveCalculation } from '@/lib/history';
 import ShareResults from '@/components/ShareResults';
 import RelatedTools from '@/components/calculators/tdee/RelatedTools';
+import Faq from '@/components/Faq';
 
 const SipCalculator = () => {
   const [monthlyInvestment, setMonthlyInvestment] = useState('');
@@ -78,7 +79,9 @@ const SipCalculator = () => {
   const faqItems = [
     { question: "What is an SIP?", answer: "A Systematic Investment Plan (SIP) is an investment route offered by mutual funds, allowing you to invest a fixed amount of money regularly (typically monthly) into a selected mutual fund scheme." },
     { question: "How does compounding work in SIP?", answer: "Compounding means you earn interest on your initial investment as well as on the accumulated interest from previous periods. Over long periods, this creates exponential growth." },
-    { question: "Can I stop or pause my SIP?", answer: "Yes, you can pause or stop your SIP at any time without any penalty, making it a highly flexible investment option." }
+    { question: "Can I stop or pause my SIP?", answer: "Yes, you can pause or stop your SIP at any time without any penalty, making it a highly flexible investment option." },
+    { question: "Is SIP better than lump sum investment?", answer: "Yes, typically for volatile stock markets, SIP is safer because it averages out your purchasing cost (Rupee Cost Averaging). Lump-sum can be risky if you invest right before a market dip." },
+    { question: "What is the tax on SIP returns?", answer: "Taxation on mutual fund SIP returns depends on the type of fund (equity vs. debt) and the holding period. Short-term capital gains (STCG) and long-term capital gains (LTCG) apply according to your country's tax laws." }
   ];
 
   const faqSchema = {
@@ -269,39 +272,56 @@ const SipCalculator = () => {
         </div>
 
         {/* Detailed SEO Explanation Section */}
-        <section className="mt-16 bg-slate-800/20 rounded-2xl border border-slate-700/40 p-8 text-slate-300 leading-relaxed max-w-5xl mx-auto">
-          <h2 className="text-2xl font-bold text-white mb-4">How Systematic Investment Plan (SIP) Works</h2>
-          <p className="mb-4">
-            A Systematic Investment Plan (SIP) is a method of investing in mutual funds where an investor contributes a fixed amount at regular intervals (typically monthly) rather than making a lump-sum payment. This instills financial discipline and takes advantage of market volatility through compounding.
-          </p>
-
-          <h3 className="text-lg font-bold text-white mt-6 mb-2">The Mathematical Formula for SIP</h3>
-          <p className="mb-4">
-            The future value of an SIP is calculated using the following formula:
-          </p>
-          <div className="bg-slate-900/50 p-4 rounded-xl border border-slate-800 text-center font-mono text-emerald-400 my-4">
-            FV = P × [ ( (1 + r)ⁿ - 1 ) / r ] × (1 + r)
-          </div>
-          <p className="mb-4">Where:</p>
-          <ul className="list-disc pl-6 space-y-2 mb-6 text-sm">
-            <li><strong>FV:</strong> Future Value or the mature amount of your investment.</li>
-            <li><strong>P:</strong> Principal monthly SIP investment amount.</li>
-            <li><strong>r:</strong> Monthly rate of return (Annual expected return rate divided by 12 and then divided by 100).</li>
-            <li><strong>n:</strong> Number of installments or total number of months (Time period in years multiplied by 12).</li>
-          </ul>
-
-          <h3 className="text-lg font-bold text-white mt-6 mb-2">Frequently Asked Questions</h3>
+        <section className="mt-16 bg-slate-800/20 rounded-2xl border border-slate-700/40 p-8 text-slate-300 leading-relaxed max-w-5xl mx-auto space-y-8">
           <div className="space-y-4">
-            <div>
-              <h4 className="font-semibold text-white">Can I modify my monthly SIP amount?</h4>
-              <p className="text-slate-400 text-sm">Yes, most mutual fund platforms allow you to pause, increase (top-up), or decrease your monthly SIP amount based on your financial needs.</p>
+            <h2 className="text-2xl font-bold text-white">What is a Systematic Investment Plan (SIP)?</h2>
+            <p>
+              A Systematic Investment Plan (SIP) is a disciplined and automated method of investing in mutual funds. Instead of trying to time the market and making a single lump-sum payment, an investor contributes a fixed amount of money at regular intervals (typically monthly). This approach instills regular saving habits and mitigates short-term market volatility.
+            </p>
+            <p>
+              By investing via SIP, you take advantage of **Rupee Cost Averaging**, which means you automatically buy more units when prices are low and fewer units when prices are high. Over time, this lowers your average purchase cost.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            <h2 className="text-2xl font-bold text-white">How to Use the Free SIP Calculator</h2>
+            <ol className="list-decimal pl-6 space-y-2">
+              <li><strong>Enter your Monthly Investment:</strong> Input the amount of money you plan to invest every month.</li>
+              <li><strong>Enter Expected Annual Return:</strong> Type the expected rate of return (percentage per annum). For diversified equity mutual funds, long-term returns typically average 12% to 15%.</li>
+              <li><strong>Select Time Period:</strong> Enter the number of years you plan to keep your SIP active.</li>
+              <li><strong>Click Calculate:</strong> Press the button to instantly view your invested capital, estimated returns earned, and total accumulated wealth.</li>
+            </ol>
+          </div>
+
+          <div className="space-y-4">
+            <h2 className="text-2xl font-bold text-white">The Mathematical Formula for SIP Future Value</h2>
+            <p>
+              The future value of a Systematic Investment Plan is calculated using the standard **Annuity Due** formula:
+            </p>
+            <div className="bg-slate-900/50 p-4 rounded-xl border border-slate-800 text-center font-mono text-emerald-400 my-4">
+              FV = P × [ ( (1 + r)ⁿ - 1 ) / r ] × (1 + r)
             </div>
-            <div>
-              <h4 className="font-semibold text-white">Is there a guarantee on SIP returns?</h4>
-              <p className="text-slate-400 text-sm">No, SIP investments are subjected to market risk. The expected rate of return is an estimate; actual returns depend on mutual fund performance.</p>
-            </div>
+            <p className="mb-4">Where:</p>
+            <ul className="list-disc pl-6 space-y-2 text-sm">
+              <li><strong>FV:</strong> Future Value (the accumulated wealth at maturity).</li>
+              <li><strong>P:</strong> Principal monthly SIP investment amount.</li>
+              <li><strong>r:</strong> Monthly rate of return (Annual expected return rate divided by 12, then divided by 100).</li>
+              <li><strong>n:</strong> Total number of monthly installments (Number of years multiplied by 12).</li>
+            </ul>
+          </div>
+
+          <div className="space-y-4">
+            <h2 className="text-2xl font-bold text-white">Financial Benefits of SIP Investments</h2>
+            <ul className="list-disc pl-6 space-y-2">
+              <li><strong>Power of Compounding:</strong> Earnings on your investments start earning their own returns, leading to exponential growth over long horizons.</li>
+              <li><strong>Affordability:</strong> You can start with small amounts (as low as $10 or $50 per month) without straining your budget.</li>
+              <li><strong>No Market Timing Required:</strong> You don't need to study market charts. Regular investments cushion you against market cycles.</li>
+              <li><strong>High Liquidity:</strong> Most mutual fund investments can be redeemed or stopped whenever emergency funds are needed.</li>
+            </ul>
           </div>
         </section>
+
+        <Faq items={faqItems} className="mt-12" />
       </div>
     </>
   );

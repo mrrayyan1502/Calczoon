@@ -40,6 +40,7 @@ const navLinks = [
   { to: '/blog', label: 'Blog' },
   { to: '/about', label: 'About' },
   { to: '/contact', label: 'Contact' },
+  { to: '/history', label: 'History' },
 ];
 
 const Header = () => {
@@ -160,6 +161,7 @@ const Header = () => {
                 <NavLink to="/blog" onClick={() => setMobileMenuOpen(false)} className={({isActive}) => `p-3 rounded-md ${isActive ? 'bg-slate-800 text-primary' : 'text-slate-300'}`}>Blog</NavLink>
                 <NavLink to="/about" onClick={() => setMobileMenuOpen(false)} className={({isActive}) => `p-3 rounded-md ${isActive ? 'bg-slate-800 text-primary' : 'text-slate-300'}`}>About</NavLink>
                 <NavLink to="/contact" onClick={() => setMobileMenuOpen(false)} className={({isActive}) => `p-3 rounded-md ${isActive ? 'bg-slate-800 text-primary' : 'text-slate-300'}`}>Contact</NavLink>
+                <NavLink to="/history" onClick={() => setMobileMenuOpen(false)} className={({isActive}) => `p-3 rounded-md ${isActive ? 'bg-slate-800 text-primary' : 'text-slate-300'}`}>History</NavLink>
               </nav>
             </SheetContent>
           </Sheet>

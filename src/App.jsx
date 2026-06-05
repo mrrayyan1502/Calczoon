@@ -91,6 +91,7 @@ const SipCalculator = lazy(() => import('@/pages/calculators/financial/SipCalcul
 const ScientificCalculator = lazy(() => import('@/pages/calculators/math/ScientificCalculator'));
 const TimeZoneConverter = lazy(() => import('@/pages/calculators/other/TimeZoneConverter'));
 const DiscountCalculator = lazy(() => import('@/pages/calculators/other/DiscountCalculator'));
+const UnitConverter = lazy(() => import('@/pages/calculators/other/UnitConverter'));
 const Calculators = lazy(() => import('@/pages/Calculators'));
 
 
@@ -197,6 +198,7 @@ function App() {
             <Route path="lifestyle/fuel-cost-calculator" element={<FuelCostCalculator />} />
             <Route path="lifestyle/time-zone-converter" element={<TimeZoneConverter />} />
             <Route path="lifestyle/discount-calculator" element={<DiscountCalculator />} />
+            <Route path="lifestyle/unit-converter" element={<UnitConverter />} />
 
             {/* Old URL redirects & aliases */}
             <Route path="/triangle" element={<Navigate to="/math/triangle-calculator" replace />} />

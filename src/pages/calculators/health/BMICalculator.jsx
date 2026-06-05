@@ -189,6 +189,57 @@ const BMICalculator = () => {
             <RelatedTools />
           </aside>
         </div>
+
+        {/* Deep SEO Informational Section */}
+        <section className="mt-16 bg-slate-800/20 rounded-2xl border border-slate-700/40 p-8 text-slate-300 leading-relaxed max-w-5xl mx-auto space-y-8">
+          <div className="space-y-4">
+            <h2 className="text-2xl font-bold text-white">Understanding Body Mass Index (BMI)</h2>
+            <p>
+              Body Mass Index (BMI) is a simple numerical calculation that measures body fat based on height and weight. It is widely used by healthcare professionals and individuals to estimate if a person is underweight, normal weight, overweight, or obese. While it is not a direct measure of body fat percentage, it serves as an excellent screening tool for identifying potential weight-related health issues.
+            </p>
+            <p>
+              By tracking your BMI, you can understand if your weight is in a healthy range for your height. This helps in making informed decisions about diet, exercise, and overall wellness.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            <h2 className="text-2xl font-bold text-white">How to Use the Free BMI Calculator</h2>
+            <ol className="list-decimal pl-6 space-y-2">
+              <li><strong>Select your unit preference:</strong> Choose either the <strong>Metric</strong> tab (for kilograms and centimeters) or the <strong>Imperial</strong> tab (for pounds, feet, and inches).</li>
+              <li><strong>Enter your weight:</strong> Input your current weight in the specified field.</li>
+              <li><strong>Enter your height:</strong> Input your height (in centimeters for metric, or feet and inches for imperial).</li>
+              <li><strong>Click Calculate:</strong> Press the "Calculate BMI" button. Your result will display instantly with your BMI score, weight category, and a visual breakup of where you stand.</li>
+            </ol>
+          </div>
+
+          <div className="space-y-4">
+            <h2 className="text-2xl font-bold text-white">The Mathematical Formula Used for BMI</h2>
+            <p>
+              The calculation of BMI is straightforward and uses standard formulas recommended by the World Health Organization (WHO):
+            </p>
+            <div className="bg-slate-900/50 p-4 rounded-xl border border-slate-800 space-y-2 font-mono text-emerald-400">
+              <p>Metric Formula: BMI = Weight (kg) ÷ [Height (m)]²</p>
+              <p>Imperial Formula: BMI = 703 × Weight (lbs) ÷ [Height (inches)]²</p>
+            </div>
+            <p className="text-sm text-slate-400 mt-2">
+              *Note: The height is squared because body volume scales with the square of height. The multiplier 703 is a conversion factor used to align imperial values with the metric scale.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            <h2 className="text-2xl font-bold text-white">Health Benefits & BMI Categories</h2>
+            <p>
+              Maintaining a healthy BMI score is associated with lower risks of developing chronic conditions. Here is the weight classification index:
+            </p>
+            <ul className="list-disc pl-6 space-y-2">
+              <li><strong>Underweight (BMI &lt; 18.5):</strong> May indicate nutrient deficiencies, weakened immune system, or osteoporosis.</li>
+              <li><strong>Normal Weight (18.5 to 24.9):</strong> Associated with the lowest risk of weight-related health problems and chronic diseases.</li>
+              <li><strong>Overweight (25 to 29.9):</strong> Elevated risk of cardiovascular strain, hypertension, and other conditions. Lifestyle adjustments can help manage this.</li>
+              <li><strong>Obesity (BMI of 30 or greater):</strong> High risk of serious chronic diseases like type 2 diabetes and heart disease. Consult a healthcare professional for customized guidance.</li>
+            </ul>
+          </div>
+        </section>
+
         <TDEE_FAQ items={faqItems} />
       </div>
     </>

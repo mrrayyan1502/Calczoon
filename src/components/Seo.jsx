@@ -1,8 +1,9 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
-const Seo = ({ title, description, canonicalUrl, schema, keywords }) => {
+const Seo = ({ title, description, canonicalUrl, schema, keywords, ogImage }) => {
   const fullTitle = title.includes('CalcZoon') || title.includes('Calczoon') ? title : `${title} | CalcZoon`;
+  const finalOgImage = ogImage || "https://calczoon.com/og-preview.png";
   
   return (
     <Helmet>
@@ -14,9 +15,11 @@ const Seo = ({ title, description, canonicalUrl, schema, keywords }) => {
       <meta property="og:description" content={description} />
       <meta property="og:type" content="website" />
       {canonicalUrl && <meta property="og:url" content={`https://calczoon.com${canonicalUrl}`} />}
+      <meta property="og:image" content={finalOgImage} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={finalOgImage} />
       {schema && (
         Array.isArray(schema) ? 
         schema.map((s, i) => <script key={i} type="application/ld+json">{JSON.stringify(s)}</script>) :

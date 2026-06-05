@@ -11,6 +11,9 @@ const lifestyleCalculators = [
   { name: 'Concrete Calculator', description: 'Estimate the amount of concrete needed for your project.', path: '/lifestyle/concrete-calculator' },
   { name: 'Sleep Calculator', description: 'Find the best time to wake up or go to sleep for optimal rest.', path: '/lifestyle/sleep-calculator' },
   { name: 'Fuel Cost Calculator', description: 'Calculate the fuel cost for your trip based on distance and MPG.', path: '/lifestyle/fuel-cost-calculator' },
+  { name: 'Time Zone Converter', description: 'Convert dates and times across global time zones instantly.', path: '/lifestyle/time-zone-converter' },
+  { name: 'Discount Calculator', description: 'Calculate sales discounts and itemized tax savings.', path: '/lifestyle/discount-calculator' },
+  { name: 'Unit Converter', description: 'Convert weight and length measurements between metric and imperial units.', path: '/lifestyle/unit-converter' },
 ];
 
 const LifestyleCalculators = () => {

@@ -23,6 +23,7 @@ const Footer = () => {
                 { text: "Loan Calculator", href: "/financial/loan-calculator" },
                 { text: "Compound Interest", href: "/financial/compound-interest-calculator" },
                 { text: "Triangle Area Calculator", href: "/math/triangle-calculator" },
+                { text: "Calculation History", href: "/history" },
             ]
         },
         {
