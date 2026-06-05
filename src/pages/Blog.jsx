@@ -113,7 +113,14 @@ const Blog = () => {
               <Link to={post.link} className="block h-full group">
                 <Card className="bg-slate-800/40 border-slate-700/50 h-full overflow-hidden hover:border-primary/50 transition-all duration-300 flex flex-col">
                   <div className="aspect-video overflow-hidden">
-                    <img src={post.imgSrc} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                    <img 
+                      src={post.imgSrc} 
+                      alt={post.title} 
+                      width="400"
+                      height="225"
+                      loading="lazy"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" 
+                    />
                   </div>
                   <CardContent className="p-6 flex flex-col flex-grow">
                     <div className="flex items-center text-sm text-primary mb-2">

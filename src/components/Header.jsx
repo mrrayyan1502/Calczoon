@@ -40,7 +40,6 @@ const navLinks = [
   { to: '/blog', label: 'Blog' },
   { to: '/about', label: 'About' },
   { to: '/contact', label: 'Contact' },
-  { to: '/partners', label: 'Partners' },
 ];
 
 const Header = () => {
