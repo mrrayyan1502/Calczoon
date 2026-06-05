@@ -55,23 +55,24 @@ const Header = () => {
           onClick={() => setMobileMenuOpen(false)}
           aria-label="CalcZoon Home"
         >
-          <svg className="h-8 w-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M19 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H19C20.1046 21 21 20.1046 21 19V5C21 3.89543 20.1046 3 19 3Z" stroke="url(#logo-grad)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            <path d="M7 7H17" stroke="url(#logo-grad)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            <path d="M7 12H9" stroke="url(#logo-grad)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            <path d="M15 12H17" stroke="url(#logo-grad)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            <path d="M7 17H9" stroke="url(#logo-grad)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            <path d="M15 17H17" stroke="url(#logo-grad)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            <path d="M11 12H13" stroke="url(#logo-grad)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            <path d="M11 17H13" stroke="url(#logo-grad)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+          <svg className="h-8 w-8 filter drop-shadow-[0_0_8px_rgba(52,211,153,0.3)]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 19V5C4 3.89543 4.89543 3 6 3H18C19.1046 3 20 3.89543 20 5V19C20 20.1046 19.1046 21 18 21H6C4.89543 21 4 20.1046 4 19Z" stroke="url(#logo-grad)" strokeWidth="2.5" />
+            <path d="M8 7H16" stroke="url(#logo-grad)" strokeWidth="2" strokeLinecap="round" />
+            <circle cx="8" cy="12" r="1.5" fill="url(#logo-grad)" />
+            <circle cx="12" cy="12" r="1.5" fill="url(#logo-grad)" />
+            <circle cx="16" cy="12" r="1.5" fill="url(#logo-grad)" />
+            <circle cx="8" cy="16" r="1.5" fill="url(#logo-grad)" />
+            <circle cx="12" cy="16" r="1.5" fill="url(#logo-grad)" />
+            <circle cx="16" cy="16" r="1.5" fill="url(#logo-grad)" />
             <defs>
-              <linearGradient id="logo-grad" x1="3" y1="3" x2="21" y2="21" gradientUnits="userSpaceOnUse">
+              <linearGradient id="logo-grad" x1="4" y1="3" x2="20" y2="21" gradientUnits="userSpaceOnUse">
                 <stop stopColor="#34d399" />
-                <stop offset="1" stopColor="#38bdf8" />
+                <stop offset="0.5" stopColor="#38bdf8" />
+                <stop offset="1" stopColor="#6366f1" />
               </linearGradient>
             </defs>
           </svg>
-          <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-sky-400 text-xl tracking-tight">CalcZoon</span>
+          <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-sky-400 to-indigo-400 text-xl tracking-tight">CalcZoon</span>
         </Link>
 
         {/* Desktop Navigation */}

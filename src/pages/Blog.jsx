@@ -52,7 +52,7 @@ const blogPosts = [
     description: 'Before you borrow, understand the true cost. Our guide and calculator help you compare loan options.',
     category: 'Finance',
     icon: <DollarSign className="w-5 h-5" />,
-    imgSrc: "https://images.unsplash.com/photo-1560518883-ce09059ee212?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb"
+    imgSrc: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb"
   },
   {
     title: 'Mastering the Triangle Area Calculator',
@@ -68,7 +68,7 @@ const blogPosts = [
     description: 'From discounts to data analysis, master percentages with our easy-to-use calculator and guide.',
     category: 'Math',
     icon: <Percent className="w-5 h-5" />,
-    imgSrc: "https://images.unsplash.com/photo-1587145820137-a9dbc8c51a3a?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb"
+    imgSrc: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb"
   },
   {
     title: 'Simplify Your Life with the Fraction Calculator',
@@ -76,7 +76,7 @@ const blogPosts = [
     description: 'Add, subtract, multiply, and divide fractions effortlessly. This guide makes fraction math simple.',
     category: 'Math',
     icon: <Divide className="w-5 h-5" />,
-    imgSrc: "https://images.unsplash.com/photo-1596495577886-d9256f431b96?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb"
+    imgSrc: "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb"
   }
 ];
 

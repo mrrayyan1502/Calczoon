@@ -16,7 +16,7 @@ const MacroCalculatorGuide = () => {
         },
         "headline": "A Beginner's Guide to Using a Macro Calculator for Fitness",
         "description": "Learn how to use a macro calculator to create a sustainable plan for weight loss or muscle gain. Our guide simplifies macros (protein, carbs, fat) for you.",
-        "image": "https://images.unsplash.com/photo-1543353071-873f6b64b638",
+        "image": "https://images.unsplash.com/photo-1498837167922-ddd27525d352",
         "author": {
             "@type": "Organization",
             "name": "Calczoon"
@@ -52,7 +52,7 @@ const MacroCalculatorGuide = () => {
                           alt="A person planning meals with a notebook, fresh vegetables, and other healthy foods on a kitchen counter"
                           className="w-full h-64 md:h-96 object-cover"
                           width="1920" height="768"
-                          src="https://images.unsplash.com/photo-1543353071-873f6b64b638?q=80&w=1920" />
+                          src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?q=80&w=1920" />
                       <div className="absolute inset-0 bg-black/50"></div>
                       <div className="absolute inset-0 flex flex-col items-center justify-center p-4">
                           <motion.h1 
