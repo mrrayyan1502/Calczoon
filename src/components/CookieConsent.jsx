@@ -25,7 +25,7 @@ const CookieConsent = () => {
     // Load gtag.js script
     const script = document.createElement('script');
     script.async = true;
-    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-8S1TR6NVS5';
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-Q04GC32XEX';
     script.id = 'google-analytics-script';
     document.head.appendChild(script);
 
@@ -35,7 +35,7 @@ const CookieConsent = () => {
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-8S1TR6NVS5', {
+      gtag('config', 'G-Q04GC32XEX', {
         page_path: window.location.pathname,
         cookie_flags: 'SameSite=None;Secure'
       });
