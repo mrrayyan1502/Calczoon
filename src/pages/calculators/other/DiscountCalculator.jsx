@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Helmet } from 'react-helmet-async';
+import Seo from '@/components/Seo';
+import { Link } from 'react-router-dom';
 import { Tag, Percent, ShoppingBag } from 'lucide-react';
 import PageHeader from '@/components/PageHeader';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
@@ -64,17 +65,51 @@ const DiscountCalculator = () => {
     toast({ title: "Discount Calculated!", description: `You save $${newResult.savings}!` });
   };
 
-  const pageTitle = "Discount Calculator: Calculate Sale Savings & Tax";
-  const pageDescription = "Calculate the final price of an item during a sale. Our free Discount Calculator supports additional stackable discounts and sales tax computations.";
-  const canonicalUrl = "https://calczoon.com/lifestyle/discount-calculator";
+  const pageTitle = "Discount Calculator Online: Calculate Stackable Store Savings";
+  const pageDescription = "Calculate final sale prices, stackable promo discounts, and sales tax instantly with our free itemized discount calculator.";
+  const canonicalUrl = "/lifestyle/discount-calculator";
+
+  const appSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "CalcZoon Discount Calculator",
+    "operatingSystem": "All",
+    "applicationCategory": "BusinessApplication",
+    "browserRequirements": "Requires JavaScript. Requires HTML5.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  };
+
+  const faqItems = [
+    { question: "Are stackable discounts added together?", answer: "No, most stores calculate stackable discounts sequentially. For example, if you have a 20% discount and a 10% coupon, the 10% is applied to the already reduced price, resulting in a total discount of 28% rather than 30%." },
+    { question: "Is sales tax applied before or after the discount?", answer: "Sales tax is usually calculated and applied to the final discounted price (subtotal), not the original sticker price." },
+    { question: "How does this discount calculator work?", answer: "Simply enter the original price, the primary discount percentage, any additional stackable discount, and sales tax. The calculator will provide an itemized receipt with exact savings and the final total price." }
+  ];
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqItems.map(item => ({
+      "@type": "Question",
+      "name": item.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.answer
+      }
+    }))
+  };
 
   return (
     <>
-      <Helmet>
-        <title>{pageTitle}</title>
-        <meta name="description" content={pageDescription} />
-        <link rel="canonical" href={canonicalUrl} />
-      </Helmet>
+      <Seo
+        title={pageTitle}
+        description={pageDescription}
+        canonicalUrl={canonicalUrl}
+        schema={[appSchema, faqSchema]}
+      />
 
       <div className="w-full max-w-7xl mx-auto py-8 px-4">
         <PageHeader title="Discount Calculator" description={pageDescription} icon={Tag} />
@@ -234,6 +269,14 @@ const DiscountCalculator = () => {
                 </div>
               </CardContent>
             </Card>
+
+            <div className="bg-slate-800/40 border border-slate-700 rounded-2xl p-6">
+              <h4 className="font-bold text-white mb-2 text-sm">Need to master percentage math?</h4>
+              <p className="text-xs text-slate-400 mb-4">Learn formulas for discounts, percentage change, and retail math step-by-step.</p>
+              <Link to="/blog/percentage-calculator-guide" className="text-emerald-400 hover:text-emerald-300 hover:underline text-xs font-bold transition-colors block">
+                Read Our Percentage Guide &rarr;
+              </Link>
+            </div>
 
             <RelatedTools />
           </aside>

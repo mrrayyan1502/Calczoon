@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Seo from '@/components/Seo';
+import { Link } from 'react-router-dom';
 import PageHeader from '@/components/PageHeader';
 import { Dumbbell } from 'lucide-react';
 import TDEE_Intro from '@/components/calculators/tdee/TDEE_Intro';
@@ -21,8 +22,8 @@ const TDEECalculator = () => {
         }
     };
     
-    const pageTitle = "TDEE Calculator: Find Your Maintenance Calories";
-    const pageDescription = "The most accurate TDEE calculator to find your Total Daily Energy Expenditure. Learn your maintenance calories, BMR, and how to adjust for weight loss or muscle gain.";
+    const pageTitle = "Free TDEE Calculator: Estimate Daily Calorie Burn 2026";
+    const pageDescription = "Calculate your Total Daily Energy Expenditure (TDEE) online for free. Get an instant, accurate estimate of your daily calorie needs for weight goals.";
     const canonicalUrl = "/health/tdee-calculator";
 
     const faqItems = [
@@ -98,6 +99,13 @@ const TDEECalculator = () => {
                     </div>
                     <aside className="lg:col-span-1 space-y-6">
                         <RelatedTools />
+                        <div className="bg-slate-800/40 border border-slate-700 rounded-2xl p-6">
+                          <h4 className="font-bold text-white mb-2 text-sm">Need a complete guide?</h4>
+                          <p className="text-xs text-slate-400 mb-4">Learn step-by-step how to manage calorie burn, calorie deficit, and nutrition profiles.</p>
+                          <Link to="/blog/tdee-calculator-guide" className="text-emerald-400 hover:text-emerald-300 hover:underline text-xs font-bold transition-colors block">
+                            Read Our TDEE Weight Loss Guide &rarr;
+                          </Link>
+                        </div>
                     </aside>
                 </div>
                 

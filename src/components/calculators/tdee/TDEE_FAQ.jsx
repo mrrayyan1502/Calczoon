@@ -17,10 +17,10 @@ const TDEE_FAQ = ({ items }) => {
     <section id="faq" className="mb-12">
       <Card className="bg-slate-800/50 border-slate-700 backdrop-blur">
         <CardHeader>
-          <CardTitle className="text-white text-2xl flex items-center gap-2">
+          <h2 className="text-white text-2xl font-semibold leading-none tracking-tight flex items-center gap-2">
             <HelpCircle className="w-6 h-6 text-emerald-400" />
-            <h2>Frequently Asked Questions</h2>
-          </CardTitle>
+            Frequently Asked Questions
+          </h2>
         </CardHeader>
         <CardContent>
           <Accordion type="single" collapsible className="w-full">

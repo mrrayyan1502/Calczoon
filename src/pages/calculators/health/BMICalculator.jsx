@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Helmet } from 'react-helmet-async';
+import Seo from '@/components/Seo';
+import { Link } from 'react-router-dom';
 import { HeartPulse } from 'lucide-react';
 import PageHeader from '@/components/PageHeader';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
@@ -72,8 +73,8 @@ const BMICalculator = () => {
     toast({ title: "BMI Calculated!", description: `Your BMI is ${newResult.bmi}.` });
   };
 
-  const pageTitle = "BMI Calculator: Check Your Body Mass Index";
-  const pageDescription = "Calculate your Body Mass Index (BMI) to understand your weight category. Our free BMI calculator provides an instant result based on your height and weight.";
+  const pageTitle = "Free BMI Calculator: Check Body Mass Index Online 2026";
+  const pageDescription = "Calculate your Body Mass Index (BMI) instantly. Understand your weight category with our free, easy-to-use BMI checker for men and women.";
   const canonicalUrl = "https://calczoon.com/health/bmi-calculator";
 
   const faqItems = [
@@ -83,13 +84,41 @@ const BMICalculator = () => {
     { question: "Should I use BMI to assess my health?", answer: "BMI is a good starting point, but it should be used alongside other measurements like waist circumference and body fat percentage for a more complete picture of health. Consult a healthcare professional for personalized advice." }
   ];
 
+  const appSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "CalcZoon BMI Calculator",
+    "operatingSystem": "All",
+    "applicationCategory": "HealthApplication",
+    "browserRequirements": "Requires JavaScript. Requires HTML5.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqItems.map(item => ({
+      "@type": "Question",
+      "name": item.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.answer
+      }
+    }))
+  };
+
   return (
     <>
-      <Helmet>
-        <title>{pageTitle}</title>
-        <meta name="description" content={pageDescription} />
-        <link rel="canonical" href={canonicalUrl} />
-      </Helmet>
+      <Seo
+        title={pageTitle}
+        description={pageDescription}
+        canonicalUrl="/health/bmi-calculator"
+        schema={[appSchema, faqSchema]}
+      />
       
       <div className="w-full max-w-7xl mx-auto py-8 px-4">
         <PageHeader title={pageTitle} description={pageDescription} icon={HeartPulse} />
@@ -152,6 +181,9 @@ const BMICalculator = () => {
                         <li className="flex justify-between"><span>Overweight</span><span className="text-yellow-400">25 – 29.9</span></li>
                         <li className="flex justify-between"><span>Obesity</span><span className="text-red-400">30 or greater</span></li>
                     </ul>
+                    <Link to="/blog/bmi-calculator-guide" className="text-emerald-400 hover:text-emerald-300 hover:underline text-xs font-bold mt-6 block text-center transition-colors">
+                      Read Our Complete BMI Guide &rarr;
+                    </Link>
                 </CardContent>
             </Card>
             <RelatedTools />

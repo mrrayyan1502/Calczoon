@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Helmet } from 'react-helmet-async';
+import Seo from '@/components/Seo';
+import { Link } from 'react-router-dom';
 import { TrendingUp, Info } from 'lucide-react';
 import PageHeader from '@/components/PageHeader';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
@@ -56,17 +57,51 @@ const SipCalculator = () => {
     toast({ title: "SIP Calculated!", description: "Check your wealth growth below." });
   };
 
-  const pageTitle = "SIP Calculator: Calculate Mutual Fund Returns";
-  const pageDescription = "Calculate the future value of your Systematic Investment Plan (SIP) returns. Plan your mutual fund investments with our free, easy-to-use SIP calculator.";
+  const pageTitle = "SIP Calculator: Project Mutual Fund Investment Returns 2026";
+  const pageDescription = "Calculate the future value of your Systematic Investment Plan (SIP) returns. Project your mutual fund compound growth with our free, easy-to-use SIP calculator.";
   const canonicalUrl = "https://calczoon.com/financial/sip-calculator";
+
+  const appSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "CalcZoon SIP Calculator",
+    "operatingSystem": "All",
+    "applicationCategory": "FinanceApplication",
+    "browserRequirements": "Requires JavaScript. Requires HTML5.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  };
+
+  const faqItems = [
+    { question: "What is an SIP?", answer: "A Systematic Investment Plan (SIP) is an investment route offered by mutual funds, allowing you to invest a fixed amount of money regularly (typically monthly) into a selected mutual fund scheme." },
+    { question: "How does compounding work in SIP?", answer: "Compounding means you earn interest on your initial investment as well as on the accumulated interest from previous periods. Over long periods, this creates exponential growth." },
+    { question: "Can I stop or pause my SIP?", answer: "Yes, you can pause or stop your SIP at any time without any penalty, making it a highly flexible investment option." }
+  ];
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqItems.map(item => ({
+      "@type": "Question",
+      "name": item.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.answer
+      }
+    }))
+  };
 
   return (
     <>
-      <Helmet>
-        <title>{pageTitle}</title>
-        <meta name="description" content={pageDescription} />
-        <link rel="canonical" href={canonicalUrl} />
-      </Helmet>
+      <Seo
+        title={pageTitle}
+        description={pageDescription}
+        canonicalUrl="/financial/sip-calculator"
+        schema={[appSchema, faqSchema]}
+      />
 
       <div className="w-full max-w-7xl mx-auto py-8 px-4">
         <PageHeader title="SIP Calculator" description={pageDescription} icon={TrendingUp} />
@@ -223,6 +258,9 @@ const SipCalculator = () => {
                     <p className="text-slate-400 text-xs">Reinvesting your gains generates exponential returns over the long run. Start early to leverage this power.</p>
                   </div>
                 </div>
+                <Link to="/blog/compound-interest-guide" className="text-emerald-400 hover:text-emerald-300 hover:underline text-xs font-bold mt-4 block text-center transition-colors">
+                  Learn More About Compounding &rarr;
+                </Link>
               </CardContent>
             </Card>
 

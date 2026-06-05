@@ -2,7 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
 const Seo = ({ title, description, canonicalUrl, schema, keywords }) => {
-  const fullTitle = `${title} | CalcZoon`;
+  const fullTitle = title.includes('CalcZoon') || title.includes('Calczoon') ? title : `${title} | CalcZoon`;
   
   return (
     <Helmet>

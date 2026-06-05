@@ -75,6 +75,7 @@ const PercentageBlog = () => {
                     <div className="mt-12">
                         <h3 className="text-2xl font-bold text-white mb-4">Related Calculators</h3>
                         <ul className="list-none p-0 space-y-2">
+                            <li><Link to="/lifestyle/discount-calculator" className="text-primary hover:underline">Discount Calculator</Link>: Calculate sale price savings and taxes instantly.</li>
                             <li><Link to="/math/triangle-area-calculator" className="text-primary hover:underline">Triangle Area Calculator</Link>: For geometric calculations.</li>
                             <li><Link to="/math/fraction-calculator" className="text-primary hover:underline">Fraction Calculator</Link>: Master adding, subtracting, and simplifying fractions.</li>
                             <li><Link to="/math/statistics-calculator" className="text-primary hover:underline">Statistics Calculator</Link>: For analyzing sets of data.</li>

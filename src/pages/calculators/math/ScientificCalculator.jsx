@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Helmet } from 'react-helmet-async';
+import Seo from '@/components/Seo';
+import { Link } from 'react-router-dom';
 import { Calculator } from 'lucide-react';
 import PageHeader from '@/components/PageHeader';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
@@ -87,9 +88,42 @@ const ScientificCalculator = () => {
     }
   };
 
-  const pageTitle = "Scientific Calculator: Free Web Mathematical Tool";
-  const pageDescription = "Solve mathematical problems easily with our free online Scientific Calculator. Includes algebra, logarithms, trigonometry, powers, and basic calculations.";
-  const canonicalUrl = "https://calczoon.com/math/scientific-calculator";
+  const pageTitle = "Free Scientific Calculator: Online Advanced Math Solver 2026";
+  const pageDescription = "Solve complex math, algebraic, and trigonometric equations in real time with our free, keyboard-friendly scientific calculator.";
+  const canonicalUrl = "/math/scientific-calculator";
+
+  const appSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "CalcZoon Scientific Calculator",
+    "operatingSystem": "All",
+    "applicationCategory": "EducationalApplication",
+    "browserRequirements": "Requires JavaScript. Requires HTML5.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  };
+
+  const faqItems = [
+    { question: "How do I toggle between Degrees and Radians?", answer: "Use the RAD/DEG toggle button at the top-left of the keyboard. This switches the input angle mode for trigonometric functions like sine, cosine, and tangent." },
+    { question: "What mathematical functions are supported?", answer: "The calculator supports basic operations, trigonometry (sin, cos, tan), logarithmic functions (log, ln), exponents, powers (x², xʸ), square roots (√), and constants (π, e)." },
+    { question: "Is this scientific calculator free to use?", answer: "Yes, it is 100% free online without any downloads, installations, or registration required." }
+  ];
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqItems.map(item => ({
+      "@type": "Question",
+      "name": item.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.answer
+      }
+    }))
+  };
 
   const buttons = [
     // Row 1: Operations
@@ -144,11 +178,12 @@ const ScientificCalculator = () => {
 
   return (
     <>
-      <Helmet>
-        <title>{pageTitle}</title>
-        <meta name="description" content={pageDescription} />
-        <link rel="canonical" href={canonicalUrl} />
-      </Helmet>
+      <Seo
+        title={pageTitle}
+        description={pageDescription}
+        canonicalUrl={canonicalUrl}
+        schema={[appSchema, faqSchema]}
+      />
 
       <div className="w-full max-w-7xl mx-auto py-8 px-4">
         <PageHeader title="Scientific Calculator" description={pageDescription} icon={Calculator} />
@@ -213,6 +248,14 @@ const ScientificCalculator = () => {
                 </div>
               </CardContent>
             </Card>
+
+            <div className="bg-slate-800/40 border border-slate-700 rounded-2xl p-6">
+              <h4 className="font-bold text-white mb-2 text-sm">Need a complete guide?</h4>
+              <p className="text-xs text-slate-400 mb-4">See how Calczoon's math calculators can help you solve complex equations with ease.</p>
+              <Link to="/blog/simplifying-complex-math" className="text-emerald-400 hover:text-emerald-300 hover:underline text-xs font-bold transition-colors block">
+                Read Our Math Tools Guide &rarr;
+              </Link>
+            </div>
 
             <RelatedTools />
           </aside>

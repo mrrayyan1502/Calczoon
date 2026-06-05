@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Helmet } from 'react-helmet-async';
+import Seo from '@/components/Seo';
+import { Link } from 'react-router-dom';
 import { Globe, Clock } from 'lucide-react';
 import PageHeader from '@/components/PageHeader';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
@@ -99,17 +100,51 @@ const TimeZoneConverter = () => {
     if (dateTime) convertTime();
   }, [dateTime, sourceZone, targetZone]);
 
-  const pageTitle = "Time Zone Converter: Convert Dates and Times";
-  const pageDescription = "Convert times between standard time zones worldwide. Estimate time differences for global meetings using our free Time Zone Converter.";
-  const canonicalUrl = "https://calczoon.com/lifestyle/time-zone-converter";
+  const pageTitle = "Time Zone Converter: Convert Global Region Times Instantly";
+  const pageDescription = "Convert dates and times across UTC, EST, GMT, and other global regions. Perfect for planning international meetings and travel.";
+  const canonicalUrl = "/lifestyle/time-zone-converter";
+
+  const appSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "CalcZoon Time Zone Converter",
+    "operatingSystem": "All",
+    "applicationCategory": "UtilitiesApplication",
+    "browserRequirements": "Requires JavaScript. Requires HTML5.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  };
+
+  const faqItems = [
+    { question: "What is UTC and how does it relate to GMT?", answer: "UTC (Coordinated Universal Time) is the scientific time standard used globally, whereas GMT (Greenwich Mean Time) is a time zone. For practical purposes, UTC and GMT share the same time offset (UTC+0)." },
+    { question: "Does this time zone converter account for Daylight Saving Time (DST)?", answer: "Yes, this converter automatically adjusts for Daylight Saving Time (DST) based on the specific date and regional rules selected." },
+    { question: "How do I schedule an international meeting?", answer: "Select your local date and time as the source, pick your target time zones, and the converter will immediately display the exact corresponding hours in those regions." }
+  ];
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqItems.map(item => ({
+      "@type": "Question",
+      "name": item.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.answer
+      }
+    }))
+  };
 
   return (
     <>
-      <Helmet>
-        <title>{pageTitle}</title>
-        <meta name="description" content={pageDescription} />
-        <link rel="canonical" href={canonicalUrl} />
-      </Helmet>
+      <Seo
+        title={pageTitle}
+        description={pageDescription}
+        canonicalUrl={canonicalUrl}
+        schema={[appSchema, faqSchema]}
+      />
 
       <div className="w-full max-w-7xl mx-auto py-8 px-4">
         <PageHeader title="Time Zone Converter" description={pageDescription} icon={Globe} />
@@ -220,6 +255,14 @@ const TimeZoneConverter = () => {
                 </p>
               </CardContent>
             </Card>
+
+            <div className="bg-slate-800/40 border border-slate-700 rounded-2xl p-6">
+              <h4 className="font-bold text-white mb-2 text-sm">Want to optimize your schedule?</h4>
+              <p className="text-xs text-slate-400 mb-4">Read our latest articles, guides, and tips on productivity, finance, and wellness.</p>
+              <Link to="/blog" className="text-emerald-400 hover:text-emerald-300 hover:underline text-xs font-bold transition-colors block">
+                Explore CalcZoon Blog &rarr;
+              </Link>
+            </div>
 
             <RelatedTools />
           </aside>
