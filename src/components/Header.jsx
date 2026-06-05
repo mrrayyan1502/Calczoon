@@ -49,9 +49,29 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-slate-700/50 bg-slate-900/80 backdrop-blur-lg">
       <nav className="container mx-auto flex h-16 max-w-7xl items-center justify-between px-4">
-        <Link to="/" className="flex items-center space-x-2" onClick={() => setMobileMenuOpen(false)}>
-          <img src="/calczoon-logo.png" alt="CalcZoon Logo" className="h-8 w-8" />
-          <span className="font-bold text-lg sm:text-xl text-white">CalcZoon</span>
+        <Link 
+          to="/" 
+          className="flex items-center space-x-2 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900" 
+          onClick={() => setMobileMenuOpen(false)}
+          aria-label="CalcZoon Home"
+        >
+          <svg className="h-8 w-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H19C20.1046 21 21 20.1046 21 19V5C21 3.89543 20.1046 3 19 3Z" stroke="url(#logo-grad)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M7 7H17" stroke="url(#logo-grad)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M7 12H9" stroke="url(#logo-grad)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M15 12H17" stroke="url(#logo-grad)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M7 17H9" stroke="url(#logo-grad)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M15 17H17" stroke="url(#logo-grad)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M11 12H13" stroke="url(#logo-grad)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M11 17H13" stroke="url(#logo-grad)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            <defs>
+              <linearGradient id="logo-grad" x1="3" y1="3" x2="21" y2="21" gradientUnits="userSpaceOnUse">
+                <stop stopColor="#34d399" />
+                <stop offset="1" stopColor="#38bdf8" />
+              </linearGradient>
+            </defs>
+          </svg>
+          <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-sky-400 text-xl tracking-tight">CalcZoon</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -120,8 +140,8 @@ const Header = () => {
             </SheetTrigger>
             <SheetContent side="right" className="w-full max-w-xs bg-slate-900 border-l-slate-800 text-white">
               <SheetHeader>
-                <SheetTitle className="text-2xl text-primary flex items-center">
-                  <Calculator className="mr-2" /> CalcZoon Menu
+                <SheetTitle className="text-2xl flex items-center">
+                  <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-sky-400">CalcZoon Menu</span>
                 </SheetTitle>
               </SheetHeader>
               <nav className="flex flex-col space-y-2 mt-6">

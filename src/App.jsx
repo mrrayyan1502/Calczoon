@@ -87,6 +87,10 @@ const GPACalculator = lazy(() => import('@/pages/calculators/other/GPACalculator
 const ConcreteCalculator = lazy(() => import('@/pages/calculators/other/ConcreteCalculator'));
 const SleepCalculator = lazy(() => import('@/pages/calculators/other/SleepCalculator'));
 const FuelCostCalculator = lazy(() => import('@/pages/calculators/other/FuelCostCalculator'));
+const SipCalculator = lazy(() => import('@/pages/calculators/financial/SipCalculator'));
+const ScientificCalculator = lazy(() => import('@/pages/calculators/math/ScientificCalculator'));
+const TimeZoneConverter = lazy(() => import('@/pages/calculators/other/TimeZoneConverter'));
+const DiscountCalculator = lazy(() => import('@/pages/calculators/other/DiscountCalculator'));
 const Calculators = lazy(() => import('@/pages/Calculators'));
 
 
@@ -175,6 +179,7 @@ function App() {
             <Route path="financial/salary-calculator" element={<SalaryCalculator />} />
             <Route path="financial/crypto-profit-calculator" element={<CryptoProfitCalculator />} />
             <Route path="financial/freelancer-tax-calculator" element={<FreelancerTaxCalculator />} />
+            <Route path="financial/sip-calculator" element={<SipCalculator />} />
 
             {/* Math */}
             <Route path="math/percentage-calculator" element={<PercentageCalculator />} />
@@ -182,6 +187,7 @@ function App() {
             <Route path="math/triangle-calculator" element={<TriangleCalculator />} />
             <Route path="math/statistics-calculator" element={<StatisticsCalculator />} />
             <Route path="math/exponent-calculator" element={<ExponentCalculator />} />
+            <Route path="math/scientific-calculator" element={<ScientificCalculator />} />
             
             {/* Lifestyle & Other */}
             <Route path="lifestyle/age-calculator" element={<AgeCalculator />} />
@@ -189,6 +195,8 @@ function App() {
             <Route path="lifestyle/concrete-calculator" element={<ConcreteCalculator />} />
             <Route path="lifestyle/sleep-calculator" element={<SleepCalculator />} />
             <Route path="lifestyle/fuel-cost-calculator" element={<FuelCostCalculator />} />
+            <Route path="lifestyle/time-zone-converter" element={<TimeZoneConverter />} />
+            <Route path="lifestyle/discount-calculator" element={<DiscountCalculator />} />
 
             {/* Old URL redirects & aliases */}
             <Route path="/triangle" element={<Navigate to="/math/triangle-calculator" replace />} />

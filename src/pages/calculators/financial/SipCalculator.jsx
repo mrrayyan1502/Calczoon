@@ -1,0 +1,272 @@
+import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
+import { TrendingUp, Info } from 'lucide-react';
+import PageHeader from '@/components/PageHeader';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { motion } from 'framer-motion';
+import { useToast } from '@/components/ui/use-toast';
+import { saveCalculation } from '@/lib/history';
+import ShareResults from '@/components/ShareResults';
+import RelatedTools from '@/components/calculators/tdee/RelatedTools';
+
+const SipCalculator = () => {
+  const [monthlyInvestment, setMonthlyInvestment] = useState('');
+  const [expectedReturn, setExpectedReturn] = useState('');
+  const [years, setYears] = useState('');
+  const [result, setResult] = useState(null);
+  const { toast } = useToast();
+
+  const calculateSip = (e) => {
+    e.preventDefault();
+    const P = parseFloat(monthlyInvestment);
+    const i = parseFloat(expectedReturn);
+    const y = parseFloat(years);
+
+    if (isNaN(P) || isNaN(i) || isNaN(y) || P <= 0 || i <= 0 || y <= 0) {
+      toast({ title: "Invalid Input", description: "Please enter positive values for all fields.", variant: "destructive" });
+      return;
+    }
+
+    const monthlyRate = i / 12 / 100;
+    const months = y * 12;
+    
+    // SIP Future Value formula (Annuity Due)
+    // FV = P * [ ( (1 + r)^n - 1 ) / r ] * (1 + r)
+    const futureValue = P * ((Math.pow(1 + monthlyRate, months) - 1) / monthlyRate) * (1 + monthlyRate);
+    const totalInvested = P * months;
+    const wealthGained = futureValue - totalInvested;
+
+    const newResult = {
+      invested: totalInvested.toFixed(0),
+      wealth: wealthGained.toFixed(0),
+      total: futureValue.toFixed(0),
+      investedPercent: ((totalInvested / futureValue) * 100).toFixed(0),
+      wealthPercent: ((wealthGained / futureValue) * 100).toFixed(0)
+    };
+
+    setResult(newResult);
+    saveCalculation({
+      type: 'SIP',
+      inputs: { monthlyInvestment: P, expectedReturn: i, years: y },
+      result: { totalValue: newResult.total, wealthGained: newResult.wealth }
+    });
+    toast({ title: "SIP Calculated!", description: "Check your wealth growth below." });
+  };
+
+  const pageTitle = "SIP Calculator: Calculate Mutual Fund Returns";
+  const pageDescription = "Calculate the future value of your Systematic Investment Plan (SIP) returns. Plan your mutual fund investments with our free, easy-to-use SIP calculator.";
+  const canonicalUrl = "https://calczoon.com/financial/sip-calculator";
+
+  return (
+    <>
+      <Helmet>
+        <title>{pageTitle}</title>
+        <meta name="description" content={pageDescription} />
+        <link rel="canonical" href={canonicalUrl} />
+      </Helmet>
+
+      <div className="w-full max-w-7xl mx-auto py-8 px-4">
+        <PageHeader title="SIP Calculator" description={pageDescription} icon={TrendingUp} />
+
+        <div className="grid lg:grid-cols-3 gap-8 mb-12">
+          <div className="lg:col-span-2">
+            <Card className="bg-slate-800/40 backdrop-blur-md border-slate-700/60 shadow-xl rounded-2xl overflow-hidden">
+              <CardHeader className="bg-slate-800/20 border-b border-slate-700/30">
+                <CardTitle className="text-white">Estimate Your Wealth Growth</CardTitle>
+                <CardDescription>Enter details about your Systematic Investment Plan</CardDescription>
+              </CardHeader>
+              <CardContent className="p-6">
+                <form onSubmit={calculateSip} className="space-y-6">
+                  <div className="space-y-2">
+                    <Label htmlFor="monthlyInvestment" className="text-slate-300 font-medium">Monthly Investment ($)</Label>
+                    <Input
+                      id="monthlyInvestment"
+                      type="number"
+                      value={monthlyInvestment}
+                      onChange={(e) => setMonthlyInvestment(e.target.value)}
+                      placeholder="e.g., 500"
+                      required
+                      className="bg-slate-900 border-slate-700 focus:ring-emerald-500 focus:border-emerald-500 text-white rounded-xl"
+                    />
+                  </div>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="expectedReturn" className="text-slate-300 font-medium">Expected Return Rate (% p.a.)</Label>
+                      <Input
+                        id="expectedReturn"
+                        type="number"
+                        step="0.1"
+                        value={expectedReturn}
+                        onChange={(e) => setExpectedReturn(e.target.value)}
+                        placeholder="e.g., 12"
+                        required
+                        className="bg-slate-900 border-slate-700 focus:ring-emerald-500 focus:border-emerald-500 text-white rounded-xl"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="years" className="text-slate-300 font-medium">Time Period (Years)</Label>
+                      <Input
+                        id="years"
+                        type="number"
+                        value={years}
+                        onChange={(e) => setYears(e.target.value)}
+                        placeholder="e.g., 10"
+                        required
+                        className="bg-slate-900 border-slate-700 focus:ring-emerald-500 focus:border-emerald-500 text-white rounded-xl"
+                      />
+                    </div>
+                  </div>
+
+                  <Button 
+                    type="submit" 
+                    className="w-full bg-gradient-to-r from-emerald-500 to-sky-500 hover:from-emerald-600 hover:to-sky-600 text-white font-bold py-3 rounded-xl shadow-lg hover:shadow-emerald-500/20 transition-all duration-300"
+                  >
+                    Calculate SIP Growth
+                  </Button>
+                </form>
+              </CardContent>
+
+              {result && (
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                  className="p-6 bg-slate-800/30 border-t border-slate-700/40"
+                >
+                  <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                    Calculation Summary
+                  </h3>
+
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div className="p-4 bg-slate-900/60 rounded-2xl border border-slate-800 text-center">
+                      <p className="text-sm text-slate-400 font-medium mb-1">Invested Amount</p>
+                      <p className="text-2xl font-extrabold text-sky-400">${Number(result.invested).toLocaleString()}</p>
+                    </div>
+                    <div className="p-4 bg-slate-900/60 rounded-2xl border border-slate-800 text-center">
+                      <p className="text-sm text-slate-400 font-medium mb-1">Est. Returns</p>
+                      <p className="text-2xl font-extrabold text-emerald-400">${Number(result.wealth).toLocaleString()}</p>
+                    </div>
+                    <div className="p-4 bg-slate-900/60 rounded-2xl border border-slate-800 text-center">
+                      <p className="text-sm text-slate-400 font-medium mb-1">Total Value</p>
+                      <p className="text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-sky-400">${Number(result.total).toLocaleString()}</p>
+                    </div>
+                  </div>
+
+                  {/* Visual Chart representation */}
+                  <div className="space-y-4">
+                    <p className="text-sm text-slate-300 font-bold">Investment Breakup</p>
+                    <div className="w-full h-6 bg-slate-900 rounded-full overflow-hidden flex border border-slate-800">
+                      <div 
+                        style={{ width: `${result.investedPercent}%` }} 
+                        className="bg-gradient-to-r from-sky-500 to-indigo-500 h-full flex items-center justify-center text-[10px] text-white font-bold"
+                        title={`Invested: ${result.investedPercent}%`}
+                      >
+                        {result.investedPercent > 15 ? `${result.investedPercent}%` : ''}
+                      </div>
+                      <div 
+                        style={{ width: `${result.wealthPercent}%` }} 
+                        className="bg-gradient-to-r from-emerald-500 to-teal-500 h-full flex items-center justify-center text-[10px] text-white font-bold"
+                        title={`Wealth: ${result.wealthPercent}%`}
+                      >
+                        {result.wealthPercent > 15 ? `${result.wealthPercent}%` : ''}
+                      </div>
+                    </div>
+                    <div className="flex gap-6 justify-center text-xs">
+                      <div className="flex items-center gap-2">
+                        <span className="w-3 h-3 rounded-full bg-sky-500 block"></span>
+                        <span className="text-slate-400">Invested Amount ({result.investedPercent}%)</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="w-3 h-3 rounded-full bg-emerald-500 block"></span>
+                        <span className="text-slate-400">Est. Returns ({result.wealthPercent}%)</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="mt-8 flex justify-center border-t border-slate-700/20 pt-6">
+                    <ShareResults 
+                      title="My SIP Investment Results" 
+                      text={`I estimated my SIP returns on Calczoon. For $${monthlyInvestment}/month at ${expectedReturn}%, my future value in ${years} years will be $${Number(result.total).toLocaleString()}!`} 
+                      url={canonicalUrl} 
+                    />
+                  </div>
+                </motion.div>
+              )}
+            </Card>
+          </div>
+
+          <aside className="lg:col-span-1 space-y-6">
+            <Card className="bg-slate-800/40 backdrop-blur-md border-slate-700/60 shadow-xl rounded-2xl">
+              <CardHeader>
+                <CardTitle className="text-white">Why invest via SIP?</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4 text-slate-300 text-sm leading-relaxed">
+                <div className="flex gap-3 items-start">
+                  <div className="bg-emerald-500/10 p-2 rounded-lg text-emerald-400 border border-emerald-500/20 shrink-0">
+                    <TrendingUp className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-white mb-1">Rupee Cost Averaging</h4>
+                    <p className="text-slate-400 text-xs">You buy more units when market prices are low and fewer units when prices are high, lowering your average cost.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3 items-start">
+                  <div className="bg-sky-500/10 p-2 rounded-lg text-sky-400 border border-sky-500/20 shrink-0">
+                    <TrendingUp className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-white mb-1">Power of Compounding</h4>
+                    <p className="text-slate-400 text-xs">Reinvesting your gains generates exponential returns over the long run. Start early to leverage this power.</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <RelatedTools />
+          </aside>
+        </div>
+
+        {/* Detailed SEO Explanation Section */}
+        <section className="mt-16 bg-slate-800/20 rounded-2xl border border-slate-700/40 p-8 text-slate-300 leading-relaxed max-w-5xl mx-auto">
+          <h2 className="text-2xl font-bold text-white mb-4">How Systematic Investment Plan (SIP) Works</h2>
+          <p className="mb-4">
+            A Systematic Investment Plan (SIP) is a method of investing in mutual funds where an investor contributes a fixed amount at regular intervals (typically monthly) rather than making a lump-sum payment. This instills financial discipline and takes advantage of market volatility through compounding.
+          </p>
+
+          <h3 className="text-lg font-bold text-white mt-6 mb-2">The Mathematical Formula for SIP</h3>
+          <p className="mb-4">
+            The future value of an SIP is calculated using the following formula:
+          </p>
+          <div className="bg-slate-900/50 p-4 rounded-xl border border-slate-800 text-center font-mono text-emerald-400 my-4">
+            FV = P × [ ( (1 + r)ⁿ - 1 ) / r ] × (1 + r)
+          </div>
+          <p className="mb-4">Where:</p>
+          <ul className="list-disc pl-6 space-y-2 mb-6 text-sm">
+            <li><strong>FV:</strong> Future Value or the mature amount of your investment.</li>
+            <li><strong>P:</strong> Principal monthly SIP investment amount.</li>
+            <li><strong>r:</strong> Monthly rate of return (Annual expected return rate divided by 12 and then divided by 100).</li>
+            <li><strong>n:</strong> Number of installments or total number of months (Time period in years multiplied by 12).</li>
+          </ul>
+
+          <h3 className="text-lg font-bold text-white mt-6 mb-2">Frequently Asked Questions</h3>
+          <div className="space-y-4">
+            <div>
+              <h4 className="font-semibold text-white">Can I modify my monthly SIP amount?</h4>
+              <p className="text-slate-400 text-sm">Yes, most mutual fund platforms allow you to pause, increase (top-up), or decrease your monthly SIP amount based on your financial needs.</p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-white">Is there a guarantee on SIP returns?</h4>
+              <p className="text-slate-400 text-sm">No, SIP investments are subjected to market risk. The expected rate of return is an estimate; actual returns depend on mutual fund performance.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </>
+  );
+};
+
+export default SipCalculator;
