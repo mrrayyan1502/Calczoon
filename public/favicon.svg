@@ -1,0 +1,18 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="512" height="512" rx="96" fill="#1E293B"/>
+    <path d="M106.667 64H405.333C422.987 64 437.333 78.3466 437.333 96V416C437.333 433.653 422.987 448 405.333 448H106.667C89.0133 448 74.6667 433.653 74.6667 416V96C74.6667 78.3466 89.0133 64 106.667 64Z" fill="#0F172A"/>
+    <rect x="106.667" y="106.667" width="298.667" height="96" rx="16" fill="#10B981"/>
+    <text x="256" y="154" dominant-baseline="middle" text-anchor="middle" font-family="'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', sans-serif" font-size="72" font-weight="bold" fill="#0F172A">CZ</text>
+    <circle cx="149.333" cy="277.333" r="21.3333" fill="#10B981"/>
+    <circle cx="213.333" cy="277.333" r="21.3333" fill="#475569"/>
+    <circle cx="277.333" cy="277.333" r="21.3333" fill="#475569"/>
+    <circle cx="341.333" cy="277.333" r="21.3333" fill="#475569"/>
+    <circle cx="149.333" cy="341.333" r="21.3333" fill="#475569"/>
+    <circle cx="213.333" cy="341.333" r="21.3333" fill="#475569"/>
+    <circle cx="277.333" cy="341.333" r="21.3333" fill="#475569"/>
+    <circle cx="341.333" cy="341.333" r="21.3333" fill="#475569"/>
+    <circle cx="149.333" cy="405.333" r="21.3333" fill="#475569"/>
+    <circle cx="213.333" cy="405.333" r="21.3333" fill="#475569"/>
+    <circle cx="277.333" cy="405.333" r="21.3333" fill="#475569"/>
+    <rect x="320" y="320" width="42.6667" height="106.667" rx="21.3333" fill="#10B981"/>
+</svg>

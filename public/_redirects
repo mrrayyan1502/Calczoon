@@ -1,0 +1,26 @@
+# PERMANENT REDIRECTS (301)
+ /other/fuel-cost-calculator      /lifestyle/fuel-cost-calculator
+ /other/concrete-calculator       /lifestyle/concrete-calculator
+ /other/sleep-calculator          /lifestyle/sleep-calculator
+ /other/gpa-calculator            /lifestyle/gpa-calculator
+ /other/age-calculator            /lifestyle/age-calculator
+ /calculators                     /tools
+ /community                       /about
+ /testimonials                    /about
+ /featured-in                     /about
+ /blog/20-free-online-calculators /tools
+ /math/area-of-triangle-with-3-sides-calculator /math/triangle-calculator
+ /tools/triangle-area-calculator  /math/triangle-calculator
+ /health/tdee-calculator-for-weight-loss-female /health/tdee-calculator
+ /blog/how-to-use-macro-calculator-for-weight-loss /blog/3-ways-to-use-macro-calculator-for-weight-loss
+ /marketing                       /tools
+ /blog/bmi-blog                    /blog/what-is-bmi
+
+# Handle spam/junk URLs
+ /pt_brpt-br*                     / 301!
+ /zh_hant_twzh-hant_tw*           / 301!
+ /*?*lang=pt_br                    / 301!
+ /*?*lang=zh_hant_tw                / 301!
+
+# SPA Fallback - React Router
+ /*                               /index.html 200
