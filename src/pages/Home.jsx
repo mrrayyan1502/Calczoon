@@ -262,7 +262,7 @@ const Home = () => {
               </div>
               <div className="flex flex-col items-center">
                 <div className="flex items-center justify-center w-16 h-16 bg-sky-500/10 border border-sky-500/30 rounded-2xl mb-6 text-sky-400 font-extrabold text-2xl">2</div>
-                <h3 className="text-xl font-bold text-white mb-2">Enter Your details</h3>
+                <h3 className="text-xl font-bold text-white mb-2">Enter Your Details</h3>
                 <p className="text-slate-400 text-sm leading-relaxed max-w-xs">Input your variables into our clean, validated, and user-friendly entry fields.</p>
               </div>
               <div className="flex flex-col items-center">

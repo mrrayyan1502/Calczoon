@@ -80,7 +80,7 @@ const SipCalculator = () => {
     { question: "What is an SIP?", answer: "A Systematic Investment Plan (SIP) is an investment route offered by mutual funds, allowing you to invest a fixed amount of money regularly (typically monthly) into a selected mutual fund scheme." },
     { question: "How does compounding work in SIP?", answer: "Compounding means you earn interest on your initial investment as well as on the accumulated interest from previous periods. Over long periods, this creates exponential growth." },
     { question: "Can I stop or pause my SIP?", answer: "Yes, you can pause or stop your SIP at any time without any penalty, making it a highly flexible investment option." },
-    { question: "Is SIP better than lump sum investment?", answer: "Yes, typically for volatile stock markets, SIP is safer because it averages out your purchasing cost (Rupee Cost Averaging). Lump-sum can be risky if you invest right before a market dip." },
+    { question: "Is SIP better than lump sum investment?", answer: "Yes, typically for volatile stock markets, SIP is safer because it averages out your purchasing cost (Dollar-Cost Averaging). Lump-sum can be risky if you invest right before a market dip." },
     { question: "What is the tax on SIP returns?", answer: "Taxation on mutual fund SIP returns depends on the type of fund (equity vs. debt) and the holding period. Short-term capital gains (STCG) and long-term capital gains (LTCG) apply according to your country's tax laws." }
   ];
 
@@ -248,7 +248,7 @@ const SipCalculator = () => {
                     <TrendingUp className="w-4 h-4" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-white mb-1">Rupee Cost Averaging</h4>
+                    <h4 className="font-semibold text-white mb-1">Dollar-Cost Averaging</h4>
                     <p className="text-slate-400 text-xs">You buy more units when market prices are low and fewer units when prices are high, lowering your average cost.</p>
                   </div>
                 </div>
@@ -279,7 +279,7 @@ const SipCalculator = () => {
               A Systematic Investment Plan (SIP) is a disciplined and automated method of investing in mutual funds. Instead of trying to time the market and making a single lump-sum payment, an investor contributes a fixed amount of money at regular intervals (typically monthly). This approach instills regular saving habits and mitigates short-term market volatility.
             </p>
             <p>
-              By investing via SIP, you take advantage of **Rupee Cost Averaging**, which means you automatically buy more units when prices are low and fewer units when prices are high. Over time, this lowers your average purchase cost.
+              By investing via SIP, you take advantage of **Dollar-Cost Averaging (DCA)**, which means you automatically buy more units when prices are low and fewer units when prices are high. Over time, this lowers your average purchase cost.
             </p>
           </div>
 
