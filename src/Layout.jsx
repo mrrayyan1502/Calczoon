@@ -12,7 +12,7 @@ const Layout = () => {
     <div className="min-h-screen bg-slate-900 text-gray-100 font-sans flex flex-col">
       <Header />
       <div className="flex-grow w-full">
-        <main className="container mx-auto px-4 py-8 max-w-7xl">
+        <main className="container mx-auto px-4 pt-2 md:pt-4 pb-8 max-w-7xl">
             {showBreadcrumbs && <Breadcrumbs />}
             <Outlet />
         </main>

@@ -144,18 +144,18 @@ const Home = () => {
         <div className="absolute top-[20%] right-[10%] w-[25rem] h-[25rem] rounded-full bg-sky-500/5 blur-[120px] pointer-events-none"></div>
 
         {/* Hero Section */}
-        <section className="text-center pt-4 md:pt-8 pb-12 relative">
+        <section className="text-center pt-0 pb-10 relative">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold uppercase tracking-widest mb-6"
+            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold uppercase tracking-widest mb-4"
           >
             <Percent className="w-3.5 h-3.5" /> 100% Free & Easy Utilities
           </motion.div>
           
           <motion.h1
-            className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-sky-400 to-indigo-400 mb-6 leading-tight tracking-tight"
+            className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-sky-400 to-indigo-400 mb-4 leading-tight tracking-tight"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
@@ -173,7 +173,7 @@ const Home = () => {
           </motion.p>
           
           <motion.div
-            className="mt-10"
+            className="mt-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
