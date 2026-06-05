@@ -144,7 +144,7 @@ const Home = () => {
         <div className="absolute top-[20%] right-[10%] w-[25rem] h-[25rem] rounded-full bg-sky-500/5 blur-[120px] pointer-events-none"></div>
 
         {/* Hero Section */}
-        <section className="text-center pt-12 md:pt-24 pb-16 relative">
+        <section className="text-center pt-4 md:pt-8 pb-12 relative">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
