@@ -32,7 +32,6 @@ const Footer = () => {
                 { text: "About Us", href: "/about", icon: <Info size={16} className="mr-2" /> },
                 { text: "Blog", href: "/blog", icon: <Rss size={16} className="mr-2" /> },
                 { text: "Contact", href: "/contact", icon: <Mail size={16} className="mr-2" /> },
-                { text: "Partners", href: "/partners", icon: <Handshake size={16} className="mr-2" /> },
             ]
         },
         {
