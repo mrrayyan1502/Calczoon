@@ -56,7 +56,12 @@ const TermsAndConditions = () => {
             </div>
 
             <div>
-              <h2 className="text-xl font-semibold text-white mb-2">6. Changes to Terms</h2>
+              <h2 className="text-xl font-semibold text-white mb-2">6. Accessibility Commitment</h2>
+              <p className="text-slate-400 text-sm">We are committed to providing a website that is accessible to the widest possible audience, regardless of technology or ability. We actively work to align our services with the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA standards, in compliance with the Americans with Disabilities Act (ADA) in the US and the Equality Act 2010 in the UK. By using this website, you agree to report any accessibility barriers you experience directly to us, allowing us the opportunity to resolve them promptly.</p>
+            </div>
+
+            <div>
+              <h2 className="text-xl font-semibold text-white mb-2">7. Changes to Terms</h2>
               <p className="text-slate-400 text-sm">We reserve the right to modify these terms and conditions at any time. We will notify users of any changes by posting the new terms on this page. Your decision to continue to visit and make use of the Site after such changes have been made constitutes your formal acceptance of the new Terms and Conditions.</p>
             </div>
 

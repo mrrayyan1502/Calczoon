@@ -28,8 +28,11 @@ const AboutPage = () => {
 
                 <div className="bg-slate-800/50 rounded-xl p-8 shadow-lg mb-12">
                     <h2 className="text-3xl font-bold text-white mb-6 text-center">Our Mission</h2>
-                    <p className="text-slate-300 text-lg leading-relaxed text-center max-w-2xl mx-auto">
+                    <p className="text-slate-300 text-lg leading-relaxed text-center max-w-2xl mx-auto mb-4">
                         At CalcZoon, our mission is to provide a comprehensive suite of simple, fast, and reliable online calculators. We believe that everyone should have access to tools that make complex calculations easy, whether you're planning your finances, tracking your health, or solving a math problem. We're dedicated to creating an intuitive and user-friendly experience, completely free of charge.
+                    </p>
+                    <p className="text-slate-400 text-sm leading-relaxed text-center max-w-2xl mx-auto border-t border-slate-700/50 pt-4">
+                        In line with our commitment to inclusivity, CalcZoon is fully optimized to comply with the **Americans with Disabilities Act (ADA)** in the United States and the **Equality Act 2010** in the United Kingdom, adhering strictly to the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA.
                     </p>
                 </div>
 

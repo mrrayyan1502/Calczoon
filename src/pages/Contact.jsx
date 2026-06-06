@@ -6,7 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { useToast } from "@/components/ui/use-toast";
-import { MessageSquare, Mail, Twitter, Linkedin } from 'lucide-react';
+import { MessageSquare, Mail, Twitter, Linkedin, Accessibility } from 'lucide-react';
 import { sendContactEmail } from '@/lib/resend';
 import Seo from '@/components/Seo';
 
@@ -161,6 +161,13 @@ const Contact = () => {
                   <div>
                     <h3 className="font-semibold text-white">LinkedIn</h3>
                     <a href="https://linkedin.com/company/calczoon" target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-primary">Calczoon</a>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4 border-t border-slate-700/50 pt-4">
+                  <Accessibility className="h-6 w-6 text-primary shrink-0 mt-1" />
+                  <div>
+                    <h3 className="font-semibold text-white">Accessibility Feedback</h3>
+                    <p className="text-slate-400 text-xs mt-1">If you have suggestions or encounter difficulties using our website, please email us directly with the subject "Accessibility Issue". We are committed to resolving WCAG AA barriers in accordance with ADA and UK Equality Act 2010 standards.</p>
                   </div>
                 </div>
               </CardContent>

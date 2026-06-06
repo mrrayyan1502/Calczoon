@@ -73,8 +73,8 @@ const Privacy = () => {
               <div className="flex items-start gap-4">
                 <Accessibility className="h-8 w-8 text-amber-400 flex-shrink-0 mt-1" />
                 <div>
-                  <h2 className="text-xl font-semibold text-white">Accessibility & Disability Commitment</h2>
-                  <p className="text-slate-400 text-sm mt-1">We are committed to ensuring digital accessibility for people with disabilities. We continually improve the user experience for everyone, applying the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA standards. If you encounter any accessibility barriers on our site, please let us know so we can resolve them.</p>
+                  <h2 className="text-xl font-semibold text-white">Accessibility & Global Compliance (ADA & UK Equality Act)</h2>
+                  <p className="text-slate-400 text-sm mt-1">We are committed to ensuring digital accessibility for people with disabilities in accordance with the Americans with Disabilities Act (ADA) in the United States and the Equality Act 2010 in the United Kingdom. We continually improve the user experience for everyone, applying the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA standards. If you encounter any accessibility barriers on our site, please let us know so we can resolve them.</p>
                 </div>
               </div>
 

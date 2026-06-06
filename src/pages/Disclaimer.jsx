@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
-import { AlertTriangle, HeartPulse, Landmark, Brain } from 'lucide-react';
+import { AlertTriangle, HeartPulse, Landmark, Brain, Accessibility } from 'lucide-react';
 import Seo from '@/components/Seo';
 
 const Disclaimer = () => {
@@ -47,6 +47,11 @@ const Disclaimer = () => {
             <div className="space-y-4 p-6 bg-red-900/20 border border-red-700/50 rounded-lg">
                 <h2 className="text-2xl font-semibold text-white">Waiver of Liability</h2>
                 <p>By using CalcZoon.com, you acknowledge and agree that we do not guarantee the accuracy, completeness, or applicability of any information or calculations. You agree that CalcZoon.com, its owners, and its contributors shall not be held liable for any damages, losses, or adverse consequences resulting directly or indirectly from the use of the information and tools provided on this site. You assume full responsibility and risk for your use of this website.</p>
+            </div>
+
+            <div className="space-y-4 p-6 bg-slate-900/50 border border-slate-700 rounded-lg">
+                <h2 className="text-2xl font-semibold text-white flex items-center"><Accessibility className="mr-3 h-6 w-6 text-primary" />Accessibility Standards</h2>
+                <p>We strive to make CalcZoon.com fully accessible to all users. Our website incorporates an accessibility toolbar designed to assist users with text size adjustments, high-contrast colors, and dyslexia-friendly typography, in compliance with the Americans with Disabilities Act (ADA) in the United States and the Equality Act 2010 in the United Kingdom (following WCAG 2.1 Level AA guidelines).</p>
             </div>
 
             <p className="text-center text-slate-400 pt-4">If you do not agree with this disclaimer, please do not use our website. Your continued use of the site signifies your acceptance of these terms. For any questions, please <Link to="/contact" className="text-primary hover:underline">contact us</Link>.</p>
