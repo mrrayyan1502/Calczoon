@@ -3,6 +3,7 @@ import { Outlet, useLocation } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import AccessibilityWidget from '@/components/AccessibilityWidget';
 
 const Layout = () => {
   const location = useLocation();
@@ -18,6 +19,7 @@ const Layout = () => {
         </main>
       </div>
       <Footer />
+      <AccessibilityWidget />
     </div>
   );
 };
