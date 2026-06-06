@@ -1,5 +1,19 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Accessibility, X } from 'lucide-react';
+import { X } from 'lucide-react';
+
+// Wheelchair SVG Icon matching the screenshot / ISA Standard
+const WheelchairIcon = ({ size = 24 }) => (
+  <svg 
+    width={size} 
+    height={size} 
+    viewBox="0 0 24 24" 
+    fill="currentColor" 
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <circle cx="12" cy="4.5" r="2" />
+    <path d="M17 11V9c0-1.1-.9-2-2-2h-3.5c-1.1 0-2 .9-2 2v3h2v-3H15v3.5c0 1.93-1.57 3.5-3.5 3.5S8 14.43 8 12.5V8c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v5.5C3 18.1 6.9 22 11.7 22c4.8 0 8.7-3.9 8.7-8.7c0-.2-.1-.4-.2-.6L17 11z" />
+  </svg>
+);
 
 const AccessibilityWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -63,7 +77,7 @@ const AccessibilityWidget = () => {
 
   return (
     <>
-      {/* Floating Action Button */}
+      {/* Floating Action Button - Purple Theme with Wheelchair Icon */}
       <button
         ref={btnRef}
         onClick={togglePanel}
@@ -71,7 +85,7 @@ const AccessibilityWidget = () => {
         aria-label="Open Accessibility Tools"
         type="button"
       >
-        <Accessibility size={24} />
+        <WheelchairIcon size={24} />
       </button>
 
       {/* Accessibility Adjustment Panel */}
@@ -126,10 +140,10 @@ const AccessibilityWidget = () => {
               <span>Contrast:</span>
               <button
                 onClick={() => setContrast(!contrast)}
-                className={`btn-acc-full ${contrast ? 'bg-emerald-600 border-emerald-500' : ''}`}
+                className={`btn-acc-full ${contrast ? 'bg-purple-600 border-purple-500' : ''}`}
                 type="button"
               >
-                {contrast ? 'Disable High Contrast' : 'Enable High Contrast'}
+                Toggle High Contrast
               </button>
             </div>
 
@@ -138,10 +152,10 @@ const AccessibilityWidget = () => {
               <span>Font Style:</span>
               <button
                 onClick={() => setDyslexic(!dyslexic)}
-                className={`btn-acc-full ${dyslexic ? 'bg-emerald-600 border-emerald-500' : ''}`}
+                className={`btn-acc-full ${dyslexic ? 'bg-purple-600 border-purple-500' : ''}`}
                 type="button"
               >
-                {dyslexic ? 'Use Standard Font' : 'Use Dyslexic Font'}
+                Dyslexic Friendly Font
               </button>
             </div>
           </div>
