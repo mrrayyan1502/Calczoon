@@ -4,6 +4,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import CookieConsent from '@/components/CookieConsent';
+import AccessibilityWidget from '@/components/AccessibilityWidget';
 
 const Layout = () => {
   const location = useLocation();
@@ -19,13 +20,14 @@ const Layout = () => {
       </a>
       <Header />
       <div className="flex-grow w-full">
-        <main id="main-content" className="container mx-auto px-4 py-8 max-w-7xl focus:outline-none" tabIndex="-1">
+        <main id="main-content" className="container mx-auto px-4 pt-2 md:pt-4 pb-8 max-w-7xl focus:outline-none" tabIndex="-1">
             {showBreadcrumbs && <Breadcrumbs />}
             <Outlet />
         </main>
       </div>
       <Footer />
       <CookieConsent />
+      <AccessibilityWidget />
     </div>
   );
 };
