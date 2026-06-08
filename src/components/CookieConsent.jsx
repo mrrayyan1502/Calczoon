@@ -33,10 +33,10 @@ const CookieConsent = () => {
     const inlineScript = document.createElement('script');
     inlineScript.innerHTML = `
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-Q04GC32XEX', {
-        page_path: window.location.pathname,
+      window.gtag = function(){window.dataLayer.push(arguments);}
+      window.gtag('js', new Date());
+      window.gtag('config', 'G-Q04GC32XEX', {
+        send_page_view: false,
         cookie_flags: 'SameSite=None;Secure'
       });
     `;
@@ -48,6 +48,12 @@ const CookieConsent = () => {
   const handleAccept = () => {
     localStorage.setItem('cookie-consent-status', 'accepted');
     initializeAnalytics();
+    if (window.gtag) {
+      window.gtag('event', 'page_view', {
+        page_path: window.location.pathname,
+        page_title: document.title
+      });
+    }
     setShowBanner(false);
   };
 

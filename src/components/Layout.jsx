@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -9,6 +9,24 @@ import AccessibilityWidget from '@/components/AccessibilityWidget';
 const Layout = () => {
   const location = useLocation();
   const showBreadcrumbs = location.pathname !== '/';
+
+  useEffect(() => {
+    const consent = localStorage.getItem('cookie-consent-status');
+    if (consent === 'accepted') {
+      const track = () => {
+        if (window.gtag) {
+          window.gtag('event', 'page_view', {
+            page_path: location.pathname,
+            page_title: document.title
+          });
+        }
+      };
+      
+      // Delay tracking slightly to let document.title be updated by react-helmet-async
+      const timer = setTimeout(track, 150);
+      return () => clearTimeout(timer);
+    }
+  }, [location.pathname]);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-gray-100 font-sans flex flex-col">
