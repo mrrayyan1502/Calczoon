@@ -1,4 +1,5 @@
 import React from 'react';
+import RelatedBlogs from '@/components/blog/RelatedBlogs';
 import Seo from '@/components/Seo';
 import Faq from '@/components/Faq';
 import { motion } from 'framer-motion';
@@ -81,7 +82,8 @@ const FractionBlog = () => {
                             <li><Link to="/math/statistics-calculator" className="text-primary hover:underline">Statistics Calculator</Link>: Analyze data sets that include fractional values.</li>
                         </ul>
                     </div>
-                </motion.article>
+                  <RelatedBlogs category="math" />
+      </motion.article>
                 <Faq items={faqItems} className="mt-12" />
             </div>
         </>

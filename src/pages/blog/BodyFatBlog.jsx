@@ -1,4 +1,5 @@
 import React from 'react';
+import RelatedBlogs from '@/components/blog/RelatedBlogs';
 import Seo from '@/components/Seo';
 import { motion } from 'framer-motion';
 import { BrainCircuit, Link as LinkIcon } from 'lucide-react';
@@ -77,7 +78,8 @@ const BlogPost = () => {
           </div>
           
           <Faq items={faqItems} className="mt-12" />
-        </motion.article>
+          <RelatedBlogs category="health" />
+      </motion.article>
       </div>
     </>
   );

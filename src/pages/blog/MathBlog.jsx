@@ -1,4 +1,5 @@
 import React, { Suspense } from 'react';
+import RelatedBlogs from '@/components/blog/RelatedBlogs';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { BookOpen, Percent, Divide, Sigma } from 'lucide-react';
@@ -106,7 +107,8 @@ const MathBlog = () => {
                           </Button>
                       </div>
                   </div>
-              </motion.article>
+                <RelatedBlogs category="math" />
+      </motion.article>
             </Suspense>
         </>
     );

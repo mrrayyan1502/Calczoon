@@ -1,4 +1,5 @@
 import React, { Suspense } from 'react';
+import RelatedBlogs from '@/components/blog/RelatedBlogs';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { TrendingUp, BarChart3, Clock, Brain } from 'lucide-react';
@@ -114,7 +115,8 @@ const CompoundInterestBlog = () => {
                     </Button>
                 </div>
             </div>
-        </motion.article>
+          <RelatedBlogs category="financial" />
+      </motion.article>
       </Suspense>
     </>
   );

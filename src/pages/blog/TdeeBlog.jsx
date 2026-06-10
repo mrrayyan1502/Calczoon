@@ -1,4 +1,5 @@
 import React, { Suspense } from 'react';
+import RelatedBlogs from '@/components/blog/RelatedBlogs';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Flame, Utensils, Zap } from 'lucide-react';
@@ -110,7 +111,8 @@ const TdeeBlog = () => {
                           </Button>
                       </div>
                   </div>
-              </motion.article>
+                <RelatedBlogs category="health" />
+      </motion.article>
             </Suspense>
         </>
     );

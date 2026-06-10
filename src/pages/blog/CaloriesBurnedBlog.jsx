@@ -1,4 +1,5 @@
 import React from 'react';
+import RelatedBlogs from '@/components/blog/RelatedBlogs';
 import Seo from '@/components/Seo';
 import Faq from '@/components/Faq';
 

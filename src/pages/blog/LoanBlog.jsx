@@ -1,4 +1,5 @@
 import React, { Suspense } from 'react';
+import RelatedBlogs from '@/components/blog/RelatedBlogs';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { PiggyBank, TrendingUp, Coins as HandCoins } from 'lucide-react';
@@ -93,7 +94,8 @@ const LoanBlog = () => {
                     </Button>
                 </div>
             </div>
-        </motion.article>
+          <RelatedBlogs category="financial" />
+      </motion.article>
       </Suspense>
     </>
   );

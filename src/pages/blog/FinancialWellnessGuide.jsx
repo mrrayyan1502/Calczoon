@@ -1,4 +1,5 @@
 import React, { Suspense } from 'react';
+import RelatedBlogs from '@/components/blog/RelatedBlogs';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -109,7 +110,8 @@ const FinancialWellnessGuide = () => {
                           </Button>
                       </div>
                   </div>
-              </motion.article>
+                <RelatedBlogs category="financial" />
+      </motion.article>
             </Suspense>
         </>
     );

@@ -1,4 +1,5 @@
 import React from 'react';
+import RelatedBlogs from '@/components/blog/RelatedBlogs';
 import Seo from '@/components/Seo';
 import { Activity, Heart, Apple, Scale, ArrowRight, Info } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -140,6 +141,7 @@ const BmiCalculatorGuide = () => {
             <strong>Medical Disclaimer:</strong> The Body Mass Index (BMI) calculator and the information provided in this article are for informational and educational purposes only and are not intended as a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition.
           </p>
         </div>
+        <RelatedBlogs category="health" />
       </article>
     </div>
   );

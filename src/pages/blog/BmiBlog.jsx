@@ -1,4 +1,5 @@
 import React, { Suspense } from 'react';
+import RelatedBlogs from '@/components/blog/RelatedBlogs';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Heart, Scale, Activity } from 'lucide-react';
@@ -111,7 +112,8 @@ const BmiBlog = () => {
                     </Button>
                 </div>
             </div>
-        </motion.article>
+          <RelatedBlogs category="health" />
+      </motion.article>
       </Suspense>
     </>
   );

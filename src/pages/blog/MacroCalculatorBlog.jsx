@@ -1,4 +1,5 @@
 import React from 'react';
+import RelatedBlogs from '@/components/blog/RelatedBlogs';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -83,7 +84,8 @@ const MacroCalculatorBlog = () => {
                         </Button>
                     </div>
                 </div>
-            </motion.article>
+              <RelatedBlogs category="health" />
+      </motion.article>
         </>
     );
 };

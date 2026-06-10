@@ -1,4 +1,5 @@
 import React from 'react';
+import RelatedBlogs from '@/components/blog/RelatedBlogs';
 import Seo from '@/components/Seo';
 import { Calculator, TrendingUp, ShieldCheck, Target, Clock, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -120,6 +121,7 @@ const SipCalculatorGuide = () => {
             <strong>Disclaimer:</strong> The information provided in this article is for educational purposes only and does not constitute financial advice. Mutual fund investments are subject to market risks, read all scheme related documents carefully before investing. Please consult a registered financial advisor before making any investment decisions.
           </p>
         </div>
+        <RelatedBlogs category="financial" />
       </article>
     </div>
   );
