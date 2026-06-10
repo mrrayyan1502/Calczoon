@@ -25,6 +25,8 @@ const Disclaimer = lazy(() => import('@/pages/Disclaimer'));
 const ScientificReferences = lazy(() => import('@/pages/ScientificReferences'));
 
 // Blog Posts
+const SipCalculatorGuide = lazy(() => import('@/pages/blog/SipCalculatorGuide'));
+const BmiCalculatorGuide = lazy(() => import('@/pages/blog/BmiCalculatorGuide'));
 const MacroCalculatorBlog = lazy(() => import('@/pages/blog/MacroCalculatorBlog'));
 const FinancialWellnessGuide = lazy(() => import('@/pages/blog/FinancialWellnessGuide'));
 const TdeeBlog = lazy(() => import('@/pages/blog/TdeeBlog'));
