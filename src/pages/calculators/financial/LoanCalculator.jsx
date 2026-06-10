@@ -249,52 +249,63 @@ const LoanCalculator = () => {
           </aside>
         </div>
 
-        {/* Detailed SEO Explanation Section */}
+        {/* Detailed SEO Explanation Section with Financial References */}
         <section className="mt-16 bg-slate-800/20 rounded-2xl border border-slate-700/40 p-8 text-slate-300 leading-relaxed max-w-5xl mx-auto space-y-8">
           <div className="space-y-4">
-            <h2 className="text-2xl font-bold text-white">What is an Installment Loan?</h2>
+            <h2 className="text-2xl font-bold text-white">What is an Installment Loan and How Does Amortization Work?</h2>
             <p>
-              An installment loan is a lump sum of money borrowed from a financial lender (like a bank or credit union) that is repaid over time with set, periodic payments (usually monthly installments). Installment loans have fixed interest rates and predetermined durations, meaning your monthly payments remain constant until the loan balance is fully paid off.
+              An installment loan is a commercial lending agreement where a specific principal sum is borrowed from a financial institution and repaid over a predetermined schedule. Unlike revolving credit (such as credit cards), installment loans utilize a fixed repayment structure called amortization.
             </p>
             <p>
-              Common examples of installment loans include auto loans, mortgage loans, student loans, and personal signature loans. Calculating these payments beforehand is vital to prevent overextending your budget.
+              Through the process of amortization, early payments primarily cover accrued interest charges, while subsequent payments increasingly reduce the principal balance. This mathematical curve ensures that the lender secures their profit early in the loan cycle, making it essential for borrowers to understand their long-term financial obligations.
             </p>
           </div>
 
           <div className="space-y-4">
-            <h2 className="text-2xl font-bold text-white">How to Use the Free Loan Calculator</h2>
+            <h2 className="text-2xl font-bold text-white">How to Use the Free Amortization Calculator</h2>
             <ol className="list-decimal pl-6 space-y-2">
-              <li><strong>Select your Currency:</strong> Choose between USD ($) and GBP (£) to customize your results.</li>
-              <li><strong>Enter Loan Principal:</strong> Type the total amount of money you want to borrow. If calculating a car loan, subtract your down payment from the purchase price first.</li>
-              <li><strong>Input Interest Rate:</strong> Enter the annual interest rate (APR) offered by your lender.</li>
-              <li><strong>Select Loan Term:</strong> Input the duration of the loan in years. (For example, entering 5 years represents a standard 60-month loan).</li>
-              <li><strong>Click Calculate:</strong> Press the "Calculate Loan" button to view your Equated Monthly Installment (EMI), principal breakdown, and the total interest expense.</li>
+              <li><strong>Currency Selection:</strong> Opt for USD ($) or GBP (£) based on your geographic banking requirements.</li>
+              <li><strong>Principal Amount:</strong> Enter the exact capital you intend to borrow. For mortgages or auto loans, this is the purchase price minus your initial down payment.</li>
+              <li><strong>Annual Percentage Rate (APR):</strong> Input the nominal interest rate provided by your lending institution.</li>
+              <li><strong>Loan Duration:</strong> Specify the term in years. For example, a standard auto loan is often 5 years (60 months), while a mortgage is typically 15 or 30 years.</li>
+              <li><strong>Financial Analysis:</strong> The calculator will generate your Equated Monthly Installment (EMI) and separate the total interest from the principal capital.</li>
             </ol>
           </div>
 
           <div className="space-y-4">
-            <h2 className="text-2xl font-bold text-white">The Mathematical Amortization Formula (EMI)</h2>
+            <h2 className="text-2xl font-bold text-white">The Mathematical Amortization Equation (EMI)</h2>
             <p>
-              To determine monthly payments for a fixed-rate loan, lenders use standard amortization mathematics. The formula used is:
+              Global banking systems rely on a standard compound interest equation to calculate fixed monthly payments. The universally accepted formula is:
             </p>
             <div className="bg-slate-900/50 p-4 rounded-xl border border-slate-800 text-center font-mono text-emerald-400 my-4">
-              M = P × [ i(1 + i)ⁿ ] / [ (1 + i)ⁿ - 1 ]
+              M = P × [ r(1 + r)ⁿ ] / [ (1 + r)ⁿ - 1 ]
             </div>
-            <p className="mb-4">Where:</p>
+            <p className="mb-4">Where the variables represent:</p>
             <ul className="list-disc pl-6 space-y-2 text-sm">
-              <li><strong>M:</strong> Monthly payment or Equated Monthly Installment (EMI).</li>
-              <li><strong>P:</strong> Principal loan amount borrowed.</li>
-              <li><strong>i:</strong> Monthly interest rate (Annual interest rate divided by 12 and then divided by 100).</li>
-              <li><strong>n:</strong> Total number of monthly payments (Term of the loan in years multiplied by 12).</li>
+              <li><strong>M:</strong> The final Equated Monthly Installment (EMI).</li>
+              <li><strong>P:</strong> The principal borrowing amount.</li>
+              <li><strong>r:</strong> The periodic interest rate (Annual interest rate ÷ 12 months ÷ 100).</li>
+              <li><strong>n:</strong> The total number of compounding periods (Years × 12).</li>
             </ul>
           </div>
 
           <div className="space-y-4">
-            <h2 className="text-2xl font-bold text-white">Benefits of Calculating Loan Payments in Advance</h2>
+            <h2 className="text-2xl font-bold text-white">Strategic Financial Benefits of Calculating Your EMI</h2>
             <ul className="list-disc pl-6 space-y-2">
-              <li><strong>Protects Your Debt-to-Income (DTI) Ratio:</strong> Keep your monthly obligations under a healthy threshold (typically below 36% of your gross monthly income) to protect your credit profile.</li>
-              <li><strong>Unveils Hidden Borrowing Costs:</strong> See exactly how much money goes towards interest rather than paying down the actual principal.</li>
-              <li><strong>Assists with Negotiation:</strong> Arm yourself with calculations before visiting a car dealership or signing broker agreements.</li>
+              <li><strong>Debt-to-Income (DTI) Optimization:</strong> Financial advisors strongly recommend keeping total debt obligations below 36% of gross income. Knowing your EMI prevents over-leveraging.</li>
+              <li><strong>Interest Mitigation:</strong> By visualizing total interest costs, borrowers can make informed decisions about shortening the loan term to save capital.</li>
+              <li><strong>Leverage in Negotiations:</strong> Understanding amortization equips consumers to negotiate better APRs with credit bureaus and auto dealerships.</li>
+            </ul>
+          </div>
+
+          {/* Financial References Section */}
+          <div className="mt-10 pt-6 border-t border-slate-700/50">
+            <h3 className="text-lg font-bold text-slate-400 mb-3 uppercase tracking-wider text-sm">Financial References & Sources</h3>
+            <ul className="text-xs text-slate-500 space-y-2">
+              <li>1. Federal Reserve Board. (2020). <em>Consumer Credit - G.19</em>. Board of Governors of the Federal Reserve System.</li>
+              <li>2. Investopedia. (2023). <em>Amortization: How it Works and How to Calculate it</em>.</li>
+              <li>3. Consumer Financial Protection Bureau (CFPB). <em>What is a debt-to-income ratio?</em> Official US Government Financial Guidelines.</li>
+              <li>4. Brealey, R. A., Myers, S. C., & Allen, F. (2011). <em>Principles of Corporate Finance</em>. McGraw-Hill Education.</li>
             </ul>
           </div>
         </section>

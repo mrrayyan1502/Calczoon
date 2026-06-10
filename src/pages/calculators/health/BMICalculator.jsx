@@ -190,52 +190,70 @@ const BMICalculator = () => {
           </aside>
         </div>
 
-        {/* Deep SEO Informational Section */}
+        {/* Deep SEO Informational Section with Scientific References */}
         <section className="mt-16 bg-slate-800/20 rounded-2xl border border-slate-700/40 p-8 text-slate-300 leading-relaxed max-w-5xl mx-auto space-y-8">
           <div className="space-y-4">
-            <h2 className="text-2xl font-bold text-white">Understanding Body Mass Index (BMI)</h2>
+            <h2 className="text-2xl font-bold text-white">Understanding Body Mass Index (BMI) and Your Health</h2>
             <p>
-              Body Mass Index (BMI) is a simple numerical calculation that measures body fat based on height and weight. It is widely used by healthcare professionals and individuals to estimate if a person is underweight, normal weight, overweight, or obese. While it is not a direct measure of body fat percentage, it serves as an excellent screening tool for identifying potential weight-related health issues.
+              Body Mass Index (BMI) is an internationally recognized anthropometric measurement used to estimate human body fat based on an individual's weight and height. Developed in the 19th century by Adolphe Quetelet, the index has become a fundamental screening tool employed by global health organizations to classify weight categories and assess associated health risks in adult populations.
             </p>
             <p>
-              By tracking your BMI, you can understand if your weight is in a healthy range for your height. This helps in making informed decisions about diet, exercise, and overall wellness.
+              While BMI does not directly measure the percentage of body fat, extensive epidemiological research has demonstrated a strong correlation between high BMI scores and adverse metabolic profiles, making it an essential first step in clinical and personal health evaluation.
             </p>
           </div>
 
           <div className="space-y-4">
-            <h2 className="text-2xl font-bold text-white">How to Use the Free BMI Calculator</h2>
+            <h2 className="text-2xl font-bold text-white">How Our Advanced BMI Calculator Works</h2>
             <ol className="list-decimal pl-6 space-y-2">
-              <li><strong>Select your unit preference:</strong> Choose either the <strong>Metric</strong> tab (for kilograms and centimeters) or the <strong>Imperial</strong> tab (for pounds, feet, and inches).</li>
-              <li><strong>Enter your weight:</strong> Input your current weight in the specified field.</li>
-              <li><strong>Enter your height:</strong> Input your height (in centimeters for metric, or feet and inches for imperial).</li>
-              <li><strong>Click Calculate:</strong> Press the "Calculate BMI" button. Your result will display instantly with your BMI score, weight category, and a visual breakup of where you stand.</li>
+              <li><strong>Measurement System:</strong> Choose your preferred standard—either <strong>Metric</strong> (kilograms and centimeters) or <strong>Imperial</strong> (pounds, feet, and inches).</li>
+              <li><strong>Data Input:</strong> Enter your current weight and accurate height measurements.</li>
+              <li><strong>Real-time Analysis:</strong> Our calculator processes the data instantly using standard mathematical formulas.</li>
+              <li><strong>Result Interpretation:</strong> You will receive your exact BMI number, your WHO-defined weight category, and a clear visual indication of your health status.</li>
             </ol>
           </div>
 
           <div className="space-y-4">
-            <h2 className="text-2xl font-bold text-white">The Mathematical Formula Used for BMI</h2>
+            <h2 className="text-2xl font-bold text-white">The Mathematical Formula Behind BMI</h2>
             <p>
-              The calculation of BMI is straightforward and uses standard formulas recommended by the World Health Organization (WHO):
+              The calculation relies on established mathematical equations that normalize body weight relative to height:
             </p>
             <div className="bg-slate-900/50 p-4 rounded-xl border border-slate-800 space-y-2 font-mono text-emerald-400">
               <p>Metric Formula: BMI = Weight (kg) ÷ [Height (m)]²</p>
               <p>Imperial Formula: BMI = 703 × Weight (lbs) ÷ [Height (inches)]²</p>
             </div>
             <p className="text-sm text-slate-400 mt-2">
-              *Note: The height is squared because body volume scales with the square of height. The multiplier 703 is a conversion factor used to align imperial values with the metric scale.
+              The scaling factor of 703 in the imperial formula ensures equivalence with the metric metric, converting pounds per square inch to kilograms per square meter.
             </p>
           </div>
 
           <div className="space-y-4">
-            <h2 className="text-2xl font-bold text-white">Health Benefits & BMI Categories</h2>
+            <h2 className="text-2xl font-bold text-white">Global Weight Categories & Clinical Implications</h2>
             <p>
-              Maintaining a healthy BMI score is associated with lower risks of developing chronic conditions. Here is the weight classification index:
+              According to the World Health Organization (WHO), maintaining an optimal BMI is crucial for preventing non-communicable diseases. The standard classifications are:
             </p>
             <ul className="list-disc pl-6 space-y-2">
-              <li><strong>Underweight (BMI &lt; 18.5):</strong> May indicate nutrient deficiencies, weakened immune system, or osteoporosis.</li>
-              <li><strong>Normal Weight (18.5 to 24.9):</strong> Associated with the lowest risk of weight-related health problems and chronic diseases.</li>
-              <li><strong>Overweight (25 to 29.9):</strong> Elevated risk of cardiovascular strain, hypertension, and other conditions. Lifestyle adjustments can help manage this.</li>
-              <li><strong>Obesity (BMI of 30 or greater):</strong> High risk of serious chronic diseases like type 2 diabetes and heart disease. Consult a healthcare professional for customized guidance.</li>
+              <li><strong>Underweight (BMI &lt; 18.5):</strong> Individuals in this category may suffer from malnutrition, compromised immune function, osteoporosis, and clinical anemia.</li>
+              <li><strong>Normal Weight (18.5 to 24.9):</strong> This optimal range is associated with the lowest statistical risk of developing weight-related morbidities and maximum longevity.</li>
+              <li><strong>Overweight (25 to 29.9):</strong> This category indicates excess body weight. It carries a moderately elevated risk for cardiovascular disease, hypertension, and metabolic syndrome.</li>
+              <li><strong>Obesity (BMI ≥ 30):</strong> Obesity is recognized as a chronic disease. It significantly increases the risk of type 2 diabetes, coronary artery disease, osteoarthritis, and certain types of carcinomas.</li>
+            </ul>
+          </div>
+
+          <div className="space-y-4">
+            <h2 className="text-2xl font-bold text-white">Limitations of the BMI Scale</h2>
+            <p>
+              While highly useful for population screening, BMI has clinical limitations at an individual level. It does not differentiate between lean muscle mass and adipose tissue (fat). Consequently, professional athletes or bodybuilders may be incorrectly classified as overweight or obese. Furthermore, BMI does not account for fat distribution; visceral fat (abdominal fat) is clinically more hazardous than subcutaneous fat.
+            </p>
+          </div>
+
+          {/* Scientific References Section */}
+          <div className="mt-10 pt-6 border-t border-slate-700/50">
+            <h3 className="text-lg font-bold text-slate-400 mb-3 uppercase tracking-wider text-sm">Scientific References & Sources</h3>
+            <ul className="text-xs text-slate-500 space-y-2">
+              <li>1. World Health Organization (WHO). (2000). Obesity: preventing and managing the global epidemic. Report of a WHO consultation. <em>World Health Organization technical report series</em>, 894, i-xii, 1-253.</li>
+              <li>2. National Institutes of Health (NIH) & National Heart, Lung, and Blood Institute (NHLBI). (1998). Clinical Guidelines on the Identification, Evaluation, and Treatment of Overweight and Obesity in Adults.</li>
+              <li>3. CDC - Centers for Disease Control and Prevention. About Adult BMI. Available at CDC.gov.</li>
+              <li>4. Nuttall, F. Q. (2015). Body Mass Index: Obesity, BMI, and Health: A Critical Review. <em>Nutrition today</em>, 50(3), 117-128.</li>
             </ul>
           </div>
         </section>

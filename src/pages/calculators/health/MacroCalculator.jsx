@@ -159,44 +159,71 @@ const MacroCalculator = () => {
           </aside>
         </div>
 
-        <Card className="bg-slate-800/50 border-slate-700 mb-12">
-            <CardHeader>
-                <CardTitle className="flex items-center gap-2 text-primary"><Weight/> Macro Calculator for Muscle Gain & Bulking</CardTitle>
-                <CardDescription>To build muscle, you need to fuel your body correctly. This means consuming more calories than you burn (a calorie surplus) and optimizing your macronutrient intake to support muscle repair and growth.</CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-6 text-slate-300">
-                <div>
-                    <h3 className="text-xl font-semibold text-white mb-2">How to Calculate Macros for Bulking</h3>
-                    <p className="mb-4">A successful bulk isn't just about eating more; it's about eating smarter. Here’s a simple, effective strategy:</p>
-                    <ul className="space-y-2 list-disc list-inside">
-                        <li><strong>Calorie Surplus:</strong> Aim for a modest calorie surplus of 300-500 calories above your <a href="/health/tdee-calculator" className="text-primary hover:underline">TDEE (maintenance calories)</a>. This provides the energy needed for muscle growth while minimizing fat gain.</li>
-                        <li><strong>High Protein:</strong> Protein is the building block of muscle. Set your protein intake high to facilitate muscle protein synthesis. Our "High Protein / Bulking" diet plan in the calculator is a great starting point.</li>
-                        <li><strong>Sufficient Carbs & Fats:</strong> Carbohydrates fuel your workouts, while fats are essential for hormone production. Don't neglect them.</li>
+        {/* Deep SEO Informational Section with Scientific References */}
+        <section className="mt-16 bg-slate-800/20 rounded-2xl border border-slate-700/40 p-8 text-slate-300 leading-relaxed max-w-5xl mx-auto space-y-8 mb-12">
+          <div className="space-y-4">
+            <h2 className="flex items-center gap-2 text-2xl font-bold text-white"><Weight className="text-primary"/> The Science of Macronutrients</h2>
+            <p>
+              Macronutrients—protein, carbohydrates, and fats—are the primary structural and energy-providing components of the human diet. Unlike micronutrients (vitamins and minerals) which are required in trace amounts, macronutrients are necessary in large quantities to sustain metabolic function, cellular repair, and daily activity.
+            </p>
+            <p>
+              By scientifically tracking and optimizing the ratio of these macronutrients (often referred to as "Flexible Dieting" or "IIFYM - If It Fits Your Macros"), individuals can achieve precise body composition goals, ranging from clinical weight loss to athletic hypertrophy (muscle gain).
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            <h2 className="text-2xl font-bold text-white">Understanding The Big Three</h2>
+            <div className="grid md:grid-cols-3 gap-6 mt-4">
+              <div className="bg-slate-900/50 p-6 border border-blue-900/50 rounded-xl">
+                <h3 className="text-blue-400 font-bold mb-2">Protein (4 kcal/g)</h3>
+                <p className="text-sm">The primary building block for muscle tissue, enzymes, and hormones. High-protein diets increase thermogenesis and satiety, making them highly effective for fat loss and muscle preservation.</p>
+              </div>
+              <div className="bg-slate-900/50 p-6 border border-green-900/50 rounded-xl">
+                <h3 className="text-green-400 font-bold mb-2">Carbohydrates (4 kcal/g)</h3>
+                <p className="text-sm">The body's preferred and most efficient energy source. Carbohydrates are stored as glycogen in muscles and the liver, powering intense physical exertion and central nervous system function.</p>
+              </div>
+              <div className="bg-slate-900/50 p-6 border border-yellow-900/50 rounded-xl">
+                <h3 className="text-yellow-400 font-bold mb-2">Fats (9 kcal/g)</h3>
+                <p className="text-sm">Essential for endocrine (hormonal) health, vitamin absorption (A, D, E, K), and cellular membrane integrity. Fats are the most calorie-dense macronutrient.</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <h2 className="flex items-center gap-2 text-2xl font-bold text-white"><Utensils className="text-primary"/> Strategic Bulking vs. Cutting</h2>
+            <div className="grid md:grid-cols-2 gap-6 mt-4">
+                <div className="bg-slate-800/40 p-6 rounded-xl border border-slate-700">
+                    <h4 className="flex items-center gap-2 text-lg font-semibold text-emerald-400 mb-2">Hypertrophy (Bulking)</h4>
+                    <p className="text-sm mb-2">To build muscle mass, a caloric surplus (consuming more than your TDEE) combined with a high protein intake is required. A balanced ratio of 40% Carbs, 30% Protein, and 30% Fat ensures adequate recovery and growth.</p>
+                    <ul className="text-xs text-slate-400 space-y-1 list-disc list-inside">
+                        <li>Focus on progressive overload</li>
+                        <li>Maintain a +300 to +500 kcal surplus</li>
+                        <li>High carbohydrate availability for training</li>
                     </ul>
                 </div>
-
-                <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                        <h4 className="flex items-center gap-2 text-lg font-semibold text-white mb-2"><Utensils /> Clean Bulking</h4>
-                        <p>Focuses on consuming a moderate calorie surplus from nutrient-dense, whole foods. The goal is to maximize muscle gain while keeping fat accumulation to a minimum. This is a slower, more sustainable approach.</p>
-                        <ul className="mt-2 text-sm text-slate-400 space-y-1 list-disc list-inside">
-                            <li>Slow, steady muscle gain</li>
-                            <li>Minimal fat gain</li>
-                            <li>Easier transition to a cutting phase</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 className="flex items-center gap-2 text-lg font-semibold text-white mb-2"><BrainCircuit /> Dirty Bulking</h4>
-                        <p>Involves eating a large calorie surplus with fewer restrictions on food choices, often including calorie-dense processed foods. While it can lead to rapid weight gain, a significant portion of that weight is often fat.</p>
-                         <ul className="mt-2 text-sm text-slate-400 space-y-1 list-disc list-inside">
-                            <li>Faster weight gain (muscle and fat)</li>
-                            <li>More flexible diet</li>
-                            <li>Requires a longer, more difficult cutting phase</li>
-                        </ul>
-                    </div>
+                <div className="bg-slate-800/40 p-6 rounded-xl border border-slate-700">
+                    <h4 className="flex items-center gap-2 text-lg font-semibold text-rose-400 mb-2">Fat Loss (Cutting)</h4>
+                    <p className="text-sm mb-2">Requires a caloric deficit (consuming less than your TDEE). Protein intake must remain high (often 40% of total calories) to prevent muscle catabolism while losing fat tissue.</p>
+                     <ul className="text-xs text-slate-400 space-y-1 list-disc list-inside">
+                        <li>Maintain a -300 to -500 kcal deficit</li>
+                        <li>Prioritize high-satiety foods</li>
+                        <li>Moderate to lower carbohydrates</li>
+                    </ul>
                 </div>
-            </CardContent>
-        </Card>
+            </div>
+          </div>
+
+          {/* Scientific References Section */}
+          <div className="mt-10 pt-6 border-t border-slate-700/50">
+            <h3 className="text-lg font-bold text-slate-400 mb-3 uppercase tracking-wider text-sm">Scientific References & Sources</h3>
+            <ul className="text-xs text-slate-500 space-y-2">
+              <li>1. Jäger, R., Kerksick, C. M., Campbell, B. I., et al. (2017). International Society of Sports Nutrition Position Stand: protein and exercise. <em>Journal of the International Society of Sports Nutrition</em>, 14(1), 20.</li>
+              <li>2. Helms, E. R., Aragon, A. A., & Fitschen, P. J. (2014). Evidence-based recommendations for natural bodybuilding contest preparation: nutrition and supplementation. <em>Journal of the International Society of Sports Nutrition</em>, 11(1), 20.</li>
+              <li>3. Morton, R. W., Murphy, K. T., McKellar, S. R., et al. (2018). A systematic review, meta-analysis and meta-regression of the effect of protein supplementation on resistance training-induced gains in muscle mass and strength in healthy adults. <em>British Journal of Sports Medicine</em>, 52(6), 376-384.</li>
+              <li>4. Dietary Guidelines for Americans, 2020-2025. U.S. Department of Agriculture and U.S. Department of Health and Human Services.</li>
+            </ul>
+          </div>
+        </section>
 
         <Faq items={faqItems} />
       </div>

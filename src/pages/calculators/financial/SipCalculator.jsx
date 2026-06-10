@@ -271,52 +271,62 @@ const SipCalculator = () => {
           </aside>
         </div>
 
-        {/* Detailed SEO Explanation Section */}
+        {/* Detailed SEO Explanation Section with Financial References */}
         <section className="mt-16 bg-slate-800/20 rounded-2xl border border-slate-700/40 p-8 text-slate-300 leading-relaxed max-w-5xl mx-auto space-y-8">
           <div className="space-y-4">
             <h2 className="text-2xl font-bold text-white">What is a Systematic Investment Plan (SIP)?</h2>
             <p>
-              A Systematic Investment Plan (SIP) is a disciplined and automated method of investing in mutual funds. Instead of trying to time the market and making a single lump-sum payment, an investor contributes a fixed amount of money at regular intervals (typically monthly). This approach instills regular saving habits and mitigates short-term market volatility.
+              A Systematic Investment Plan (SIP) is a disciplined and automated wealth generation strategy commonly utilized in mutual funds and index fund investing. Instead of allocating a single, large lump-sum payment (which carries the risk of market timing), an investor automatically contributes a fixed amount of capital at regular intervals (such as weekly or monthly).
             </p>
             <p>
-              By investing via SIP, you take advantage of **Dollar-Cost Averaging (DCA)**, which means you automatically buy more units when prices are low and fewer units when prices are high. Over time, this lowers your average purchase cost.
+              By investing via SIP, investors mathematically benefit from <strong>Dollar-Cost Averaging (DCA)</strong>. This means you naturally acquire more equity shares or mutual fund units when the market is down, and fewer units when the market is up, thereby lowering your average cost per unit over the long term and mitigating acute market volatility.
             </p>
           </div>
 
           <div className="space-y-4">
-            <h2 className="text-2xl font-bold text-white">How to Use the Free SIP Calculator</h2>
+            <h2 className="text-2xl font-bold text-white">How to Use Our Financial SIP Calculator</h2>
             <ol className="list-decimal pl-6 space-y-2">
-              <li><strong>Enter your Monthly Investment:</strong> Input the amount of money you plan to invest every month.</li>
-              <li><strong>Enter Expected Annual Return:</strong> Type the expected rate of return (percentage per annum). For diversified equity mutual funds, long-term returns typically average 12% to 15%.</li>
-              <li><strong>Select Time Period:</strong> Enter the number of years you plan to keep your SIP active.</li>
-              <li><strong>Click Calculate:</strong> Press the button to instantly view your invested capital, estimated returns earned, and total accumulated wealth.</li>
+              <li><strong>Enter your Monthly Investment:</strong> Input the exact capital you intend to allocate automatically every month.</li>
+              <li><strong>Enter Expected Annual Return (CAGR):</strong> Type the estimated Compound Annual Growth Rate. Historically, broad market index funds (like the S&P 500) have yielded average long-term returns between 8% to 12% before inflation.</li>
+              <li><strong>Select Time Period:</strong> Enter the investment horizon in years. Compounding works best over periods exceeding 10 years.</li>
+              <li><strong>Analyze the Projection:</strong> The algorithm will instantly isolate your principal investment from the wealth generated through compounded interest.</li>
             </ol>
           </div>
 
           <div className="space-y-4">
-            <h2 className="text-2xl font-bold text-white">The Mathematical Formula for SIP Future Value</h2>
+            <h2 className="text-2xl font-bold text-white">The Mathematics of Compound Growth (Annuity Due)</h2>
             <p>
-              The future value of a Systematic Investment Plan is calculated using the standard **Annuity Due** formula:
+              The future value of a Systematic Investment Plan is calculated using the established financial formula for the Future Value of an Annuity Due:
             </p>
             <div className="bg-slate-900/50 p-4 rounded-xl border border-slate-800 text-center font-mono text-emerald-400 my-4">
               FV = P × [ ( (1 + r)ⁿ - 1 ) / r ] × (1 + r)
             </div>
-            <p className="mb-4">Where:</p>
+            <p className="mb-4">Variable Definitions:</p>
             <ul className="list-disc pl-6 space-y-2 text-sm">
-              <li><strong>FV:</strong> Future Value (the accumulated wealth at maturity).</li>
-              <li><strong>P:</strong> Principal monthly SIP investment amount.</li>
-              <li><strong>r:</strong> Monthly rate of return (Annual expected return rate divided by 12, then divided by 100).</li>
-              <li><strong>n:</strong> Total number of monthly installments (Number of years multiplied by 12).</li>
+              <li><strong>FV:</strong> Future Value (Total projected wealth accumulation).</li>
+              <li><strong>P:</strong> The periodic (monthly) SIP installment amount.</li>
+              <li><strong>r:</strong> Periodic interest rate (Annual Return Percentage ÷ 12 months ÷ 100).</li>
+              <li><strong>n:</strong> Total number of compounding periods (Investment Years × 12).</li>
             </ul>
           </div>
 
           <div className="space-y-4">
-            <h2 className="text-2xl font-bold text-white">Financial Benefits of SIP Investments</h2>
+            <h2 className="text-2xl font-bold text-white">Why Financial Advisors Recommend SIPs</h2>
             <ul className="list-disc pl-6 space-y-2">
-              <li><strong>Power of Compounding:</strong> Earnings on your investments start earning their own returns, leading to exponential growth over long horizons.</li>
-              <li><strong>Affordability:</strong> You can start with small amounts (as low as $10 or $50 per month) without straining your budget.</li>
-              <li><strong>No Market Timing Required:</strong> You don't need to study market charts. Regular investments cushion you against market cycles.</li>
-              <li><strong>High Liquidity:</strong> Most mutual fund investments can be redeemed or stopped whenever emergency funds are needed.</li>
+              <li><strong>The Snowball Effect (Compounding):</strong> Reinvested dividends and capital gains begin generating their own returns. The longer the capital remains invested, the steeper the exponential growth curve becomes.</li>
+              <li><strong>Behavioral Finance Alpha:</strong> Automating investments removes the emotional biases of panic-selling or FOMO-buying, encouraging steadfast financial discipline.</li>
+              <li><strong>High Liquidity and Flexibility:</strong> Most open-ended mutual funds permit investors to adjust their SIP mandate amounts or liquidate their holdings swiftly if emergency capital is required.</li>
+            </ul>
+          </div>
+
+          {/* Financial References Section */}
+          <div className="mt-10 pt-6 border-t border-slate-700/50">
+            <h3 className="text-lg font-bold text-slate-400 mb-3 uppercase tracking-wider text-sm">Financial References & Market Sources</h3>
+            <ul className="text-xs text-slate-500 space-y-2">
+              <li>1. Malkiel, B. G. (2015). <em>A Random Walk Down Wall Street: The Time-Tested Strategy for Successful Investing</em>. W. W. Norton & Company.</li>
+              <li>2. Bogle, J. C. (2017). <em>The Little Book of Common Sense Investing</em>. John Wiley & Sons.</li>
+              <li>3. U.S. Securities and Exchange Commission (SEC). <em>Compound Interest and Yield</em>. Investor.gov.</li>
+              <li>4. Statman, M. (1995). A Behavioral Framework for Dollar-Cost Averaging. <em>The Journal of Portfolio Management</em>, 22(1), 70-78.</li>
             </ul>
           </div>
         </section>
