@@ -5,16 +5,21 @@ const Seo = ({ title, description, canonicalUrl, schema, keywords, ogImage }) =>
   const fullTitle = title.includes('CalcZoon') || title.includes('Calczoon') ? title : `${title} | CalcZoon`;
   const finalOgImage = ogImage || "https://calczoon.com/og-preview.png";
   
+  // Safe Canonical URL logic
+  const finalCanonicalUrl = canonicalUrl 
+    ? (canonicalUrl.startsWith('http') ? canonicalUrl : `https://calczoon.com${canonicalUrl.startsWith('/') ? '' : '/'}${canonicalUrl}`) 
+    : null;
+  
   return (
     <Helmet>
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
       {keywords && <meta name="keywords" content={keywords.join(', ')} />}
-      {canonicalUrl && <link rel="canonical" href={`https://calczoon.com${canonicalUrl}`} />}
+      {finalCanonicalUrl && <link rel="canonical" href={finalCanonicalUrl} />}
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content="website" />
-      {canonicalUrl && <meta property="og:url" content={`https://calczoon.com${canonicalUrl}`} />}
+      {finalCanonicalUrl && <meta property="og:url" content={finalCanonicalUrl} />}
       <meta property="og:image" content={finalOgImage} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={fullTitle} />

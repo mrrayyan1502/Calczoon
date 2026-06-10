@@ -5,6 +5,7 @@ import Footer from '@/components/Footer';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import CookieConsent from '@/components/CookieConsent';
 import AccessibilityWidget from '@/components/AccessibilityWidget';
+import ShareButtons from '@/components/ShareButtons';
 
 const Layout = () => {
   const location = useLocation();
@@ -41,6 +42,11 @@ const Layout = () => {
         <main id="main-content" className="container mx-auto px-4 pt-2 md:pt-4 pb-8 max-w-7xl focus:outline-none" tabIndex="-1">
             {showBreadcrumbs && <Breadcrumbs />}
             <Outlet />
+            {showBreadcrumbs && (
+              <div className="mt-12">
+                <ShareButtons title={document.title} />
+              </div>
+            )}
         </main>
       </div>
       <Footer />

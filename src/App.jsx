@@ -119,6 +119,8 @@ function App() {
 
             {/* Blog posts */}
             <Route path="blog/macro-calculator-guide" element={<MacroCalculatorBlog />} />
+            <Route path="blog/sip-calculator-guide" element={<SipCalculatorGuide />} />
+            <Route path="blog/understanding-bmi" element={<BmiCalculatorGuide />} />
             <Route path="blog/financial-wellness-guide" element={<FinancialWellnessGuide />} />
             <Route path="blog/tdee-calculator-guide" element={<TdeeBlog />} />
             <Route path="blog/top-financial-calculators-for-financial-planning" element={<FinancialBlog />} />
