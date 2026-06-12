@@ -3,8 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CalcZoon | Free Online Calculator Hub</title>
-  <meta name="description" content="Calculate, simplify, and succeed with a wide collection of free online calculators for health, fitness, finance, math, and everyday life." />
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -35,10 +33,31 @@
     }
   </script>
 
+  <!-- Default Title & Meta (overridden per page by react-helmet-async) -->
+  <title>CalcZoon – Free Online Calculators for Math, Finance, Health & More</title>
+  <meta name="description" content="100+ free online calculators for math, health, finance, fitness and everyday life. Fast, accurate results with no signup required. Try CalcZoon now." />
+  <link rel="canonical" href="https://calczoon.com/" />
+
   <!-- Google Site Verification -->
   <meta name="google-site-verification" content="fyUYtNajmnEhD5FPSAg51k8jwv_ezuSKcqopR6rFi70" />
-  <meta name="google-site-verification" content="JGN2aQixIJBuGFTKpGEA9auOjQlxw3p05UM7-J08uhU" />
 
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8S1TR6NVS5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8S1TR6NVS5');
+  </script>
+  
+  <!-- Open Graph Defaults (overridden per page by react-helmet-async) -->
+  <meta property="og:site_name" content="CalcZoon" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://calczoon.com/calczoon-logo-full.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@calczoon" />
 </head>
 <body>
   <div id="root"></div>
