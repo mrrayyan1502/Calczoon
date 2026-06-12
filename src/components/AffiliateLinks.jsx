@@ -1,3 +1,4 @@
+// v1.1 - Pure ClickBank Gluco6 + NerdWallet | No Amazon
 import React from 'react';
 import { ExternalLink, TrendingUp } from 'lucide-react';
 
