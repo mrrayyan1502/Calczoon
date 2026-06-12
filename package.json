@@ -4,8 +4,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "vite --host :: --port 3000",
-    "build-old": "node tools/generate-llms.js || true && node tools/generate-sitemap.js && vite build",
+    "build": "node tools/generate-llms.js || true && node tools/generate-sitemap.js && vite build",
+    "dev": "node tools/generate-llms.js || true && node tools/generate-sitemap.js && vite build",
     "preview": "vite preview --host :: --port 3000",
     "prerender": "vite build && node tools/prerender.js",
     "lint": "eslint . --quiet"
