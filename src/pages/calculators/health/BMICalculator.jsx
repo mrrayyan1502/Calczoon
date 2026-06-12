@@ -13,6 +13,7 @@ import { saveCalculation } from '@/lib/history';
 import TDEE_FAQ from '@/components/calculators/tdee/TDEE_FAQ';
 import RelatedTools from '@/components/calculators/tdee/RelatedTools';
 import ShareResults from '@/components/ShareResults';
+import AffiliateLinks from '@/components/AffiliateLinks';
 
 const BMICalculator = () => {
   const [unit, setUnit] = useState('metric');
@@ -257,6 +258,8 @@ const BMICalculator = () => {
             </ul>
           </div>
         </section>
+
+        <AffiliateLinks category="bmi" title="Recommended Health & Fitness Tools" />
 
         <TDEE_FAQ items={faqItems} />
       </div>

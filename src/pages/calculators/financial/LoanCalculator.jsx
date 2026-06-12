@@ -7,6 +7,7 @@ import { saveCalculation } from '@/lib/history';
 import Faq from '@/components/Faq';
 import Disclaimer from '@/components/Disclaimer';
 import ShareResults from '@/components/ShareResults';
+import AffiliateLinks from '@/components/AffiliateLinks';
 import Seo from '@/components/Seo';
 import PageHeader from '@/components/PageHeader';
 import RelatedTools from '@/components/calculators/tdee/RelatedTools';
@@ -316,5 +317,7 @@ const LoanCalculator = () => {
     </>
   );
 };
+
+        <AffiliateLinks category="loan" title="Recommended Loan & Finance Tools" />
 
 export default LoanCalculator;
