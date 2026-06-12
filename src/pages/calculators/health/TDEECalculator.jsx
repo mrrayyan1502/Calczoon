@@ -117,4 +117,6 @@ const TDEECalculator = () => {
     );
 };
 
+        <AffiliateLinks category="tdee" title="Recommended Fitness & Nutrition Tools" />
+
 export default TDEECalculator;

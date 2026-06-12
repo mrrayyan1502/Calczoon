@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import Faq from '@/components/Faq';
 import Disclaimer from '@/components/Disclaimer';
 import ShareResults from '@/components/ShareResults';
+import AffiliateLinks from '@/components/AffiliateLinks';
 import Seo from '@/components/Seo';
 import { Droplet } from 'lucide-react';
 
@@ -166,5 +167,7 @@ const WaterIntakeCalculator = () => {
     </>
   );
 };
+
+        <AffiliateLinks category="water" title="Recommended Hydration Tools" />
 
 export default WaterIntakeCalculator;

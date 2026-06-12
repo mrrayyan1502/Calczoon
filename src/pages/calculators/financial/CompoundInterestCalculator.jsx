@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import Faq from '@/components/Faq';
 import Disclaimer from '@/components/Disclaimer';
 import ShareResults from '@/components/ShareResults';
+import AffiliateLinks from '@/components/AffiliateLinks';
 import { Link as LinkIcon } from 'lucide-react';
 import Seo from '@/components/Seo';
 
@@ -210,5 +211,7 @@ const CompoundInterestCalculator = () => {
         </>
     );
 };
+
+        <AffiliateLinks category="compound" title="Recommended Investment Tools" />
 
 export default CompoundInterestCalculator;
