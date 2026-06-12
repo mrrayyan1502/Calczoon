@@ -259,7 +259,28 @@ const BMICalculator = () => {
           </div>
         </section>
 
-        <AffiliateLinks category="bmi" title="Recommended Health & Fitness Tools" />
+        {/* Affiliate - Gluco6 ClickBank */}
+        <div className="mt-8 p-5 bg-gradient-to-br from-slate-800/60 to-slate-900/60 border border-slate-700/50 rounded-xl">
+          <div className="flex items-center gap-2 mb-4">
+            <span className="text-emerald-400">⚡</span>
+            <h3 className="text-lg font-semibold text-white">Recommended Health Tool</h3>
+            <span className="text-xs text-slate-500 ml-auto">Affiliate</span>
+          </div>
+          <a
+            href="https://tinyurl.com/5448pvdk"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+            className="flex items-start gap-3 p-3 rounded-lg bg-slate-800/40 hover:bg-slate-700/50 border border-slate-700/30 hover:border-emerald-600/50 transition-all group"
+          >
+            <span className="text-emerald-400 group-hover:translate-x-0.5 transition-transform">→</span>
+            <div>
+              <span className="text-sm font-medium text-slate-200 group-hover:text-emerald-300 transition-colors">
+                Gluco6 - Blood Sugar Support
+              </span>
+              <p className="text-xs text-slate-500 mt-0.5">Natural supplement for healthy glucose levels &amp; weight management</p>
+            </div>
+          </a>
+        </div>
 
         <TDEE_FAQ items={faqItems} />
       </div>
