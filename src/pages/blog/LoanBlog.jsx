@@ -1,5 +1,4 @@
 import React, { Suspense } from 'react';
-import RelatedBlogs from '@/components/blog/RelatedBlogs';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { PiggyBank, TrendingUp, Coins as HandCoins } from 'lucide-react';
@@ -16,7 +15,7 @@ const LoanBlog = () => {
     },
     "headline": "How Our Loan Calculator Helps You Save Money",
     "description": "Discover how using a loan calculator can empower you to make smarter borrowing decisions, compare offers, and potentially save thousands in interest.",
-    "image": "https://images.unsplash.com/photo-1560518883-ce09059eeffa",
+    "image": "https://images.unsplash.com/photo-1579621970795-87facc2f976d?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb",
     "author": {
       "@type": "Organization",
       "name": "Calczoon"
@@ -52,7 +51,7 @@ const LoanBlog = () => {
                     alt="A person using a calculator with coins and a piggy bank nearby"
                     className="w-full h-64 md:h-96 object-cover" 
                     width="1920" height="768"
-                    src="https://images.unsplash.com/photo-1560518883-ce09059eeffa" />
+                    src="https://images.unsplash.com/photo-1579621970795-87facc2f976d?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb" />
                 <div className="absolute inset-0 bg-black/50"></div>
                 <div className="absolute inset-0 flex items-center justify-center">
                     <motion.h1 
@@ -94,8 +93,7 @@ const LoanBlog = () => {
                     </Button>
                 </div>
             </div>
-          <RelatedBlogs category="financial" />
-      </motion.article>
+        </motion.article>
       </Suspense>
     </>
   );

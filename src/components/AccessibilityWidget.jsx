@@ -20,7 +20,14 @@ const AccessibilityWidget = () => {
   const [contrast, setContrast] = useState(false);
   const [dyslexic, setDyslexic] = useState(false);
   const [fontSizeScale, setFontSizeScale] = useState(1.0);
+  const [isHidden, setIsHidden] = useState(() => {
+    if (typeof window !== 'undefined' && window.localStorage) {
+      return localStorage.getItem('accessibilityWidgetHidden') === 'true';
+    }
+    return false;
+  });
   const panelRef = useRef(null);
+
   const btnRef = useRef(null);
 
   // Toggle Panel Open/Close
@@ -74,6 +81,8 @@ const AccessibilityWidget = () => {
       document.body.style.fontSize = `${fontSizeScale}rem`;
     }
   }, [fontSizeScale]);
+
+  if (isHidden) return null;
 
   return (
     <>
@@ -140,10 +149,10 @@ const AccessibilityWidget = () => {
               <span>Contrast:</span>
               <button
                 onClick={() => setContrast(!contrast)}
-                className={`btn-acc-full ${contrast ? 'bg-purple-600 border-purple-500' : ''}`}
+                className={`btn-acc-full ${contrast ? 'bg-emerald-600 border-emerald-500' : ''}`}
                 type="button"
               >
-                Toggle High Contrast
+                {contrast ? 'Disable High Contrast' : 'Enable High Contrast'}
               </button>
             </div>
 
@@ -152,10 +161,27 @@ const AccessibilityWidget = () => {
               <span>Font Style:</span>
               <button
                 onClick={() => setDyslexic(!dyslexic)}
-                className={`btn-acc-full ${dyslexic ? 'bg-purple-600 border-purple-500' : ''}`}
+                className={`btn-acc-full ${dyslexic ? 'bg-emerald-600 border-emerald-500' : ''}`}
                 type="button"
               >
-                Dyslexic Friendly Font
+                {dyslexic ? 'Use Standard Font' : 'Use Dyslexic Font'}
+              </button>
+            </div>
+
+            {/* Disable Accessibility Widget Row */}
+            <div className="acc-tool-row" style={{ marginTop: '15px', borderTop: '1px solid #334155', paddingTop: '15px' }}>
+              <span>Hide Tool:</span>
+              <button
+                onClick={() => {
+                  if(window.confirm('Are you sure you want to disable and hide the Accessibility Tool? You will have to clear site data to get it back.')) {
+                    localStorage.setItem('accessibilityWidgetHidden', 'true');
+                    window.location.reload();
+                  }
+                }}
+                className="btn-acc-full bg-red-600/80 hover:bg-red-700 border-red-500"
+                type="button"
+              >
+                Disable Accessibility
               </button>
             </div>
           </div>

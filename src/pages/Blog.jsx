@@ -52,7 +52,7 @@ const blogPosts = [
     description: 'Before you borrow, understand the true cost. Our guide and calculator help you compare loan options.',
     category: 'Finance',
     icon: <DollarSign className="w-5 h-5" />,
-    imgSrc: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb"
+    imgSrc: "https://images.unsplash.com/photo-1579621970795-87facc2f976d?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb"
   },
   {
     title: 'Mastering the Triangle Area Calculator',
@@ -60,7 +60,7 @@ const blogPosts = [
     description: 'A comprehensive guide to calculating the area of any triangle, with formulas and practical examples.',
     category: 'Math',
     icon: <Calculator className="w-5 h-5" />,
-    imgSrc: "https://images.unsplash.com/photo-1509228627152-72ae9ae6848d?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb"
+    imgSrc: "https://images.unsplash.com/photo-1541873676-a18131494184?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb"
   },
   {
     title: 'The Ultimate Guide to Percentage Calculations',
@@ -68,7 +68,7 @@ const blogPosts = [
     description: 'From discounts to data analysis, master percentages with our easy-to-use calculator and guide.',
     category: 'Math',
     icon: <Percent className="w-5 h-5" />,
-    imgSrc: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb"
+    imgSrc: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb"
   },
   {
     title: 'Simplify Your Life with the Fraction Calculator',
@@ -76,7 +76,7 @@ const blogPosts = [
     description: 'Add, subtract, multiply, and divide fractions effortlessly. This guide makes fraction math simple.',
     category: 'Math',
     icon: <Divide className="w-5 h-5" />,
-    imgSrc: "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb"
+    imgSrc: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb"
   }
 ];
 
@@ -113,14 +113,7 @@ const Blog = () => {
               <Link to={post.link} className="block h-full group">
                 <Card className="bg-slate-800/40 border-slate-700/50 h-full overflow-hidden hover:border-primary/50 transition-all duration-300 flex flex-col">
                   <div className="aspect-video overflow-hidden">
-                    <img 
-                      src={post.imgSrc} 
-                      alt={post.title} 
-                      width="400"
-                      height="225"
-                      loading="lazy"
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" 
-                    />
+                    <img src={post.imgSrc} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
                   </div>
                   <CardContent className="p-6 flex flex-col flex-grow">
                     <div className="flex items-center text-sm text-primary mb-2">

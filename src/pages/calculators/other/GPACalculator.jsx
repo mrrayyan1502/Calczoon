@@ -99,10 +99,19 @@ const GPACalculator = () => {
   return (
     <>
       <Seo
-        title="GPA Calculator | Calculate Your Semester & Cumulative GPA"
-        description="A free and easy-to-use GPA calculator to determine your semester and overall Grade Point Average. Helps students track academic performance."
+        title="GPA Calculator – Calculate Semester & Cumulative GPA Free"
+        description="Free GPA calculator for students. Calculate your semester GPA and cumulative Grade Point Average instantly. Add courses, credits and grades to track your academic performance."
         canonicalUrl="/lifestyle/gpa-calculator"
-      />
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          "name": "GPA Calculator",
+          "url": "https://calczoon.com/lifestyle/gpa-calculator",
+          "description": "Free GPA calculator to determine semester and cumulative Grade Point Average for students.",
+          "applicationCategory": "UtilityApplication",
+          "operatingSystem": "Web Browser",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+        }} />
       <div className="max-w-4xl mx-auto py-8">
         <Card className="bg-slate-800/50 border-slate-700">
           <CardHeader>

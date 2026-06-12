@@ -23,7 +23,6 @@ const Footer = () => {
                 { text: "Loan Calculator", href: "/financial/loan-calculator" },
                 { text: "Compound Interest", href: "/financial/compound-interest-calculator" },
                 { text: "Triangle Area Calculator", href: "/math/triangle-calculator" },
-                { text: "Calculation History", href: "/history" },
             ]
         },
         {
@@ -58,29 +57,9 @@ const Footer = () => {
                 <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
                     {/* Brand Section */}
                     <div className="col-span-2 md:col-span-1 flex flex-col space-y-4">
-                         <Link 
-                            to="/" 
-                            className="flex items-center space-x-2 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
-                            aria-label="CalcZoon Home"
-                         >
-                            <svg className="h-8 w-8 filter drop-shadow-[0_0_8px_rgba(52,211,153,0.3)]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M4 19V5C4 3.89543 4.89543 3 6 3H18C19.1046 3 20 3.89543 20 5V19C20 20.1046 19.1046 21 18 21H6C4.89543 21 4 20.1046 4 19Z" stroke="url(#footer-logo-grad)" strokeWidth="2.5" />
-                              <path d="M8 7H16" stroke="url(#footer-logo-grad)" strokeWidth="2" strokeLinecap="round" />
-                              <circle cx="8" cy="12" r="1.5" fill="url(#footer-logo-grad)" />
-                              <circle cx="12" cy="12" r="1.5" fill="url(#footer-logo-grad)" />
-                              <circle cx="16" cy="12" r="1.5" fill="url(#footer-logo-grad)" />
-                              <circle cx="8" cy="16" r="1.5" fill="url(#footer-logo-grad)" />
-                              <circle cx="12" cy="16" r="1.5" fill="url(#footer-logo-grad)" />
-                              <circle cx="16" cy="16" r="1.5" fill="url(#footer-logo-grad)" />
-                              <defs>
-                                <linearGradient id="footer-logo-grad" x1="4" y1="3" x2="20" y2="21" gradientUnits="userSpaceOnUse">
-                                  <stop stopColor="#34d399" />
-                                  <stop offset="0.5" stopColor="#38bdf8" />
-                                  <stop offset="1" stopColor="#6366f1" />
-                                </linearGradient>
-                              </defs>
-                            </svg>
-                            <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-sky-400 to-indigo-400 text-lg sm:text-xl">CalcZoon</span>
+                         <Link to="/" className="flex items-center space-x-2">
+                            <img src="/calczoon-logo.png" alt="CalcZoon Logo" className="h-8 w-auto" />
+                            <span className="font-bold text-lg text-white">CalcZoon</span>
                         </Link>
                         <p className="text-sm">
                             Your go-to source for precise and easy-to-use online calculators.

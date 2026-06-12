@@ -79,10 +79,19 @@ const FuelCostCalculator = () => {
   return (
     <>
       <Seo
-        title="Fuel Cost Calculator | Plan Your Trip's Gas Expense"
-        description="Use our free Fuel Cost Calculator to estimate the total cost of gasoline or diesel for your road trip. Works with MPG and L/100km. Plan your travel budget accurately."
+        title="Fuel Cost Calculator – Estimate Trip Gas Expenses Instantly"
+        description="Plan your road trip budget with our free fuel cost calculator. Enter distance, fuel efficiency and price per litre to get accurate petrol or diesel cost estimates. Works with MPG and L/100km."
         canonicalUrl="/lifestyle/fuel-cost-calculator"
-      />
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          "name": "Fuel Cost Calculator",
+          "url": "https://calczoon.com/lifestyle/fuel-cost-calculator",
+          "description": "Free fuel cost calculator to estimate petrol and diesel expenses for road trips and commutes.",
+          "applicationCategory": "UtilityApplication",
+          "operatingSystem": "Web Browser",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+        }} />
       <div className="max-w-4xl mx-auto py-8 px-4">
           <Card className="bg-slate-800/50 border-slate-700">
             <CardHeader>

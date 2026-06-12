@@ -40,7 +40,6 @@ const navLinks = [
   { to: '/blog', label: 'Blog' },
   { to: '/about', label: 'About' },
   { to: '/contact', label: 'Contact' },
-  { to: '/history', label: 'History' },
 ];
 
 const Header = () => {
@@ -49,30 +48,11 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-slate-700/50 bg-slate-900/80 backdrop-blur-lg">
       <nav className="container mx-auto flex h-16 max-w-7xl items-center justify-between px-4">
-        <Link 
-          to="/" 
-          className="flex items-center space-x-2 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900" 
-          onClick={() => setMobileMenuOpen(false)}
-          aria-label="CalcZoon Home"
-        >
-          <svg className="h-8 w-8 filter drop-shadow-[0_0_8px_rgba(52,211,153,0.3)]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M4 19V5C4 3.89543 4.89543 3 6 3H18C19.1046 3 20 3.89543 20 5V19C20 20.1046 19.1046 21 18 21H6C4.89543 21 4 20.1046 4 19Z" stroke="url(#logo-grad)" strokeWidth="2.5" />
-            <path d="M8 7H16" stroke="url(#logo-grad)" strokeWidth="2" strokeLinecap="round" />
-            <circle cx="8" cy="12" r="1.5" fill="url(#logo-grad)" />
-            <circle cx="12" cy="12" r="1.5" fill="url(#logo-grad)" />
-            <circle cx="16" cy="12" r="1.5" fill="url(#logo-grad)" />
-            <circle cx="8" cy="16" r="1.5" fill="url(#logo-grad)" />
-            <circle cx="12" cy="16" r="1.5" fill="url(#logo-grad)" />
-            <circle cx="16" cy="16" r="1.5" fill="url(#logo-grad)" />
-            <defs>
-              <linearGradient id="logo-grad" x1="4" y1="3" x2="20" y2="21" gradientUnits="userSpaceOnUse">
-                <stop stopColor="#34d399" />
-                <stop offset="0.5" stopColor="#38bdf8" />
-                <stop offset="1" stopColor="#6366f1" />
-              </linearGradient>
-            </defs>
-          </svg>
-          <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-sky-400 to-indigo-400 text-xl tracking-tight">CalcZoon</span>
+        <Link to="/" className="flex items-center space-x-2 group" onClick={() => setMobileMenuOpen(false)}>
+          <div className="bg-primary/10 p-2 rounded-lg group-hover:bg-primary/20 transition-colors">
+            <Calculator className="h-6 w-6 text-primary" />
+          </div>
+          <span className="font-bold text-xl tracking-tight text-white">CalcZoon</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -141,8 +121,8 @@ const Header = () => {
             </SheetTrigger>
             <SheetContent side="right" className="w-full max-w-xs bg-slate-900 border-l-slate-800 text-white">
               <SheetHeader>
-                <SheetTitle className="text-2xl flex items-center">
-                  <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-sky-400">CalcZoon Menu</span>
+                <SheetTitle className="text-2xl text-primary flex items-center">
+                  <Calculator className="mr-2" /> CalcZoon Menu
                 </SheetTitle>
               </SheetHeader>
               <nav className="flex flex-col space-y-2 mt-6">
@@ -161,7 +141,6 @@ const Header = () => {
                 <NavLink to="/blog" onClick={() => setMobileMenuOpen(false)} className={({isActive}) => `p-3 rounded-md ${isActive ? 'bg-slate-800 text-primary' : 'text-slate-300'}`}>Blog</NavLink>
                 <NavLink to="/about" onClick={() => setMobileMenuOpen(false)} className={({isActive}) => `p-3 rounded-md ${isActive ? 'bg-slate-800 text-primary' : 'text-slate-300'}`}>About</NavLink>
                 <NavLink to="/contact" onClick={() => setMobileMenuOpen(false)} className={({isActive}) => `p-3 rounded-md ${isActive ? 'bg-slate-800 text-primary' : 'text-slate-300'}`}>Contact</NavLink>
-                <NavLink to="/history" onClick={() => setMobileMenuOpen(false)} className={({isActive}) => `p-3 rounded-md ${isActive ? 'bg-slate-800 text-primary' : 'text-slate-300'}`}>History</NavLink>
               </nav>
             </SheetContent>
           </Sheet>
