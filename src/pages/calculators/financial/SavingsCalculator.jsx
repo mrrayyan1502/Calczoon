@@ -17,7 +17,13 @@ const SavingsCalculator = () => {
   const [currency, setCurrency] = useState('USD');
   const [result, setResult] = useState(null);
 
-  const getCurrencySymbol = () => (currency === 'USD' ? '$' : '£');
+  const getCurrencySymbol = () => {
+    switch (currency) {
+      case 'GBP': return '£';
+      case 'EUR': return '€';
+      default: return '$';
+    }
+  };
 
   const calculateSavings = (e) => {
     e.preventDefault();
@@ -80,9 +86,10 @@ const SavingsCalculator = () => {
                 <div className="space-y-2">
                   <Label htmlFor="currency">Currency</Label>
                   <select id="currency" value={currency} onChange={(e) => setCurrency(e.target.value)} className="w-full p-2 bg-slate-900 border border-slate-700 rounded-md text-white">
-                    <option value="USD">USD ($)</option>
-                    <option value="GBP">GBP (£)</option>
-                  </select>
+                        <option value="USD">USD ($)</option>
+                        <option value="GBP">GBP (£)</option>
+                        <option value="EUR">EUR (€)</option>
+                      </select>
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="initialDeposit">Initial Deposit ({getCurrencySymbol()})</Label>

@@ -15,7 +15,13 @@ const SalaryCalculator = () => {
     const [currency, setCurrency] = useState('USD');
     const [result, setResult] = useState(null);
 
-    const getCurrencySymbol = () => (currency === 'USD' ? '$' : '£');
+    const getCurrencySymbol = () => {
+    switch (currency) {
+      case 'GBP': return '£';
+      case 'EUR': return '€';
+      default: return '$';
+    }
+  };
 
     const calculateSalary = (e) => {
         e.preventDefault();

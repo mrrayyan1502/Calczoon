@@ -20,7 +20,13 @@ const LoanCalculator = () => {
   const [currency, setCurrency] = useState('USD');
   const [result, setResult] = useState(null);
 
-  const getCurrencySymbol = () => (currency === 'USD' ? '$' : '£');
+  const getCurrencySymbol = () => {
+    switch (currency) {
+      case 'GBP': return '£';
+      case 'EUR': return '€';
+      default: return '$';
+    }
+  };
 
   const calculateLoan = (e) => {
     e.preventDefault();
@@ -153,9 +159,10 @@ const LoanCalculator = () => {
                       onChange={(e) => setCurrency(e.target.value)}
                       className="w-full p-3 bg-slate-900 border border-slate-700 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 rounded-xl text-white outline-none"
                     >
-                      <option value="USD">USD ($)</option>
-                      <option value="GBP">GBP (£)</option>
-                    </select>
+                        <option value="USD">USD ($)</option>
+                        <option value="GBP">GBP (£)</option>
+                        <option value="EUR">EUR (€)</option>
+                      </select>
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="loanAmount" className="text-slate-300 font-medium">Loan Amount ({getCurrencySymbol()})</Label>
