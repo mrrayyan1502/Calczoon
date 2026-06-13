@@ -6,6 +6,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Smile } from 'lucide-react';
 
 const lifestyleCalculators = [
+  { name: 'Date Calculator', description: 'Calculate the days, weeks, or months between two dates.', path: '/lifestyle/date-calculator' },
+  { name: 'Tip Calculator', description: 'Calculate tip amount and split bills easily among friends.', path: '/lifestyle/tip-calculator' },
   { name: 'Age Calculator', description: 'Find your exact age in years, months, days, and more.', path: '/lifestyle/age-calculator' },
   { name: 'GPA Calculator', description: 'Calculate your Grade Point Average quickly and easily.', path: '/lifestyle/gpa-calculator' },
   { name: 'Concrete Calculator', description: 'Estimate the amount of concrete needed for your project.', path: '/lifestyle/concrete-calculator' },

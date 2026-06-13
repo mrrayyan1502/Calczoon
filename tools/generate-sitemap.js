@@ -29,6 +29,11 @@ const ROUTES = [
   { path: '/health-fitness-calculators', priority: '0.7', changefreq: 'weekly' },
   { path: '/math-science-calculators', priority: '0.7', changefreq: 'weekly' },
   { path: '/lifestyle-everyday-calculators', priority: '0.7', changefreq: 'weekly' },
+  { path: '/financial/mortgage-calculator', priority: '0.8', changefreq: 'weekly' },
+  { path: '/financial/currency-converter', priority: '0.8', changefreq: 'weekly' },
+  { path: '/health/ideal-weight-calculator', priority: '0.8', changefreq: 'weekly' },
+  { path: '/lifestyle/date-calculator', priority: '0.8', changefreq: 'weekly' },
+  { path: '/lifestyle/tip-calculator', priority: '0.8', changefreq: 'weekly' },
   // Calculator pages
   { path: '/health/bmi-calculator', priority: '0.9', changefreq: 'weekly' },
   { path: '/health/tdee-calculator', priority: '0.9', changefreq: 'weekly' },

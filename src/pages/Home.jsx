@@ -12,6 +12,20 @@ import TestimonialsSection from '@/components/TestimonialsSection';
 
 const tools = [
   {
+    icon: <DollarSign className="w-8 h-8 text-emerald-400" />,
+    name: 'Mortgage Calculator',
+    description: 'Estimate your monthly home payments, principal, and interest.',
+    path: '/financial/mortgage-calculator',
+    category: "Financial"
+  },
+  {
+    icon: <Globe className="w-8 h-8 text-blue-400" />,
+    name: 'Currency Converter',
+    description: 'Convert global currencies using live exchange rates.',
+    path: '/financial/currency-converter',
+    category: "Financial"
+  },
+  {
     icon: <BarChart2 className="w-8 h-8 text-blue-400" />,
     name: 'Statistics Calculator',
     description: 'Calculate mean, median, mode, variance, and standard deviation instantly.',
@@ -31,6 +45,27 @@ const tools = [
     description: 'Estimate your future wealth and mutual fund returns via Systematic Investment Plans.',
     path: '/financial/sip-calculator',
     category: "Financial"
+  },
+  {
+    icon: <Scale className="w-8 h-8 text-rose-400" />,
+    name: 'Ideal Weight Calculator',
+    description: 'Calculate your ideal body weight based on standard medical formulas.',
+    path: '/health/ideal-weight-calculator',
+    category: "Health & Fitness"
+  },
+  {
+    icon: <Globe className="w-8 h-8 text-yellow-400" />,
+    name: 'Date Calculator',
+    description: 'Calculate the exact days between two dates.',
+    path: '/lifestyle/date-calculator',
+    category: "Lifestyle"
+  },
+  {
+    icon: <DollarSign className="w-8 h-8 text-emerald-400" />,
+    name: 'Tip Calculator',
+    description: 'Quickly calculate tips and split restaurant bills.',
+    path: '/lifestyle/tip-calculator',
+    category: "Lifestyle"
   },
   {
     icon: <DollarSign className="w-8 h-8 text-green-400" />,

@@ -94,6 +94,11 @@ const ScientificCalculator = lazy(() => import('@/pages/calculators/math/Scienti
 const TimeZoneConverter = lazy(() => import('@/pages/calculators/other/TimeZoneConverter'));
 const DiscountCalculator = lazy(() => import('@/pages/calculators/other/DiscountCalculator'));
 const UnitConverter = lazy(() => import('@/pages/calculators/other/UnitConverter'));
+const MortgageCalculator = lazy(() => import('@/pages/calculators/financial/MortgageCalculator'));
+const CurrencyConverter = lazy(() => import('@/pages/calculators/financial/CurrencyConverter'));
+const DateCalculator = lazy(() => import('@/pages/calculators/lifestyle/DateCalculator'));
+const TipCalculator = lazy(() => import('@/pages/calculators/lifestyle/TipCalculator'));
+const IdealWeightCalculator = lazy(() => import('@/pages/calculators/health/IdealWeightCalculator'));
 const Calculators = lazy(() => import('@/pages/Calculators'));
 
 
@@ -171,8 +176,11 @@ function App() {
             <Route path="health/pregnancy-due-date-calculator" element={<PregnancyDueDateCalculator />} />
             <Route path="health/water-intake-calculator" element={<WaterIntakeCalculator />} />
             <Route path="health/body-fat-calculator" element={<BodyFatCalculator />} />
+            <Route path="health/ideal-weight-calculator" element={<IdealWeightCalculator />} />
 
             {/* Financial */}
+            <Route path="financial/mortgage-calculator" element={<MortgageCalculator />} />
+            <Route path="financial/currency-converter" element={<CurrencyConverter />} />
             <Route path="financial/simple-interest-calculator" element={<SimpleInterestCalculator />} />
             <Route path="financial/loan-calculator" element={<LoanCalculator />} />
             <Route path="financial/savings-calculator" element={<SavingsCalculator />} />
@@ -195,6 +203,8 @@ function App() {
             <Route path="math/scientific-calculator" element={<ScientificCalculator />} />
             
             {/* Lifestyle & Other */}
+            <Route path="lifestyle/date-calculator" element={<DateCalculator />} />
+            <Route path="lifestyle/tip-calculator" element={<TipCalculator />} />
             <Route path="lifestyle/age-calculator" element={<AgeCalculator />} />
             <Route path="lifestyle/gpa-calculator" element={<GPACalculator />} />
             <Route path="lifestyle/concrete-calculator" element={<ConcreteCalculator />} />

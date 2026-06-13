@@ -7,6 +7,7 @@ import { HeartPulse } from 'lucide-react';
 
 const healthCalculators = [
   { name: 'BMI Calculator', description: 'Check your Body Mass Index to assess your weight category.', path: '/health/bmi-calculator' },
+  { name: 'Ideal Weight Calculator', description: 'Calculate your ideal body weight range based on standard medical formulas.', path: '/health/ideal-weight-calculator' },
   { name: 'TDEE Calculator', description: 'Determine your total daily energy expenditure for diet planning.', path: '/health/tdee-calculator' },
   { name: 'Macro Calculator', description: 'Calculate your daily needs for protein, carbs, and fat.', path: '/health/macro-calculator' },
   { name: 'Calories Burned Calculator', description: 'Estimate calories burned during various activities.', path: '/health/calories-burned-calculator' },

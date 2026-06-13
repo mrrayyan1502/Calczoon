@@ -6,6 +6,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { DollarSign } from 'lucide-react';
 
 const financialCalculators = [
+  { name: 'Mortgage Calculator', description: 'Estimate your monthly home payments, principal, and interest.', path: '/financial/mortgage-calculator' },
+  { name: 'Currency Converter', description: 'Get live exchange rates for global currencies.', path: '/financial/currency-converter' },
   { name: 'Loan EMI Calculator', description: 'Estimate monthly payments for auto, personal, or other loans.', path: '/financial/loan-calculator' },
   { name: 'Compound Interest Calculator', description: 'See how your investments can grow over time.', path: '/financial/compound-interest-calculator' },
   { name: 'Investment ROI Calculator', description: 'Measure the profitability and return on your investments.', path: '/financial/investment-roi-calculator' },

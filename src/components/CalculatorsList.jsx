@@ -10,6 +10,8 @@ const calculatorGroups = [
     category: 'Financial Calculators: Plan Your Finances',
     icon: <DollarSign className="w-7 h-7 text-green-400" />,
     calculators: [
+      { name: 'Mortgage Calculator', description: 'Estimate your monthly home payments, principal, and interest.', path: '/financial/mortgage-calculator' },
+      { name: 'Currency Converter', description: 'Live exchange rates for global currencies.', path: '/financial/currency-converter' },
       { name: 'Auto Loan Payment Calculator', description: 'Estimate your monthly car payments, factoring in trade-ins.', path: '/financial/loan-calculator' },
       { name: 'Simple Interest Calculator', description: 'Quickly calculate simple interest on personal loans or debts.', path: '/financial/simple-interest-calculator' },
       { name: 'Retirement Savings Calculator', description: 'Project how long your retirement savings will last.', path: '/financial/savings-calculator' },
@@ -22,6 +24,7 @@ const calculatorGroups = [
     category: 'Health & Fitness Calculators: Track Your Goals',
     icon: <HeartPulse className="w-7 h-7 text-red-400" />,
     calculators: [
+      { name: 'Ideal Weight Calculator', description: 'Calculate your ideal body weight range based on standard medical formulas.', path: '/health/ideal-weight-calculator' },
       { name: 'BMI Calculator for Adults', description: 'Calculate your Body Mass Index for a health snapshot.', path: '/health/bmi-calculator' },
       { name: 'TDEE Calculator for Weight Management', description: 'Find daily calorie needs for your goals.', path: '/health/tdee-calculator' },
       { name: 'Macro Calculator for Diet Planning', description: 'Get a personalized macro plan for your diet.', path: '/health/macro-calculator' },
@@ -39,6 +42,15 @@ const calculatorGroups = [
       { name: 'Triangle Area Calculator & Solver', description: 'Find sides, angles, area, and perimeter of any triangle.', path: '/math/triangle-calculator' },
       { name: 'Statistics Calculator', description: 'Analyze data sets to find mean, median, and mode.', path: '/math/statistics-calculator' },
       { name: 'Exponent Calculator', description: 'Quickly solve expressions with positive or negative powers.', path: '/math/exponent-calculator' },
+    ]
+  },
+  {
+    category: 'Lifestyle & Everyday Calculators',
+    icon: <DollarSign className="w-7 h-7 text-yellow-400" />,
+    calculators: [
+      { name: 'Date Calculator', description: 'Calculate the days, weeks, or months between two dates.', path: '/lifestyle/date-calculator' },
+      { name: 'Tip Calculator', description: 'Calculate tip amount and split bills easily among friends.', path: '/lifestyle/tip-calculator' },
+      { name: 'Age Calculator', description: 'Find your exact age in years, months, days, and more.', path: '/lifestyle/age-calculator' },
     ]
   },
 ];
