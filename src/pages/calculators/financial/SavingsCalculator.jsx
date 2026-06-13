@@ -80,6 +80,11 @@ const SavingsCalculator = () => {
               <CardDescription className="text-center text-slate-400">
                 Visualize your financial future. This calculator shows how your savings can grow over time with the power of compound interest. Enter your initial deposit, regular contributions, and interest rate to project the future value of your investments, perfect for retirement, college, or any long-term savings goal.
               </CardDescription>
+                <div className="mt-4 p-4 bg-emerald-900/20 border border-emerald-500/20 rounded-xl">
+                  <p className="text-sm text-emerald-400/90 leading-relaxed">
+                    Yeh tool aapko calculations ko multiple currencies mein dekhne ki sahulat deta hai. Sirf apni currency select karein aur result US Dollar ($), British Pound (£) ya Euro (€) mein hasil karein. Is se UK, Europe aur international users ke liye calculations ko samajhna aur plan karna zyada asaan ho jata hai.
+                  </p>
+                </div>
             </CardHeader>
             <CardContent>
               <form onSubmit={calculateSavings} className="space-y-6">

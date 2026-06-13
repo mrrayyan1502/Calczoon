@@ -144,6 +144,11 @@ const DebtToIncomeRatioCalculator = () => {
               <CardDescription className="text-center text-slate-400">
                  Your debt-to-income (DTI) ratio is a critical financial health indicator that lenders use to assess your borrowing risk. This tool helps you calculate your DTI to see where you stand, whether you're aiming for mortgage approval, applying for a personal loan, or simply managing your finances.
               </CardDescription>
+                <div className="mt-4 p-4 bg-emerald-900/20 border border-emerald-500/20 rounded-xl">
+                  <p className="text-sm text-emerald-400/90 leading-relaxed">
+                    Yeh tool aapko calculations ko multiple currencies mein dekhne ki sahulat deta hai. Sirf apni currency select karein aur result US Dollar ($), British Pound (£) ya Euro (€) mein hasil karein. Is se UK, Europe aur international users ke liye calculations ko samajhna aur plan karna zyada asaan ho jata hai.
+                  </p>
+                </div>
             </CardHeader>
             <CardContent>
               <form onSubmit={calculateDTI} className="space-y-6">

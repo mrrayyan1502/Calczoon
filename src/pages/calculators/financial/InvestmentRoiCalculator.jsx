@@ -84,6 +84,11 @@ const InvestmentRoiCalculator = () => {
                     <CardHeader className="text-center">
                         <CardTitle className="text-3xl font-bold text-primary">Investment ROI Calculator</CardTitle>
                         <CardDescription className="text-slate-400">Measure the efficiency and profitability of your investment. This Return on Investment (ROI) calculator helps you evaluate the performance of a stock, real estate, or any other investment by showing both simple and annualized returns.</CardDescription>
+                <div className="mt-4 p-4 bg-emerald-900/20 border border-emerald-500/20 rounded-xl">
+                  <p className="text-sm text-emerald-400/90 leading-relaxed">
+                    Yeh tool aapko calculations ko multiple currencies mein dekhne ki sahulat deta hai. Sirf apni currency select karein aur result US Dollar ($), British Pound (£) ya Euro (€) mein hasil karein. Is se UK, Europe aur international users ke liye calculations ko samajhna aur plan karna zyada asaan ho jata hai.
+                  </p>
+                </div>
                     </CardHeader>
                     <CardContent>
                         <form onSubmit={calculateROI} className="space-y-6">
