@@ -1,4 +1,26 @@
 {
+  "redirects": [
+    {
+      "source": "/blog/top-financial-calculators-2025",
+      "destination": "/blog/top-financial-calculators-for-financial-planning",
+      "permanent": true
+    },
+    {
+      "source": "/math/triangle-area-calculator-with-steps",
+      "destination": "/math/triangle-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/financial/vat-calculator",
+      "destination": "/financial-calculators",
+      "permanent": true
+    },
+    {
+      "source": "/health/vo2-max-calculator",
+      "destination": "/health-fitness-calculators",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/(.*)",
