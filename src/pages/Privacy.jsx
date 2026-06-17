@@ -82,7 +82,15 @@ const Privacy = () => {
                 <Mail className="h-8 w-8 text-rose-400 flex-shrink-0 mt-1" />
                 <div>
                   <h2 className="text-xl font-semibold text-white">Contact Information</h2>
-                  <p className="text-slate-300 text-sm mt-1">If you have any questions or concerns about this Privacy Policy, or want to exercise your data rights, please contact us via our <Link to="/contact" className="text-emerald-400 hover:underline font-semibold">Contact Page</Link>.</p>
+                  <p className="text-slate-300 text-sm mt-1 mb-4">If you have any questions or concerns about this Privacy Policy, or want to exercise your data rights, please contact us via our <Link to="/contact" className="text-emerald-400 hover:underline font-semibold">Contact Page</Link>.</p>
+                  <p className="text-slate-300 text-sm">
+                    <strong>Data Controller:</strong><br/>
+                    CalcZoon Ltd.<br />
+                    124 City Road<br />
+                    London, EC1V 2NX<br />
+                    United Kingdom<br />
+                    Email: contact@calczoon.com
+                  </p>
                 </div>
               </div>
             </div>

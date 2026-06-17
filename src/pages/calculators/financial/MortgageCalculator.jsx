@@ -99,8 +99,7 @@ const MortgageCalculator = () => {
                 <CardDescription>Enter your home details</CardDescription>
                 <div className="mt-4 p-4 bg-emerald-900/20 border border-emerald-500/20 rounded-xl">
                   <p className="text-sm text-emerald-400/90 leading-relaxed">
-                    Yeh tool aapko calculations ko multiple currencies mein dekhne ki sahulat deta hai. Sirf apni currency select karein aur result US Dollar ($), British Pound (£) ya Euro (€) mein hasil karein. Is se UK, Europe aur international users ke liye calculations ko samajhna aur plan karna zyada asaan ho jata hai.
-                  </p>
+                    This tool supports multiple currencies for international users. Simply select your preferred currency, and all financial results will automatically format into US Dollars ($), British Pounds (£), or Euros (€) for easier planning.</p>
                 </div>
               </CardHeader>
               <CardContent className="p-6">
@@ -191,7 +190,23 @@ const MortgageCalculator = () => {
         </div>
         <Faq items={faqItems} className="mt-12" />
         <Disclaimer text="This calculator is for informational purposes only. Actual mortgage terms and amounts may vary based on property taxes, insurance, and lender fees." />
-      </div>
+      
+        <div className="mt-12 bg-slate-800/50 rounded-xl p-8 border border-slate-700">
+          <h2 className="text-2xl font-bold text-white mb-4">How to Use the Mortgage Calculator</h2>
+          <p className="text-slate-300 mb-4 leading-relaxed">
+            Buying a home is one of the most significant financial decisions you'll ever make. Our free online Mortgage Calculator helps you estimate your monthly payments with precision. By inputting your home price, down payment, interest rate, and loan term, you can instantly see your expected monthly obligations.
+          </p>
+          <h3 className="text-xl font-semibold text-white mb-3">Understanding the Formula</h3>
+          <p className="text-slate-300 mb-4 leading-relaxed">
+            The standard mortgage calculation uses the formula: <strong>M = P [ i(1 + i)^n ] / [ (1 + i)^n - 1 ]</strong>, where <em>M</em> is your monthly payment, <em>P</em> is the principal loan amount, <em>i</em> is your monthly interest rate, and <em>n</em> is the number of months. While this formula can be complex to calculate manually, our tool processes it instantly, saving you time and preventing mathematical errors.
+          </p>
+          <h3 className="text-xl font-semibold text-white mb-3">Benefits of Pre-Planning Your Mortgage</h3>
+          <p className="text-slate-300 leading-relaxed">
+            Knowing your exact monthly payment helps you budget effectively. You can experiment with different down payment amounts or loan terms (like 15 vs 30 years) to see how it impacts your total interest paid over the life of the loan. This is crucial for avoiding being "house poor" and ensuring your new property remains a blessing rather than a financial burden.
+          </p>
+        </div>
+
+</div>
     </>
   );
 };

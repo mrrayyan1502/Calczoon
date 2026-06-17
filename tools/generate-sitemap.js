@@ -90,6 +90,16 @@ const ROUTES = [
   { path: '/blog/fuel-cost-guide', priority: '0.6', changefreq: 'monthly' },
   { path: '/blog/simplifying-complex-math', priority: '0.6', changefreq: 'monthly' },
   { path: '/blog/top-financial-calculators-for-financial-planning', priority: '0.6', changefreq: 'monthly' },
+  { path: '/blog/retirement-planning-guide', priority: '0.6', changefreq: 'monthly' },
+  { path: '/blog/freelancer-tax-guide', priority: '0.6', changefreq: 'monthly' },
+  { path: '/blog/water-intake-guide', priority: '0.6', changefreq: 'monthly' },
+  { path: '/blog/debt-to-income-guide', priority: '0.6', changefreq: 'monthly' },
+  { path: '/blog/crypto-profit-guide', priority: '0.6', changefreq: 'monthly' },
+  { path: '/blog/pregnancy-health-guide', priority: '0.6', changefreq: 'monthly' },
+  { path: '/blog/vat-tax-guide', priority: '0.6', changefreq: 'monthly' },
+  { path: '/blog/discount-shopping-guide', priority: '0.6', changefreq: 'monthly' },
+  { path: '/blog/investment-roi-guide', priority: '0.6', changefreq: 'monthly' },
+  { path: '/blog/salary-negotiation-guide', priority: '0.6', changefreq: 'monthly' },
 ];
 
 function generateSitemap() {

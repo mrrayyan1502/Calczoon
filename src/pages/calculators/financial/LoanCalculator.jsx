@@ -150,8 +150,7 @@ const LoanCalculator = () => {
                 <CardDescription>Enter your principal, interest, and term details</CardDescription>
                 <div className="mt-4 p-4 bg-emerald-900/20 border border-emerald-500/20 rounded-xl">
                   <p className="text-sm text-emerald-400/90 leading-relaxed">
-                    Yeh tool aapko calculations ko multiple currencies mein dekhne ki sahulat deta hai. Sirf apni currency select karein aur result US Dollar ($), British Pound (£) ya Euro (€) mein hasil karein. Is se UK, Europe aur international users ke liye calculations ko samajhna aur plan karna zyada asaan ho jata hai.
-                  </p>
+                    This tool supports multiple currencies for international users. Simply select your preferred currency, and all financial results will automatically format into US Dollars ($), British Pounds (£), or Euros (€) for easier planning.</p>
                 </div>
               </CardHeader>
               <CardContent className="p-6">
@@ -325,7 +324,23 @@ const LoanCalculator = () => {
 
         <Faq items={faqItems} className="mt-12" />
         <Disclaimer text="This calculator is for informational purposes only. The results are estimates and may not reflect the actual terms of your loan. Consult with a financial professional for personalized advice." />
-      </div>
+      
+        <div className="mt-12 bg-slate-800/50 rounded-xl p-8 border border-slate-700">
+          <h2 className="text-2xl font-bold text-white mb-4">Mastering Your Debt with the Loan Calculator</h2>
+          <p className="text-slate-300 mb-4 leading-relaxed">
+            Taking out a personal, auto, or student loan is a major financial commitment. Our comprehensive Loan Calculator empowers you to see exactly how much your loan will cost over time. By clearly displaying your monthly payment, total interest, and total repayment amount, you can make smarter borrowing decisions.
+          </p>
+          <h3 className="text-xl font-semibold text-white mb-3">How Amortization Works</h3>
+          <p className="text-slate-300 mb-4 leading-relaxed">
+            Most standard loans are "amortized," meaning your monthly payment stays the same, but the portion going toward interest versus principal changes over time. Early in the loan, a large chunk of your payment goes toward interest. Toward the end, you're paying mostly principal. Our tool calculates this complex math instantly, giving you a clear picture of your exact financial obligations.
+          </p>
+          <h3 className="text-xl font-semibold text-white mb-3">Strategies for Saving Money</h3>
+          <p className="text-slate-300 leading-relaxed">
+            The true power of this calculator lies in experimentation. Try adjusting the interest rate to see how a better credit score could save you thousands. Alternatively, shorten the loan term from 60 months to 48 months; while your monthly payment will increase, the total interest paid will drop significantly. Use these insights to negotiate better terms and achieve financial freedom faster.
+          </p>
+        </div>
+
+</div>
     </>
   );
 };

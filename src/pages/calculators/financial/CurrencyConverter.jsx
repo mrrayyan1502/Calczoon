@@ -119,8 +119,7 @@ const CurrencyConverter = () => {
                 <CardDescription>Get up-to-date exchange rates</CardDescription>
                 <div className="mt-4 p-4 bg-emerald-900/20 border border-emerald-500/20 rounded-xl">
                   <p className="text-sm text-emerald-400/90 leading-relaxed">
-                    Yeh tool aapko calculations ko multiple currencies mein dekhne ki sahulat deta hai. Sirf apni currency select karein aur result US Dollar ($), British Pound (£) ya Euro (€) mein hasil karein. Is se UK, Europe aur international users ke liye calculations ko samajhna aur plan karna zyada asaan ho jata hai.
-                  </p>
+                    This tool supports multiple currencies for international users. Simply select your preferred currency, and all financial results will automatically format into US Dollars ($), British Pounds (£), or Euros (€) for easier planning.</p>
                 </div>
               </CardHeader>
               <CardContent className="p-6">
@@ -191,7 +190,23 @@ const CurrencyConverter = () => {
         </div>
         <Faq items={faqItems} className="mt-12" />
         <Disclaimer text="Rates are provided for informational purposes only. Actual rates offered by your bank or foreign exchange provider will vary." />
-      </div>
+      
+        <div className="mt-12 bg-slate-800/50 rounded-xl p-8 border border-slate-700">
+          <h2 className="text-2xl font-bold text-white mb-4">Real-Time Currency Converter</h2>
+          <p className="text-slate-300 mb-4 leading-relaxed">
+            Whether you are traveling abroad, managing an international business, or investing in foreign markets, having access to accurate exchange rates is essential. Our free Currency Converter uses live, up-to-date financial data to provide you with the exact conversion between any two global currencies instantly.
+          </p>
+          <h3 className="text-xl font-semibold text-white mb-3">How Exchange Rates Are Calculated</h3>
+          <p className="text-slate-300 mb-4 leading-relaxed">
+            Currency values fluctuate constantly based on global economic conditions, inflation, and geopolitical events. Our tool fetches the "mid-market rate"—the midpoint between the buy and sell prices from global currency markets. This ensures you are getting the fairest and most accurate representation of a currency's true value at this exact moment in time.
+          </p>
+          <h3 className="text-xl font-semibold text-white mb-3">Practical Applications</h3>
+          <p className="text-slate-300 leading-relaxed">
+            Use this tool to budget for your next vacation, ensure you aren't being overcharged on foreign transaction fees, or calculate the exact cost of an item imported from overseas. Fast, responsive, and easy to use on both mobile and desktop, our currency converter is designed to be your go-to financial companion for the global economy.
+          </p>
+        </div>
+
+</div>
     </>
   );
 };

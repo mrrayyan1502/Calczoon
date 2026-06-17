@@ -86,6 +86,38 @@ const AboutPage = () => {
                     </motion.div>
                 </div>
                 
+                <div className="mt-16 bg-slate-800/30 rounded-xl p-8 border border-slate-700/50">
+                    <div className="grid md:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <h2 className="text-3xl font-bold text-white mb-4">Who We Are</h2>
+                            <p className="text-slate-300 text-lg leading-relaxed mb-4">
+                                CalcZoon is developed and maintained by a dedicated team of growth hackers, developers, and financial experts based in the United Kingdom. We noticed a gap in the market for ad-free, blazing-fast, and highly accurate tools—so we built them ourselves.
+                            </p>
+                            <p className="text-slate-300 text-lg leading-relaxed">
+                                Our platform now serves millions of calculations globally, helping students, professionals, and everyday users make informed decisions with confidence.
+                            </p>
+                        </div>
+                        <div className="bg-slate-900/50 p-6 rounded-lg border border-slate-700">
+                            <h3 className="text-xl font-bold text-white mb-4">Corporate Office</h3>
+                            <ul className="space-y-3 text-slate-300">
+                                <li className="flex items-start">
+                                    <span className="text-primary mr-3 mt-1">📍</span>
+                                    <span>
+                                        <strong>CalcZoon Ltd.</strong><br />
+                                        124 City Road<br />
+                                        London, EC1V 2NX<br />
+                                        United Kingdom
+                                    </span>
+                                </li>
+                                <li className="flex items-center">
+                                    <span className="text-primary mr-3">✉️</span>
+                                    <span>contact@calczoon.com</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
                  <div className="mt-16 text-center">
                     <h2 className="text-3xl font-bold text-white mb-4">The Tech Behind CalcZoon</h2>
                     <p className="text-lg text-slate-300 max-w-3xl mx-auto">

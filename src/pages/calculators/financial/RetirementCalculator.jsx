@@ -93,8 +93,7 @@ const RetirementCalculator = () => {
                         <CardDescription className="text-slate-300">Are you on track for retirement? This calculator helps you estimate the future value of your retirement savings based on your current age, savings, contributions, and expected rate of return.</CardDescription>
                 <div className="mt-4 p-4 bg-emerald-900/20 border border-emerald-500/20 rounded-xl">
                   <p className="text-sm text-emerald-400/90 leading-relaxed">
-                    Yeh tool aapko calculations ko multiple currencies mein dekhne ki sahulat deta hai. Sirf apni currency select karein aur result US Dollar ($), British Pound (£) ya Euro (€) mein hasil karein. Is se UK, Europe aur international users ke liye calculations ko samajhna aur plan karna zyada asaan ho jata hai.
-                  </p>
+                    This tool supports multiple currencies for international users. Simply select your preferred currency, and all financial results will automatically format into US Dollars ($), British Pounds (£), or Euros (€) for easier planning.</p>
                 </div>
                     </CardHeader>
                     <CardContent>

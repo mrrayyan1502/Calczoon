@@ -283,7 +283,23 @@ const BMICalculator = () => {
         </div>
 
         <TDEE_FAQ items={faqItems} />
-      </div>
+      
+        <div className="mt-12 bg-slate-800/50 rounded-xl p-8 border border-slate-700">
+          <h2 className="text-2xl font-bold text-white mb-4">Understanding Your Body Mass Index (BMI)</h2>
+          <p className="text-slate-300 mb-4 leading-relaxed">
+            The Body Mass Index (BMI) is a widely used screening tool that estimates whether a person has a healthy body weight for their height. Our free BMI calculator allows you to quickly determine your current BMI category by simply entering your height and weight in either metric (cm/kg) or imperial (ft/lbs) units.
+          </p>
+          <h3 className="text-xl font-semibold text-white mb-3">How is BMI Calculated?</h3>
+          <p className="text-slate-300 mb-4 leading-relaxed">
+            The mathematical formula for BMI is remarkably simple: your weight in kilograms divided by the square of your height in meters (kg/m²). For imperial measurements, the formula is (weight in pounds / (height in inches)²) x 703. Our calculator handles these conversions automatically, giving you an instant and accurate classification based on World Health Organization (WHO) standards.
+          </p>
+          <h3 className="text-xl font-semibold text-white mb-3">Limitations and Next Steps</h3>
+          <p className="text-slate-300 leading-relaxed">
+            While BMI is an excellent quick-reference tool, it's important to remember that it doesn't distinguish between muscle mass and fat. Athletes or bodybuilders may have a high BMI but low body fat. If your BMI falls outside the "Normal" range, consider exploring our Body Fat Calculator or consulting with a healthcare professional to get a more comprehensive view of your metabolic health.
+          </p>
+        </div>
+
+</div>
     </>
   );
 };

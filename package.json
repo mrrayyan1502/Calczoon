@@ -5,10 +5,33 @@
   "private": true,
   "scripts": {
     "build": "node tools/generate-llms.js || true && node tools/generate-sitemap.js && vite build",
+    "postbuild": "react-snap",
     "dev": "node tools/generate-llms.js || true && node tools/generate-sitemap.js && vite build",
     "preview": "vite preview --host :: --port 3000",
     "prerender": "vite build && node tools/prerender.js",
     "lint": "eslint . --quiet"
+  },
+  "reactSnap": {
+    "include": [
+      "/",
+      "/about",
+      "/privacy",
+      "/contact",
+      "/financial-calculators",
+      "/health-fitness-calculators",
+      "/math-science-calculators",
+      "/lifestyle-everyday-calculators",
+      "/financial/mortgage-calculator",
+      "/health/bmi-calculator",
+      "/health/tdee-calculator",
+      "/financial/loan-calculator",
+      "/financial/currency-converter",
+      "/blog"
+    ],
+    "puppeteerArgs": [
+      "--no-sandbox",
+      "--disable-setuid-sandbox"
+    ]
   },
   "dependencies": {
     "@emotion/is-prop-valid": "^1.2.2",
@@ -48,6 +71,7 @@
     "eslint": "^8.57.1",
     "eslint-config-react-app": "^7.0.1",
     "postcss": "^8.4.35",
+    "react-snap": "^1.23.0",
     "tailwindcss": "^3.4.1",
     "vite": "^5.1.1"
   }

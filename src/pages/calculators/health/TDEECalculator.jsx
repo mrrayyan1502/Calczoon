@@ -112,7 +112,23 @@ const TDEECalculator = () => {
                 <TDEE_Content />
                 <TDEE_FAQ items={faqItems} />
                 <Disclaimer text="This calculator provides an estimate and should not replace professional medical advice. Results can vary based on individual metabolic rates and other factors." />
-            </div>
+            
+        <div className="mt-12 bg-slate-800/50 rounded-xl p-8 border border-slate-700">
+          <h2 className="text-2xl font-bold text-white mb-4">Total Daily Energy Expenditure (TDEE) Explained</h2>
+          <p className="text-slate-300 mb-4 leading-relaxed">
+            Your Total Daily Energy Expenditure (TDEE) is the estimated total number of calories your body burns in a 24-hour period. Our highly accurate TDEE calculator takes into account your Basal Metabolic Rate (BMR) alongside your daily activity level to give you a precise target for weight maintenance, weight loss, or muscle gain.
+          </p>
+          <h3 className="text-xl font-semibold text-white mb-3">The Science Behind the Calculator</h3>
+          <p className="text-slate-300 mb-4 leading-relaxed">
+            We utilize the scientifically validated Mifflin-St Jeor equation to calculate your BMR, which is considered the most reliable modern formula. Once your baseline metabolic rate is established, an activity multiplier (ranging from Sedentary to Extra Active) is applied. This comprehensive approach ensures that the calories suggested are tailored directly to your specific lifestyle rather than a generic average.
+          </p>
+          <h3 className="text-xl font-semibold text-white mb-3">Why TDEE is Crucial for Fitness</h3>
+          <p className="text-slate-300 leading-relaxed">
+            Knowing your TDEE is the absolute foundation of any successful diet plan. If your goal is to lose fat, you must consume fewer calories than your TDEE (a caloric deficit). If you want to build muscle, you need to eat slightly more (a caloric surplus). By using this free tool, you eliminate the guesswork from your nutrition and set yourself up for sustainable, long-term health success.
+          </p>
+        </div>
+
+</div>
         </>
     );
 };

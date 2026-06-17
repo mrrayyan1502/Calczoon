@@ -141,7 +141,19 @@ const Contact = () => {
               <CardHeader>
                 <CardTitle>Other Ways to Reach Us</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
+              <CardContent className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <span className="text-xl mt-1">🏢</span>
+                  <div>
+                    <h3 className="font-semibold text-white">Corporate Office</h3>
+                    <p className="text-slate-300 text-sm mt-1">
+                        <strong>CalcZoon Ltd.</strong><br />
+                        124 City Road<br />
+                        London, EC1V 2NX<br />
+                        United Kingdom
+                    </p>
+                  </div>
+                </div>
                 <div className="flex items-center gap-4">
                   <Mail className="h-6 w-6 text-primary" />
                   <div>
