@@ -106,7 +106,7 @@ const BodyFatCalculatorForm = ({ onCalculate }) => {
             <Label htmlFor={id} className={`text-slate-300 ${error ? 'text-red-400' : ''}`}>{label}</Label>
             <div className="flex items-center">
                 <Input id={id} type="number" value={value} onChange={onChange} placeholder="0" className={`bg-slate-700 border-slate-600 text-white focus:ring-emerald-500 ${error ? 'border-red-400' : ''}`} />
-                <span className="ml-3 text-slate-400">{unit}</span>
+                <span className="ml-3 text-slate-300">{unit}</span>
             </div>
             {error && <p className="text-red-400 text-xs mt-1">{error}</p>}
         </div>
@@ -119,7 +119,7 @@ const BodyFatCalculatorForm = ({ onCalculate }) => {
                     <BrainCircuit className="w-6 h-6 text-emerald-400" />
                     Estimate Your Body Fat
                 </CardTitle>
-                <CardDescription className="text-slate-400">Enter your details below to calculate your body fat percentage.</CardDescription>
+                <CardDescription className="text-slate-300">Enter your details below to calculate your body fat percentage.</CardDescription>
             </CardHeader>
             <CardContent>
                 <form onSubmit={handleCalculate} className="space-y-6">

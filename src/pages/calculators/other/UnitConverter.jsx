@@ -322,7 +322,7 @@ const UnitConverter = () => {
               <CardContent className="space-y-4 text-slate-300 text-sm leading-relaxed">
                 <div>
                   <h4 className="font-semibold text-white mb-1">Common Length Conversions</h4>
-                  <ul className="list-disc list-inside text-xs text-slate-400 space-y-1">
+                  <ul className="list-disc list-inside text-xs text-slate-300 space-y-1">
                     <li>1 Inch = 2.54 Centimeters (cm)</li>
                     <li>1 Meter = 3.28084 Feet (ft)</li>
                     <li>1 Mile = 1.60934 Kilometers (km)</li>
@@ -330,7 +330,7 @@ const UnitConverter = () => {
                 </div>
                 <div className="border-t border-slate-800 pt-4">
                   <h4 className="font-semibold text-white mb-1">Common Weight Conversions</h4>
-                  <ul className="list-disc list-inside text-xs text-slate-400 space-y-1">
+                  <ul className="list-disc list-inside text-xs text-slate-300 space-y-1">
                     <li>1 Kilogram = 2.20462 Pounds (lbs)</li>
                     <li>1 Pound = 16 Ounces (oz)</li>
                     <li>1 Stone = 14 Pounds (lbs)</li>
@@ -386,7 +386,7 @@ const UnitConverter = () => {
             </div>
 
             <h3 className="text-lg font-bold text-white mt-4">Length Conversion Factors (Meters per Unit):</h3>
-            <ul className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-slate-400 pl-4 list-disc">
+            <ul className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-slate-300 pl-4 list-disc">
               <li>Centimeter: 0.01 m</li>
               <li>Millimeter: 0.001 m</li>
               <li>Kilometer: 1,000 m</li>
@@ -397,7 +397,7 @@ const UnitConverter = () => {
             </ul>
 
             <h3 className="text-lg font-bold text-white mt-4">Weight Conversion Factors (Kilograms per Unit):</h3>
-            <ul className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-slate-400 pl-4 list-disc">
+            <ul className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-slate-300 pl-4 list-disc">
               <li>Gram: 0.001 kg</li>
               <li>Ounce: 0.0283495 kg</li>
               <li>Pound: 0.453592 kg</li>

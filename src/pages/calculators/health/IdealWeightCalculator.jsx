@@ -178,28 +178,28 @@ const IdealWeightCalculator = () => {
                     <h3 className="text-lg font-bold text-slate-300">Your Ideal Weight Range</h3>
                     
                     <div className="text-center mb-4 bg-slate-900/60 p-6 rounded-2xl border border-slate-800">
-                      <p className="text-slate-400 text-sm font-medium">Average Recommended Weight</p>
+                      <p className="text-slate-300 text-sm font-medium">Average Recommended Weight</p>
                       <p className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-sky-400">
-                        {result.avgKg} kg <span className="text-2xl text-slate-500 font-normal">/ {result.avgLbs} lbs</span>
+                        {result.avgKg} kg <span className="text-2xl text-slate-400 font-normal">/ {result.avgLbs} lbs</span>
                       </p>
                       <p className="text-emerald-400 mt-2 font-medium">Healthy Range: {result.rangeKg} kg</p>
                     </div>
 
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-4">
                       <div className="p-3 bg-slate-900/50 rounded-xl border border-slate-800 text-center">
-                        <p className="text-[10px] uppercase tracking-wider text-slate-400">Devine (1974)</p>
+                        <p className="text-[10px] uppercase tracking-wider text-slate-300">Devine (1974)</p>
                         <p className="font-semibold text-slate-200">{result.formulas.devine} kg</p>
                       </div>
                       <div className="p-3 bg-slate-900/50 rounded-xl border border-slate-800 text-center">
-                        <p className="text-[10px] uppercase tracking-wider text-slate-400">Robinson (1983)</p>
+                        <p className="text-[10px] uppercase tracking-wider text-slate-300">Robinson (1983)</p>
                         <p className="font-semibold text-slate-200">{result.formulas.robinson} kg</p>
                       </div>
                       <div className="p-3 bg-slate-900/50 rounded-xl border border-slate-800 text-center">
-                        <p className="text-[10px] uppercase tracking-wider text-slate-400">Miller (1983)</p>
+                        <p className="text-[10px] uppercase tracking-wider text-slate-300">Miller (1983)</p>
                         <p className="font-semibold text-slate-200">{result.formulas.miller} kg</p>
                       </div>
                       <div className="p-3 bg-slate-900/50 rounded-xl border border-slate-800 text-center">
-                        <p className="text-[10px] uppercase tracking-wider text-slate-400">Hamwi (1964)</p>
+                        <p className="text-[10px] uppercase tracking-wider text-slate-300">Hamwi (1964)</p>
                         <p className="font-semibold text-slate-200">{result.formulas.hamwi} kg</p>
                       </div>
                     </div>

@@ -157,7 +157,7 @@ const AgeCalculator = () => {
                         </p>
                       </div>
                       <div className="flex justify-center text-sm">
-                        <span className="text-slate-400">Total Days Lived:</span>
+                        <span className="text-slate-300">Total Days Lived:</span>
                         <span className="font-bold text-emerald-400 ml-2">{result.totalDays.toLocaleString()} days</span>
                       </div>
                       <div className="mt-4 w-full">

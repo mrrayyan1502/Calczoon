@@ -97,7 +97,7 @@ const WeightLossCalculator = () => {
                               <div className="space-y-2">
                                 <Label htmlFor="tdee">Maintenance Calories (TDEE)</Label>
                                 <Input id="tdee" type="number" value={tdee} onChange={(e) => setTdee(e.target.value)} placeholder="e.g., 2500" required className="bg-slate-900 border-slate-700" />
-                                 <p className="text-xs text-slate-400">Use our <a href="/health/tdee-calculator" className="text-primary hover:underline">TDEE Calculator</a> if you're unsure.</p>
+                                 <p className="text-xs text-slate-300">Use our <a href="/health/tdee-calculator" className="text-primary hover:underline">TDEE Calculator</a> if you're unsure.</p>
                               </div>
                               <div className="space-y-2">
                                 <Label htmlFor="deficit">Daily Calorie Deficit</Label>
@@ -118,11 +118,11 @@ const WeightLossCalculator = () => {
                             <CardFooter className="flex-col items-center mt-6">
                                 <h3 className="text-xl font-bold">Your Path to Success</h3>
                                 <div className="text-center my-4">
-                                  <p className="text-slate-400">Daily Calorie Goal</p>
+                                  <p className="text-slate-300">Daily Calorie Goal</p>
                                   <p className="text-4xl font-bold text-primary">{result.dailyCalories} kcal</p>
                                 </div>
                                 <div className="text-center">
-                                  <p className="text-slate-400">Estimated Time to Reach Goal</p>
+                                  <p className="text-slate-300">Estimated Time to Reach Goal</p>
                                   <p className="text-4xl font-bold text-primary">{result.weeks} weeks</p>
                                 </div>
                                  <div className="mt-4">

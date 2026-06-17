@@ -155,22 +155,22 @@ const MortgageCalculator = () => {
                   <div className="w-full space-y-4">
                     <h3 className="text-lg font-bold text-slate-300">Mortgage Summary</h3>
                     <div className="text-center mb-4 bg-slate-900/60 p-6 rounded-2xl border border-slate-800">
-                      <p className="text-slate-400 text-sm font-medium">Estimated Monthly Payment (P&I)</p>
+                      <p className="text-slate-300 text-sm font-medium">Estimated Monthly Payment (P&I)</p>
                       <p className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-sky-400">
                         {getCurrencySymbol()}{Number(result.monthlyPayment).toLocaleString()}
                       </p>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                       <div className="p-4 bg-slate-900/50 rounded-xl border border-slate-800 text-center">
-                        <p className="text-xs text-slate-400">Principal Loan Amount</p>
+                        <p className="text-xs text-slate-300">Principal Loan Amount</p>
                         <p className="font-semibold text-slate-200">{getCurrencySymbol()}{Number(result.principalAmount).toLocaleString()}</p>
                       </div>
                       <div className="p-4 bg-slate-900/50 rounded-xl border border-slate-800 text-center">
-                        <p className="text-xs text-slate-400">Total Interest</p>
+                        <p className="text-xs text-slate-300">Total Interest</p>
                         <p className="font-semibold text-red-400">{getCurrencySymbol()}{Number(result.totalInterest).toLocaleString()}</p>
                       </div>
                       <div className="p-4 bg-slate-900/50 rounded-xl border border-slate-800 text-center">
-                        <p className="text-xs text-slate-400">Total Payments</p>
+                        <p className="text-xs text-slate-300">Total Payments</p>
                         <p className="font-semibold text-slate-200">{getCurrencySymbol()}{Number(result.totalPayment).toLocaleString()}</p>
                       </div>
                     </div>

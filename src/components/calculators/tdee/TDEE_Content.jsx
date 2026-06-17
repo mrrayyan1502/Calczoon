@@ -70,7 +70,7 @@ const TDEE_Content = () => (
 
                     <div className="space-y-2">
                         <h3 className="font-semibold text-white">Activity Multipliers (TDEE = BMR × Multiplier):</h3>
-                        <ul className="list-disc pl-6 space-y-1 text-sm text-slate-400">
+                        <ul className="list-disc pl-6 space-y-1 text-sm text-slate-300">
                             <li>Sedentary (little or no exercise): BMR × 1.2</li>
                             <li>Lightly Active (light exercise/sports 1-3 days/week): BMR × 1.375</li>
                             <li>Moderately Active (moderate exercise/sports 3-5 days/week): BMR × 1.55</li>
@@ -158,8 +158,8 @@ const TDEE_Content = () => (
 
         {/* Scientific References Section */}
         <section className="mb-12 mt-10 pt-6 border-t border-slate-700/50">
-            <h3 className="text-lg font-bold text-slate-400 mb-3 uppercase tracking-wider text-sm">Scientific References & Sources</h3>
-            <ul className="text-xs text-slate-500 space-y-2">
+            <h3 className="text-lg font-bold text-slate-300 mb-3 uppercase tracking-wider text-sm">Scientific References & Sources</h3>
+            <ul className="text-xs text-slate-400 space-y-2">
                 <li>1. Mifflin, M. D., St Jeor, S. T., Hill, L. A., Scott, B. J., Daugherty, S. A., & Koh, Y. O. (1990). A new predictive equation for resting energy expenditure in healthy individuals. <em>The American journal of clinical nutrition</em>, 51(2), 241-247.</li>
                 <li>2. Katch, V. L., McArdle, W. D., & Katch, F. I. (2011). <em>Essentials of exercise physiology</em>. Lippincott Williams & Wilkins.</li>
                 <li>3. Levine, J. A. (2002). Non-exercise activity thermogenesis (NEAT). <em>Best practice & research Clinical endocrinology & metabolism</em>, 16(4), 679-702.</li>

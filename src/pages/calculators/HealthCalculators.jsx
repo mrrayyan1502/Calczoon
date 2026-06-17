@@ -41,7 +41,7 @@ const HealthCalculators = () => {
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="flex-grow">
-                    <p className="text-slate-400">{calc.description}</p>
+                    <p className="text-slate-300">{calc.description}</p>
                   </CardContent>
                 </Card>
               </Link>

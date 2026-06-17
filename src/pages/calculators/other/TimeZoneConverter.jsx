@@ -211,7 +211,7 @@ const TimeZoneConverter = () => {
                     <div className="space-y-1">
                       <p className="text-xs font-bold text-sky-400 uppercase tracking-widest">Source Time</p>
                       <p className="text-lg font-bold text-white">{convertedResult.sourceTime}</p>
-                      <p className="text-xs text-slate-400">{convertedResult.sourceLabel}</p>
+                      <p className="text-xs text-slate-300">{convertedResult.sourceLabel}</p>
                     </div>
 
                     <div className="text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1.5 rounded-full text-xs font-bold shrink-0 self-start md:self-center">
@@ -221,7 +221,7 @@ const TimeZoneConverter = () => {
                     <div className="space-y-1">
                       <p className="text-xs font-bold text-emerald-400 uppercase tracking-widest">Target Time</p>
                       <p className="text-lg font-bold text-white">{convertedResult.targetTime}</p>
-                      <p className="text-xs text-slate-400">{convertedResult.targetLabel}</p>
+                      <p className="text-xs text-slate-300">{convertedResult.targetLabel}</p>
                     </div>
                   </div>
 
@@ -229,11 +229,11 @@ const TimeZoneConverter = () => {
                   <div className="flex gap-12 justify-center border-t border-slate-800 pt-6">
                     <div className="flex flex-col items-center gap-2">
                       <Clock className="w-8 h-8 text-sky-400 animate-spin" style={{ animationDuration: '60s' }} />
-                      <span className="text-xs text-slate-400">Source Zone</span>
+                      <span className="text-xs text-slate-300">Source Zone</span>
                     </div>
                     <div className="flex flex-col items-center gap-2">
                       <Clock className="w-8 h-8 text-emerald-400 animate-spin" style={{ animationDuration: '60s' }} />
-                      <span className="text-xs text-slate-400">Target Zone</span>
+                      <span className="text-xs text-slate-300">Target Zone</span>
                     </div>
                   </div>
                 </motion.div>
@@ -247,10 +247,10 @@ const TimeZoneConverter = () => {
                 <CardTitle className="text-white">Why Use Time Zone Converters?</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4 text-slate-300 text-sm leading-relaxed">
-                <p className="text-xs text-slate-400 leading-relaxed">
+                <p className="text-xs text-slate-300 leading-relaxed">
                   Time zones govern the local clock settings in specific geographical regions. Because Earth rotates $15^\circ$ every hour, the global coordinate system divides the world into 24 standard offsets from Coordinated Universal Time (UTC).
                 </p>
-                <p className="text-xs text-slate-400 leading-relaxed">
+                <p className="text-xs text-slate-300 leading-relaxed">
                   This converter dynamically parses time zone offsets, including daylight savings offsets, ensuring you never schedule a meeting at the wrong hour.
                 </p>
               </CardContent>
@@ -258,7 +258,7 @@ const TimeZoneConverter = () => {
 
             <div className="bg-slate-800/40 border border-slate-700 rounded-2xl p-6">
               <h4 className="font-bold text-white mb-2 text-sm">Want to optimize your schedule?</h4>
-              <p className="text-xs text-slate-400 mb-4">Read our latest articles, guides, and tips on productivity, finance, and wellness.</p>
+              <p className="text-xs text-slate-300 mb-4">Read our latest articles, guides, and tips on productivity, finance, and wellness.</p>
               <Link to="/blog" className="text-emerald-400 hover:text-emerald-300 hover:underline text-xs font-bold transition-colors block">
                 Explore CalcZoon Blog &rarr;
               </Link>

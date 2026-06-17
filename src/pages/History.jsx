@@ -75,14 +75,14 @@ const History = () => {
                         <h3 className="font-semibold text-white">{item.type}</h3>
                         {renderCalculationDetails(item)}
                       </div>
-                      <p className="text-xs text-slate-400 whitespace-nowrap">{formatTimestamp(item.date)}</p>
+                      <p className="text-xs text-slate-300 whitespace-nowrap">{formatTimestamp(item.date)}</p>
                     </div>
                   </motion.li>
                 ))}
               </ul>
             ) : (
               <div className="text-center py-12">
-                <HistoryIcon className="mx-auto h-12 w-12 text-slate-500" />
+                <HistoryIcon className="mx-auto h-12 w-12 text-slate-400" />
                 <h3 className="mt-2 text-xl font-semibold text-slate-200">No History Yet</h3>
                 <p className="mt-1 text-sm text-slate-300">Your recent calculations will appear here after you use a tool.</p>
                 <Button asChild className="mt-6">

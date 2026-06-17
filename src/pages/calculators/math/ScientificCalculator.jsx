@@ -196,7 +196,7 @@ const ScientificCalculator = () => {
                 <span className="absolute top-3 left-4 text-xs font-bold text-sky-400 px-2.5 py-0.5 rounded-full bg-sky-500/10 uppercase tracking-widest">
                   {angleMode} mode
                 </span>
-                <div className="text-slate-400 text-sm font-mono break-all min-h-[1.25rem] max-w-full text-right mt-2">
+                <div className="text-slate-300 text-sm font-mono break-all min-h-[1.25rem] max-w-full text-right mt-2">
                   {display || '0'}
                 </div>
                 <div className="text-white text-4xl font-extrabold font-mono tracking-tight text-right break-all max-w-full">
@@ -240,18 +240,18 @@ const ScientificCalculator = () => {
               <CardContent className="space-y-4 text-slate-300 text-sm leading-relaxed">
                 <div>
                   <h4 className="font-semibold text-white mb-1">Radian vs Degree</h4>
-                  <p className="text-slate-400 text-xs">Toggle "DEG" and "RAD" mode. Degree mode converts inputs inside `sin()`, `cos()`, and `tan()` from degrees to radians automatically.</p>
+                  <p className="text-slate-300 text-xs">Toggle "DEG" and "RAD" mode. Degree mode converts inputs inside `sin()`, `cos()`, and `tan()` from degrees to radians automatically.</p>
                 </div>
                 <div>
                   <h4 className="font-semibold text-white mb-1">Parentheses Rules</h4>
-                  <p className="text-slate-400 text-xs">Ensure you open and close parenthesis `()` correctly (e.g. `sin(30)` instead of `sin(30`). Closing bracket issues will show "Error".</p>
+                  <p className="text-slate-300 text-xs">Ensure you open and close parenthesis `()` correctly (e.g. `sin(30)` instead of `sin(30`). Closing bracket issues will show "Error".</p>
                 </div>
               </CardContent>
             </Card>
 
             <div className="bg-slate-800/40 border border-slate-700 rounded-2xl p-6">
               <h4 className="font-bold text-white mb-2 text-sm">Need a complete guide?</h4>
-              <p className="text-xs text-slate-400 mb-4">See how Calczoon's math calculators can help you solve complex equations with ease.</p>
+              <p className="text-xs text-slate-300 mb-4">See how Calczoon's math calculators can help you solve complex equations with ease.</p>
               <Link to="/blog/simplifying-complex-math" className="text-emerald-400 hover:text-emerald-300 hover:underline text-xs font-bold transition-colors block">
                 Read Our Math Tools Guide &rarr;
               </Link>

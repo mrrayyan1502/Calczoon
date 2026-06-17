@@ -29,9 +29,9 @@ const BodyFatResults = ({ result }) => {
             transition={{ duration: 0.5 }}
         >
             <div className="flex justify-center items-center mb-2">{icon}</div>
-            <p className="text-slate-400 text-sm">{title}</p>
+            <p className="text-slate-300 text-sm">{title}</p>
             <p className={`text-2xl font-bold ${colorClass || 'text-white'}`}>
-                {value} <span className="text-lg font-normal text-slate-400">{unit}</span>
+                {value} <span className="text-lg font-normal text-slate-300">{unit}</span>
             </p>
         </motion.div>
     );
@@ -59,18 +59,18 @@ const BodyFatResults = ({ result }) => {
                             colorClass={getCategoryColor(category)}
                         />
                         <ResultCard
-                            icon={<Scale className="w-8 h-8 text-slate-400" />}
+                            icon={<Scale className="w-8 h-8 text-slate-300" />}
                             title="Fat Mass"
                             value={fatMass.toFixed(1)}
                             unit={weightUnit}
                         />
                     </div>
                      <div className="bg-slate-800 p-4 rounded-lg text-center">
-                        <p className="text-slate-400 text-sm">Lean Body Mass</p>
+                        <p className="text-slate-300 text-sm">Lean Body Mass</p>
                         <p className="text-3xl font-bold text-white">
-                            {leanMass.toFixed(1)} <span className="text-xl font-normal text-slate-400">{weightUnit}</span>
+                            {leanMass.toFixed(1)} <span className="text-xl font-normal text-slate-300">{weightUnit}</span>
                         </p>
-                        <p className="text-xs text-slate-500 mt-1">(Muscle, Bone, Organs, and Water)</p>
+                        <p className="text-xs text-slate-400 mt-1">(Muscle, Bone, Organs, and Water)</p>
                     </div>
                     <ShareResults
                         title="Body Fat Calculation"

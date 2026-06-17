@@ -64,7 +64,7 @@ const Community = () => {
                   </a>
                 </li>
               </ul>
-              <p className="text-slate-400 text-sm mt-4">We are always looking for new opportunities to collaborate. If you represent a local organization, please <a href="/contact" className="text-primary hover:underline">get in touch</a>.</p>
+              <p className="text-slate-300 text-sm mt-4">We are always looking for new opportunities to collaborate. If you represent a local organization, please <a href="/contact" className="text-primary hover:underline">get in touch</a>.</p>
             </section>
           
           </CardContent>

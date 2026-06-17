@@ -43,7 +43,7 @@ const Breadcrumbs = () => {
       <script type="application/ld+json">
         {JSON.stringify(breadcrumbSchema)}
       </script>
-      <ol className="flex items-center space-x-2 text-sm text-slate-400">
+      <ol className="flex items-center space-x-2 text-sm text-slate-300">
         <li>
           <Link to="/" className="hover:text-primary transition-colors">
             Home

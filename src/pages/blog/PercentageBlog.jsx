@@ -40,7 +40,7 @@ const PercentageBlog = () => {
                 <motion.article initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="prose prose-lg prose-invert mx-auto">
                     <header className="mb-8 text-center">
                         <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4">Percentage Calculator Guide: Master Percentages</h1>
-                        <p className="text-lg text-slate-400">Unlock the power of percentages with our ultimate guide. Learn to calculate discounts, growth, and more with our free, easy-to-use tool.</p>
+                        <p className="text-lg text-slate-300">Unlock the power of percentages with our ultimate guide. Learn to calculate discounts, growth, and more with our free, easy-to-use tool.</p>
                     </header>
 
                     <p>Percentages are everywhere—from calculating a tip at a restaurant and understanding a sales discount to analyzing business growth and interpreting statistical data. While the concept is fundamental, the calculations can sometimes be tricky or repetitive. Are you getting the best deal? Is your investment growing at the expected rate? Our online **Percentage Calculator** is designed to eliminate these uncertainties. It provides instant, accurate answers to a wide range of percentage-based questions. This guide will explore the various functions of our tool, helping you master percentages and apply them confidently in your daily life. Stop second-guessing and start calculating with precision.</p>

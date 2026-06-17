@@ -174,11 +174,11 @@ const CurrencyConverter = () => {
               {result && !error && (
                 <CardFooter className="flex flex-col items-start p-6 bg-slate-800/30 border-t border-slate-700/40">
                   <div className="w-full space-y-4 text-center">
-                    <p className="text-slate-400 font-medium">{amount} {fromCurrency} equals</p>
+                    <p className="text-slate-300 font-medium">{amount} {fromCurrency} equals</p>
                     <p className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-sky-400">
                       {result.amount} <span className="text-3xl">{toCurrency}</span>
                     </p>
-                    <p className="text-xs text-slate-500 pt-2">Mid-market exchange rate: 1 {fromCurrency} = {result.rate} {toCurrency}</p>
+                    <p className="text-xs text-slate-400 pt-2">Mid-market exchange rate: 1 {fromCurrency} = {result.rate} {toCurrency}</p>
                     <ShareResults title="Currency Conversion" text={`${amount} ${fromCurrency} is equal to ${result.amount} ${toCurrency}.`} url="/financial/currency-converter" />
                   </div>
                 </CardFooter>

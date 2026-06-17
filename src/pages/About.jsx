@@ -31,7 +31,7 @@ const AboutPage = () => {
                     <p className="text-slate-300 text-lg leading-relaxed text-center max-w-2xl mx-auto mb-4">
                         At CalcZoon, our mission is to provide a comprehensive suite of simple, fast, and reliable online calculators. We believe that everyone should have access to tools that make complex calculations easy, whether you're planning your finances, tracking your health, or solving a math problem. We're dedicated to creating an intuitive and user-friendly experience, completely free of charge.
                     </p>
-                    <p className="text-slate-400 text-sm leading-relaxed text-center max-w-2xl mx-auto border-t border-slate-700/50 pt-4">
+                    <p className="text-slate-300 text-sm leading-relaxed text-center max-w-2xl mx-auto border-t border-slate-700/50 pt-4">
                         In line with our commitment to inclusivity, CalcZoon is fully optimized to comply with the **Americans with Disabilities Act (ADA)** in the United States and the **Equality Act 2010** in the United Kingdom, adhering strictly to the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA.
                     </p>
                 </div>
@@ -49,7 +49,7 @@ const AboutPage = () => {
                                 </div>
                             </div>
                             <h3 className="text-xl font-semibold text-white mb-2">Fast & Efficient</h3>
-                            <p className="text-slate-400">Get instant answers without unnecessary clutter. Our tools are optimized for speed and simplicity, so you can calculate what you need and get on with your day.</p>
+                            <p className="text-slate-300">Get instant answers without unnecessary clutter. Our tools are optimized for speed and simplicity, so you can calculate what you need and get on with your day.</p>
                         </div>
                     </motion.div>
 
@@ -65,7 +65,7 @@ const AboutPage = () => {
                                 </div>
                             </div>
                             <h3 className="text-xl font-semibold text-white mb-2">Accurate & Reliable</h3>
-                            <p className="text-slate-400">We use standard, industry-accepted formulas and rigorously test our calculators to ensure you receive trustworthy results every time.</p>
+                            <p className="text-slate-300">We use standard, industry-accepted formulas and rigorously test our calculators to ensure you receive trustworthy results every time.</p>
                         </div>
                     </motion.div>
                     
@@ -81,7 +81,7 @@ const AboutPage = () => {
                                 </div>
                             </div>
                             <h3 className="text-xl font-semibold text-white mb-2">Completely Free</h3>
-                            <p className="text-slate-400">Our goal is to make these tools accessible to everyone. All calculators on CalcZoon are, and always will be, free to use without any hidden fees or subscriptions.</p>
+                            <p className="text-slate-300">Our goal is to make these tools accessible to everyone. All calculators on CalcZoon are, and always will be, free to use without any hidden fees or subscriptions.</p>
                         </div>
                     </motion.div>
                 </div>

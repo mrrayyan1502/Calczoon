@@ -74,7 +74,7 @@ const ToolFeatures = ({ toolName, toolPath }) => {
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <p className="text-sm text-slate-400 mb-4">
+          <p className="text-sm text-slate-300 mb-4">
             Add this calculator to your website by copying the code below.
           </p>
           <div className="bg-slate-900 p-3 rounded-md mb-4">

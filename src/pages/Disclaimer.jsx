@@ -54,7 +54,7 @@ const Disclaimer = () => {
                 <p>We strive to make CalcZoon.com fully accessible to all users. Our website incorporates an accessibility toolbar designed to assist users with text size adjustments, high-contrast colors, and dyslexia-friendly typography, in compliance with the Americans with Disabilities Act (ADA) in the United States and the Equality Act 2010 in the United Kingdom (following WCAG 2.1 Level AA guidelines).</p>
             </div>
 
-            <p className="text-center text-slate-400 pt-4">If you do not agree with this disclaimer, please do not use our website. Your continued use of the site signifies your acceptance of these terms. For any questions, please <Link to="/contact" className="text-primary hover:underline">contact us</Link>.</p>
+            <p className="text-center text-slate-300 pt-4">If you do not agree with this disclaimer, please do not use our website. Your continued use of the site signifies your acceptance of these terms. For any questions, please <Link to="/contact" className="text-primary hover:underline">contact us</Link>.</p>
 
           </CardContent>
         </Card>

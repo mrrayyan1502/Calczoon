@@ -143,13 +143,13 @@ const TipCalculator = () => {
                     
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                        <div className="text-center bg-slate-900/60 p-6 rounded-2xl border border-slate-800">
-                        <p className="text-slate-400 text-sm font-medium">Total Bill (With Tip)</p>
+                        <p className="text-slate-300 text-sm font-medium">Total Bill (With Tip)</p>
                         <p className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-sky-400">
                           ${result.totalAmount}
                         </p>
                       </div>
                       <div className="text-center bg-slate-900/60 p-6 rounded-2xl border border-emerald-900/50">
-                        <p className="text-slate-400 text-sm font-medium">Total Per Person</p>
+                        <p className="text-slate-300 text-sm font-medium">Total Per Person</p>
                         <p className="text-3xl font-extrabold text-emerald-400">
                           ${result.perPerson}
                         </p>
@@ -158,11 +158,11 @@ const TipCalculator = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div className="p-4 bg-slate-900/50 rounded-xl border border-slate-800 flex justify-between">
-                        <span className="text-slate-400">Total Tip Amount</span>
+                        <span className="text-slate-300">Total Tip Amount</span>
                         <span className="font-semibold text-slate-200">${result.tipAmount}</span>
                       </div>
                       <div className="p-4 bg-slate-900/50 rounded-xl border border-slate-800 flex justify-between">
-                        <span className="text-slate-400">Tip Per Person</span>
+                        <span className="text-slate-300">Tip Per Person</span>
                         <span className="font-semibold text-slate-200">${result.tipPerPerson}</span>
                       </div>
                     </div>

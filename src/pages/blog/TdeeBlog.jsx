@@ -51,7 +51,7 @@ const TdeeBlog = () => {
                   <div className="relative">
                       <img   
                           alt="A woman in workout gear smiling and checking her fitness tracker, symbolizing successful weight management."
-                          className="w-full h-64 md:h-96 object-cover" loading="lazy"  src="https://images.unsplash.com/photo-1609096458733-95b38583ac4e?q=80&w=2070" />
+                          className="w-full h-64 md:h-96 object-cover" loading="lazy"  src="https://images.unsplash.com/photo-1609096458733-95b38583ac4e?q=80&w=2070"  width="800" height="400"  />
                       <div className="absolute inset-0 bg-black/50"></div>
                       <div className="absolute inset-0 flex flex-col items-center justify-center p-4">
                           <motion.h1 

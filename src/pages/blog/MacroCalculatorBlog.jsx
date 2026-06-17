@@ -30,7 +30,7 @@ const MacroCalculatorBlog = () => {
                     <img
                         alt="A person planning meals with a notebook and fresh vegetables on a kitchen counter"
                         className="w-full h-64 md:h-96 object-cover"
-                     src="https://images.unsplash.com/photo-1570645314284-8b28f8fac62e" />
+                     src="https://images.unsplash.com/photo-1570645314284-8b28f8fac62e"  width="800" height="400" loading="lazy" />
                     <div className="absolute inset-0 bg-black/50"></div>
                     <div className="absolute inset-0 flex items-center justify-center">
                         <motion.h1 

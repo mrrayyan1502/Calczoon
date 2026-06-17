@@ -96,7 +96,7 @@ const ExponentCalculator = () => {
           <Card className="bg-slate-800/50 border-slate-700">
             <CardHeader>
               <h1 className="text-3xl font-bold text-center text-primary">Exponent Calculator</h1>
-              <CardDescription className="text-center text-slate-400">
+              <CardDescription className="text-center text-slate-300">
                 The Exponent Calculator simplifies expressions with exponents. Enter a base number and an exponent (power) to find the result. This tool can handle positive, negative, and decimal exponents and helps you quickly solve any exponential expression according to the laws of exponents.
               </CardDescription>
             </CardHeader>

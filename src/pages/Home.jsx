@@ -199,7 +199,7 @@ const Home = () => {
           </motion.h1>
 
           <motion.p
-            className="max-w-2xl mx-auto text-lg md:text-xl text-slate-400 leading-relaxed font-medium"
+            className="max-w-2xl mx-auto text-lg md:text-xl text-slate-300 leading-relaxed font-medium"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -235,7 +235,7 @@ const Home = () => {
                   className={`px-5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all duration-300 ${
                     activeCategory === cat
                       ? 'bg-gradient-to-r from-emerald-500 to-sky-500 text-white shadow-lg'
-                      : 'text-slate-400 hover:text-white hover:bg-slate-800/50'
+                      : 'text-slate-300 hover:text-white hover:bg-slate-800/50'
                   }`}
                   aria-label={`Show ${cat} calculators`}
                 >
@@ -271,7 +271,7 @@ const Home = () => {
                         </div>
                       </div>
                       <CardContent className="p-0">
-                        <p className="text-slate-400 text-sm leading-relaxed">{tool.description}</p>
+                        <p className="text-slate-300 text-sm leading-relaxed">{tool.description}</p>
                       </CardContent>
                     </CardHeader>
                   </Card>
@@ -287,23 +287,23 @@ const Home = () => {
           <div className="container mx-auto px-6">
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold text-white">How It Works</h2>
-              <p className="mt-4 text-slate-400 font-medium">Get accurate results instantly in 3 simple steps.</p>
+              <p className="mt-4 text-slate-300 font-medium">Get accurate results instantly in 3 simple steps.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
               <div className="flex flex-col items-center">
                 <div className="flex items-center justify-center w-16 h-16 bg-emerald-500/10 border border-emerald-500/30 rounded-2xl mb-6 text-emerald-400 font-extrabold text-2xl">1</div>
                 <h3 className="text-xl font-bold text-white mb-2">Select a Calculator</h3>
-                <p className="text-slate-400 text-sm leading-relaxed max-w-xs">Choose from our wide range of custom tools matching your financial, health, or math needs.</p>
+                <p className="text-slate-300 text-sm leading-relaxed max-w-xs">Choose from our wide range of custom tools matching your financial, health, or math needs.</p>
               </div>
               <div className="flex flex-col items-center">
                 <div className="flex items-center justify-center w-16 h-16 bg-sky-500/10 border border-sky-500/30 rounded-2xl mb-6 text-sky-400 font-extrabold text-2xl">2</div>
                 <h3 className="text-xl font-bold text-white mb-2">Enter Your Details</h3>
-                <p className="text-slate-400 text-sm leading-relaxed max-w-xs">Input your variables into our clean, validated, and user-friendly entry fields.</p>
+                <p className="text-slate-300 text-sm leading-relaxed max-w-xs">Input your variables into our clean, validated, and user-friendly entry fields.</p>
               </div>
               <div className="flex flex-col items-center">
                 <div className="flex items-center justify-center w-16 h-16 bg-indigo-500/10 border border-indigo-500/30 rounded-2xl mb-6 text-indigo-400 font-extrabold text-2xl">3</div>
                 <h3 className="text-xl font-bold text-white mb-2">Get Instant Answers</h3>
-                <p className="text-slate-400 text-sm leading-relaxed max-w-xs">Receive highly accurate mathematical outputs, complete with summaries, tips, and graphs.</p>
+                <p className="text-slate-300 text-sm leading-relaxed max-w-xs">Receive highly accurate mathematical outputs, complete with summaries, tips, and graphs.</p>
               </div>
             </div>
           </div>

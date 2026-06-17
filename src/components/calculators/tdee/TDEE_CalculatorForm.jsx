@@ -33,7 +33,7 @@ const CalculatorInput = ({ id, label, value, onChange, placeholder, type = "numb
       placeholder={placeholder}
       value={value}
       onChange={onChange}
-      className="bg-slate-900/50 border-slate-600 text-white placeholder:text-slate-500"
+      className="bg-slate-900/50 border-slate-600 text-white placeholder:text-slate-400"
     />
   </div>
 );
@@ -128,14 +128,14 @@ const TDEE_CalculatorForm = ({ setResults }) => {
           <CardTitle className="text-2xl text-white flex items-center gap-2">
             <Calculator className="w-6 h-6 text-emerald-400" /> Enter Your Details
           </CardTitle>
-          <CardDescription className="text-slate-400">
+          <CardDescription className="text-slate-300">
             Provide your stats to get an accurate TDEE estimate.
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
           <div className="flex gap-2 p-1 bg-slate-900/50 rounded-lg">
-            <Button variant={unit === 'metric' ? 'default' : 'ghost'} className={`flex-1 ${unit === 'metric' ? 'bg-emerald-600 hover:bg-emerald-700' : 'text-slate-400 hover:text-white'}`} onClick={() => setUnit('metric')}>Metric</Button>
-            <Button variant={unit === 'imperial' ? 'default' : 'ghost'} className={`flex-1 ${unit === 'imperial' ? 'bg-emerald-600 hover:bg-emerald-700' : 'text-slate-400 hover:text-white'}`} onClick={() => setUnit('imperial')}>Imperial</Button>
+            <Button variant={unit === 'metric' ? 'default' : 'ghost'} className={`flex-1 ${unit === 'metric' ? 'bg-emerald-600 hover:bg-emerald-700' : 'text-slate-300 hover:text-white'}`} onClick={() => setUnit('metric')}>Metric</Button>
+            <Button variant={unit === 'imperial' ? 'default' : 'ghost'} className={`flex-1 ${unit === 'imperial' ? 'bg-emerald-600 hover:bg-emerald-700' : 'text-slate-300 hover:text-white'}`} onClick={() => setUnit('imperial')}>Imperial</Button>
           </div>
 
           <div className="grid grid-cols-2 gap-4">
@@ -188,7 +188,7 @@ const TDEE_CalculatorForm = ({ setResults }) => {
                         <SelectItem key={level.value} value={level.value}>
                             <div className="flex flex-col">
                                 <span>{level.label}</span>
-                                <span className="text-xs text-slate-400">{level.description}</span>
+                                <span className="text-xs text-slate-300">{level.description}</span>
                             </div>
                         </SelectItem>
                     ))}

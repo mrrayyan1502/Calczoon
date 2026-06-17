@@ -124,7 +124,7 @@ const CaloriesBurnedCalculator = () => {
                 <CardFooter className="flex-col items-center mt-6">
                     <h3 className="text-xl font-bold">Estimated Calories Burned</h3>
                     <p className="text-6xl font-bold text-primary">{result.calories}</p>
-                    <p className="text-slate-400">calories during {result.activityLabel}</p>
+                    <p className="text-slate-300">calories during {result.activityLabel}</p>
                     <div className="mt-4">
                         <ShareResults
                             title="My Workout Stats"

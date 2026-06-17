@@ -10,7 +10,7 @@ const FeaturedToolSection = () => {
             <div className="container mx-auto px-4">
                 <div className="text-center mb-12">
                     <h2 className="text-3xl md:text-4xl font-bold text-white">Featured Calculators</h2>
-                    <p className="mt-4 text-lg text-slate-400">Hand-picked tools to help you make informed decisions.</p>
+                    <p className="mt-4 text-lg text-slate-300">Hand-picked tools to help you make informed decisions.</p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {/* Feature 1: TDEE Calculator */}
@@ -24,7 +24,7 @@ const FeaturedToolSection = () => {
                                         </div>
                                     </div>
                                     <CardTitle className="text-center text-white">TDEE Calculator</CardTitle>
-                                    <CardDescription className="text-center text-slate-400">
+                                    <CardDescription className="text-center text-slate-300">
                                         Estimate your daily calorie needs for weight management.
                                     </CardDescription>
                                 </CardHeader>
@@ -48,7 +48,7 @@ const FeaturedToolSection = () => {
                                         </div>
                                     </div>
                                     <CardTitle className="text-center text-white">Investment ROI Calculator</CardTitle>
-                                    <CardDescription className="text-center text-slate-400">
+                                    <CardDescription className="text-center text-slate-300">
                                         Calculate the return on your investments quickly.
                                     </CardDescription>
                                 </CardHeader>
@@ -72,7 +72,7 @@ const FeaturedToolSection = () => {
                                         </div>
                                     </div>
                                     <CardTitle className="text-center text-white">Mortgage Payoff Calculator</CardTitle>
-                                    <CardDescription className="text-center text-slate-400">
+                                    <CardDescription className="text-center text-slate-300">
                                         See how extra payments can save you thousands in interest.
                                     </CardDescription>
                                 </CardHeader>

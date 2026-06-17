@@ -28,7 +28,7 @@ const FeaturesSection = () => {
               {feature.icon}
             </div>
             <h3 className="text-xl font-bold text-white mb-2">{feature.title}</h3>
-            <p className="text-slate-400">{feature.description}</p>
+            <p className="text-slate-300">{feature.description}</p>
           </motion.div>
         ))}
       </div>

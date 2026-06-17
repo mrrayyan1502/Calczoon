@@ -58,7 +58,7 @@ const BlogSection = () => (
                 <h3 className="text-xl font-bold text-white mb-2 flex-grow">
                   {post.title}
                 </h3>
-                <p className="text-slate-400 mb-4">{post.description}</p>
+                <p className="text-slate-300 mb-4">{post.description}</p>
                 <span className="font-semibold text-primary flex items-center mt-auto">
                   Read More <ArrowRight className="ml-2 h-4 w-4" />
                 </span>

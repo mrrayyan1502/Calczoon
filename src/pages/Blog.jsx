@@ -113,7 +113,7 @@ const Blog = () => {
               <Link to={post.link} className="block h-full group">
                 <Card className="bg-slate-800/40 border-slate-700/50 h-full overflow-hidden hover:border-primary/50 transition-all duration-300 flex flex-col">
                   <div className="aspect-video overflow-hidden">
-                    <img src={post.imgSrc} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                    <img src={post.imgSrc} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"  width="800" height="400" loading="lazy" />
                   </div>
                   <CardContent className="p-6 flex flex-col flex-grow">
                     <div className="flex items-center text-sm text-primary mb-2">
@@ -121,7 +121,7 @@ const Blog = () => {
                         <span className="ml-2 font-semibold">{post.category}</span>
                     </div>
                     <h2 className="text-xl font-bold text-white mb-3 flex-grow">{post.title}</h2>
-                    <p className="text-slate-400 mb-4 text-sm">{post.description}</p>
+                    <p className="text-slate-300 mb-4 text-sm">{post.description}</p>
                     <div className="font-semibold text-primary flex items-center mt-auto group-hover:translate-x-1 transition-transform">
                       Read Article <ArrowRight className="ml-2 h-4 w-4" />
                     </div>

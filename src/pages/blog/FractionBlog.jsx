@@ -40,7 +40,7 @@ const FractionBlog = () => {
                 <motion.article initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="prose prose-lg prose-invert mx-auto">
                     <header className="mb-8 text-center">
                         <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4">Fraction Calculator Guide: Simplify Fractions</h1>
-                        <p className="text-lg text-slate-400">Tired of struggling with fraction arithmetic? This guide and our free calculator make adding, subtracting, multiplying, and dividing fractions effortless.</p>
+                        <p className="text-lg text-slate-300">Tired of struggling with fraction arithmetic? This guide and our free calculator make adding, subtracting, multiplying, and dividing fractions effortless.</p>
                     </header>
 
                     <p>Fractions are a building block of mathematics, appearing in everything from recipes and measurements to financial analysis. Yet, for many, working with them can be confusing and frustrating. Finding common denominators, simplifying results, and performing different operations requires multiple steps and careful attention to detail. This is where our **Fraction Calculator** becomes an invaluable asset. Designed to handle all your fraction-related arithmetic, this tool provides clear, accurate, and instant answers. Whether you're a student trying to master fractions, a chef scaling a recipe, or a woodworker making precise cuts, our calculator simplifies the process. This guide will show you how to use it effectively, so you can solve fraction problems with confidence.</p>

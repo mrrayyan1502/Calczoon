@@ -116,7 +116,7 @@ const CompoundInterestCalculator = () => {
                 <Card className="bg-slate-800/50 border-slate-700">
                     <CardHeader className="text-center">
                         <h1 className="text-3xl font-bold text-primary">Compound Interest Calculator</h1>
-                        <CardDescription className="text-slate-400">See how your money can grow over time with the power of compound interest. Perfect for retirement planning, savings goals, or investment projections.</CardDescription>
+                        <CardDescription className="text-slate-300">See how your money can grow over time with the power of compound interest. Perfect for retirement planning, savings goals, or investment projections.</CardDescription>
                 <div className="mt-4 p-4 bg-emerald-900/20 border border-emerald-500/20 rounded-xl">
                   <p className="text-sm text-emerald-400/90 leading-relaxed">
                     Yeh tool aapko calculations ko multiple currencies mein dekhne ki sahulat deta hai. Sirf apni currency select karein aur result US Dollar ($), British Pound (£) ya Euro (€) mein hasil karein. Is se UK, Europe aur international users ke liye calculations ko samajhna aur plan karna zyada asaan ho jata hai.
@@ -200,7 +200,7 @@ const CompoundInterestCalculator = () => {
                       <div className="bg-slate-900/50 p-4 rounded-lg border border-slate-700">
                           <h3 className="font-semibold text-white">The Formula</h3>
                           <p className="font-mono text-sm text-primary">A = P(1 + r/n)^(nt) + PMT * [(((1 + r/n)^(nt)) - 1) / (r/n)]</p>
-                          <p className="text-xs mt-2 text-slate-400">Where P is the principal, PMT is the monthly payment, r is the annual rate, n is the number of compounding periods per year, and t is the number of years.</p>
+                          <p className="text-xs mt-2 text-slate-300">Where P is the principal, PMT is the monthly payment, r is the annual rate, n is the number of compounding periods per year, and t is the number of years.</p>
                       </div>
 
                       <h3 className="text-xl font-semibold text-white mt-4">Practical Example:</h3>

@@ -23,7 +23,7 @@ const NotFound = () => {
         <AlertTriangle className="w-24 h-24 text-primary mb-6" />
         <h1 className="text-6xl font-bold text-white mb-2">404</h1>
         <h2 className="text-3xl font-semibold text-slate-200 mb-4">Page Not Found</h2>
-        <p className="text-lg text-slate-400 mb-8 max-w-md">
+        <p className="text-lg text-slate-300 mb-8 max-w-md">
           Oops! The page you're looking for doesn't exist. It might have been moved or deleted.
         </p>
         <Button asChild size="lg">

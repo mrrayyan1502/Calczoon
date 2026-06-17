@@ -100,7 +100,7 @@ const CryptoProfitCalculator = () => {
         <Card className="bg-slate-800/50 border-slate-700">
           <CardHeader className="text-center">
             <h1 className="text-3xl font-bold text-primary">Cryptocurrency Profit Calculator</h1>
-            <CardDescription className="text-slate-400">
+            <CardDescription className="text-slate-300">
               Easily calculate the profit or loss from your crypto trades, including your Return on Investment (ROI). This tool helps you understand the performance of your crypto assets like Bitcoin, Ethereum, and more.
             </CardDescription>
                 <div className="mt-4 p-4 bg-emerald-900/20 border border-emerald-500/20 rounded-xl">
@@ -131,7 +131,7 @@ const CryptoProfitCalculator = () => {
                         Total Fees ({currency})
                         <TooltipProvider>
                             <Tooltip>
-                                <TooltipTrigger><HelpCircle className="w-4 h-4 ml-1.5 text-slate-400" /></TooltipTrigger>
+                                <TooltipTrigger><HelpCircle className="w-4 h-4 ml-1.5 text-slate-300" /></TooltipTrigger>
                                 <TooltipContent>
                                     <p>Include all exchange fees, network fees, etc.</p>
                                 </TooltipContent>
@@ -156,13 +156,13 @@ const CryptoProfitCalculator = () => {
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-center pt-4">
                       <div className="p-4 bg-slate-700/50 rounded-lg">
-                          <p className="text-slate-400 text-sm">Return on Investment (ROI)</p>
+                          <p className="text-slate-300 text-sm">Return on Investment (ROI)</p>
                           <p className={`text-2xl font-bold ${result.isProfit ? 'text-green-400' : 'text-red-400'}`}>
                             {result.roi}%
                           </p>
                       </div>
                       <div className="p-4 bg-slate-700/50 rounded-lg">
-                          <p className="text-slate-400 text-sm">Total Value</p>
+                          <p className="text-slate-300 text-sm">Total Value</p>
                           <p className="text-2xl font-bold text-white">
                             {currency}{result.finalValue}
                           </p>

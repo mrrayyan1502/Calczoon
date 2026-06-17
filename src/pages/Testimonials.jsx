@@ -188,7 +188,7 @@ const Testimonials = () => {
               <DialogContent className="sm:max-w-[425px] bg-slate-900 border-slate-700 text-white">
                 <DialogHeader>
                   <DialogTitle className="text-primary">Leave a Review</DialogTitle>
-                  <DialogDescription className="text-slate-400">
+                  <DialogDescription className="text-slate-300">
                     Share your experience with Calczoon. Your feedback helps us improve.
                   </DialogDescription>
                 </DialogHeader>

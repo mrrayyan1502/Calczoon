@@ -22,13 +22,13 @@ const PlaceholderCalculator = ({ toolName }) => {
           <Wrench className="w-6 h-6 text-emerald-400" />
           {toolName}
         </CardTitle>
-        <CardDescription className="text-slate-400">
+        <CardDescription className="text-slate-300">
           This calculator is under construction. More features coming soon!
         </CardDescription>
       </CardHeader>
       <CardContent>
         <div className="flex items-center justify-center h-40 bg-slate-900/50 border border-dashed border-slate-600 rounded-lg">
-          <p className="text-slate-500">Calculator inputs will be here.</p>
+          <p className="text-slate-400">Calculator inputs will be here.</p>
         </div>
         <Button onClick={handleCalculate} className="w-full mt-6 bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-semibold py-6 text-lg shadow-lg">
           Calculate (Coming Soon)

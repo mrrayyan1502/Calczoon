@@ -123,7 +123,7 @@ const FreelancerTaxCalculator = () => {
                   Estimated Overall Tax Rate (%)
                   <TooltipProvider>
                       <Tooltip>
-                          <TooltipTrigger type="button" className="ml-2"><HelpCircle className="w-4 h-4 text-slate-400" /></TooltipTrigger>
+                          <TooltipTrigger type="button" className="ml-2"><HelpCircle className="w-4 h-4 text-slate-300" /></TooltipTrigger>
                           <TooltipContent className="bg-slate-800 text-white border-slate-600">
                               <p>This is your combined federal, state, and self-employment tax rate. <br/> A common estimate is 25-35%, but consult a tax professional.</p>
                           </TooltipContent>

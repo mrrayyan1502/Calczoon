@@ -133,8 +133,8 @@ const BMICalculator = () => {
               <CardContent>
                 <form onSubmit={calculateBMI} className="space-y-6">
                   <div className="flex gap-2 p-1 bg-slate-900/50 rounded-lg">
-                    <Button type="button" variant={unit === 'metric' ? 'default' : 'ghost'} className={`flex-1 ${unit === 'metric' ? 'bg-emerald-600 hover:bg-emerald-700' : 'text-slate-400 hover:text-white'}`} onClick={() => setUnit('metric')}>Metric</Button>
-                    <Button type="button" variant={unit === 'imperial' ? 'default' : 'ghost'} className={`flex-1 ${unit === 'imperial' ? 'bg-emerald-600 hover:bg-emerald-700' : 'text-slate-400 hover:text-white'}`} onClick={() => setUnit('imperial')}>Imperial</Button>
+                    <Button type="button" variant={unit === 'metric' ? 'default' : 'ghost'} className={`flex-1 ${unit === 'metric' ? 'bg-emerald-600 hover:bg-emerald-700' : 'text-slate-300 hover:text-white'}`} onClick={() => setUnit('metric')}>Metric</Button>
+                    <Button type="button" variant={unit === 'imperial' ? 'default' : 'ghost'} className={`flex-1 ${unit === 'imperial' ? 'bg-emerald-600 hover:bg-emerald-700' : 'text-slate-300 hover:text-white'}`} onClick={() => setUnit('imperial')}>Imperial</Button>
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="weight">Weight ({unit === 'metric' ? 'kg' : 'lbs'})</Label>
@@ -222,7 +222,7 @@ const BMICalculator = () => {
               <p>Metric Formula: BMI = Weight (kg) ÷ [Height (m)]²</p>
               <p>Imperial Formula: BMI = 703 × Weight (lbs) ÷ [Height (inches)]²</p>
             </div>
-            <p className="text-sm text-slate-400 mt-2">
+            <p className="text-sm text-slate-300 mt-2">
               The scaling factor of 703 in the imperial formula ensures equivalence with the metric metric, converting pounds per square inch to kilograms per square meter.
             </p>
           </div>
@@ -249,8 +249,8 @@ const BMICalculator = () => {
 
           {/* Scientific References Section */}
           <div className="mt-10 pt-6 border-t border-slate-700/50">
-            <h3 className="text-lg font-bold text-slate-400 mb-3 uppercase tracking-wider text-sm">Scientific References & Sources</h3>
-            <ul className="text-xs text-slate-500 space-y-2">
+            <h3 className="text-lg font-bold text-slate-300 mb-3 uppercase tracking-wider text-sm">Scientific References & Sources</h3>
+            <ul className="text-xs text-slate-400 space-y-2">
               <li>1. World Health Organization (WHO). (2000). Obesity: preventing and managing the global epidemic. Report of a WHO consultation. <em>World Health Organization technical report series</em>, 894, i-xii, 1-253.</li>
               <li>2. National Institutes of Health (NIH) & National Heart, Lung, and Blood Institute (NHLBI). (1998). Clinical Guidelines on the Identification, Evaluation, and Treatment of Overweight and Obesity in Adults.</li>
               <li>3. CDC - Centers for Disease Control and Prevention. About Adult BMI. Available at CDC.gov.</li>
@@ -264,7 +264,7 @@ const BMICalculator = () => {
           <div className="flex items-center gap-2 mb-4">
             <span className="text-emerald-400">⚡</span>
             <h3 className="text-lg font-semibold text-white">Recommended Health Tool</h3>
-            <span className="text-xs text-slate-500 ml-auto">Affiliate</span>
+            <span className="text-xs text-slate-400 ml-auto">Affiliate</span>
           </div>
           <a
             href="https://tinyurl.com/5448pvdk"
@@ -277,7 +277,7 @@ const BMICalculator = () => {
               <span className="text-sm font-medium text-slate-200 group-hover:text-emerald-300 transition-colors">
                 Gluco6 - Blood Sugar Support
               </span>
-              <p className="text-xs text-slate-500 mt-0.5">Natural supplement for healthy glucose levels &amp; weight management</p>
+              <p className="text-xs text-slate-400 mt-0.5">Natural supplement for healthy glucose levels &amp; weight management</p>
             </div>
           </a>
         </div>

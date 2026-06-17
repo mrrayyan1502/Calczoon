@@ -83,7 +83,7 @@ const CookieConsent = () => {
               <h4 id="cookie-title" className="text-lg font-bold text-white flex items-center gap-2">
                 We value your privacy
               </h4>
-              <p id="cookie-desc" className="text-sm text-slate-400 leading-relaxed">
+              <p id="cookie-desc" className="text-sm text-slate-300 leading-relaxed">
                 We use cookies to analyze website traffic and optimize your user experience. By clicking "Accept All", you agree to our use of cookies.
               </p>
             </div>
@@ -94,7 +94,7 @@ const CookieConsent = () => {
               variant="ghost"
               size="sm"
               onClick={handleReject}
-              className="text-slate-400 hover:text-white hover:bg-slate-800 rounded-full font-medium"
+              className="text-slate-300 hover:text-white hover:bg-slate-800 rounded-full font-medium"
               aria-label="Reject all cookies"
             >
               Reject All

@@ -26,7 +26,7 @@ const BlogPost = () => {
         <motion.article initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
           <header className="mb-8 text-center">
             <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4">A Complete Guide to Understanding Your Body Fat Percentage</h1>
-            <p className="text-lg text-slate-400">Move beyond the scale and discover what your body is truly made of. This guide explores the importance of body fat percentage for your health and fitness journey.</p>
+            <p className="text-lg text-slate-300">Move beyond the scale and discover what your body is truly made of. This guide explores the importance of body fat percentage for your health and fitness journey.</p>
           </header>
 
           <div className="prose prose-lg prose-invert mx-auto">

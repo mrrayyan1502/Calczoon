@@ -141,7 +141,7 @@ const DebtToIncomeRatioCalculator = () => {
           <Card className="bg-slate-800/50 border-slate-700">
             <CardHeader>
               <h1 className="text-3xl font-bold text-center text-primary">DTI Ratio Calculator for Mortgage Approval</h1>
-              <CardDescription className="text-center text-slate-400">
+              <CardDescription className="text-center text-slate-300">
                  Your debt-to-income (DTI) ratio is a critical financial health indicator that lenders use to assess your borrowing risk. This tool helps you calculate your DTI to see where you stand, whether you're aiming for mortgage approval, applying for a personal loan, or simply managing your finances.
               </CardDescription>
                 <div className="mt-4 p-4 bg-emerald-900/20 border border-emerald-500/20 rounded-xl">

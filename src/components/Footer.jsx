@@ -52,13 +52,13 @@ const Footer = () => {
     ];
 
     return (
-        <footer className="bg-slate-950/70 border-t border-slate-800 text-slate-400 backdrop-blur-sm">
+        <footer className="bg-slate-950/70 border-t border-slate-800 text-slate-300 backdrop-blur-sm">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
                 <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
                     {/* Brand Section */}
                     <div className="col-span-2 md:col-span-1 flex flex-col space-y-4">
                          <Link to="/" className="flex items-center space-x-2">
-                            <img src="/calczoon-logo.png" alt="CalcZoon Logo" className="h-8 w-auto" />
+                            <img src="/calczoon-logo.png" alt="CalcZoon Logo" className="h-8 w-auto"  width="800" height="400" loading="lazy" />
                             <span className="font-bold text-lg text-white">CalcZoon</span>
                         </Link>
                         <p className="text-sm">
@@ -66,7 +66,7 @@ const Footer = () => {
                         </p>
                         <div className="flex space-x-4 pt-2">
                             {socialLinks.map((social, index) => (
-                                <a key={index} href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social['aria-label']} className="text-slate-400 hover:text-primary transition-colors">
+                                <a key={index} href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social['aria-label']} className="text-slate-300 hover:text-primary transition-colors">
                                     <social.icon className="h-5 w-5" />
                                 </a>
                             ))}

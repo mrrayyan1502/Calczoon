@@ -91,7 +91,7 @@ const CalculatorPageLayout = ({
                 <DialogContent className="bg-slate-900 border-slate-700 text-white">
                   <DialogHeader>
                     <DialogTitle>Embed This Calculator</DialogTitle>
-                    <DialogDescription className="text-slate-400">
+                    <DialogDescription className="text-slate-300">
                       Copy the code below to add this calculator to your website or blog.
                     </DialogDescription>
                   </DialogHeader>

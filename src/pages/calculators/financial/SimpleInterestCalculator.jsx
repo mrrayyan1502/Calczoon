@@ -130,7 +130,7 @@ const SimpleInterestCalculator = () => {
             <Card className="bg-slate-800/50 border-slate-700">
               <CardHeader>
                 <h1 className="text-3xl font-bold text-center text-primary">Simple Interest Calculator</h1>
-                <CardDescription className="text-center text-slate-400">
+                <CardDescription className="text-center text-slate-300">
                   This tool provides a quick way to compute interest on loans or savings without compounding. It's ideal for personal loans, certain investments, or legal claims where simple interest applies.
                 </CardDescription>
                 <div className="mt-4 p-4 bg-emerald-900/20 border border-emerald-500/20 rounded-xl">
@@ -205,7 +205,7 @@ const SimpleInterestCalculator = () => {
                   </div>
                   <h3 className="text-xl font-semibold text-white">Practical Example</h3>
                   <p>Imagine you take out a small personal loan of $1,000 for 2 years at a simple interest rate of 5% per year. Using the formula:</p>
-                  <p className='italic text-slate-400'>Interest = $1,000 × 0.05 × 2 = $100.</p>
+                  <p className='italic text-slate-300'>Interest = $1,000 × 0.05 × 2 = $100.</p>
                   <p>This means over the two years, you would pay $100 in interest. The total amount you would repay is the principal plus the interest, which is $1,000 + $100 = $1,100.</p>
                   <p>This calculator automates that process for you, providing instant and accurate results for any given scenario.</p>
               </CardContent>

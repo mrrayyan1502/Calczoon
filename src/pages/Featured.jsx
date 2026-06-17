@@ -62,7 +62,7 @@ const Featured = () => {
                     {item.source}
                   </h3>
                   <p className="font-bold text-slate-200">"{item.title}"</p>
-                  <p className="text-slate-400 mt-2">{item.description}</p>
+                  <p className="text-slate-300 mt-2">{item.description}</p>
                   <a href={item.link} className="text-primary hover:underline flex items-center gap-2 mt-4 text-sm">
                     Read More <LinkIcon size={14} />
                   </a>

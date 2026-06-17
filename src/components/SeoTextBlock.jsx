@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const SeoTextBlock = () => {
   return (
     <motion.section
-      className="max-w-4xl mx-auto px-4 text-slate-400 text-sm leading-relaxed"
+      className="max-w-4xl mx-auto px-4 text-slate-300 text-sm leading-relaxed"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, amount: 0.5 }}

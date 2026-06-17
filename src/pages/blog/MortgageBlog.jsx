@@ -26,7 +26,7 @@ const BlogPost = () => {
         <motion.article initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
           <header className="mb-8 text-center">
             <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4">Pay Off Your Mortgage Faster & Save Thousands in Interest</h1>
-            <p className="text-lg text-slate-400">Your mortgage is likely your largest debt. Discover the powerful strategy of extra payments and how it can lead to financial freedom years ahead of schedule.</p>
+            <p className="text-lg text-slate-300">Your mortgage is likely your largest debt. Discover the powerful strategy of extra payments and how it can lead to financial freedom years ahead of schedule.</p>
           </header>
 
           <div className="prose prose-lg prose-invert mx-auto">

@@ -107,7 +107,7 @@ const MortgagePayoffCalculator = () => {
             <Card className="bg-slate-800/50 border-slate-700">
               <CardHeader>
                 <h1 className="text-3xl font-bold text-center text-primary">Mortgage Payoff Calculator</h1>
-                <CardDescription className="text-center text-slate-400">
+                <CardDescription className="text-center text-slate-300">
                   Discover how making additional monthly payments can dramatically shorten your loan term and save you thousands in interest. See your new payoff date and total savings instantly.
                 </CardDescription>
                 <div className="mt-4 p-4 bg-emerald-900/20 border border-emerald-500/20 rounded-xl">

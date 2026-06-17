@@ -102,7 +102,7 @@ const SleepCalculator = () => {
           <Card className="bg-slate-800/50 border-slate-700">
              <CardHeader className="text-center">
               <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">Sleep Cycle Calculator</h1>
-              <p className="text-slate-400">Find the perfect time to go to bed or wake up feeling refreshed and energized.</p>
+              <p className="text-slate-300">Find the perfect time to go to bed or wake up feeling refreshed and energized.</p>
             </CardHeader>
             <CardContent>
               <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-6">
@@ -139,7 +139,7 @@ const SleepCalculator = () => {
                           </div>
                         ))}
                       </div>
-                      <p className="text-sm text-slate-500 mt-4">These times are based on completing full 90-minute sleep cycles.</p>
+                      <p className="text-sm text-slate-400 mt-4">These times are based on completing full 90-minute sleep cycles.</p>
                     </>
                   ) : (
                     <>
@@ -151,7 +151,7 @@ const SleepCalculator = () => {
                           </div>
                         ))}
                       </div>
-                       <p className="text-sm text-slate-500 mt-4">It takes the average person about 14 minutes to fall asleep, which is factored into these times.</p>
+                       <p className="text-sm text-slate-400 mt-4">It takes the average person about 14 minutes to fall asleep, which is factored into these times.</p>
                     </>
                   )}
                    <div className="mt-4">

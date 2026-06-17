@@ -195,7 +195,7 @@ const DiscountCalculator = () => {
                 >
                   {/* Glowing Price Results Header */}
                   <div className="flex flex-col items-center text-center p-6 bg-slate-950/50 rounded-2xl border border-slate-800">
-                    <p className="text-sm text-slate-400 font-medium mb-1">Final Price After Sale</p>
+                    <p className="text-sm text-slate-300 font-medium mb-1">Final Price After Sale</p>
                     <p className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-sky-400 mb-2">
                       ${result.finalPrice}
                     </p>
@@ -207,7 +207,7 @@ const DiscountCalculator = () => {
                   {/* Itemized Receipt (Visual Wow Factor) */}
                   <div className="p-6 bg-slate-900/40 rounded-2xl border border-slate-800/60 font-mono text-sm space-y-3 text-slate-300 max-w-md mx-auto relative overflow-hidden">
                     <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-500 to-sky-500"></div>
-                    <div className="flex justify-between items-center text-xs font-bold text-slate-500 uppercase tracking-widest border-b border-slate-800 pb-2 mb-2">
+                    <div className="flex justify-between items-center text-xs font-bold text-slate-400 uppercase tracking-widest border-b border-slate-800 pb-2 mb-2">
                       <span>Receipt Description</span>
                       <span>Amount</span>
                     </div>
@@ -230,7 +230,7 @@ const DiscountCalculator = () => {
                       <span>${result.discountedPrice}</span>
                     </div>
                     {parseFloat(taxPercent) > 0 && (
-                      <div className="flex justify-between text-slate-400">
+                      <div className="flex justify-between text-slate-300">
                         <span>Sales Tax ({taxPercent}%)</span>
                         <span>+${result.taxAmount}</span>
                       </div>
@@ -261,18 +261,18 @@ const DiscountCalculator = () => {
               <CardContent className="space-y-4 text-slate-300 text-sm leading-relaxed">
                 <div>
                   <h4 className="font-semibold text-white mb-1">Stackable Discounts</h4>
-                  <p className="text-slate-400 text-xs">If a store offers an "extra 10% off sale items", the discounts are typically calculated sequentially (not added together). E.g., 20% off plus an extra 10% off equals a total discount of 28% off the original price, not 30%.</p>
+                  <p className="text-slate-300 text-xs">If a store offers an "extra 10% off sale items", the discounts are typically calculated sequentially (not added together). E.g., 20% off plus an extra 10% off equals a total discount of 28% off the original price, not 30%.</p>
                 </div>
                 <div>
                   <h4 className="font-semibold text-white mb-1">Sales Tax Impact</h4>
-                  <p className="text-slate-400 text-xs">Sales tax is applied to the final discounted subtotal, not the original price, saving you even more money in taxes.</p>
+                  <p className="text-slate-300 text-xs">Sales tax is applied to the final discounted subtotal, not the original price, saving you even more money in taxes.</p>
                 </div>
               </CardContent>
             </Card>
 
             <div className="bg-slate-800/40 border border-slate-700 rounded-2xl p-6">
               <h4 className="font-bold text-white mb-2 text-sm">Need to master percentage math?</h4>
-              <p className="text-xs text-slate-400 mb-4">Learn formulas for discounts, percentage change, and retail math step-by-step.</p>
+              <p className="text-xs text-slate-300 mb-4">Learn formulas for discounts, percentage change, and retail math step-by-step.</p>
               <Link to="/blog/percentage-calculator-guide" className="text-emerald-400 hover:text-emerald-300 hover:underline text-xs font-bold transition-colors block">
                 Read Our Percentage Guide &rarr;
               </Link>

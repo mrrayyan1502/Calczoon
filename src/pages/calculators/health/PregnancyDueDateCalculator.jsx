@@ -68,7 +68,7 @@ const PregnancyDueDateCalculator = () => {
           <Card className="bg-slate-800/50 border-slate-700">
             <CardHeader>
               <h1 className="text-3xl font-bold text-center text-primary">Pregnancy Due Date Calculator</h1>
-              <CardDescription className="text-center text-slate-400">
+              <CardDescription className="text-center text-slate-300">
                 Find out when your baby is due with our easy-to-use Pregnancy Due Date Calculator. Enter the first day of your last menstrual period and your average cycle length to get your estimated due date. This tool provides a helpful estimate, which can be confirmed by your healthcare provider with a first-trimester ultrasound.
               </CardDescription>
             </CardHeader>

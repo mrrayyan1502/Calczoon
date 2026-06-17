@@ -35,7 +35,7 @@ const AffiliateLinks = ({ category, title = 'Recommended' }) => {
       <div className="flex items-center gap-2 mb-4">
         <TrendingUp className="w-5 h-5 text-emerald-400" />
         <h3 className="text-lg font-semibold text-white">{title}</h3>
-        <span className="text-xs text-slate-500 ml-auto">Affiliate</span>
+        <span className="text-xs text-slate-400 ml-auto">Affiliate</span>
       </div>
       <div className="grid grid-cols-1 gap-3">
         {items.map((item, i) => (
@@ -53,7 +53,7 @@ const AffiliateLinks = ({ category, title = 'Recommended' }) => {
               <span className="text-sm font-medium text-slate-200 group-hover:text-emerald-300 transition-colors">
                 {item.name}
               </span>
-              <p className="text-xs text-slate-500 mt-0.5">{item.desc}</p>
+              <p className="text-xs text-slate-400 mt-0.5">{item.desc}</p>
             </div>
           </a>
         ))}

@@ -18,12 +18,12 @@ const BmiCalculatorGuide = () => {
           <h1 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400 mb-6">
             Understanding BMI: The Complete Guide to Body Mass Index
           </h1>
-          <p className="text-xl text-slate-400 max-w-2xl mx-auto">
+          <p className="text-xl text-slate-300 max-w-2xl mx-auto">
             Learn what BMI really means, how it's calculated, and why it's a vital, though imperfect, tool for assessing your overall health.
           </p>
         </header>
 
-        <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=1200&q=80" alt="Healthy Lifestyle and Fitness" className="w-full h-64 md:h-96 object-cover rounded-2xl mb-12 shadow-2xl" />
+        <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=1200&q=80" alt="Healthy Lifestyle and Fitness" className="w-full h-64 md:h-96 object-cover rounded-2xl mb-12 shadow-2xl"  width="800" height="400" loading="lazy" />
 
         <div className="bg-slate-800/50 p-6 md:p-8 rounded-2xl mb-10 border border-slate-700">
           <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
@@ -75,7 +75,7 @@ const BmiCalculatorGuide = () => {
               </tr>
             </tbody>
           </table>
-          <p className="text-xs text-slate-500 mt-2 text-right">* Categories based on World Health Organization (WHO) standards for adults.</p>
+          <p className="text-xs text-slate-400 mt-2 text-right">* Categories based on World Health Organization (WHO) standards for adults.</p>
         </div>
 
         <h2 className="text-3xl font-bold text-white mb-6">Limitations of BMI</h2>
@@ -101,7 +101,7 @@ const BmiCalculatorGuide = () => {
           <div className="bg-slate-800 p-6 rounded-xl border border-slate-700">
             <Apple className="text-blue-400 w-8 h-8 mb-4" />
             <h3 className="text-xl font-semibold text-white mb-2">Balanced Nutrition</h3>
-            <p className="text-slate-400 text-sm">
+            <p className="text-slate-300 text-sm">
               Focus on whole foods, lean proteins, complex carbohydrates, and healthy fats. Maintain a slight caloric deficit if aiming for weight loss, and ensure adequate hydration.
             </p>
           </div>
@@ -109,7 +109,7 @@ const BmiCalculatorGuide = () => {
           <div className="bg-slate-800 p-6 rounded-xl border border-slate-700">
             <Heart className="text-blue-400 w-8 h-8 mb-4" />
             <h3 className="text-xl font-semibold text-white mb-2">Regular Exercise</h3>
-            <p className="text-slate-400 text-sm">
+            <p className="text-slate-300 text-sm">
               Aim for at least 150 minutes of moderate aerobic activity or 75 minutes of vigorous aerobic activity a week, combined with strength training exercises twice a week.
             </p>
           </div>
@@ -117,7 +117,7 @@ const BmiCalculatorGuide = () => {
           <div className="bg-slate-800 p-6 rounded-xl border border-slate-700">
             <Scale className="text-blue-400 w-8 h-8 mb-4" />
             <h3 className="text-xl font-semibold text-white mb-2">Monitor Progress</h3>
-            <p className="text-slate-400 text-sm">
+            <p className="text-slate-300 text-sm">
               Track your weight consistently, but don't obsess over daily fluctuations. Use tools like body fat calipers or waist circumference measurements alongside BMI for a better picture.
             </p>
           </div>
@@ -136,7 +136,7 @@ const BmiCalculatorGuide = () => {
           </Link>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-slate-700 text-sm text-slate-500 text-center">
+        <div className="mt-12 pt-8 border-t border-slate-700 text-sm text-slate-400 text-center">
           <p>
             <strong>Medical Disclaimer:</strong> The Body Mass Index (BMI) calculator and the information provided in this article are for informational and educational purposes only and are not intended as a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition.
           </p>

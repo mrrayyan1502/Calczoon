@@ -91,7 +91,7 @@ const ConcreteCalculator = () => {
           <Card className="bg-slate-800/50 border-slate-700">
             <CardHeader>
               <h1 className="text-3xl md:text-4xl font-bold text-center text-primary">Concrete Calculator</h1>
-              <CardDescription className="text-center text-slate-400">
+              <CardDescription className="text-center text-slate-300">
                 Plan your project with confidence. Estimate the volume of concrete and the number of pre-mixed bags required for your slab, patio, or footing.
               </CardDescription>
             </CardHeader>
@@ -129,17 +129,17 @@ const ConcreteCalculator = () => {
                   <div className="p-4 bg-slate-700 rounded-lg">
                     <p className="text-slate-300 text-sm">Volume Needed</p>
                     <p className="text-2xl font-bold text-primary">{result.volumeCubicYards} yd³</p>
-                    <p className="text-sm text-slate-400">({result.volumeCubicFeet} ft³)</p>
+                    <p className="text-sm text-slate-300">({result.volumeCubicFeet} ft³)</p>
                   </div>
                   <div className="p-4 bg-slate-700 rounded-lg">
                     <p className="text-slate-300 text-sm">60 lb Bags</p>
                     <p className="text-2xl font-bold text-primary">{result.bags60lb}</p>
-                    <p className="text-sm text-slate-400">bags</p>
+                    <p className="text-sm text-slate-300">bags</p>
                   </div>
                   <div className="p-4 bg-slate-700 rounded-lg">
                     <p className="text-slate-300 text-sm">80 lb Bags</p>
                     <p className="text-2xl font-bold text-primary">{result.bags80lb}</p>
-                    <p className="text-sm text-slate-400">bags</p>
+                    <p className="text-sm text-slate-300">bags</p>
                   </div>
                 </div>
                  <div className="mt-4 w-full">

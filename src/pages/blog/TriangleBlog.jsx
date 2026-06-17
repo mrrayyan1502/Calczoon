@@ -40,7 +40,7 @@ const TriangleBlog = () => {
                 <motion.article initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="prose prose-lg prose-invert mx-auto">
                     <header className="mb-8 text-center">
                         <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4">Triangle Area Calculator: A Complete Guide</h1>
-                        <p className="text-lg text-slate-400">Master the geometry of triangles and effortlessly calculate area for any project with our comprehensive guide and free online tool.</p>
+                        <p className="text-lg text-slate-300">Master the geometry of triangles and effortlessly calculate area for any project with our comprehensive guide and free online tool.</p>
                     </header>
 
                     <p>Whether you're a student tackling a geometry assignment, a DIY enthusiast planning a project, or a professional architect designing a new structure, calculating the area of a triangle is a fundamental skill. However, manual calculations can be time-consuming and prone to errors, especially when dealing with complex numbers. This is where our **Triangle Area Calculator** comes in, providing a fast, accurate, and user-friendly solution. This guide will walk you through everything you need to know about calculating triangle areas, helping you save time and ensure precision in all your endeavors. Say goodbye to guesswork and hello to flawless calculations.</p>

@@ -131,10 +131,10 @@ const Header = () => {
                     <AccordionItem value="calculators" className="border-b-0">
                         <AccordionTrigger className="p-3 hover:no-underline rounded-md text-slate-300 hover:text-primary">Calculators</AccordionTrigger>
                         <AccordionContent className="pl-4">
-                            <NavLink to="/health-fitness-calculators" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-slate-400 hover:text-primary">Health & Fitness</NavLink>
-                            <NavLink to="/financial-calculators" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-slate-400 hover:text-primary">Financial</NavLink>
-                            <NavLink to="/math-science-calculators" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-slate-400 hover:text-primary">Math & Science</NavLink>
-                            <NavLink to="/lifestyle-everyday-calculators" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-slate-400 hover:text-primary">Lifestyle</NavLink>
+                            <NavLink to="/health-fitness-calculators" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-slate-300 hover:text-primary">Health & Fitness</NavLink>
+                            <NavLink to="/financial-calculators" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-slate-300 hover:text-primary">Financial</NavLink>
+                            <NavLink to="/math-science-calculators" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-slate-300 hover:text-primary">Math & Science</NavLink>
+                            <NavLink to="/lifestyle-everyday-calculators" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-slate-300 hover:text-primary">Lifestyle</NavLink>
                         </AccordionContent>
                     </AccordionItem>
                 </Accordion>

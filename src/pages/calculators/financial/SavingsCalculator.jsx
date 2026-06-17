@@ -77,7 +77,7 @@ const SavingsCalculator = () => {
           <Card className="bg-slate-800/50 border-slate-700">
             <CardHeader>
               <h1 className="text-3xl font-bold text-center text-primary">Future Value of Savings Calculator</h1>
-              <CardDescription className="text-center text-slate-400">
+              <CardDescription className="text-center text-slate-300">
                 Visualize your financial future. This calculator shows how your savings can grow over time with the power of compound interest. Enter your initial deposit, regular contributions, and interest rate to project the future value of your investments, perfect for retirement, college, or any long-term savings goal.
               </CardDescription>
                 <div className="mt-4 p-4 bg-emerald-900/20 border border-emerald-500/20 rounded-xl">

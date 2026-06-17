@@ -85,7 +85,7 @@ const SalaryCalculator = () => {
                 <Card className="bg-slate-800/50 border-slate-700">
                     <CardHeader className="text-center">
                         <h1 className="text-3xl font-bold text-primary">Salary Calculator</h1>
-                        <CardDescription className="text-slate-400">Convert your salary between different pay periods. Whether you're comparing job offers or just curious about your earnings, this tool breaks down your income into annual, monthly, weekly, daily, and hourly rates.</CardDescription>
+                        <CardDescription className="text-slate-300">Convert your salary between different pay periods. Whether you're comparing job offers or just curious about your earnings, this tool breaks down your income into annual, monthly, weekly, daily, and hourly rates.</CardDescription>
                 <div className="mt-4 p-4 bg-emerald-900/20 border border-emerald-500/20 rounded-xl">
                   <p className="text-sm text-emerald-400/90 leading-relaxed">
                     Yeh tool aapko calculations ko multiple currencies mein dekhne ki sahulat deta hai. Sirf apni currency select karein aur result US Dollar ($), British Pound (£) ya Euro (€) mein hasil karein. Is se UK, Europe aur international users ke liye calculations ko samajhna aur plan karna zyada asaan ho jata hai.

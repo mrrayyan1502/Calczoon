@@ -85,7 +85,7 @@ const ScientificReferences = () => {
                     {ref.formulas.map((formula, fIndex) => (
                       <div key={fIndex} className="border-l-4 border-primary pl-4">
                         <h3 className="font-semibold text-primary">{formula.name}</h3>
-                        <p className="text-sm text-slate-400 italic">"{formula.source}"</p>
+                        <p className="text-sm text-slate-300 italic">"{formula.source}"</p>
                         <a href={formula.link} target="_blank" rel="noopener noreferrer" className="text-sm text-emerald-400 hover:underline">View Source</a>
                       </div>
                     ))}

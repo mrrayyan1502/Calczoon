@@ -116,7 +116,7 @@ const GPACalculator = () => {
         <Card className="bg-slate-800/50 border-slate-700">
           <CardHeader>
             <h1 className="text-3xl font-bold text-center text-primary">GPA Calculator</h1>
-            <CardDescription className="text-center text-slate-400">
+            <CardDescription className="text-center text-slate-300">
               Calculate your Grade Point Average (GPA) for the current semester and see how it impacts your cumulative GPA. Enter your courses, credits, and grades below.
             </CardDescription>
           </CardHeader>
@@ -198,12 +198,12 @@ const GPACalculator = () => {
                 {result.error ? (<p className="text-destructive text-center">{result.error}</p>) : (
                   <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 text-center">
                       <div className="p-4 bg-slate-800 rounded-lg">
-                          <p className="text-slate-400">Semester GPA</p>
+                          <p className="text-slate-300">Semester GPA</p>
                           <p className="text-4xl font-bold text-primary">{result.semesterGPA}</p>
                       </div>
                       {cumulativeGPA && (
                           <div className="p-4 bg-slate-800 rounded-lg">
-                              <p className="text-slate-400">New Cumulative GPA</p>
+                              <p className="text-slate-300">New Cumulative GPA</p>
                               <p className="text-4xl font-bold text-primary">{cumulativeGPA}</p>
                           </div>
                       )}

@@ -96,7 +96,7 @@ const FuelCostCalculator = () => {
           <Card className="bg-slate-800/50 border-slate-700">
             <CardHeader>
               <h1 className="text-3xl md:text-4xl font-bold text-center text-primary">Road Trip Fuel Cost Calculator</h1>
-              <CardDescription className="text-center text-slate-400">
+              <CardDescription className="text-center text-slate-300">
                 Planning a journey? Estimate your fuel expenses with our easy-to-use calculator. Simply input your trip details to get a clear idea of your expected fuel costs, helping you budget more effectively for your travels.
               </CardDescription>
             </CardHeader>
@@ -147,11 +147,11 @@ const FuelCostCalculator = () => {
                   <h2 className="text-xl font-bold text-white mb-4">Trip Cost Estimate</h2>
                   <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 text-center">
                       <div className="p-4 bg-slate-700/50 rounded-lg">
-                          <p className="text-slate-400 text-sm">Total Fuel Needed</p>
+                          <p className="text-slate-300 text-sm">Total Fuel Needed</p>
                           <p className="text-3xl font-bold text-primary">{result.fuelNeeded}</p>
                       </div>
                       <div className="p-4 bg-slate-700/50 rounded-lg">
-                          <p className="text-slate-400 text-sm">Total Estimated Cost</p>
+                          <p className="text-slate-300 text-sm">Total Estimated Cost</p>
                           <p className="text-3xl font-bold text-primary">{getCurrencySymbol()}{result.totalCost}</p>
                       </div>
                   </div>

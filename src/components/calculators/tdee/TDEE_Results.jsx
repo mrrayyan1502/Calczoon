@@ -32,7 +32,7 @@ const ResultBox = ({ title, value, description, icon: Icon, color = 'blue' }) =>
                     <Icon className={cn("w-6 h-6", variants.text)} />
                 </div>
                 <div>
-                    <p className="text-sm text-slate-400">{title}</p>
+                    <p className="text-sm text-slate-300">{title}</p>
                     <p className="text-3xl font-bold text-white">{value}</p>
                 </div>
             </div>
@@ -73,7 +73,7 @@ const GoalCard = ({ title, weeklyGoal, calories, icon: Icon, color, description 
                     </div>
                     <div>
                         <p className="font-semibold text-white">{title}</p>
-                        <p className="text-sm text-slate-400">{weeklyGoal}</p>
+                        <p className="text-sm text-slate-300">{weeklyGoal}</p>
                     </div>
                 </div>
                 <p className="text-2xl font-bold text-white">{calories}</p>
@@ -98,7 +98,7 @@ const SaveResultsForm = () => {
         <Card className="bg-slate-900/50 border-slate-700 mt-8">
             <CardHeader>
                 <CardTitle className="text-xl text-white flex items-center gap-2"><Mail className="w-5 h-5 text-emerald-400"/>Save Your Results</CardTitle>
-                <CardDescription className="text-slate-400">Enter your email to save your TDEE results for future reference.</CardDescription>
+                <CardDescription className="text-slate-300">Enter your email to save your TDEE results for future reference.</CardDescription>
             </CardHeader>
             <CardContent>
                 <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4">

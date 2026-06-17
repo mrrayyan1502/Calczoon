@@ -93,7 +93,7 @@ const MacroCalculator = () => {
                   <div className="space-y-2">
                     <Label htmlFor="calories">Daily Calorie Goal (kcal)</Label>
                     <Input id="calories" type="number" value={calories} onChange={(e) => setCalories(e.target.value)} placeholder="e.g., 2000" required className="bg-slate-900 border-slate-700" />
-                    <p className="text-xs text-slate-400">Tip: Use our <a href="/health/tdee-calculator" className="text-primary hover:underline">TDEE Calculator</a> to find your calorie goal.</p>
+                    <p className="text-xs text-slate-300">Tip: Use our <a href="/health/tdee-calculator" className="text-primary hover:underline">TDEE Calculator</a> to find your calorie goal.</p>
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="dietType">Choose a Diet Plan</Label>
@@ -148,7 +148,7 @@ const MacroCalculator = () => {
                 {Object.values(dietPlans).map(plan => (
                   <div key={plan.label}>
                     <p className="font-semibold text-white">{plan.label}</p>
-                    <p className="text-xs text-slate-400">
+                    <p className="text-xs text-slate-300">
                       P: {plan.p*100}% | C: {plan.c*100}% | F: {plan.f*100}%
                     </p>
                   </div>
@@ -195,7 +195,7 @@ const MacroCalculator = () => {
                 <div className="bg-slate-800/40 p-6 rounded-xl border border-slate-700">
                     <h4 className="flex items-center gap-2 text-lg font-semibold text-emerald-400 mb-2">Hypertrophy (Bulking)</h4>
                     <p className="text-sm mb-2">To build muscle mass, a caloric surplus (consuming more than your TDEE) combined with a high protein intake is required. A balanced ratio of 40% Carbs, 30% Protein, and 30% Fat ensures adequate recovery and growth.</p>
-                    <ul className="text-xs text-slate-400 space-y-1 list-disc list-inside">
+                    <ul className="text-xs text-slate-300 space-y-1 list-disc list-inside">
                         <li>Focus on progressive overload</li>
                         <li>Maintain a +300 to +500 kcal surplus</li>
                         <li>High carbohydrate availability for training</li>
@@ -204,7 +204,7 @@ const MacroCalculator = () => {
                 <div className="bg-slate-800/40 p-6 rounded-xl border border-slate-700">
                     <h4 className="flex items-center gap-2 text-lg font-semibold text-rose-400 mb-2">Fat Loss (Cutting)</h4>
                     <p className="text-sm mb-2">Requires a caloric deficit (consuming less than your TDEE). Protein intake must remain high (often 40% of total calories) to prevent muscle catabolism while losing fat tissue.</p>
-                     <ul className="text-xs text-slate-400 space-y-1 list-disc list-inside">
+                     <ul className="text-xs text-slate-300 space-y-1 list-disc list-inside">
                         <li>Maintain a -300 to -500 kcal deficit</li>
                         <li>Prioritize high-satiety foods</li>
                         <li>Moderate to lower carbohydrates</li>
@@ -215,8 +215,8 @@ const MacroCalculator = () => {
 
           {/* Scientific References Section */}
           <div className="mt-10 pt-6 border-t border-slate-700/50">
-            <h3 className="text-lg font-bold text-slate-400 mb-3 uppercase tracking-wider text-sm">Scientific References & Sources</h3>
-            <ul className="text-xs text-slate-500 space-y-2">
+            <h3 className="text-lg font-bold text-slate-300 mb-3 uppercase tracking-wider text-sm">Scientific References & Sources</h3>
+            <ul className="text-xs text-slate-400 space-y-2">
               <li>1. Jäger, R., Kerksick, C. M., Campbell, B. I., et al. (2017). International Society of Sports Nutrition Position Stand: protein and exercise. <em>Journal of the International Society of Sports Nutrition</em>, 14(1), 20.</li>
               <li>2. Helms, E. R., Aragon, A. A., & Fitschen, P. J. (2014). Evidence-based recommendations for natural bodybuilding contest preparation: nutrition and supplementation. <em>Journal of the International Society of Sports Nutrition</em>, 11(1), 20.</li>
               <li>3. Morton, R. W., Murphy, K. T., McKellar, S. R., et al. (2018). A systematic review, meta-analysis and meta-regression of the effect of protein supplementation on resistance training-induced gains in muscle mass and strength in healthy adults. <em>British Journal of Sports Medicine</em>, 52(6), 376-384.</li>

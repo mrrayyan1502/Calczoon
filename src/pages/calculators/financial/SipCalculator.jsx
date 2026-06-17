@@ -186,15 +186,15 @@ const SipCalculator = () => {
 
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                     <div className="p-4 bg-slate-900/60 rounded-2xl border border-slate-800 text-center">
-                      <p className="text-sm text-slate-400 font-medium mb-1">Invested Amount</p>
+                      <p className="text-sm text-slate-300 font-medium mb-1">Invested Amount</p>
                       <p className="text-2xl font-extrabold text-sky-400">${Number(result.invested).toLocaleString()}</p>
                     </div>
                     <div className="p-4 bg-slate-900/60 rounded-2xl border border-slate-800 text-center">
-                      <p className="text-sm text-slate-400 font-medium mb-1">Est. Returns</p>
+                      <p className="text-sm text-slate-300 font-medium mb-1">Est. Returns</p>
                       <p className="text-2xl font-extrabold text-emerald-400">${Number(result.wealth).toLocaleString()}</p>
                     </div>
                     <div className="p-4 bg-slate-900/60 rounded-2xl border border-slate-800 text-center">
-                      <p className="text-sm text-slate-400 font-medium mb-1">Total Value</p>
+                      <p className="text-sm text-slate-300 font-medium mb-1">Total Value</p>
                       <p className="text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-sky-400">${Number(result.total).toLocaleString()}</p>
                     </div>
                   </div>
@@ -221,11 +221,11 @@ const SipCalculator = () => {
                     <div className="flex gap-6 justify-center text-xs">
                       <div className="flex items-center gap-2">
                         <span className="w-3 h-3 rounded-full bg-sky-500 block"></span>
-                        <span className="text-slate-400">Invested Amount ({result.investedPercent}%)</span>
+                        <span className="text-slate-300">Invested Amount ({result.investedPercent}%)</span>
                       </div>
                       <div className="flex items-center gap-2">
                         <span className="w-3 h-3 rounded-full bg-emerald-500 block"></span>
-                        <span className="text-slate-400">Est. Returns ({result.wealthPercent}%)</span>
+                        <span className="text-slate-300">Est. Returns ({result.wealthPercent}%)</span>
                       </div>
                     </div>
                   </div>
@@ -254,7 +254,7 @@ const SipCalculator = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-white mb-1">Dollar-Cost Averaging</h4>
-                    <p className="text-slate-400 text-xs">You buy more units when market prices are low and fewer units when prices are high, lowering your average cost.</p>
+                    <p className="text-slate-300 text-xs">You buy more units when market prices are low and fewer units when prices are high, lowering your average cost.</p>
                   </div>
                 </div>
                 <div className="flex gap-3 items-start">
@@ -263,7 +263,7 @@ const SipCalculator = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-white mb-1">Power of Compounding</h4>
-                    <p className="text-slate-400 text-xs">Reinvesting your gains generates exponential returns over the long run. Start early to leverage this power.</p>
+                    <p className="text-slate-300 text-xs">Reinvesting your gains generates exponential returns over the long run. Start early to leverage this power.</p>
                   </div>
                 </div>
                 <Link to="/blog/compound-interest-guide" className="text-emerald-400 hover:text-emerald-300 hover:underline text-xs font-bold mt-4 block text-center transition-colors">
@@ -326,8 +326,8 @@ const SipCalculator = () => {
 
           {/* Financial References Section */}
           <div className="mt-10 pt-6 border-t border-slate-700/50">
-            <h3 className="text-lg font-bold text-slate-400 mb-3 uppercase tracking-wider text-sm">Financial References & Market Sources</h3>
-            <ul className="text-xs text-slate-500 space-y-2">
+            <h3 className="text-lg font-bold text-slate-300 mb-3 uppercase tracking-wider text-sm">Financial References & Market Sources</h3>
+            <ul className="text-xs text-slate-400 space-y-2">
               <li>1. Malkiel, B. G. (2015). <em>A Random Walk Down Wall Street: The Time-Tested Strategy for Successful Investing</em>. W. W. Norton & Company.</li>
               <li>2. Bogle, J. C. (2017). <em>The Little Book of Common Sense Investing</em>. John Wiley & Sons.</li>
               <li>3. U.S. Securities and Exchange Commission (SEC). <em>Compound Interest and Yield</em>. Investor.gov.</li>

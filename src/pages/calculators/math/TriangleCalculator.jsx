@@ -172,7 +172,7 @@ const TriangleCalculator = () => {
                             <div>
                                 <h2 className="text-lg font-semibold text-slate-100 mb-2">Triangle Area</h2>
                                 <p className="text-4xl font-bold text-primary">{result.area}</p>
-                                <p className="text-slate-400">square units</p>
+                                <p className="text-slate-300">square units</p>
                             </div>
                             <ShareResults
                               title="Triangle Area Calculation"

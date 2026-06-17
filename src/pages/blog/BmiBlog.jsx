@@ -91,7 +91,7 @@ const BmiBlog = () => {
                         <li><strong>25.0 – 29.9:</strong> Overweight. This indicates a higher risk for health conditions like heart disease and diabetes.</li>
                         <li><strong>30.0 and above:</strong> Obesity. This category signifies a significantly increased risk of serious health issues.</li>
                     </ul>
-                    <p className="mt-4 text-slate-400">It's crucial to remember that BMI is a screening tool, not a definitive diagnosis of body fatness or overall health. Athletes with high muscle mass may have a high BMI but low body fat.</p>
+                    <p className="mt-4 text-slate-300">It's crucial to remember that BMI is a screening tool, not a definitive diagnosis of body fatness or overall health. Athletes with high muscle mass may have a high BMI but low body fat.</p>
                 </section>
                 
                 <section>

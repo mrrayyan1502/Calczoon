@@ -97,7 +97,7 @@ const WaterIntakeCalculator = () => {
         <Card className="bg-slate-800/50 border-slate-700">
           <CardHeader className="text-center">
             <h1 className="text-3xl font-bold text-primary">Daily Water Intake Calculator</h1>
-            <CardDescription className="text-slate-400">
+            <CardDescription className="text-slate-300">
               Find out how much water you should be drinking daily based on your weight and activity level. Staying hydrated is key to good health.
             </CardDescription>
           </CardHeader>

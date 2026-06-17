@@ -101,7 +101,7 @@ const TDEECalculator = () => {
                         <RelatedTools />
                         <div className="bg-slate-800/40 border border-slate-700 rounded-2xl p-6">
                           <h4 className="font-bold text-white mb-2 text-sm">Need a complete guide?</h4>
-                          <p className="text-xs text-slate-400 mb-4">Learn step-by-step how to manage calorie burn, calorie deficit, and nutrition profiles.</p>
+                          <p className="text-xs text-slate-300 mb-4">Learn step-by-step how to manage calorie burn, calorie deficit, and nutrition profiles.</p>
                           <Link to="/blog/tdee-calculator-guide" className="text-emerald-400 hover:text-emerald-300 hover:underline text-xs font-bold transition-colors block">
                             Read Our TDEE Weight Loss Guide &rarr;
                           </Link>

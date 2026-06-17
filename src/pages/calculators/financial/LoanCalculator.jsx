@@ -221,22 +221,22 @@ const LoanCalculator = () => {
                   <div className="w-full space-y-4">
                     <h3 className="text-lg font-bold text-slate-300">Loan Repayment Summary</h3>
                     <div className="text-center mb-4 bg-slate-900/60 p-6 rounded-2xl border border-slate-800">
-                      <p className="text-slate-400 text-sm font-medium">Estimated Monthly Payment</p>
+                      <p className="text-slate-300 text-sm font-medium">Estimated Monthly Payment</p>
                       <p className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-sky-400">
                         {getCurrencySymbol()}{Number(result.monthlyPayment).toLocaleString()}
                       </p>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                       <div className="p-4 bg-slate-900/50 rounded-xl border border-slate-800 text-center">
-                        <p className="text-xs text-slate-400">Total Principal</p>
+                        <p className="text-xs text-slate-300">Total Principal</p>
                         <p className="font-semibold text-slate-200">{getCurrencySymbol()}{Number(result.loanAmount).toLocaleString()}</p>
                       </div>
                       <div className="p-4 bg-slate-900/50 rounded-xl border border-slate-800 text-center">
-                        <p className="text-xs text-slate-400">Total Interest</p>
+                        <p className="text-xs text-slate-300">Total Interest</p>
                         <p className="font-semibold text-red-400">{getCurrencySymbol()}{Number(result.totalInterest).toLocaleString()}</p>
                       </div>
                       <div className="p-4 bg-slate-900/50 rounded-xl border border-slate-800 text-center">
-                        <p className="text-xs text-slate-400">Total Payments</p>
+                        <p className="text-xs text-slate-300">Total Payments</p>
                         <p className="font-semibold text-slate-200">{getCurrencySymbol()}{Number(result.totalPayment).toLocaleString()}</p>
                       </div>
                     </div>
@@ -313,8 +313,8 @@ const LoanCalculator = () => {
 
           {/* Financial References Section */}
           <div className="mt-10 pt-6 border-t border-slate-700/50">
-            <h3 className="text-lg font-bold text-slate-400 mb-3 uppercase tracking-wider text-sm">Financial References & Sources</h3>
-            <ul className="text-xs text-slate-500 space-y-2">
+            <h3 className="text-lg font-bold text-slate-300 mb-3 uppercase tracking-wider text-sm">Financial References & Sources</h3>
+            <ul className="text-xs text-slate-400 space-y-2">
               <li>1. Federal Reserve Board. (2020). <em>Consumer Credit - G.19</em>. Board of Governors of the Federal Reserve System.</li>
               <li>2. Investopedia. (2023). <em>Amortization: How it Works and How to Calculate it</em>.</li>
               <li>3. Consumer Financial Protection Bureau (CFPB). <em>What is a debt-to-income ratio?</em> Official US Government Financial Guidelines.</li>

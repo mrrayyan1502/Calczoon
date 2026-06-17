@@ -80,7 +80,7 @@ const CalculatorsList = () => {
                                     <Card key={calc.path} className="bg-slate-800/50 border-slate-700 flex flex-col justify-between p-6 hover:bg-slate-800 transition-colors duration-300">
                                         <div>
                                             <h3 className="font-semibold text-lg text-slate-100">{calc.name}</h3>
-                                            <p className="text-sm text-slate-400 mt-2 mb-4">{calc.description}</p>
+                                            <p className="text-sm text-slate-300 mt-2 mb-4">{calc.description}</p>
                                         </div>
                                         <Button asChild variant="secondary" className="w-full mt-auto">
                                             <Link to={calc.path}>Use Tool →</Link>
