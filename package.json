@@ -4,11 +4,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "node tools/generate-llms.js || true && node tools/generate-sitemap.js && vite build",
-    "postbuild": "react-snap",
-    "dev": "node tools/generate-llms.js || true && node tools/generate-sitemap.js && vite build",
+    "build": "node tools/generate-llms.js && node tools/generate-sitemap.js && vite build",
+    "dev": "vite",
     "preview": "vite preview --host :: --port 3000",
-    "prerender": "vite build && node tools/prerender.js",
     "lint": "eslint . --quiet"
   },
   "reactSnap": {

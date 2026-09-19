@@ -24,14 +24,37 @@
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"></noscript>
 
-  <!-- Structured Data -->
+  <!-- Interconnected Structured Data Graph (Organization & WebSite) -->
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "CalcZoon",
-      "url": "https://calczoon.com/",
-      "logo": "https://calczoon.com/logo.png"
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://calczoon.com/#organization",
+          "name": "CalcZoon",
+          "url": "https://calczoon.com/",
+          "logo": {
+            "@type": "ImageObject",
+            "@id": "https://calczoon.com/#logo",
+            "url": "https://calczoon.com/calczoon-logo-full.png",
+            "contentUrl": "https://calczoon.com/calczoon-logo-full.png",
+            "caption": "CalcZoon"
+          },
+          "description": "CalcZoon provides free online calculators for finance, mathematics, health, fitness and everyday tasks."
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://calczoon.com/#website",
+          "url": "https://calczoon.com/",
+          "name": "CalcZoon",
+          "description": "Free online calculators for finance, mathematics, health, fitness and everyday calculations.",
+          "publisher": {
+            "@id": "https://calczoon.com/#organization"
+          },
+          "inLanguage": "en"
+        }
+      ]
     }
   </script>
 

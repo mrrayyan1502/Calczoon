@@ -1,3 +1,53 @@
+# CalcZoon robots.txt
+# Updated: 2026-09-19 for AI Search (AEO/GEO) & Crawl Efficiency
+
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /api/private/
+Disallow: /search?
+Disallow: /*?preview=
+Disallow: /*?output=
+Disallow: /*?share=
+Disallow: /*?utm_
+Disallow: /*?fbclid=
+
+# OpenAI Search Discovery (ChatGPT Search)
+User-agent: OAI-SearchBot
+Allow: /
+
+# OpenAI LLM Model Crawler
+User-agent: GPTBot
+Allow: /
+
+# User-Requested ChatGPT Page Retrieval
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic Search Discovery
+User-agent: Claude-SearchBot
+Allow: /
+
+# Anthropic Model Crawler
+User-agent: ClaudeBot
+Allow: /
+
+# User-Requested Claude Retrieval
+User-agent: Claude-User
+Allow: /
+
+# Perplexity Indexing & User Retrieval
+User-agent: PerplexityBot
+Allow: /
+User-agent: Perplexity-User
+Allow: /
+
+# Google Gemini & Extended AI Grounding
+User-agent: Google-Extended
+Allow: /
+
+# Apple Generative AI Model
+User-agent: Applebot-Extended
+Allow: /
+
 Sitemap: https://calczoon.com/sitemap.xml
