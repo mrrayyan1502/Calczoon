@@ -55,6 +55,8 @@ const ROUTES = [
   { path: '/financial/salary-calculator', priority: '0.7', changefreq: 'weekly' },
   { path: '/financial/crypto-profit-calculator', priority: '0.7', changefreq: 'weekly' },
   { path: '/financial/freelancer-tax-calculator', priority: '0.6', changefreq: 'weekly' },
+  { path: '/financial/auto-loan-calculator', priority: '0.9', changefreq: 'weekly' },
+  { path: '/financial/vat-calculator', priority: '0.9', changefreq: 'weekly' },
   { path: '/math/percentage-calculator', priority: '0.8', changefreq: 'weekly' },
   { path: '/math/fraction-calculator', priority: '0.7', changefreq: 'weekly' },
   { path: '/math/triangle-calculator', priority: '0.8', changefreq: 'weekly' },

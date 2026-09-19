@@ -4,14 +4,14 @@ import { motion } from 'framer-motion';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 const quickLinks = [
-    { text: "Planning a road trip?", linkText: "Gas Cost Calculator", path: "/other/fuel-cost-calculator" },
-    { text: "Buying a new car?", linkText: "Auto Loan Calculator", path: "/financial/loan-calculator" },
+    { text: "Planning a road trip?", linkText: "Gas Cost Calculator", path: "/lifestyle/fuel-cost-calculator" },
+    { text: "Buying a new car?", linkText: "Auto Loan Calculator", path: "/financial/auto-loan-calculator" },
     { text: "Checking your fitness?", linkText: "BMI & TDEE Calculators", path: "/health/bmi-calculator" },
     { text: "Need help with homework?", linkText: "Fraction Calculator", path: "/math/fraction-calculator" },
     { text: "Saving for the future?", linkText: "Savings Growth Calculator", path: "/financial/savings-calculator" },
     { text: "Paying off your mortgage?", linkText: "Mortgage Payoff Calculator", path: "/financial/mortgage-payoff-calculator" },
     { text: "Managing debt?", linkText: "DTI Ratio Calculator", path: "/financial/debt-to-income-ratio-calculator" },
-    { text: "Planning a project?", linkText: "Concrete Calculator", path: "/other/concrete-calculator" }
+    { text: "Planning a project?", linkText: "Concrete Calculator", path: "/lifestyle/concrete-calculator" }
 ];
 
 const QuickLinksSection = () => {

@@ -34,7 +34,7 @@ const KeywordOptimizedTextBlock = () => {
                 <CardContent className="space-y-4 text-slate-300 text-justify">
                     <motion.p variants={itemVariants}>
                         Need to plan your <strong>finances</strong>? Use our{' '}
-                        <Link to="/financial/loan-calculator" aria-label="Auto Loan Payment Calculator" className="text-primary hover:underline">
+                        <Link to="/financial/auto-loan-calculator" aria-label="Auto Loan Payment Calculator" className="text-primary hover:underline">
                             auto loan payment calculator with trade-in
                         </Link>{' '}
                         to see what you can afford. Or, use the{' '}
@@ -73,7 +73,7 @@ const KeywordOptimizedTextBlock = () => {
 
                     <motion.p variants={itemVariants}>
                         Solve <strong>everyday problems</strong> like calculating your{' '}
-                        <Link to="/other/age-calculator" aria-label="Age Calculator" className="text-primary hover:underline">
+                        <Link to="/lifestyle/age-calculator" aria-label="Age Calculator" className="text-primary hover:underline">
                             age from date of birth
                         </Link>, or handle complex math with our{' '}
                         <Link to="/math/triangle-calculator" aria-label="Triangle Calculator" className="text-primary hover:underline">

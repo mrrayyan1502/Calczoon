@@ -12,7 +12,8 @@ const calculatorGroups = [
     calculators: [
       { name: 'Mortgage Calculator', description: 'Estimate your monthly home payments, principal, and interest.', path: '/financial/mortgage-calculator' },
       { name: 'Currency Converter', description: 'Live exchange rates for global currencies.', path: '/financial/currency-converter' },
-      { name: 'Auto Loan Payment Calculator', description: 'Estimate your monthly car payments, factoring in trade-ins.', path: '/financial/loan-calculator' },
+      { name: 'Auto Loan Payment Calculator', description: 'Estimate your monthly car payments, factoring in trade-ins.', path: '/financial/auto-loan-calculator' },
+      { name: 'VAT & Sales Tax Calculator', description: 'Calculate gross, net, and VAT amounts for UK, EU, and global rates.', path: '/financial/vat-calculator' },
       { name: 'Simple Interest Calculator', description: 'Quickly calculate simple interest on personal loans or debts.', path: '/financial/simple-interest-calculator' },
       { name: 'Retirement Savings Calculator', description: 'Project how long your retirement savings will last.', path: '/financial/savings-calculator' },
       { name: 'Mortgage Payoff Calculator', description: 'See how extra principal payments can save you thousands.', path: '/financial/mortgage-payoff-calculator' },

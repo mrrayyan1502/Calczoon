@@ -83,6 +83,8 @@ const RetirementCalculator = lazy(() => import('@/pages/calculators/financial/Re
 const SalaryCalculator = lazy(() => import('@/pages/calculators/financial/SalaryCalculator'));
 const CryptoProfitCalculator = lazy(() => import('@/pages/calculators/financial/CryptoProfitCalculator'));
 const FreelancerTaxCalculator = lazy(() => import('@/pages/calculators/financial/FreelancerTaxCalculator'));
+const AutoLoanCalculator = lazy(() => import('@/pages/calculators/financial/AutoLoanCalculator'));
+const VatCalculator = lazy(() => import('@/pages/calculators/financial/VatCalculator'));
 const BMICalculator = lazy(() => import('@/pages/calculators/health/BMICalculator'));
 const MacroCalculator = lazy(() => import('@/pages/calculators/health/MacroCalculator'));
 const PregnancyDueDateCalculator = lazy(() => import('@/pages/calculators/health/PregnancyDueDateCalculator'));
@@ -203,6 +205,8 @@ function App() {
             <Route path="financial/crypto-profit-calculator" element={<CryptoProfitCalculator />} />
             <Route path="financial/freelancer-tax-calculator" element={<FreelancerTaxCalculator />} />
             <Route path="financial/sip-calculator" element={<SipCalculator />} />
+            <Route path="financial/auto-loan-calculator" element={<AutoLoanCalculator />} />
+            <Route path="financial/vat-calculator" element={<VatCalculator />} />
 
             {/* Math */}
             <Route path="math/percentage-calculator" element={<PercentageCalculator />} />

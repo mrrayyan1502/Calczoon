@@ -11,11 +11,6 @@
       "permanent": true
     },
     {
-      "source": "/financial/vat-calculator",
-      "destination": "/financial-calculators",
-      "permanent": true
-    },
-    {
       "source": "/health/vo2-max-calculator",
       "destination": "/health-fitness-calculators",
       "permanent": true

@@ -19,6 +19,8 @@ const financialCalculators = [
   { name: 'Savings Goal Calculator', description: 'Plan how to reach your savings goals over time.', path: '/financial/savings-calculator' },
   { name: 'Crypto Profit Calculator', description: 'Track your profits and losses from cryptocurrency trades.', path: '/financial/crypto-profit-calculator' },
   { name: 'Freelancer Tax Calculator', description: 'Estimate your self-employment taxes and plan for payments.', path: '/financial/freelancer-tax-calculator' },
+  { name: 'Auto Loan Calculator', description: 'Estimate monthly car payments, total interest, and trade-in value.', path: '/financial/auto-loan-calculator' },
+  { name: 'VAT & Sales Tax Calculator', description: 'Calculate gross, net, and VAT amounts for UK, EU, and global rates.', path: '/financial/vat-calculator' },
 ];
 
 const FinancialCalculators = () => {

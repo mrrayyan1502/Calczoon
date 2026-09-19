@@ -101,6 +101,20 @@ const tools = [
     description: 'Convert dates and times across global time zones for easy meeting planning.',
     path: '/lifestyle/time-zone-converter',
     category: "Lifestyle & Everyday"
+  },
+  {
+    icon: <DollarSign className="w-8 h-8 text-cyan-400" />,
+    name: 'Auto Loan Calculator',
+    description: 'Estimate monthly car payments, interest, amortization, and trade-in deductions.',
+    path: '/financial/auto-loan-calculator',
+    category: "Financial"
+  },
+  {
+    icon: <Percent className="w-8 h-8 text-amber-400" />,
+    name: 'VAT & Sales Tax Calculator',
+    description: 'Calculate gross, net, and VAT amounts for UK 20%, EU, and global tax rates.',
+    path: '/financial/vat-calculator',
+    category: "Financial"
   }
 ];
 
