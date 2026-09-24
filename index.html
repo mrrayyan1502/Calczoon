@@ -13,9 +13,6 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
   <!-- Favicon setup -->
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
 
   <!-- Google Fonts -->
@@ -75,9 +72,24 @@
     gtag('config', 'G-8S1TR6NVS5');
   </script>
 
-  <!-- Google AdSense -->
+  <!-- Google AdSense (High Performance Lazy Load for 100/100 Core Web Vitals) -->
   <meta name="google-adsense-account" content="ca-pub-1668581059091583">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1668581059091583" crossorigin="anonymous"></script>
+  <script>
+    let adsenseLoaded = false;
+    function loadAdSense() {
+      if (adsenseLoaded) return;
+      adsenseLoaded = true;
+      const s = document.createElement('script');
+      s.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1668581059091583";
+      s.async = true;
+      s.crossOrigin = "anonymous";
+      document.head.appendChild(s);
+    }
+    window.addEventListener('scroll', loadAdSense, {once: true, passive: true});
+    window.addEventListener('mousemove', loadAdSense, {once: true, passive: true});
+    window.addEventListener('touchstart', loadAdSense, {once: true, passive: true});
+    setTimeout(loadAdSense, 3500);
+  </script>
 
   <!-- Open Graph Defaults (overridden per page by react-helmet-async) -->
   <meta property="og:site_name" content="CalcZoon" />
