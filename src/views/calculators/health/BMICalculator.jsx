@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useState } from 'react';
 import Seo from '@/components/Seo';
@@ -9,13 +9,10 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter }
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { motion } from 'framer-motion';
 import { useToast } from '@/components/ui/use-toast';
 import { saveCalculation } from '@/lib/history';
-import TDEE_FAQ from '@/components/calculators/tdee/TDEE_FAQ';
 import RelatedTools from '@/components/calculators/tdee/RelatedTools';
 import ShareResults from '@/components/ShareResults';
-import AffiliateLinks from '@/components/AffiliateLinks';
 
 const BMICalculator = () => {
   const [unit, setUnit] = useState('metric');
@@ -57,7 +54,7 @@ const BMICalculator = () => {
       color = 'text-blue-400';
     } else if (bmi >= 18.5 && bmi < 25) {
       category = 'Normal weight';
-      color = 'text-green-400';
+      color = 'text-emerald-400';
     } else if (bmi >= 25 && bmi < 30) {
       category = 'Overweight';
       color = 'text-yellow-400';
@@ -78,14 +75,6 @@ const BMICalculator = () => {
 
   const pageTitle = "Free BMI Calculator: Check Body Mass Index Online 2026";
   const pageDescription = "Calculate your Body Mass Index (BMI) instantly. Understand your weight category with our free, easy-to-use BMI checker for men and women.";
-  const canonicalUrl = "https://calczoon.com/health/bmi-calculator";
-
-  const faqItems = [
-    { question: "What is BMI?", answer: "Body Mass Index (BMI) is a measure that uses your height and weight to work out if your weight is healthy. The BMI calculation divides an adult's weight in kilograms by their height in metres squared." },
-    { question: "How accurate is BMI?", answer: "BMI is a useful population-level measure of overweight and obesity. However, it is a screening tool and not a diagnostic tool. It does not distinguish between excess fat, muscle, or bone mass, nor does it provide any indication of the distribution of fat." },
-    { question: "What are the BMI categories?", answer: "Underweight = <18.5, Normal weight = 18.5â€“24.9, Overweight = 25â€“29.9, Obesity = BMI of 30 or greater." },
-    { question: "Should I use BMI to assess my health?", answer: "BMI is a good starting point, but it should be used alongside other measurements like waist circumference and body fat percentage for a more complete picture of health. Consult a healthcare professional for personalized advice." }
-  ];
 
   const appSchema = {
     "@context": "https://schema.org",
@@ -101,26 +90,13 @@ const BMICalculator = () => {
     }
   };
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqItems.map(item => ({
-      "@type": "Question",
-      "name": item.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": item.answer
-      }
-    }))
-  };
-
   return (
     <>
       <Seo
         title={pageTitle}
         description={pageDescription}
         canonicalUrl="/health/bmi-calculator"
-        schema={[appSchema, faqSchema]}
+        schema={[appSchema]}
       />
       
       <div className="w-full max-w-7xl mx-auto py-8 px-4">
@@ -140,12 +116,12 @@ const BMICalculator = () => {
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="weight">Weight ({unit === 'metric' ? 'kg' : 'lbs'})</Label>
-                    <Input id="weight" type="number" value={weight} onChange={(e) => setWeight(e.target.value)} placeholder={`e.g., ${unit === 'metric' ? '70' : '155'}`} required className="bg-slate-900 border-slate-700" />
+                    <Input id="weight" type="number" step="0.1" value={weight} onChange={(e) => setWeight(e.target.value)} placeholder={`e.g., ${unit === 'metric' ? '70' : '155'}`} required className="bg-slate-900 border-slate-700" />
                   </div>
                   {unit === 'metric' ? (
                     <div className="space-y-2">
                       <Label htmlFor="heightCm">Height (cm)</Label>
-                      <Input id="heightCm" type="number" value={heightCm} onChange={(e) => setHeightCm(e.target.value)} placeholder="e.g., 178" required className="bg-slate-900 border-slate-700" />
+                      <Input id="heightCm" type="number" step="0.1" value={heightCm} onChange={(e) => setHeightCm(e.target.value)} placeholder="e.g., 178" required className="bg-slate-900 border-slate-700" />
                     </div>
                   ) : (
                     <div className="grid grid-cols-2 gap-4">
@@ -155,153 +131,215 @@ const BMICalculator = () => {
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="heightIn">Height (inches)</Label>
-                        <Input id="heightIn" type="number" value={heightIn} onChange={(e) => setHeightIn(e.target.value)} placeholder="e.g., 10" className="bg-slate-900 border-slate-700" />
+                        <Input id="heightIn" type="number" step="0.1" value={heightIn} onChange={(e) => setHeightIn(e.target.value)} placeholder="e.g., 10" className="bg-slate-900 border-slate-700" />
                       </div>
                     </div>
                   )}
-                  <Button type="submit" className="w-full bg-primary hover:bg-primary/90">Calculate BMI</Button>
+                  <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-slate-950 font-bold">Calculate BMI</Button>
                 </form>
               </CardContent>
               {result && (
                 <CardFooter className="flex flex-col items-center mt-6">
-                  <h3 className="text-xl font-bold">Your BMI is:</h3>
-                  <p className={`text-6xl font-bold ${result.color}`}>{result.bmi}</p>
+                  <h3 className="text-xl font-bold text-white">Your BMI is:</h3>
+                  <p className={`text-6xl font-bold my-2 ${result.color}`}>{result.bmi}</p>
                   <p className={`text-xl font-semibold ${result.color}`}>{result.category}</p>
-                   <div className="mt-4 w-full">
-                        <ShareResults title="BMI Calculation" text={`Just got my BMI results from CalcZoon! My score: ${result.bmi} (${result.category}). Highly recommend this free tool:`} url="/health/bmi-calculator" />
-                    </div>
+                  <div className="mt-4 w-full">
+                    <ShareResults title="BMI Calculation" text={`Just calculated my BMI on CalcZoon: ${result.bmi} (${result.category}). Free check:`} url="/health/bmi-calculator" />
+                  </div>
                 </CardFooter>
               )}
             </Card>
           </div>
           <aside className="lg:col-span-1 space-y-6">
             <Card className="bg-slate-800/50 border-slate-700">
-                <CardHeader><CardTitle>BMI Categories</CardTitle></CardHeader>
-                <CardContent>
-                    <ul className="space-y-2 text-slate-300">
-                        <li className="flex justify-between"><span>Underweight</span><span className="text-blue-400">&lt; 18.5</span></li>
-                        <li className="flex justify-between"><span>Normal weight</span><span className="text-green-400">18.5 â€“ 24.9</span></li>
-                        <li className="flex justify-between"><span>Overweight</span><span className="text-yellow-400">25 â€“ 29.9</span></li>
-                        <li className="flex justify-between"><span>Obesity</span><span className="text-red-400">30 or greater</span></li>
-                    </ul>
-                    <Link to="/blog/bmi-calculator-guide" className="text-emerald-400 hover:text-emerald-300 hover:underline text-xs font-bold mt-6 block text-center transition-colors">
-                      Read Our Complete BMI Guide &rarr;
-                    </Link>
-                </CardContent>
+              <CardHeader><CardTitle className="text-white">BMI Classifications</CardTitle></CardHeader>
+              <CardContent>
+                <ul className="space-y-2.5 text-slate-300 text-sm">
+                  <li className="flex justify-between pb-1.5 border-b border-slate-800"><span>Underweight</span><span className="text-blue-400 font-semibold">&lt; 18.5</span></li>
+                  <li className="flex justify-between pb-1.5 border-b border-slate-800"><span>Normal weight</span><span className="text-emerald-400 font-semibold">18.5 – 24.9</span></li>
+                  <li className="flex justify-between pb-1.5 border-b border-slate-800"><span>Overweight</span><span className="text-yellow-400 font-semibold">25.0 – 29.9</span></li>
+                  <li className="flex justify-between"><span>Obesity</span><span className="text-rose-400 font-semibold">30.0 or greater</span></li>
+                </ul>
+              </CardContent>
             </Card>
             <RelatedTools />
           </aside>
         </div>
 
-        {/* Deep SEO Informational Section with Scientific References */}
-        <section className="mt-16 bg-slate-800/20 rounded-2xl border border-slate-700/40 p-8 text-slate-300 leading-relaxed max-w-5xl mx-auto space-y-8">
+        {/* Comprehensive Content Section - 500 to 800 Words */}
+        <section className="mt-16 bg-slate-800/30 rounded-2xl border border-slate-700/60 p-8 md:p-10 text-slate-300 leading-relaxed max-w-5xl mx-auto space-y-10">
+          
+          {/* 1. What is BMI Calculator */}
           <div className="space-y-4">
-            <h2 className="text-2xl font-bold text-white">Understanding Body Mass Index (BMI) and Your Health</h2>
-            <p>
-              Body Mass Index (BMI) is an internationally recognized anthropometric measurement used to estimate human body fat based on an individual's weight and height. Developed in the 19th century by Adolphe Quetelet, the index has become a fundamental screening tool employed by global health organizations to classify weight categories and assess associated health risks in adult populations.
+            <h2 className="text-2xl md:text-3xl font-bold text-white">What is a BMI Calculator?</h2>
+            <p className="text-base md:text-lg">
+              A <strong>Body Mass Index (BMI) Calculator</strong> is a standardized clinical screening tool used to assess body weight relative to stature. First developed in the 1830s by Belgian astronomer and statistician Adolphe Quetelet, BMI provides an objective, rapid benchmark to classify adults into four core health ranges: underweight, normal weight, overweight, and obesity.
             </p>
             <p>
-              While BMI does not directly measure the percentage of body fat, extensive epidemiological research has demonstrated a strong correlation between high BMI scores and adverse metabolic profiles, making it an essential first step in clinical and personal health evaluation.
+              Major health institutions, including the World Health Organization (WHO) and the U.S. Centers for Disease Control and Prevention (CDC), use BMI as an initial population-level assessment tool. Although BMI does not directly measure body fat percentage, extensive epidemiological studies demonstrate that higher BMI figures correlate strongly with elevated risks for hypertension, cardiovascular disease, dyslipidemia, and type 2 diabetes.
             </p>
           </div>
 
+          {/* 2. How it works / formula */}
           <div className="space-y-4">
-            <h2 className="text-2xl font-bold text-white">How Our Advanced BMI Calculator Works</h2>
-            <ol className="list-decimal pl-6 space-y-2">
-              <li><strong>Measurement System:</strong> Choose your preferred standardâ€”either <strong>Metric</strong> (kilograms and centimeters) or <strong>Imperial</strong> (pounds, feet, and inches).</li>
-              <li><strong>Data Input:</strong> Enter your current weight and accurate height measurements.</li>
-              <li><strong>Real-time Analysis:</strong> Our calculator processes the data instantly using standard mathematical formulas.</li>
-              <li><strong>Result Interpretation:</strong> You will receive your exact BMI number, your WHO-defined weight category, and a clear visual indication of your health status.</li>
+            <h2 className="text-2xl md:text-3xl font-bold text-white">How it Works / Formula</h2>
+            <p>
+              The calculator operates by normalizing an individual’s body weight relative to the square of their height. Because human body surface area scales exponentially with height, dividing weight by height squared produces an objective index.
+            </p>
+            <div className="grid md:grid-cols-2 gap-4">
+              <div className="bg-slate-900/60 p-5 rounded-xl border border-slate-800 font-mono text-sm space-y-2">
+                <p className="text-emerald-400 font-bold uppercase tracking-wider text-xs">Metric Formula</p>
+                <p className="text-white text-base">BMI = Weight (kg) ÷ [Height (m)]²</p>
+                <p className="text-slate-400 text-xs">Where weight is measured in kilograms and height in meters.</p>
+              </div>
+              <div className="bg-slate-900/60 p-5 rounded-xl border border-slate-800 font-mono text-sm space-y-2">
+                <p className="text-sky-400 font-bold uppercase tracking-wider text-xs">Imperial Formula</p>
+                <p className="text-white text-base">BMI = 703 × Weight (lbs) ÷ [Height (inches)]²</p>
+                <p className="text-slate-400 text-xs">The conversion multiplier 703 equates imperial units to kg/m².</p>
+              </div>
+            </div>
+            <div className="bg-slate-900/40 p-4 rounded-xl border border-slate-800 text-sm">
+              <p className="font-semibold text-white mb-2">WHO Adult BMI Classifications:</p>
+              <ul className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
+                <li className="bg-slate-800/80 p-2.5 rounded border border-slate-700"><strong>Underweight:</strong> &lt; 18.5</li>
+                <li className="bg-slate-800/80 p-2.5 rounded border border-emerald-700/50 text-emerald-300"><strong>Normal Weight:</strong> 18.5 – 24.9</li>
+                <li className="bg-slate-800/80 p-2.5 rounded border border-amber-700/50 text-amber-300"><strong>Overweight:</strong> 25.0 – 29.9</li>
+                <li className="bg-slate-800/80 p-2.5 rounded border border-rose-700/50 text-rose-300"><strong>Obese:</strong> ≥ 30.0</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* 3. How to use it (steps) */}
+          <div className="space-y-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-white">How to Use It (Steps)</h2>
+            <ol className="list-decimal list-inside space-y-3 pl-2 text-slate-300 text-sm md:text-base">
+              <li><strong className="text-white">Step 1: Select Measurement Standard:</strong> Choose either <strong>Metric</strong> (kg / cm) or <strong>Imperial</strong> (lbs / feet & inches) based on what you used to measure.</li>
+              <li><strong className="text-white">Step 2: Enter Current Morning Weight:</strong> Record your weight first thing in the morning after using the restroom, wearing minimal clothing.</li>
+              <li><strong className="text-white">Step 3: Enter Barefoot Standing Height:</strong> Measure your standing height against a flat vertical wall without shoes.</li>
+              <li><strong className="text-white">Step 4: Press "Calculate BMI":</strong> The tool displays your exact BMI number, your official WHO weight category, and the healthy weight boundary for your height.</li>
             </ol>
           </div>
 
-          <div className="space-y-4">
-            <h2 className="text-2xl font-bold text-white">The Mathematical Formula Behind BMI</h2>
-            <p>
-              The calculation relies on established mathematical equations that normalize body weight relative to height:
-            </p>
-            <div className="bg-slate-900/50 p-4 rounded-xl border border-slate-800 space-y-2 font-mono text-emerald-400">
-              <p>Metric Formula: BMI = Weight (kg) Ã· [Height (m)]Â²</p>
-              <p>Imperial Formula: BMI = 703 Ã— Weight (lbs) Ã· [Height (inches)]Â²</p>
+          {/* 4. 2 Solved Real-Life Examples with Numbers */}
+          <div className="space-y-6">
+            <h2 className="text-2xl md:text-3xl font-bold text-white">2 Solved Real-Life Examples with Numbers</h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="bg-slate-900/60 p-6 rounded-xl border border-slate-700/60 space-y-3">
+                <h3 className="text-lg font-bold text-emerald-400">Example 1: Metric Calculation (Software Engineer)</h3>
+                <p className="text-sm">
+                  <strong>Profile:</strong> David, 34 years old, weighs <strong>84 kg</strong> and stands <strong>178 cm (1.78 m)</strong> tall.
+                </p>
+                <div className="bg-slate-950 p-3 rounded font-mono text-xs text-slate-300 space-y-1">
+                  <p>Height squared: 1.78 × 1.78 = 3.1684 m²</p>
+                  <p>Calculation: 84 ÷ 3.1684 = <strong>26.51</strong></p>
+                </div>
+                <p className="text-sm">
+                  <strong>Outcome:</strong> David’s calculated BMI is <strong>26.5</strong>, classifying him as <em>Overweight</em> (25.0 to 29.9). To achieve a normal BMI of 24.9, David would need a target weight of 78.8 kg (a reduction of 5.2 kg).
+                </p>
+              </div>
+
+              <div className="bg-slate-900/60 p-6 rounded-xl border border-slate-700/60 space-y-3">
+                <h3 className="text-lg font-bold text-sky-400">Example 2: Imperial Calculation (Fitness Enthusiast)</h3>
+                <p className="text-sm">
+                  <strong>Profile:</strong> Maria, 28 years old, weighs <strong>132 lbs</strong> and stands <strong>5 feet 5 inches (65 inches)</strong> tall.
+                </p>
+                <div className="bg-slate-950 p-3 rounded font-mono text-xs text-slate-300 space-y-1">
+                  <p>Height in inches squared: 65 × 65 = 4,225 in²</p>
+                  <p>Calculation: 703 × (132 ÷ 4,225) = 703 × 0.03124 = <strong>21.96</strong></p>
+                </div>
+                <p className="text-sm">
+                  <strong>Outcome:</strong> Maria’s BMI is <strong>22.0</strong>, placing her squarely in the healthy <em>Normal Weight</em> category (18.5 to 24.9).
+                </p>
+              </div>
             </div>
-            <p className="text-sm text-slate-300 mt-2">
-              The scaling factor of 703 in the imperial formula ensures equivalence with the metric metric, converting pounds per square inch to kilograms per square meter.
-            </p>
           </div>
 
+          {/* 5. Common Mistakes */}
           <div className="space-y-4">
-            <h2 className="text-2xl font-bold text-white">Global Weight Categories & Clinical Implications</h2>
-            <p>
-              According to the World Health Organization (WHO), maintaining an optimal BMI is crucial for preventing non-communicable diseases. The standard classifications are:
-            </p>
-            <ul className="list-disc pl-6 space-y-2">
-              <li><strong>Underweight (BMI &lt; 18.5):</strong> Individuals in this category may suffer from malnutrition, compromised immune function, osteoporosis, and clinical anemia.</li>
-              <li><strong>Normal Weight (18.5 to 24.9):</strong> This optimal range is associated with the lowest statistical risk of developing weight-related morbidities and maximum longevity.</li>
-              <li><strong>Overweight (25 to 29.9):</strong> This category indicates excess body weight. It carries a moderately elevated risk for cardiovascular disease, hypertension, and metabolic syndrome.</li>
-              <li><strong>Obesity (BMI â‰¥ 30):</strong> Obesity is recognized as a chronic disease. It significantly increases the risk of type 2 diabetes, coronary artery disease, osteoarthritis, and certain types of carcinomas.</li>
+            <h2 className="text-2xl md:text-3xl font-bold text-white">Common Mistakes When Using BMI</h2>
+            <ul className="list-disc list-inside space-y-2 pl-2 text-slate-300 text-sm">
+              <li><strong className="text-white">Confusing Skeletal Muscle with Adipose Fat:</strong> Because muscle tissue is 18% denser than fat, muscular athletes and bodybuilders often score in the overweight or obese ranges despite having low body fat percentages.</li>
+              <li><strong className="text-white">Weighing at Inconsistent Times of Day:</strong> Water retention, meal digestion, and sodium levels can shift body weight by 1 to 3 kilograms within 24 hours. Always measure under identical morning conditions.</li>
+              <li><strong className="text-white">Measuring Height with Footwear:</strong> Running sneakers or work shoes add 2 to 4 centimeters, distorting your score downward.</li>
+              <li><strong className="text-white">Ignoring Body Fat Distribution:</strong> Visceral fat around abdominal organs carries severe cardiovascular risk, whereas subcutaneous fat on thighs is metabolically benign. BMI cannot differentiate where weight is carried.</li>
+              <li><strong className="text-white">Applying Adult Scales to Adolescents:</strong> Individuals under age 18 must be evaluated using age-and-sex-adjusted pediatric growth charts rather than standard adult thresholds.</li>
             </ul>
           </div>
 
+          {/* 6. 5 FAQs */}
           <div className="space-y-4">
-            <h2 className="text-2xl font-bold text-white">Limitations of the BMI Scale</h2>
-            <p>
-              While highly useful for population screening, BMI has clinical limitations at an individual level. It does not differentiate between lean muscle mass and adipose tissue (fat). Consequently, professional athletes or bodybuilders may be incorrectly classified as overweight or obese. Furthermore, BMI does not account for fat distribution; visceral fat (abdominal fat) is clinically more hazardous than subcutaneous fat.
-            </p>
+            <h2 className="text-2xl md:text-3xl font-bold text-white">5 Frequently Asked Questions (FAQs)</h2>
+            <div className="space-y-4">
+              <div className="bg-slate-900/50 p-5 rounded-xl border border-slate-700/60">
+                <h3 className="font-bold text-white text-base mb-1">1. Is the healthy BMI range identical for men and women?</h3>
+                <p className="text-sm text-slate-300">
+                  Yes, standard WHO guidelines define 18.5 to 24.9 as the normal range for both adult men and women. However, women naturally maintain a higher biological percentage of essential body fat at the same numerical BMI.
+                </p>
+              </div>
+
+              <div className="bg-slate-900/50 p-5 rounded-xl border border-slate-700/60">
+                <h3 className="font-bold text-white text-base mb-1">2. Can you be metabolically fit while classified as overweight?</h3>
+                <p className="text-sm text-slate-300">
+                  Yes. Individuals with good cardiovascular conditioning, high muscle mass, and normal blood pressure, glucose, and lipid profiles frequently exhibit "metabolically healthy overweight" profiles.
+                </p>
+              </div>
+
+              <div className="bg-slate-900/50 p-5 rounded-xl border border-slate-700/60">
+                <h3 className="font-bold text-white text-base mb-1">3. How many kilograms equal 1 point on the BMI scale?</h3>
+                <p className="text-sm text-slate-300">
+                  For an adult of average height (5'7" or 170 cm), approximately 2.9 kilograms (6.4 lbs) corresponds to exactly 1 BMI point.
+                </p>
+              </div>
+
+              <div className="bg-slate-900/50 p-5 rounded-xl border border-slate-700/60">
+                <h3 className="font-bold text-white text-base mb-1">4. Does BMI criteria change for senior citizens (over 65)?</h3>
+                <p className="text-sm text-slate-300">
+                  Geriatric nutritionists often suggest that seniors maintain a slightly higher BMI (23.0 to 27.0) because modest nutritional reserves provide protection against osteoporosis, falls, and recovery from acute illnesses.
+                </p>
+              </div>
+
+              <div className="bg-slate-900/50 p-5 rounded-xl border border-slate-700/60">
+                <h3 className="font-bold text-white text-base mb-1">5. What tools should I consult alongside my BMI score?</h3>
+                <p className="text-sm text-slate-300">
+                  Combine your BMI with our Body Fat Calculator (to analyze body composition) and our TDEE Calculator (to discover your precise daily energy expenditure).
+                </p>
+              </div>
+            </div>
           </div>
 
-          {/* Scientific References Section */}
-          <div className="mt-10 pt-6 border-t border-slate-700/50">
-            <h3 className="text-lg font-bold text-slate-300 mb-3 uppercase tracking-wider text-sm">Scientific References & Sources</h3>
-            <ul className="text-xs text-slate-400 space-y-2">
-              <li>1. World Health Organization (WHO). (2000). Obesity: preventing and managing the global epidemic. Report of a WHO consultation. <em>World Health Organization technical report series</em>, 894, i-xii, 1-253.</li>
-              <li>2. National Institutes of Health (NIH) & National Heart, Lung, and Blood Institute (NHLBI). (1998). Clinical Guidelines on the Identification, Evaluation, and Treatment of Overweight and Obesity in Adults.</li>
-              <li>3. CDC - Centers for Disease Control and Prevention. About Adult BMI. Available at CDC.gov.</li>
-              <li>4. Nuttall, F. Q. (2015). Body Mass Index: Obesity, BMI, and Health: A Critical Review. <em>Nutrition today</em>, 50(3), 117-128.</li>
-            </ul>
+          {/* 7. Related Calculators (Internal Links) */}
+          <div className="space-y-4 pt-4 border-t border-slate-700/60">
+            <h2 className="text-2xl md:text-3xl font-bold text-white">Related Calculators (Internal Links)</h2>
+            <p className="text-sm text-slate-300 mb-4">
+              Explore our connected health and wellness calculators to optimize your fitness and nutrition plans:
+            </p>
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+              <Link to="/health/tdee-calculator" className="p-4 bg-slate-900/60 hover:bg-slate-900 border border-slate-800 hover:border-emerald-500/50 rounded-xl transition-all block group">
+                <span className="font-bold text-white group-hover:text-emerald-400 block mb-1">TDEE Calculator &rarr;</span>
+                <span className="text-xs text-slate-400">Calculate total daily calories burned and maintenance energy.</span>
+              </Link>
+              <Link to="/health/body-fat-calculator" className="p-4 bg-slate-900/60 hover:bg-slate-900 border border-slate-800 hover:border-emerald-500/50 rounded-xl transition-all block group">
+                <span className="font-bold text-white group-hover:text-emerald-400 block mb-1">Body Fat Calculator &rarr;</span>
+                <span className="text-xs text-slate-400">Estimate body fat percentage using US Navy tape measurements.</span>
+              </Link>
+              <Link to="/health/macro-calculator" className="p-4 bg-slate-900/60 hover:bg-slate-900 border border-slate-800 hover:border-emerald-500/50 rounded-xl transition-all block group">
+                <span className="font-bold text-white group-hover:text-emerald-400 block mb-1">Macro Calculator &rarr;</span>
+                <span className="text-xs text-slate-400">Determine daily protein, carbohydrate, and fat grams for your goal.</span>
+              </Link>
+              <Link to="/health/calories-burned-calculator" className="p-4 bg-slate-900/60 hover:bg-slate-900 border border-slate-800 hover:border-emerald-500/50 rounded-xl transition-all block group">
+                <span className="font-bold text-white group-hover:text-emerald-400 block mb-1">Calories Burned Calculator &rarr;</span>
+                <span className="text-xs text-slate-400">Estimate energy burned across dozens of cardio and sports activities.</span>
+              </Link>
+              <Link to="/health/water-intake-calculator" className="p-4 bg-slate-900/60 hover:bg-slate-900 border border-slate-800 hover:border-emerald-500/50 rounded-xl transition-all block group">
+                <span className="font-bold text-white group-hover:text-emerald-400 block mb-1">Water Intake Calculator &rarr;</span>
+                <span className="text-xs text-slate-400">Determine your daily hydration requirements based on weight and activity.</span>
+              </Link>
+            </div>
           </div>
+
         </section>
 
-        {/* Affiliate - Gluco6 ClickBank */}
-        <div className="mt-8 p-5 bg-gradient-to-br from-slate-800/60 to-slate-900/60 border border-slate-700/50 rounded-xl">
-          <div className="flex items-center gap-2 mb-4">
-            <span className="text-emerald-400">âš¡</span>
-            <h3 className="text-lg font-semibold text-white">Recommended Health Tool</h3>
-            <span className="text-xs text-slate-400 ml-auto">Affiliate</span>
-          </div>
-          <a
-            href="https://tinyurl.com/5448pvdk"
-            target="_blank"
-            rel="noopener noreferrer sponsored"
-            className="flex items-start gap-3 p-3 rounded-lg bg-slate-800/40 hover:bg-slate-700/50 border border-slate-700/30 hover:border-emerald-600/50 transition-all group"
-          >
-            <span className="text-emerald-400 group-hover:translate-x-0.5 transition-transform">â†’</span>
-            <div>
-              <span className="text-sm font-medium text-slate-200 group-hover:text-emerald-300 transition-colors">
-                Gluco6 - Blood Sugar Support
-              </span>
-              <p className="text-xs text-slate-400 mt-0.5">Natural supplement for healthy glucose levels &amp; weight management</p>
-            </div>
-          </a>
-        </div>
-
-        <TDEE_FAQ items={faqItems} />
-      
-        <div className="mt-12 bg-slate-800/50 rounded-xl p-8 border border-slate-700">
-          <h2 className="text-2xl font-bold text-white mb-4">Understanding Your Body Mass Index (BMI)</h2>
-          <p className="text-slate-300 mb-4 leading-relaxed">
-            The Body Mass Index (BMI) is a widely used screening tool that estimates whether a person has a healthy body weight for their height. Our free BMI calculator allows you to quickly determine your current BMI category by simply entering your height and weight in either metric (cm/kg) or imperial (ft/lbs) units.
-          </p>
-          <h3 className="text-xl font-semibold text-white mb-3">How is BMI Calculated?</h3>
-          <p className="text-slate-300 mb-4 leading-relaxed">
-            The mathematical formula for BMI is remarkably simple: your weight in kilograms divided by the square of your height in meters (kg/mÂ²). For imperial measurements, the formula is (weight in pounds / (height in inches)Â²) x 703. Our calculator handles these conversions automatically, giving you an instant and accurate classification based on World Health Organization (WHO) standards.
-          </p>
-          <h3 className="text-xl font-semibold text-white mb-3">Limitations and Next Steps</h3>
-          <p className="text-slate-300 leading-relaxed">
-            While BMI is an excellent quick-reference tool, it's important to remember that it doesn't distinguish between muscle mass and fat. Athletes or bodybuilders may have a high BMI but low body fat. If your BMI falls outside the "Normal" range, consider exploring our Body Fat Calculator or consulting with a healthcare professional to get a more comprehensive view of your metabolic health.
-          </p>
-        </div>
-
-</div>
+      </div>
     </>
   );
 };
