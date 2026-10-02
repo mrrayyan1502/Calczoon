@@ -1,3 +1,5 @@
+﻿'use client';
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -84,7 +86,7 @@ const CalculatorsList = () => {
                                             <p className="text-sm text-slate-300 mt-2 mb-4">{calc.description}</p>
                                         </div>
                                         <Button asChild variant="secondary" className="w-full mt-auto">
-                                            <Link to={calc.path}>Use Tool →</Link>
+                                            <Link to={calc.path}>Use Tool â†’</Link>
                                         </Button>
                                     </Card>
                                 ))}

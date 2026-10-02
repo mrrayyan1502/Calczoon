@@ -1,3 +1,5 @@
+﻿'use client';
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
@@ -16,7 +18,7 @@ const AboutSection = () => (
       </h2>
       <p className="text-lg text-slate-300 leading-relaxed mb-8">
         Our mission is to become the internet's best collection of free, easy-to-use online calculators.
-        We provide working calculators for every need—finance, health, mathematics, science, and everyday life.
+        We provide working calculators for every needâ€”finance, health, mathematics, science, and everyday life.
         Each calculator page is not just a tool, but a complete guide to help you understand the concepts behind the numbers.
       </p>
       <Button asChild>

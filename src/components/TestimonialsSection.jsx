@@ -1,3 +1,5 @@
+﻿'use client';
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
@@ -8,19 +10,19 @@ const testimonials = [
     name: 'Sarah J.',
     title: 'Financial Planner',
     testimonial: "Calczoon's loan and mortgage calculators are a lifesaver! I use them daily with my clients to quickly illustrate financial scenarios. They are intuitive, accurate, and save me so much time.",
-    avatar: "👩‍💼"
+    avatar: "ðŸ‘©â€ðŸ’¼"
   },
   {
     name: 'Mike R.',
     title: 'Fitness Coach',
     testimonial: "The TDEE and Macro calculators are my go-to tools for creating nutrition plans. My clients love how easy it is to understand their calorie and macro needs.",
-    avatar: "💪"
+    avatar: "ðŸ’ª"
   },
   {
     name: 'Emily T.',
     title: 'University Student',
     testimonial: "As a math student, the Fraction and Statistics calculators are invaluable. They help me double-check my homework and understand complex concepts. It's like having a personal tutor.",
-    avatar: "🎓"
+    avatar: "ðŸŽ“"
   }
 ];
 

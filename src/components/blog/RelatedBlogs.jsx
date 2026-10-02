@@ -1,3 +1,5 @@
+﻿'use client';
+
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { BookOpen, TrendingUp, HeartPulse, Calculator, GraduationCap } from 'lucide-react';
@@ -88,3 +90,4 @@ const RelatedBlogs = ({ category }) => {
 };
 
 export default RelatedBlogs;
+

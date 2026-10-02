@@ -1,3 +1,5 @@
+﻿'use client';
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
@@ -24,7 +26,7 @@ const FeaturedToolSection = () => {
                             <CardContent className="p-0">
                                 <p className="text-slate-300 mb-6">Find your daily calorie needs to create a successful cutting phase and achieve your weight loss goals.</p>
                                 <Button asChild size="lg">
-                                    <Link to="/health/tdee-calculator">Use Tool →</Link>
+                                    <Link to="/health/tdee-calculator">Use Tool â†’</Link>
                                 </Button>
                             </CardContent>
                         </div>

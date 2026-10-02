@@ -1,3 +1,5 @@
+﻿'use client';
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -54,7 +56,7 @@ const QuickLinksSection = () => {
                                     className="flex items-baseline space-x-2 sm:space-x-3"
                                 >
                                     <span className="text-slate-300">{item.text}</span>
-                                    <span className="text-primary">→</span>
+                                    <span className="text-primary">â†’</span>
                                     <Link
                                         to={item.path}
                                         className="text-primary font-semibold hover:underline flex-shrink-0"

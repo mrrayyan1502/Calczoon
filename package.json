@@ -4,10 +4,10 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "node tools/generate-llms.js && node tools/generate-sitemap.js && vite build",
-    "dev": "vite",
-    "preview": "vite preview --host :: --port 3000",
-    "lint": "eslint . --quiet"
+    "build": "next build",
+    "dev": "next dev",
+    "start": "next start",
+    "lint": "next lint"
   },
   "reactSnap": {
     "include": [
@@ -51,6 +51,7 @@
     "clsx": "^2.1.1",
     "framer-motion": "^10.18.0",
     "lucide-react": "^0.292.0",
+    "next": "^14.2.35",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",

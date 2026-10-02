@@ -1,3 +1,5 @@
+﻿'use client';
+
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -11,7 +13,7 @@ const PlaceholderCalculator = ({ toolName }) => {
     e.preventDefault();
     toast({
       title: "Coming Soon!",
-      description: `🚧 The ${toolName} isn't implemented yet—but you can request it in your next prompt! 🚀`,
+      description: `ðŸš§ The ${toolName} isn't implemented yetâ€”but you can request it in your next prompt! ðŸš€`,
     });
   };
 

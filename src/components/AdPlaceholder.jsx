@@ -1,3 +1,5 @@
+﻿'use client';
+
 import React, { useEffect, useRef } from 'react';
 
 /**
@@ -33,3 +35,4 @@ const AdPlaceholder = ({ slot = '1234567890', format = 'auto', className = '' })
 };
 
 export default AdPlaceholder;
+

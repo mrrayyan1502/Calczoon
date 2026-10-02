@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Calculator, Menu, Rss, Info, Mail, HeartHandshake as Handshake, ChevronDown, Activity, HeartPulse, Target, Flame, BrainCircuit, TrendingDown } from 'lucide-react';

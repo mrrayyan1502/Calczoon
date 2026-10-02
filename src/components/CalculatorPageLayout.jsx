@@ -1,3 +1,5 @@
+﻿'use client';
+
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Share2, Code, Copy, Check } from 'lucide-react';

@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Twitter, Linkedin, Github, Home, Heart, Calculator, Info, Mail, HeartHandshake as Handshake, Shield, FileText, Map, Rss } from 'lucide-react';

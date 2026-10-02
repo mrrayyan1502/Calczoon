@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import { Facebook, Twitter, Link as LinkIcon, MessageCircle } from 'lucide-react';
 import { useLocation } from 'react-router-dom';
