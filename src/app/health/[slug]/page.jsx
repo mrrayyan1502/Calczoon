@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import { healthCalculators } from '@/data/calculatorRegistry';
+import { getCalculatorSchemas } from '@/data/calculatorSchemas';
 
 export async function generateStaticParams() {
   return Object.keys(healthCalculators).map((slug) => ({
@@ -43,5 +44,17 @@ export default function HealthCalculatorPage({ params }) {
   }
 
   const Component = calc.component;
-  return <Component />;
+  const schemas = getCalculatorSchemas(params.slug);
+
+  return (
+    <>
+      {schemas && schemas.length > 0 && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
+        />
+      )}
+      <Component />
+    </>
+  );
 }

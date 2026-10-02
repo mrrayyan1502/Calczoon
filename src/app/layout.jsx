@@ -8,7 +8,7 @@ export const metadata = {
     default: 'CalcZoon – Free Online Calculators for Math, Finance, Health & More',
     template: '%s',
   },
-  description: '100+ free online calculators for math, health, finance, fitness and everyday life. Fast, accurate results with no signup required. Try CalcZoon now.',
+  description: 'Free online calculators for finance, health, math, and everyday calculations. Fast, accurate results with step-by-step formulas and solved examples.',
   verification: {
     google: 'fyUYtNajmnEhD5FPSAg51k8jwv_ezuSKcqopR6rFi70',
   },
@@ -40,6 +40,12 @@ export const metadata = {
     card: 'summary_large_image',
     site: '@calczoon',
   },
+};
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: '#0f172a',
 };
 
 const orgSchema = {
@@ -105,13 +111,7 @@ export default function RootLayout({ children }) {
           `}
         </Script>
 
-        {/* Google AdSense */}
-        <Script
-          id="google-adsense"
-          strategy="lazyOnload"
-          crossOrigin="anonymous"
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1668581059091583"
-        />
+        {/* Google AdSense: Inactive during review to guarantee pristine Core Web Vitals and zero ad requests */}
 
         <ClientLayout>{children}</ClientLayout>
       </body>
