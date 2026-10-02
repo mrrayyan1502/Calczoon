@@ -27,12 +27,11 @@ const navLinks = [
         to: '/health-fitness-calculators', 
         label: 'Health & Fitness',
         subItems: [
-            { to: '/health/tdee-calculator', label: 'TDEE', icon: <Activity className="w-4 h-4 mr-2" /> },
-            { to: '/health/bmi-calculator', label: 'BMI', icon: <HeartPulse className="w-4 h-4 mr-2" /> },
-            { to: '/health/macro-calculator', label: 'Macro', icon: <Target className="w-4 h-4 mr-2" /> },
-            { to: '/health/calories-burned-calculator', label: 'Calories Burned', icon: <Flame className="w-4 h-4 mr-2" /> },
-            { to: '/health/weight-loss-calculator', label: 'Weight Loss', icon: <TrendingDown className="w-4 h-4 mr-2" /> },
+            { to: '/health/bmi-calculator', label: 'BMI Calculator', icon: <HeartPulse className="w-4 h-4 mr-2" /> },
+            { to: '/health/tdee-calculator', label: 'TDEE Calculator', icon: <Activity className="w-4 h-4 mr-2" /> },
+            { to: '/health/macro-calculator', label: 'Macro Calculator', icon: <Target className="w-4 h-4 mr-2" /> },
             { to: '/health/body-fat-calculator', label: 'Body Fat', icon: <BrainCircuit className="w-4 h-4 mr-2" /> },
+            { to: '/health/calories-burned-calculator', label: 'Calories Burned', icon: <Flame className="w-4 h-4 mr-2" /> },
         ]
       },
       { to: '/math-science-calculators', label: 'Math & Science' },

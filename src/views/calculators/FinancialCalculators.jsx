@@ -1,28 +1,20 @@
-﻿'use client';
+'use client';
 
 import React from 'react';
 import Seo from '@/components/Seo';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { DollarSign } from 'lucide-react';
+import { DollarSign, ArrowRight, ShieldCheck } from 'lucide-react';
 
 const financialCalculators = [
-  { name: 'Mortgage Calculator', description: 'Estimate your monthly home payments, principal, and interest.', path: '/financial/mortgage-calculator' },
-  { name: 'Currency Converter', description: 'Get live exchange rates for global currencies.', path: '/financial/currency-converter' },
-  { name: 'Loan EMI Calculator', description: 'Estimate monthly payments for auto, personal, or other loans.', path: '/financial/loan-calculator' },
-  { name: 'Compound Interest Calculator', description: 'See how your investments can grow over time.', path: '/financial/compound-interest-calculator' },
-  { name: 'Investment ROI Calculator', description: 'Measure the profitability and return on your investments.', path: '/financial/investment-roi-calculator' },
-  { name: 'Retirement Savings Calculator', description: 'Project your savings to see if you are on track for retirement.', path: '/financial/retirement-calculator' },
-  { name: 'Salary Calculator', description: 'Convert your salary between annual, monthly, and hourly rates.', path: '/financial/salary-calculator' },
-  { name: 'Mortgage Payoff Calculator', description: 'Calculate how extra payments can shorten your mortgage term.', path: '/financial/mortgage-payoff-calculator' },
-  { name: 'DTI Ratio Calculator', description: 'Check your debt-to-income ratio for financial health.', path: '/financial/debt-to-income-ratio-calculator' },
-  { name: 'Simple Interest Calculator', description: 'Calculate simple interest on loans or savings.', path: '/financial/simple-interest-calculator' },
-  { name: 'Savings Goal Calculator', description: 'Plan how to reach your savings goals over time.', path: '/financial/savings-calculator' },
-  { name: 'Crypto Profit Calculator', description: 'Track your profits and losses from cryptocurrency trades.', path: '/financial/crypto-profit-calculator' },
-  { name: 'Freelancer Tax Calculator', description: 'Estimate your self-employment taxes and plan for payments.', path: '/financial/freelancer-tax-calculator' },
-  { name: 'Auto Loan Calculator', description: 'Estimate monthly car payments, total interest, and trade-in value.', path: '/financial/auto-loan-calculator' },
-  { name: 'VAT & Sales Tax Calculator', description: 'Calculate gross, net, and VAT amounts for UK, EU, and global rates.', path: '/financial/vat-calculator' },
+  { name: 'Mortgage Calculator', description: 'Estimate your monthly home payments, principal, interest, taxes, and amortization.', path: '/financial/mortgage-calculator' },
+  { name: 'Loan EMI Calculator', description: 'Estimate monthly payments, interest charges, and payoff schedules for loans.', path: '/financial/loan-calculator' },
+  { name: 'Compound Interest Calculator', description: 'Calculate how your savings and mutual funds multiply over 5 to 30 years.', path: '/financial/compound-interest-calculator' },
+  { name: 'Live Currency Converter', description: 'Convert 150+ world currencies instantly with real-time foreign exchange rates.', path: '/financial/currency-converter' },
+  { name: 'Savings Goal Calculator', description: 'Plan monthly contributions to achieve your target financial milestones.', path: '/financial/savings-calculator' },
+  { name: 'Retirement Savings Calculator', description: 'Project your retirement nest egg, inflation impact, and sustainable withdrawal.', path: '/financial/retirement-calculator' },
+  { name: 'SIP Investment Calculator', description: 'Estimate returns on monthly Systematic Investment Plans with compounding interest.', path: '/financial/sip-calculator' },
 ];
 
 const FinancialCalculators = () => {
@@ -30,27 +22,40 @@ const FinancialCalculators = () => {
         <>
             <Seo
                 title="Free Online Financial Calculators - CalcZoon"
-                description="Get access to free online financial calculators for budgeting, loans, investments, and more. Calculate your finances easily with our reliable financial tools."
+                description="Access our curated suite of free financial calculators for mortgages, loans, compound interest, savings goals, and retirement planning."
                 canonicalUrl="/financial-calculators"
             />
-            <div className="container mx-auto px-4 py-16">
+            <div className="container mx-auto px-4 py-16 max-w-7xl">
                 <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-center mb-16">
+                    <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl mb-6 shadow-lg">
+                      <DollarSign className="w-8 h-8 text-white" />
+                    </div>
                     <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4">Free Online Financial Calculators</h1>
-                    <p className="text-lg text-slate-300 max-w-3xl mx-auto">Take control of your financial future with our free online financial calculators. From planning loans and investments to saving for retirement, we have a free financial calculator for every need. Our suite of financial calculators will help you make informed decisions, whether you are looking to calculate mortgage payments or plan for future expenses. With our online financial calculator, managing your finances has never been easier.</p>
+                    <p className="text-lg text-slate-300 max-w-3xl mx-auto leading-relaxed">
+                      Take control of your financial future with our reliable financial calculation tools. From planning home mortgages and personal loans to growing investments through compound interest, these tools deliver fast and accurate financial estimates.
+                    </p>
                 </motion.div>
+
                 <motion.div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.2 }}>
                     {financialCalculators.map((calc, index) => (
                         <motion.div key={calc.path} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: index * 0.05 }}>
                             <Link to={calc.path} className="block h-full">
-                                <Card className="bg-slate-800/40 border-slate-700/50 h-full hover:bg-slate-800 hover:border-primary/50 transition-all duration-300 group flex flex-col">
-                                    <CardHeader>
-                                        <CardTitle className="text-xl text-primary flex items-center gap-2">
-                                            <DollarSign size={24} /> {calc.name}
-                                        </CardTitle>
-                                    </CardHeader>
-                                    <CardContent className="flex-grow">
-                                        <p className="text-slate-300">{calc.description}</p>
-                                    </CardContent>
+                                <Card className="bg-slate-800/40 border-slate-700/50 h-full hover:bg-slate-800 hover:border-emerald-500/50 transition-all duration-300 group flex flex-col justify-between p-6 rounded-2xl shadow-xl">
+                                    <div>
+                                        <CardHeader className="p-0 mb-4">
+                                            <CardTitle className="text-xl font-bold text-white group-hover:text-emerald-400 transition-colors flex items-center justify-between">
+                                                <span>{calc.name}</span>
+                                                <ArrowRight className="w-5 h-5 text-slate-500 group-hover:text-emerald-400 group-hover:translate-x-1 transition-all" />
+                                            </CardTitle>
+                                        </CardHeader>
+                                        <CardContent className="p-0">
+                                            <p className="text-sm text-slate-300 leading-relaxed">{calc.description}</p>
+                                        </CardContent>
+                                    </div>
+                                    <div className="mt-6 pt-4 border-t border-slate-700/40 text-xs font-semibold text-emerald-400 flex items-center justify-between">
+                                        <span>Use Calculator</span>
+                                        <span>&rarr;</span>
+                                    </div>
                                 </Card>
                             </Link>
                         </motion.div>

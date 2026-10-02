@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React from 'react';
 import { Link } from 'react-router-dom';
@@ -18,19 +18,13 @@ const mainPages = [
 
 const financialCalculators = [
   { path: '/financial-calculators', name: 'Financial Calculators Hub' },
-  { path: '/financial/simple-interest-calculator', name: 'Simple Interest Calculator' },
+  { path: '/financial/mortgage-calculator', name: 'Mortgage Calculator' },
+  { path: '/financial/loan-calculator', name: 'Loan EMI Calculator' },
   { path: '/financial/compound-interest-calculator', name: 'Compound Interest Calculator' },
-  { path: '/financial/loan-calculator', name: 'Loan Calculator' },
-  { path: '/financial/mortgage-payoff-calculator', name: 'Mortgage Payoff Calculator' },
-  { path: '/financial/investment-roi-calculator', name: 'Investment ROI Calculator' },
-  { path: '/financial/retirement-calculator', name: 'Retirement Calculator' },
-  { path: '/financial/savings-calculator', name: 'Savings Calculator' },
-  { path: '/financial/salary-calculator', name: 'Salary Calculator' },
-  { path: '/financial/vat-calculator', name: 'VAT & Sales Tax Calculator' },
-  { path: '/financial/auto-loan-calculator', name: 'Auto Loan Calculator' },
-  { path: '/financial/debt-to-income-ratio-calculator', name: 'DTI Ratio Calculator' },
-  { path: '/financial/crypto-profit-calculator', name: 'Crypto Profit Calculator' },
-  { path: '/financial/freelancer-tax-calculator', name: 'Freelancer Tax Calculator' },
+  { path: '/financial/currency-converter', name: 'Currency Converter' },
+  { path: '/financial/savings-calculator', name: 'Savings Goal Calculator' },
+  { path: '/financial/retirement-calculator', name: 'Retirement Savings Calculator' },
+  { path: '/financial/sip-calculator', name: 'SIP Investment Calculator' },
 ];
 
 const healthCalculators = [
@@ -38,27 +32,28 @@ const healthCalculators = [
   { path: '/health/bmi-calculator', name: 'BMI Calculator' },
   { path: '/health/tdee-calculator', name: 'TDEE Calculator' },
   { path: '/health/macro-calculator', name: 'Macro Calculator' },
+  { path: '/health/body-fat-calculator', name: 'Body Fat Calculator' },
   { path: '/health/calories-burned-calculator', name: 'Calories Burned Calculator' },
-  { path: '/health/pregnancy-due-date-calculator', name: 'Pregnancy Due Date Calculator' },
-  { path: '/health/daily-water-intake-calculator', name: 'Daily Water Intake Calculator' },
+  { path: '/health/water-intake-calculator', name: 'Water Intake Calculator' },
 ];
 
 const mathCalculators = [
-    { path: '/math-science-calculators', name: 'Math & Science Calculators Hub' },
-    { path: '/math/percentage-calculator', name: 'Percentage Calculator' },
-    { path: '/math/fraction-calculator', name: 'Fraction Calculator' },
-    { path: '/math/triangle-calculator', name: 'Triangle Calculator' },
-    { path: '/math/statistics-calculator', name: 'Statistics Calculator' },
-    { path: '/math/exponent-calculator', name: 'Exponent Calculator' },
+  { path: '/math-science-calculators', name: 'Math & Science Calculators Hub' },
+  { path: '/math/percentage-calculator', name: 'Percentage Calculator' },
+  { path: '/math/fraction-calculator', name: 'Fraction Calculator' },
+  { path: '/math/scientific-calculator', name: 'Scientific Calculator' },
+  { path: '/math/triangle-calculator', name: 'Triangle Calculator' },
+  { path: '/math/statistics-calculator', name: 'Statistics Calculator' },
 ];
 
 const lifestyleCalculators = [
-    { path: '/lifestyle-everyday-calculators', name: 'Lifestyle & Everyday Calculators Hub' },
-    { path: '/lifestyle/age-calculator', name: 'Age Calculator' },
-    { path: '/lifestyle/gpa-calculator', name: 'GPA Calculator' },
-    { path: '/lifestyle/concrete-calculator', name: 'Concrete Calculator' },
-    { path: '/lifestyle/sleep-calculator', name: 'Sleep Calculator' },
-    { path: '/lifestyle/fuel-cost-calculator', name: 'Fuel Cost Calculator' },
+  { path: '/lifestyle-everyday-calculators', name: 'Lifestyle & Everyday Calculators Hub' },
+  { path: '/lifestyle/age-calculator', name: 'Age Calculator' },
+  { path: '/lifestyle/discount-calculator', name: 'Discount & Sales Calculator' },
+  { path: '/lifestyle/tip-calculator', name: 'Tip & Bill Split Calculator' },
+  { path: '/lifestyle/date-calculator', name: 'Date Duration Calculator' },
+  { path: '/lifestyle/unit-converter', name: 'Unit Measurement Converter' },
+  { path: '/lifestyle/fuel-cost-calculator', name: 'Fuel Cost Trip Calculator' },
 ];
 
 const blogPosts = [

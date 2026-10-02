@@ -24,6 +24,179 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      // 17 Removed Calculators -> Redirect to Category or Best Alternative
+      {
+        source: '/auto-loan-calculator',
+        destination: '/financial/loan-calculator',
+        permanent: true,
+      },
+      {
+        source: '/financial/auto-loan-calculator',
+        destination: '/financial/loan-calculator',
+        permanent: true,
+      },
+      {
+        source: '/mortgage-payoff-calculator',
+        destination: '/financial/mortgage-calculator',
+        permanent: true,
+      },
+      {
+        source: '/financial/mortgage-payoff-calculator',
+        destination: '/financial/mortgage-calculator',
+        permanent: true,
+      },
+      {
+        source: '/simple-interest-calculator',
+        destination: '/financial/compound-interest-calculator',
+        permanent: true,
+      },
+      {
+        source: '/financial/simple-interest-calculator',
+        destination: '/financial/compound-interest-calculator',
+        permanent: true,
+      },
+      {
+        source: '/debt-to-income-ratio-calculator',
+        destination: '/financial-calculators',
+        permanent: true,
+      },
+      {
+        source: '/financial/debt-to-income-ratio-calculator',
+        destination: '/financial-calculators',
+        permanent: true,
+      },
+      {
+        source: '/investment-roi-calculator',
+        destination: '/financial-calculators',
+        permanent: true,
+      },
+      {
+        source: '/financial/investment-roi-calculator',
+        destination: '/financial-calculators',
+        permanent: true,
+      },
+      {
+        source: '/salary-calculator',
+        destination: '/financial-calculators',
+        permanent: true,
+      },
+      {
+        source: '/financial/salary-calculator',
+        destination: '/financial-calculators',
+        permanent: true,
+      },
+      {
+        source: '/crypto-profit-calculator',
+        destination: '/financial-calculators',
+        permanent: true,
+      },
+      {
+        source: '/financial/crypto-profit-calculator',
+        destination: '/financial-calculators',
+        permanent: true,
+      },
+      {
+        source: '/freelancer-tax-calculator',
+        destination: '/financial-calculators',
+        permanent: true,
+      },
+      {
+        source: '/financial/freelancer-tax-calculator',
+        destination: '/financial-calculators',
+        permanent: true,
+      },
+      {
+        source: '/vat-calculator',
+        destination: '/financial-calculators',
+        permanent: true,
+      },
+      {
+        source: '/financial/vat-calculator',
+        destination: '/financial-calculators',
+        permanent: true,
+      },
+      {
+        source: '/ideal-weight-calculator',
+        destination: '/health/bmi-calculator',
+        permanent: true,
+      },
+      {
+        source: '/health/ideal-weight-calculator',
+        destination: '/health/bmi-calculator',
+        permanent: true,
+      },
+      {
+        source: '/weight-loss-calculator',
+        destination: '/health/tdee-calculator',
+        permanent: true,
+      },
+      {
+        source: '/health/weight-loss-calculator',
+        destination: '/health/tdee-calculator',
+        permanent: true,
+      },
+      {
+        source: '/pregnancy-due-date-calculator',
+        destination: '/health-fitness-calculators',
+        permanent: true,
+      },
+      {
+        source: '/health/pregnancy-due-date-calculator',
+        destination: '/health-fitness-calculators',
+        permanent: true,
+      },
+      {
+        source: '/exponent-calculator',
+        destination: '/math/scientific-calculator',
+        permanent: true,
+      },
+      {
+        source: '/math/exponent-calculator',
+        destination: '/math/scientific-calculator',
+        permanent: true,
+      },
+      {
+        source: '/gpa-calculator',
+        destination: '/lifestyle-everyday-calculators',
+        permanent: true,
+      },
+      {
+        source: '/lifestyle/gpa-calculator',
+        destination: '/lifestyle-everyday-calculators',
+        permanent: true,
+      },
+      {
+        source: '/concrete-calculator',
+        destination: '/lifestyle-everyday-calculators',
+        permanent: true,
+      },
+      {
+        source: '/lifestyle/concrete-calculator',
+        destination: '/lifestyle-everyday-calculators',
+        permanent: true,
+      },
+      {
+        source: '/sleep-calculator',
+        destination: '/lifestyle-everyday-calculators',
+        permanent: true,
+      },
+      {
+        source: '/lifestyle/sleep-calculator',
+        destination: '/lifestyle-everyday-calculators',
+        permanent: true,
+      },
+      {
+        source: '/time-zone-converter',
+        destination: '/lifestyle-everyday-calculators',
+        permanent: true,
+      },
+      {
+        source: '/lifestyle/time-zone-converter',
+        destination: '/lifestyle-everyday-calculators',
+        permanent: true,
+      },
+
+      // Legacy Blog & Alias Redirects
       {
         source: '/blog/top-financial-calculators-2025',
         destination: '/blog/top-financial-calculators-for-financial-planning',
@@ -56,7 +229,7 @@ const nextConfig = {
       },
       {
         source: '/mortgage',
-        destination: '/financial/mortgage-payoff-calculator',
+        destination: '/financial/mortgage-calculator',
         permanent: true,
       },
       {
