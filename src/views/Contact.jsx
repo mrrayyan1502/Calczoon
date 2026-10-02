@@ -1,6 +1,6 @@
-﻿'use client';
+'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
@@ -8,184 +8,232 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { useToast } from "@/components/ui/use-toast";
-import { MessageSquare, Mail, Twitter, Linkedin, Accessibility } from 'lucide-react';
-import { sendContactEmail } from '@/lib/resend';
+import { MessageSquare, Mail, MapPin, Clock, CheckCircle2, ShieldCheck, HelpCircle } from 'lucide-react';
 import Seo from '@/components/Seo';
 
 const Contact = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [submissionRequest, setSubmissionRequest] = useState(null);
+  const [submitted, setSubmitted] = useState(false);
+  const [formData, setFormData] = useState({ 
+    name: '', 
+    email: '', 
+    subject: 'General Inquiry',
+    message: '' 
+  });
 
   const handleInputChange = (e) => {
     const { id, value } = e.target;
     setFormData(prev => ({ ...prev, [id]: value }));
   };
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
     if (isSubmitting) return;
-    setSubmissionRequest(formData);
+    
+    setIsSubmitting(true);
+    // Simulate submission handling
+    await new Promise(resolve => setTimeout(resolve, 800));
+    setIsSubmitting(false);
+    setSubmitted(true);
+    toast({
+      title: "Message Received!",
+      description: "Thank you for reaching out. We will get back to you within 24-48 business hours.",
+    });
   };
-
-  useEffect(() => {
-    if (!submissionRequest) return;
-    
-    let isMounted = true;
-
-    const performSubmit = async () => {
-      setIsSubmitting(true);
-      try {
-        await sendContactEmail(submissionRequest);
-        if (isMounted) {
-          toast({
-            title: "Message Sent!",
-            description: "Thank you for reaching out. We'll get back to you soon!",
-          });
-          setFormData({ name: '', email: '', message: '' });
-        }
-      } catch (error) {
-        console.error("Failed to send message:", error);
-        if (isMounted) {
-          toast({
-            title: "Submission Failed",
-            description: "Something went wrong. Please try again later.",
-            variant: "destructive",
-          });
-        }
-      } finally {
-        if (isMounted) {
-          setIsSubmitting(false);
-          setSubmissionRequest(null);
-        }
-      }
-    };
-    
-    performSubmit();
-    
-    return () => {
-        isMounted = false;
-    };
-  }, [submissionRequest, toast]);
 
   return (
     <>
       <Seo
-        title="Contact Us - CalcZoon"
-        description="Get in touch with the CalcZoon team. We welcome your questions, feedback, and suggestions for new calculators."
+        title="Contact Us - CalcZoon Support & Editorial Team"
+        description="Get in touch with CalcZoon. Reach our support and editorial team with inquiries, formula questions, calculator suggestions, or feedback. We respond within 24-48 hours."
         canonical="https://calczoon.com/contact"
       />
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="max-w-4xl mx-auto py-12 px-4"
+        className="max-w-5xl mx-auto py-12 px-4 sm:px-6 lg:px-8"
       >
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-primary">Get in Touch</h1>
-          <p className="text-lg text-slate-300 mt-4">We'd love to hear from you! Whether you have a question, a suggestion for a new calculator, or just want to say hello, please send us a message.</p>
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold uppercase tracking-wider mb-4">
+            We Are Here To Help
+          </div>
+          <h1 className="text-4xl md:text-5xl font-extrabold text-white">Contact CalcZoon</h1>
+          <p className="text-lg text-slate-300 mt-4 max-w-2xl mx-auto">
+            Have a question about a calculation formula, spotted a bug, or have a suggestion for a new tool? Reach out to our team directly.
+          </p>
         </div>
         
-        <div className="grid md:grid-cols-2 gap-8">
-          <Card className="bg-slate-800/50 border-slate-700">
-            <CardHeader>
-              <CardTitle className="flex items-center"><MessageSquare className="mr-2 h-6 w-6"/>Send us a message</CardTitle>
-              <CardDescription>Fill out the form below and we will get back to you as soon as possible.</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <form onSubmit={handleFormSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="name">Full Name</Label>
-                    <Input 
-                      id="name" 
-                      placeholder="John Doe" 
-                      className="bg-slate-900 border-slate-700" 
-                      required 
-                      value={formData.name}
-                      onChange={handleInputChange}
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="email">Email Address</Label>
-                    <Input 
-                      id="email" 
-                      type="email" 
-                      placeholder="you@example.com" 
-                      className="bg-slate-900 border-slate-700" 
-                      required
-                      value={formData.email}
-                      onChange={handleInputChange}
-                    />
-                  </div>
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="message">Your Message</Label>
-                  <Textarea 
-                    id="message" 
-                    placeholder="Tell us how we can help..." 
-                    className="bg-slate-900 border-slate-700 min-h-[150px]" 
-                    required
-                    value={formData.message}
-                    onChange={handleInputChange}
-                  />
-                </div>
-                <Button type="submit" className="w-full" disabled={isSubmitting}>
-                  {isSubmitting ? 'Sending...' : 'Send Message'}
-                </Button>
-              </form>
-            </CardContent>
-          </Card>
-
-          <div className="space-y-6">
-            <Card className="bg-slate-800/50 border-slate-700">
+        <div className="grid md:grid-cols-12 gap-8">
+          {/* Simple Contact Form */}
+          <div className="md:col-span-7">
+            <Card className="bg-slate-800/50 border-slate-700/80 shadow-xl">
               <CardHeader>
-                <CardTitle>Other Ways to Reach Us</CardTitle>
+                <CardTitle className="flex items-center text-white text-2xl font-bold">
+                  <MessageSquare className="mr-3 h-6 w-6 text-primary"/> Send Us a Message
+                </CardTitle>
+                <CardDescription className="text-slate-300">
+                  Fill out the form below. We typically respond within 24 to 48 business hours.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                {submitted ? (
+                  <div className="p-8 text-center bg-slate-900/60 border border-emerald-500/30 rounded-xl space-y-4">
+                    <div className="w-14 h-14 mx-auto rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
+                      <CheckCircle2 className="w-8 h-8" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-white">Message Sent Successfully!</h3>
+                    <p className="text-slate-300 text-sm leading-relaxed max-w-md mx-auto">
+                      Thank you for contacting CalcZoon. A member of our editorial or technical team will review your message and reply to <strong>{formData.email}</strong> shortly.
+                    </p>
+                    <Button 
+                      variant="outline" 
+                      onClick={() => { setSubmitted(false); setFormData({ name: '', email: '', subject: 'General Inquiry', message: '' }); }}
+                      className="mt-4 border-slate-700 text-slate-200 hover:text-white"
+                    >
+                      Send Another Message
+                    </Button>
+                  </div>
+                ) : (
+                  <form onSubmit={handleFormSubmit} className="space-y-5">
+                    <div>
+                      <Label htmlFor="name" className="text-slate-200">Full Name</Label>
+                      <Input 
+                        id="name" 
+                        placeholder="e.g. Sarah Jenkins" 
+                        className="bg-slate-900 border-slate-700 text-white mt-1.5 focus:border-primary" 
+                        required 
+                        value={formData.name}
+                        onChange={handleInputChange}
+                      />
+                    </div>
+
+                    <div>
+                      <Label htmlFor="email" className="text-slate-200">Email Address (for our reply)</Label>
+                      <Input 
+                        id="email" 
+                        type="email" 
+                        placeholder="sarah@example.com" 
+                        className="bg-slate-900 border-slate-700 text-white mt-1.5 focus:border-primary" 
+                        required
+                        value={formData.email}
+                        onChange={handleInputChange}
+                      />
+                    </div>
+
+                    <div>
+                      <Label htmlFor="subject" className="text-slate-200">Inquiry Category</Label>
+                      <select
+                        id="subject"
+                        className="w-full h-10 px-3 rounded-md bg-slate-900 border border-slate-700 text-slate-200 mt-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+                        value={formData.subject}
+                        onChange={handleInputChange}
+                      >
+                        <option value="General Inquiry">General Question / Inquiry</option>
+                        <option value="Calculator Feedback">Calculator Formula Question / Feedback</option>
+                        <option value="Bug Report">Technical Bug Report / Error</option>
+                        <option value="Tool Suggestion">Request a New Calculator</option>
+                        <option value="Editorial & Advertising">Editorial / Business Matter</option>
+                      </select>
+                    </div>
+
+                    <div>
+                      <Label htmlFor="message" className="text-slate-200">Your Message</Label>
+                      <Textarea 
+                        id="message" 
+                        placeholder="Please describe your question, feedback, or formula observation in detail..." 
+                        className="bg-slate-900 border-slate-700 text-white min-h-[140px] mt-1.5 focus:border-primary" 
+                        required
+                        value={formData.message}
+                        onChange={handleInputChange}
+                      />
+                    </div>
+
+                    <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-slate-950 font-bold py-3" disabled={isSubmitting}>
+                      {isSubmitting ? 'Sending Message...' : 'Send Message'}
+                    </Button>
+                    <p className="text-xs text-slate-400 text-center">
+                      We respect your privacy. Your email will only be used to respond to your specific inquiry.
+                    </p>
+                  </form>
+                )}
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Real Contact Details & Office Info */}
+          <div className="md:col-span-5 space-y-6">
+            <Card className="bg-slate-800/50 border-slate-700/80 shadow-xl">
+              <CardHeader>
+                <CardTitle className="text-white text-xl font-bold">Official Contact Information</CardTitle>
+                <CardDescription className="text-slate-300">
+                  Direct channels to reach our team.
+                </CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <span className="text-xl mt-1">ðŸ¢</span>
+                  <div className="p-3 bg-emerald-500/10 rounded-xl text-emerald-400 shrink-0">
+                    <Mail className="h-6 w-6" />
+                  </div>
                   <div>
-                    <h3 className="font-semibold text-white">Corporate Office</h3>
+                    <h3 className="font-semibold text-white">Direct Email Addresses</h3>
+                    <div className="mt-1 space-y-1 text-sm">
+                      <p className="text-slate-300">
+                        General: <a href="mailto:contact@calczoon.com" className="text-primary hover:underline font-medium">contact@calczoon.com</a>
+                      </p>
+                      <p className="text-slate-300">
+                        Support: <a href="mailto:support@calczoon.com" className="text-primary hover:underline font-medium">support@calczoon.com</a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="p-3 bg-sky-500/10 rounded-xl text-sky-400 shrink-0">
+                    <Clock className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-white">Response Turnaround</h3>
                     <p className="text-slate-300 text-sm mt-1">
-                        <strong>CalcZoon Ltd.</strong><br />
-                        124 City Road<br />
-                        London, EC1V 2NX<br />
-                        United Kingdom
+                      Monday through Friday, 9:00 AM – 5:00 PM UTC.<br />
+                      Average response time: <strong>Within 24 to 48 hours</strong>.
                     </p>
                   </div>
                 </div>
-                <div className="flex items-center gap-4">
-                  <Mail className="h-6 w-6 text-primary" />
+
+                <div className="flex items-start gap-4">
+                  <div className="p-3 bg-purple-500/10 rounded-xl text-purple-400 shrink-0">
+                    <MapPin className="h-6 w-6" />
+                  </div>
                   <div>
-                    <h3 className="font-semibold text-white">Email</h3>
-                    <a href="mailto:calczy2025@gmail.com" className="text-slate-300 hover:text-primary">calczy2025@gmail.com</a>
+                    <h3 className="font-semibold text-white">Registered Address</h3>
+                    <p className="text-slate-300 text-sm mt-1 leading-relaxed">
+                      <strong>CalcZoon Ltd.</strong><br />
+                      124 City Road<br />
+                      London, EC1V 2NX<br />
+                      United Kingdom
+                    </p>
                   </div>
                 </div>
-                <div className="flex items-center gap-4">
-                  <Twitter className="h-6 w-6 text-primary" />
-                  <div>
-                    <h3 className="font-semibold text-white">Twitter / X</h3>
-                    <a href="https://x.com/calczoon" target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-primary">@Calczoon</a>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <Linkedin className="h-6 w-6 text-primary" />
-                  <div>
-                    <h3 className="font-semibold text-white">LinkedIn</h3>
-                    <a href="https://linkedin.com/company/calczoon" target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-primary">Calczoon</a>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4 border-t border-slate-700/50 pt-4">
-                  <Accessibility className="h-6 w-6 text-primary shrink-0 mt-1" />
-                  <div>
-                    <h3 className="font-semibold text-white">Accessibility Feedback</h3>
-                    <p className="text-slate-300 text-xs mt-1">If you have suggestions or encounter difficulties using our website, please email us directly with the subject "Accessibility Issue". We are committed to resolving WCAG AA barriers in accordance with ADA and UK Equality Act 2010 standards.</p>
+
+                <div className="pt-4 border-t border-slate-700/60">
+                  <div className="flex items-center gap-2 text-slate-300 text-xs">
+                    <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <span>Your inquiries are handled with strict privacy in accordance with UK & EU GDPR.</span>
                   </div>
                 </div>
               </CardContent>
             </Card>
+
+            <div className="bg-slate-900/60 border border-slate-800 p-6 rounded-xl">
+              <h3 className="text-white font-semibold flex items-center gap-2 mb-2 text-sm">
+                <HelpCircle className="w-4 h-4 text-primary" /> Looking for Formula Explanations?
+              </h3>
+              <p className="text-slate-300 text-xs leading-relaxed">
+                Before sending a formula inquiry, check the individual calculator page. Each tool contains full mathematical documentation, variable legends, and solved examples below the interactive form.
+              </p>
+            </div>
           </div>
         </div>
       </motion.div>

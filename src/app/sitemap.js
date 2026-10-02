@@ -14,6 +14,7 @@ export default function sitemap() {
     '/about',
     '/contact',
     '/privacy',
+    '/terms-of-service',
     '/terms-and-conditions',
     '/disclaimer',
     '/sitemap',

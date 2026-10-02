@@ -1,74 +1,101 @@
-﻿'use client';
+'use client';
 
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
-import { FileText } from 'lucide-react';
+import { FileText, Shield, AlertTriangle, Scale, CheckCircle2 } from 'lucide-react';
 import Seo from '@/components/Seo';
 
 const TermsAndConditions = () => {
   return (
     <>
       <Seo
-        title="Terms and Conditions - CalcZoon"
-        description="Read the Terms and Conditions for using CalcZoon. Understand your rights and responsibilities when using our free online calculators."
-        canonical="https://calczoon.com/terms-and-conditions"
+        title="Terms of Service & User Agreement - CalcZoon"
+        description="Review the Terms of Service for CalcZoon. Learn about website usage, intellectual property, user responsibilities, and disclaimers of warranty."
+        canonical="https://calczoon.com/terms-of-service"
       />
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="max-w-4xl mx-auto py-12 px-4"
+        className="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8"
       >
-        <Card className="bg-slate-900/40 backdrop-blur-md border border-slate-800/80 rounded-2xl overflow-hidden shadow-xl">
-          <CardHeader className="text-center bg-slate-800/20 border-b border-slate-700/30 p-8">
+        <Card className="bg-slate-900/60 backdrop-blur-md border border-slate-800 rounded-2xl overflow-hidden shadow-xl">
+          <CardHeader className="text-center bg-slate-800/30 border-b border-slate-700/40 p-8 md:p-10">
             <div className="inline-flex items-center justify-center w-16 h-16 mb-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/20">
-              <FileText className="h-8 w-8 text-emerald-400" />
+              <Scale className="h-8 w-8 text-emerald-400" />
             </div>
-            <h1 className="text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-sky-400">Terms and Conditions</h1>
-            <p className="text-slate-300 text-sm mt-2">Last Updated: June 5, 2026</p>
+            <h1 className="text-3xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-sky-400">
+              Terms of Service
+            </h1>
+            <p className="text-slate-300 text-sm mt-3">Last Updated: October 2, 2026</p>
           </CardHeader>
+
           <CardContent className="space-y-6 text-slate-300 leading-relaxed px-6 md:px-10 py-8">
-            <p>Welcome to <strong>CalcZoon</strong>. By accessing and using this website, you accept and agree to be bound by the terms and provisions of this agreement. If you do not agree to abide by these terms, please do not use this site.</p>
-            
-            <div>
-              <h2 className="text-xl font-semibold text-white mb-2">1. Use of Website</h2>
-              <p className="text-slate-300 text-sm">This website and its calculator components are offered for informational and educational purposes only. This site shall not be responsible or liable for the accuracy, usefulness, or availability of any calculations transmitted or made available via the site, and shall not be responsible or liable for any error or omissions in that information.</p>
+            <p className="text-base md:text-lg">
+              Welcome to <strong>CalcZoon</strong> ("CalcZoon", "we", "us", or "our"). By accessing or using our website located at <a href="https://calczoon.com" className="text-primary hover:underline">calczoon.com</a> and its associated calculators, tools, and content, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services.
+            </p>
+
+            <div className="space-y-6 divide-y divide-slate-800/80">
+              <div className="pt-4 space-y-2">
+                <h2 className="text-xl font-bold text-white">1. Permitted Use & Free Access</h2>
+                <p className="text-sm">
+                  CalcZoon grants you a personal, non-exclusive, non-transferable, revocable license to access and use our calculators, guides, and tools strictly for personal, non-commercial, or educational calculations. All calculators are provided free of charge without mandatory account registration.
+                </p>
+              </div>
+
+              <div className="pt-4 space-y-2">
+                <h2 className="text-xl font-bold text-white">2. Informational & Educational Scope</h2>
+                <p className="text-sm">
+                  Our calculators generate estimates based on standard mathematical formulas and user-supplied numbers. As explicitly detailed in our <Link to="/disclaimer" className="text-primary hover:underline font-medium">Disclaimer</Link>, these tools are not professional financial, tax, legal, or medical advice. You agree that any reliance upon calculations generated by CalcZoon is done solely at your own risk.
+                </p>
+              </div>
+
+              <div className="pt-4 space-y-2">
+                <h2 className="text-xl font-bold text-white">3. Intellectual Property Rights</h2>
+                <p className="text-sm">
+                  The design, structure, graphics, interface elements, source code, formulas implementations, and original editorial content on CalcZoon are the exclusive property of CalcZoon Ltd. and are protected by international copyright and intellectual property laws. You may not scrape, frame, reverse-engineer, or republish our calculator algorithms or content without prior written permission.
+                </p>
+              </div>
+
+              <div className="pt-4 space-y-2">
+                <h2 className="text-xl font-bold text-white">4. Prohibited Activities</h2>
+                <p className="text-sm">When using CalcZoon, you agree not to:</p>
+                <ul className="list-disc list-inside space-y-1 text-sm pl-2">
+                  <li>Use automated bots, scrapers, or spiders that cause unreasonable load on our infrastructure.</li>
+                  <li>Attempt to disrupt or compromise website security or client-side integrity.</li>
+                  <li>Transmit harmful code, malware, or malicious scripts.</li>
+                  <li>Misrepresent calculations from this site as certified or officially endorsed audits.</li>
+                </ul>
+              </div>
+
+              <div className="pt-4 space-y-2">
+                <h2 className="text-xl font-bold text-white">5. Disclaimer of Warranties & Limitation of Liability</h2>
+                <p className="text-sm">
+                  CalcZoon is provided on an "AS IS" and "AS AVAILABLE" basis without warranties of any kind, whether express or implied. In no event shall CalcZoon Ltd., its directors, employees, or developers be liable for any indirect, incidental, punitive, or consequential damages resulting from the use or inability to use our tools or information.
+                </p>
+              </div>
+
+              <div className="pt-4 space-y-2">
+                <h2 className="text-xl font-bold text-white">6. Third-Party Links & Advertising</h2>
+                <p className="text-sm">
+                  Our website may feature advertisements (such as Google AdSense) or links to external third-party sites. We do not endorse, control, or assume responsibility for any third-party websites, products, or services. Please review our <Link to="/privacy" className="text-primary hover:underline font-medium">Privacy Policy</Link> for advertising cookie details.
+                </p>
+              </div>
+
+              <div className="pt-4 space-y-2">
+                <h2 className="text-xl font-bold text-white">7. Governing Law & Contact</h2>
+                <p className="text-sm">
+                  These Terms of Service are governed by and construed in accordance with the laws of the United Kingdom, without regard to conflict of law principles. If you have any questions, please contact us at:
+                </p>
+                <div className="bg-slate-800/50 p-4 rounded-lg border border-slate-700/60 text-sm mt-2">
+                  <p className="font-semibold text-white">CalcZoon Ltd.</p>
+                  <p className="text-slate-300">124 City Road, London, EC1V 2NX, United Kingdom</p>
+                  <p className="text-slate-300">Email: <a href="mailto:contact@calczoon.com" className="text-primary hover:underline">contact@calczoon.com</a></p>
+                </div>
+              </div>
             </div>
-
-            <div>
-              <h2 className="text-xl font-semibold text-white mb-2">2. Intellectual Property</h2>
-              <p className="text-slate-300 text-sm">The Site and its original content, features, layout, and functionality are owned by CalcZoon and are protected by international copyright, trademark, and other intellectual property or proprietary rights laws. You may not reproduce, distribute, or create derivative works from any part of the website without express written permission.</p>
-            </div>
-
-            <div>
-              <h2 className="text-xl font-semibold text-white mb-2">3. Disclaimer of Warranties</h2>
-              <p className="text-slate-300 text-sm">The tools and information on this site are provided "as is" and "as available." We make no warranties, expressed or implied, and hereby disclaim and negate all other warranties, including without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property. For more details, please see our full <Link to="/disclaimer" className="text-emerald-400 hover:underline font-semibold">Disclaimer</Link>.</p>
-            </div>
-
-            <div>
-              <h2 className="text-xl font-semibold text-white mb-2">4. Limitation of Liability</h2>
-              <p className="text-slate-300 text-sm">In no event shall CalcZoon, its owners, or developers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on our website, even if we have been notified orally or in writing of the possibility of such damage. Some jurisdictions do not allow limitations on implied warranties or limitations of liability, so these limitations may not apply to you.</p>
-            </div>
-
-            <div>
-              <h2 className="text-xl font-semibold text-white mb-2">5. Governing Law & Consumer Protection</h2>
-              <p className="text-slate-300 text-sm">Any claims relating to this website shall be governed by the laws of the jurisdiction of the website owner's residence. However, if you are a consumer residing in the UK, European Union, or United States, you also benefit from any mandatory provisions of the law of the country in which you are resident, and nothing in these terms affects your statutory consumer rights.</p>
-            </div>
-
-            <div>
-              <h2 className="text-xl font-semibold text-white mb-2">6. Accessibility Commitment</h2>
-              <p className="text-slate-300 text-sm">We are committed to providing a website that is accessible to the widest possible audience, regardless of technology or ability. We actively work to align our services with the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA standards, in compliance with the Americans with Disabilities Act (ADA) in the US and the Equality Act 2010 in the UK. By using this website, you agree to report any accessibility barriers you experience directly to us, allowing us the opportunity to resolve them promptly.</p>
-            </div>
-
-            <div>
-              <h2 className="text-xl font-semibold text-white mb-2">7. Changes to Terms</h2>
-              <p className="text-slate-300 text-sm">We reserve the right to modify these terms and conditions at any time. We will notify users of any changes by posting the new terms on this page. Your decision to continue to visit and make use of the Site after such changes have been made constitutes your formal acceptance of the new Terms and Conditions.</p>
-            </div>
-
-            <p className="text-center text-slate-300 pt-6 border-t border-slate-800">For any questions about these terms, please <Link to="/contact" className="text-emerald-400 hover:underline font-semibold">contact us</Link>.</p>
-
           </CardContent>
         </Card>
       </motion.div>

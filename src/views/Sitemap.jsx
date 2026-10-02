@@ -11,8 +11,9 @@ const mainPages = [
   { path: '/about', name: 'About Us' },
   { path: '/contact', name: 'Contact' },
   { path: '/privacy', name: 'Privacy Policy' },
+  { path: '/terms-of-service', name: 'Terms of Service' },
+  { path: '/disclaimer', name: 'Disclaimer' },
   { path: '/partners', name: 'Partners' },
-  { path: '/testimonials', name: 'Testimonials' },
   { path: '/blog', name: 'Blog' },
 ];
 

@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { Calculator, Menu, Rss, Info, Mail, HeartHandshake as Handshake, ChevronDown, Activity, HeartPulse, Target, Flame, BrainCircuit, TrendingDown } from 'lucide-react';
+import { Calculator, Menu, ChevronDown, Activity, HeartPulse, Target, Flame, BrainCircuit, Shield, Scale, AlertTriangle, FileText, Mail, Info } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion';
@@ -27,11 +27,11 @@ const navLinks = [
         to: '/health-fitness-calculators', 
         label: 'Health & Fitness',
         subItems: [
-            { to: '/health/bmi-calculator', label: 'BMI Calculator', icon: <HeartPulse className="w-4 h-4 mr-2" /> },
-            { to: '/health/tdee-calculator', label: 'TDEE Calculator', icon: <Activity className="w-4 h-4 mr-2" /> },
-            { to: '/health/macro-calculator', label: 'Macro Calculator', icon: <Target className="w-4 h-4 mr-2" /> },
-            { to: '/health/body-fat-calculator', label: 'Body Fat', icon: <BrainCircuit className="w-4 h-4 mr-2" /> },
-            { to: '/health/calories-burned-calculator', label: 'Calories Burned', icon: <Flame className="w-4 h-4 mr-2" /> },
+            { to: '/health/bmi-calculator', label: 'BMI Calculator', icon: <HeartPulse className="w-4 h-4 mr-2 text-emerald-400" /> },
+            { to: '/health/tdee-calculator', label: 'TDEE Calculator', icon: <Activity className="w-4 h-4 mr-2 text-sky-400" /> },
+            { to: '/health/macro-calculator', label: 'Macro Calculator', icon: <Target className="w-4 h-4 mr-2 text-amber-400" /> },
+            { to: '/health/body-fat-calculator', label: 'Body Fat', icon: <BrainCircuit className="w-4 h-4 mr-2 text-purple-400" /> },
+            { to: '/health/calories-burned-calculator', label: 'Calories Burned', icon: <Flame className="w-4 h-4 mr-2 text-rose-400" /> },
         ]
       },
       { to: '/math-science-calculators', label: 'Math & Science' },
@@ -39,8 +39,16 @@ const navLinks = [
     ],
   },
   { to: '/blog', label: 'Blog' },
-  { to: '/about', label: 'About' },
+  { to: '/about', label: 'About Us' },
   { to: '/contact', label: 'Contact' },
+  {
+    title: 'Legal & Info',
+    items: [
+      { to: '/privacy', label: 'Privacy Policy', icon: <Shield className="w-4 h-4 mr-2 text-emerald-400" /> },
+      { to: '/terms-of-service', label: 'Terms of Service', icon: <Scale className="w-4 h-4 mr-2 text-sky-400" /> },
+      { to: '/disclaimer', label: 'Disclaimer', icon: <AlertTriangle className="w-4 h-4 mr-2 text-amber-400" /> },
+    ],
+  },
 ];
 
 const Header = () => {
@@ -67,7 +75,7 @@ const Header = () => {
                     <ChevronDown className="h-4 w-4" />
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="bg-slate-800/90 backdrop-blur-sm border-slate-700 text-slate-200">
+                <DropdownMenuContent className="bg-slate-800/95 backdrop-blur-md border-slate-700 text-slate-200">
                   {link.items.map((item) => (
                     item.subItems ? (
                         <DropdownMenuSub key={item.to}>
@@ -77,7 +85,7 @@ const Header = () => {
                                 </NavLink>
                             </DropdownMenuSubTrigger>
                              <DropdownMenuPortal>
-                                <DropdownMenuSubContent className="bg-slate-800/90 backdrop-blur-sm border-slate-700 text-slate-200">
+                                <DropdownMenuSubContent className="bg-slate-800/95 backdrop-blur-md border-slate-700 text-slate-200">
                                     {item.subItems.map((subItem) => (
                                         <DropdownMenuItem key={subItem.to} asChild>
                                             <NavLink to={subItem.to} className={({ isActive }) => `w-full text-left flex items-center p-2 rounded-sm text-sm hover:bg-slate-700 focus:bg-slate-700 ${isActive ? 'text-primary' : ''}`}>
@@ -91,7 +99,7 @@ const Header = () => {
                     ) : (
                         <DropdownMenuItem key={item.to} asChild>
                             <NavLink to={item.to} className={({ isActive }) => `w-full text-left flex items-center p-2 rounded-sm text-sm hover:bg-slate-700 focus:bg-slate-700 ${isActive ? 'text-primary' : ''}`}>
-                                {item.label}
+                                {item.icon}{item.label}
                             </NavLink>
                         </DropdownMenuItem>
                     )
@@ -116,11 +124,11 @@ const Header = () => {
           <Sheet open={isMobileMenuOpen} onOpenChange={setMobileMenuOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon">
-                <Menu className="h-6 w-6" />
+                <Menu className="h-6 w-6 text-slate-200" />
                 <span className="sr-only">Open menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-full max-w-xs bg-slate-900 border-l-slate-800 text-white">
+            <SheetContent side="right" className="w-full max-w-xs bg-slate-900 border-l-slate-800 text-white overflow-y-auto">
               <SheetHeader>
                 <SheetTitle className="text-2xl text-primary flex items-center">
                   <Calculator className="mr-2" /> CalcZoon Menu
@@ -131,17 +139,24 @@ const Header = () => {
                 <Accordion type="single" collapsible>
                     <AccordionItem value="calculators" className="border-b-0">
                         <AccordionTrigger className="p-3 hover:no-underline rounded-md text-slate-300 hover:text-primary">Calculators</AccordionTrigger>
-                        <AccordionContent className="pl-4">
-                            <NavLink to="/health-fitness-calculators" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-slate-300 hover:text-primary">Health & Fitness</NavLink>
+                        <AccordionContent className="pl-4 space-y-1">
                             <NavLink to="/financial-calculators" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-slate-300 hover:text-primary">Financial</NavLink>
+                            <NavLink to="/health-fitness-calculators" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-slate-300 hover:text-primary">Health & Fitness</NavLink>
                             <NavLink to="/math-science-calculators" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-slate-300 hover:text-primary">Math & Science</NavLink>
                             <NavLink to="/lifestyle-everyday-calculators" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-slate-300 hover:text-primary">Lifestyle</NavLink>
                         </AccordionContent>
                     </AccordionItem>
                 </Accordion>
                 <NavLink to="/blog" onClick={() => setMobileMenuOpen(false)} className={({isActive}) => `p-3 rounded-md ${isActive ? 'bg-slate-800 text-primary' : 'text-slate-300'}`}>Blog</NavLink>
-                <NavLink to="/about" onClick={() => setMobileMenuOpen(false)} className={({isActive}) => `p-3 rounded-md ${isActive ? 'bg-slate-800 text-primary' : 'text-slate-300'}`}>About</NavLink>
+                <NavLink to="/about" onClick={() => setMobileMenuOpen(false)} className={({isActive}) => `p-3 rounded-md ${isActive ? 'bg-slate-800 text-primary' : 'text-slate-300'}`}>About Us</NavLink>
                 <NavLink to="/contact" onClick={() => setMobileMenuOpen(false)} className={({isActive}) => `p-3 rounded-md ${isActive ? 'bg-slate-800 text-primary' : 'text-slate-300'}`}>Contact</NavLink>
+                
+                <div className="pt-4 border-t border-slate-800 space-y-2">
+                  <p className="px-3 text-xs uppercase tracking-wider text-slate-400 font-semibold">Legal & Policies</p>
+                  <NavLink to="/privacy" onClick={() => setMobileMenuOpen(false)} className="block p-3 rounded-md text-sm text-slate-300 hover:text-primary">Privacy Policy</NavLink>
+                  <NavLink to="/terms-of-service" onClick={() => setMobileMenuOpen(false)} className="block p-3 rounded-md text-sm text-slate-300 hover:text-primary">Terms of Service</NavLink>
+                  <NavLink to="/disclaimer" onClick={() => setMobileMenuOpen(false)} className="block p-3 rounded-md text-sm text-slate-300 hover:text-primary">Disclaimer</NavLink>
+                </div>
               </nav>
             </SheetContent>
           </Sheet>
