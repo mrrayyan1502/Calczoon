@@ -1,36 +1,34 @@
-import dynamic from 'next/dynamic';
-
 // 1. Health & Fitness Calculators (6)
-const BMICalculator = dynamic(() => import('@/views/calculators/health/BMICalculator'));
-const TDEECalculator = dynamic(() => import('@/views/calculators/health/TDEECalculator'));
-const MacroCalculator = dynamic(() => import('@/views/calculators/health/MacroCalculator'));
-const BodyFatCalculator = dynamic(() => import('@/views/calculators/health/BodyFatCalculator'));
-const CaloriesBurnedCalculator = dynamic(() => import('@/views/calculators/health/CaloriesBurnedCalculator'));
-const WaterIntakeCalculator = dynamic(() => import('@/views/calculators/health/WaterIntakeCalculator'));
+import BMICalculator from '@/views/calculators/health/BMICalculator';
+import TDEECalculator from '@/views/calculators/health/TDEECalculator';
+import MacroCalculator from '@/views/calculators/health/MacroCalculator';
+import BodyFatCalculator from '@/views/calculators/health/BodyFatCalculator';
+import CaloriesBurnedCalculator from '@/views/calculators/health/CaloriesBurnedCalculator';
+import WaterIntakeCalculator from '@/views/calculators/health/WaterIntakeCalculator';
 
 // 2. Financial Calculators (7)
-const MortgageCalculator = dynamic(() => import('@/views/calculators/financial/MortgageCalculator'));
-const LoanCalculator = dynamic(() => import('@/views/calculators/financial/LoanCalculator'));
-const CompoundInterestCalculator = dynamic(() => import('@/views/calculators/financial/CompoundInterestCalculator'));
-const CurrencyConverter = dynamic(() => import('@/views/calculators/financial/CurrencyConverter'));
-const SavingsCalculator = dynamic(() => import('@/views/calculators/financial/SavingsCalculator'));
-const RetirementCalculator = dynamic(() => import('@/views/calculators/financial/RetirementCalculator'));
-const SipCalculator = dynamic(() => import('@/views/calculators/financial/SipCalculator'));
+import MortgageCalculator from '@/views/calculators/financial/MortgageCalculator';
+import LoanCalculator from '@/views/calculators/financial/LoanCalculator';
+import CompoundInterestCalculator from '@/views/calculators/financial/CompoundInterestCalculator';
+import CurrencyConverter from '@/views/calculators/financial/CurrencyConverter';
+import SavingsCalculator from '@/views/calculators/financial/SavingsCalculator';
+import RetirementCalculator from '@/views/calculators/financial/RetirementCalculator';
+import SipCalculator from '@/views/calculators/financial/SipCalculator';
 
 // 3. Math & Science Calculators (5)
-const PercentageCalculator = dynamic(() => import('@/views/calculators/math/PercentageCalculator'));
-const FractionCalculator = dynamic(() => import('@/views/calculators/math/FractionCalculator'));
-const ScientificCalculator = dynamic(() => import('@/views/calculators/math/ScientificCalculator'));
-const TriangleCalculator = dynamic(() => import('@/views/calculators/math/TriangleCalculator'));
-const StatisticsCalculator = dynamic(() => import('@/views/calculators/math/StatisticsCalculator'));
+import PercentageCalculator from '@/views/calculators/math/PercentageCalculator';
+import FractionCalculator from '@/views/calculators/math/FractionCalculator';
+import ScientificCalculator from '@/views/calculators/math/ScientificCalculator';
+import TriangleCalculator from '@/views/calculators/math/TriangleCalculator';
+import StatisticsCalculator from '@/views/calculators/math/StatisticsCalculator';
 
 // 4. Lifestyle & Everyday Calculators (6)
-const AgeCalculator = dynamic(() => import('@/views/calculators/other/AgeCalculator'));
-const DiscountCalculator = dynamic(() => import('@/views/calculators/other/DiscountCalculator'));
-const TipCalculator = dynamic(() => import('@/views/calculators/lifestyle/TipCalculator'));
-const DateCalculator = dynamic(() => import('@/views/calculators/lifestyle/DateCalculator'));
-const UnitConverter = dynamic(() => import('@/views/calculators/other/UnitConverter'));
-const FuelCostCalculator = dynamic(() => import('@/views/calculators/other/FuelCostCalculator'));
+import AgeCalculator from '@/views/calculators/other/AgeCalculator';
+import DiscountCalculator from '@/views/calculators/other/DiscountCalculator';
+import TipCalculator from '@/views/calculators/lifestyle/TipCalculator';
+import DateCalculator from '@/views/calculators/lifestyle/DateCalculator';
+import UnitConverter from '@/views/calculators/other/UnitConverter';
+import FuelCostCalculator from '@/views/calculators/other/FuelCostCalculator';
 
 export const healthCalculators = {
   'bmi-calculator': {
