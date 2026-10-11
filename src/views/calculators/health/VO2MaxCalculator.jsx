@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
@@ -70,8 +70,14 @@ const VO2MaxCalculator = () => {
         <meta name="description" content={pageDescription} />
         <meta name="keywords" content="vo2 max calculator, cardiovascular fitness, aerobic capacity, endurance test, cooper test, rockport walk test, fitness calculator" />
         <link rel="canonical" href={canonicalUrl} />
-        <script type="application/ld+json">{JSON.stringify(pageSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
       </Helmet>
       
       <div className="w-full max-w-7xl mx-auto py-8 px-4">

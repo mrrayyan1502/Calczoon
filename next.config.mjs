@@ -239,7 +239,17 @@ const nextConfig = {
       },
       {
         source: '/terms',
-        destination: '/terms-and-conditions',
+        destination: '/terms-of-service',
+        permanent: true,
+      },
+      {
+        source: '/terms-and-conditions',
+        destination: '/terms-of-service',
+        permanent: true,
+      },
+      {
+        source: '/tools',
+        destination: '/calculators',
         permanent: true,
       },
       {

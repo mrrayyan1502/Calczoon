@@ -15,6 +15,21 @@
       "source": "/health/vo2-max-calculator",
       "destination": "/health-fitness-calculators",
       "permanent": true
+    },
+    {
+      "source": "/terms",
+      "destination": "/terms-of-service",
+      "permanent": true
+    },
+    {
+      "source": "/terms-and-conditions",
+      "destination": "/terms-of-service",
+      "permanent": true
+    },
+    {
+      "source": "/tools",
+      "destination": "/calculators",
+      "permanent": true
     }
   ],
   "headers": [

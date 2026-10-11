@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
@@ -69,8 +69,14 @@ const BodyFatCalculator = () => {
                 <meta name="description" content={pageDescription} />
                 <meta name="keywords" content="body fat calculator, body fat percentage, navy method body fat, fitness calculator, lean mass, fat mass" />
                 <link rel="canonical" href={canonicalUrl} />
-                <script type="application/ld+json">{JSON.stringify(pageSchema)}</script>
-                <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }}
+                />
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+                />
             </Helmet>
             
             <div className="w-full max-w-7xl mx-auto py-8 px-4">

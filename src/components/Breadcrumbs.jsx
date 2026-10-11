@@ -42,9 +42,10 @@ const Breadcrumbs = () => {
 
   return (
     <nav aria-label="Breadcrumb" className="mb-8">
-      <script type="application/ld+json">
-        {JSON.stringify(breadcrumbSchema)}
-      </script>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <ol className="flex items-center space-x-2 text-sm text-slate-300">
         <li>
           <Link to="/" className="hover:text-primary transition-colors">

@@ -27,8 +27,17 @@ const Seo = ({ title, description, canonicalUrl, schema, keywords, ogImage }) =>
       <meta name="twitter:image" content={finalOgImage} />
       {schema && (
         Array.isArray(schema) ? 
-        schema.map((s, i) => <script key={i} type="application/ld+json">{JSON.stringify(s)}</script>) :
-        <script type="application/ld+json">{JSON.stringify(schema)}</script>
+        schema.map((s, i) => (
+          <script
+            key={i}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }}
+          />
+        )) :
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
       )}
     </Helmet>
   );

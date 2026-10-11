@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
@@ -64,9 +64,12 @@ const CalculatorPageLayout = ({
         <title>{title}</title>
         <meta name="description" content={description} />
         <meta name="keywords" content={keywords} />
-        <link rel="canonical" href={canonicalUrl} />
-        {schema && <script type="application/ld+json">{JSON.stringify(schema)}</script>}
-      </Helmet>
+        {schema && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+          />
+        )}
 
       <div className="w-full max-w-7xl mx-auto py-8 px-4">
         {/* Header Section */}
