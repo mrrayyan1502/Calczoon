@@ -1,6 +1,7 @@
-﻿'use client';
+'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
@@ -13,7 +14,7 @@ import Seo from '@/components/Seo';
 import PageHeader from '@/components/PageHeader';
 import RelatedTools from '@/components/calculators/tdee/RelatedTools';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Percent } from 'lucide-react';
+import { Percent, BookOpen, CheckCircle, HelpCircle, ArrowRight, TrendingUp } from 'lucide-react';
 
 const PercentageCalculator = () => {
   const [activeTab, setActiveTab] = useState("p_of_x");
@@ -67,25 +68,45 @@ const PercentageCalculator = () => {
   };
 
   const faqItems = [
-    { question: "How do you calculate percentage of a number?", answer: "To calculate the percentage of a number, multiply the number by the percentage and then divide by 100. For example, 20% of 150 is calculated as (150 * 20) / 100 = 30." },
-    { question: "How do I calculate a percentage increase?", answer: "To calculate the percentage increase from value X to value Y, subtract X from Y, divide the result by X, and then multiply by 100. The formula is: ((Y - X) / X) * 100." },
-    { question: "Can this calculator be used for discounts?", answer: "Yes! To find a discount, select the 'P% of X' tab. Enter the discount percentage (e.g. 20) and the original price. The result shows your total savings. Subtract this from the original price to get the final sales cost." },
-    { question: "What is the formula to convert a fraction to a percentage?", answer: "To convert any fraction (like 3/4) to a percentage, divide the numerator by the denominator to get a decimal, and then multiply by 100. For example: (3 Ã· 4) Ã— 100 = 0.75 Ã— 100 = 75%." }
+    {
+      question: "How do you calculate the percentage of a number manually?",
+      answer: "To find P% of a number X, divide the percentage P by 100 to convert it into a decimal fraction, and then multiply by the total number X. Mathematically: Result = (P / 100) * X. For instance, to compute 15% of $80, compute (15 / 100) * 80 = 0.15 * 80 = $12.00."
+    },
+    {
+      question: "How do I calculate a percentage increase or decrease between two values?",
+      answer: "To calculate percentage change from initial value X to final value Y, subtract the starting value from the final value, divide by the original starting value, and multiply by 100: Percentage Change = ((Final - Initial) / Initial) * 100. A positive outcome represents percentage growth or markup, while a negative figure denotes a reduction or discount."
+    },
+    {
+      question: "What is the critical difference between percentage change and percentage points?",
+      answer: "A percentage point represents the simple arithmetic difference between two percentage figures, whereas percentage change measures relative proportional movement. For example, if an interest rate moves from 5% to 6%, it has increased by 1 percentage point, but represents a 20% relative increase ((6 - 5) / 5 * 100 = 20%). Conflating the two is a frequent financial reporting error."
+    },
+    {
+      question: "Why does a 20% price increase followed by a 20% decrease not return to the original amount?",
+      answer: "Percentage changes operate on asymmetric bases. If a $100 product rises by 20%, its new cost becomes $120. A subsequent 20% discount applies to the new $120 price base ($120 * 0.20 = $24 deduction), reducing the final price to $96. Because the reduction base is larger than the starting base, identical percentages do not cancel each other out."
+    },
+    {
+      question: "How can I calculate the original price before a discount was applied?",
+      answer: "To find the original pre-discount price (reverse percentage), divide the sale price by (1 - (Discount % / 100)). For example, if a jacket sells for $80 after a 20% discount, divide $80 by (1 - 0.20) = $80 / 0.80 = $100.00 original price."
+    },
+    {
+      question: "How do I convert fractions and decimals into percentages?",
+      answer: "To convert any fraction (such as 3/8) into a percentage, divide the numerator by denominator to get the decimal representation (3 / 8 = 0.375), and multiply by 100 (0.375 * 100 = 37.5%). To convert a decimal directly, shift the decimal point two digits to the right and append the % sign."
+    }
   ];
 
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     "name": "Percentage Calculator",
-    "description": "A versatile and free Percentage Calculator to solve all percentage-related problems. Perfect for math homework and everyday tasks.",
+    "description": "Comprehensive online percentage calculator to solve percentage of a number, relative proportions, percentage increase, decrease, markups, and reverse percentages.",
     "applicationCategory": "EducationalTool",
     "operatingSystem": "Any",
     "url": "https://calczoon.com/math/percentage-calculator",
     "browserRequirements": "Requires a modern web browser."
   };
 
-  const pageTitle = "Percentage Calculator: Solve Math Percentages Instantly 2026";
-  const pageDescription = "Calculate percentage increases, decreases, fractions, and values instantly. Solve school math or calculate retail discounts with our free online tool.";
+  const pageTitle = "Percentage Calculator: Free Online Percent & Change Tool 2026";
+  const pageDescription = "Calculate percentage increases, decreases, relative proportions, discounts, and fractions instantly with exact formulas and step-by-step worked solutions.";
 
   return (
     <>
@@ -193,56 +214,209 @@ const PercentageCalculator = () => {
             </Card>
           </div>
           <aside className="lg:col-span-1 space-y-6">
+            <Card className="bg-slate-800/50 border-slate-700">
+              <CardHeader>
+                <CardTitle className="text-white text-lg flex items-center gap-2">
+                  <BookOpen className="w-5 h-5 text-emerald-400" /> Percentage Quick Sheet
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3 text-xs text-slate-300 font-mono">
+                <div className="pb-2 border-b border-slate-700/60">
+                  <p className="text-emerald-400 font-bold">Portion of Total:</p>
+                  <p className="text-slate-300 mt-0.5">Value = (P / 100) × Total</p>
+                </div>
+                <div className="pb-2 border-b border-slate-700/60">
+                  <p className="text-sky-400 font-bold">Relative Share:</p>
+                  <p className="text-slate-300 mt-0.5">Percent = (Part / Total) × 100</p>
+                </div>
+                <div>
+                  <p className="text-amber-400 font-bold">Rate of Growth/Decline:</p>
+                  <p className="text-slate-300 mt-0.5">Change = ((New − Old) / Old) × 100</p>
+                </div>
+              </CardContent>
+            </Card>
             <RelatedTools category="math" />
           </aside>
         </div>
 
-        {/* Detailed SEO Explanation Section */}
-        <section className="mt-16 bg-slate-800/20 rounded-2xl border border-slate-700/40 p-8 text-slate-300 leading-relaxed max-w-5xl mx-auto space-y-8">
+        {/* 7-Section Comprehensive Educational Guide (>1,200 words) */}
+        <section className="mt-16 bg-slate-800/30 rounded-2xl border border-slate-700/60 p-8 md:p-10 text-slate-300 leading-relaxed max-w-5xl mx-auto space-y-10 mb-12">
+          {/* Section 1: What is a Percentage */}
           <div className="space-y-4">
-            <h2 className="text-2xl font-bold text-white">Understanding Mathematical Percentages</h2>
-            <p>
-              A percentage is a mathematical number or ratio expressed as a fraction of 100. It is often denoted using the percent sign, "%". Percentages are dimensionless fractions used to describe size, proportions, relative increases, decreases, interest rates, and discounts.
+            <h2 className="text-2xl md:text-3xl font-bold text-white flex items-center gap-3">
+              <Percent className="text-emerald-400 w-7 h-7" /> What is a Percentage & The Foundations of Relative Proportions
+            </h2>
+            <p className="text-base md:text-lg">
+              The term <strong>percentage</strong> originates from the Latin <em>per centum</em>, translating directly to &quot;by the hundred.&quot; In modern mathematics and statistical analysis, a percentage is a dimensionless ratio or fraction whose denominator is standardized to exactly 100. By standardizing diverse quantities to a unified base of 100, percentages enable instantaneous comparisons between datasets of vastly differing scales, such as comparing the financial growth of a multinational conglomerate with that of a local neighborhood enterprise.
             </p>
             <p>
-              Understanding how to calculate percentages helps in managing everyday tasks like budgeting, determining financial growth, calculating discounts at retail stores, tips at restaurants, and tax rates on invoices.
+              Whether analyzing consumer price index inflation, examining loan interest rates, calculating sales tax surcharges, or assessing retail seasonal discounts, percentages represent the universal quantitative language of trade and science. Understanding how to calculate percentage values, rates of change, and relative shares ensures error-free budgeting, accurate financial planning, and sound business decisions.
             </p>
           </div>
 
+          {/* Section 2: Mathematical Formulas & Equations */}
           <div className="space-y-4">
-            <h2 className="text-2xl font-bold text-white">How to Use the Free Percentage Calculator</h2>
-            <p>Our tool operates in three separate modes, designed to cover all daily calculation needs:</p>
-            <ul className="list-disc pl-6 space-y-2">
-              <li><strong>Tab 1: P% of X</strong> â€“ Use this to find a specific percentage value of a number. (Example: What is 15% of $80?).</li>
-              <li><strong>Tab 2: X is what % of Y</strong> â€“ Use this to discover the proportion of one value relative to another. (Example: 45 is what percentage of 150?).</li>
-              <li><strong>Tab 3: Increase/Decrease</strong> â€“ Use this to calculate the percentage rate of change when a number grows or shrinks from its starting value. (Example: If price increases from $100 to $125, what is the percent change?).</li>
-            </ul>
-          </div>
-
-          <div className="space-y-4">
-            <h2 className="text-2xl font-bold text-white">Percentage Formulas & Calculations Explained</h2>
-            <p>Behind the tabs, our calculator executes the following fundamental algebraic formulas:</p>
-            
-            <div className="bg-slate-900/50 p-6 rounded-xl border border-slate-800 font-mono text-emerald-400 space-y-3">
-              <p>1. Percentage Value (P% of X): Value = (P Ã· 100) Ã— X</p>
-              <p>2. Relative Percentage (X is what % of Y): Percentage = (X Ã· Y) Ã— 100</p>
-              <p>3. Percentage Change (From X to Y): Change = ((Y - X) Ã· X) Ã— 100</p>
+            <h2 className="text-2xl md:text-3xl font-bold text-white">
+              Mathematical Formulas & Structural Equations
+            </h2>
+            <p>
+              Our calculator automates three primary algebraic expressions alongside essential reciprocal formulas:
+            </p>
+            <div className="grid md:grid-cols-2 gap-4 my-4 font-mono text-xs">
+              <div className="bg-slate-900/60 p-4 rounded-xl border border-emerald-800/40 space-y-2">
+                <p className="text-emerald-400 font-bold uppercase tracking-wider">Formula 1: Direct Percentage of a Number</p>
+                <p className="text-white text-sm font-semibold">Value = (P ÷ 100) × Total</p>
+                <p className="text-slate-400">Used for determining discounts, commissions, gratuities, and statutory sales taxes.</p>
+              </div>
+              <div className="bg-slate-900/60 p-4 rounded-xl border border-sky-800/40 space-y-2">
+                <p className="text-sky-400 font-bold uppercase tracking-wider">Formula 2: Proportional Ratio</p>
+                <p className="text-white text-sm font-semibold">Percentage = (Part ÷ Whole) × 100</p>
+                <p className="text-slate-400">Calculates exam scores, demographic shares, and portfolio asset allocation percentages.</p>
+              </div>
+              <div className="bg-slate-900/60 p-4 rounded-xl border border-amber-800/40 space-y-2">
+                <p className="text-amber-400 font-bold uppercase tracking-wider">Formula 3: Percentage Growth or Decline</p>
+                <p className="text-white text-sm font-semibold">Δ% = ((Final − Initial) ÷ Initial) × 100</p>
+                <p className="text-slate-400">Measures quarterly revenue shifts, asset depreciation, inflation, and bodily weight fluctuations.</p>
+              </div>
+              <div className="bg-slate-900/60 p-4 rounded-xl border border-purple-800/40 space-y-2">
+                <p className="text-purple-400 font-bold uppercase tracking-wider">Formula 4: Reverse Base Value</p>
+                <p className="text-white text-sm font-semibold">Base Price = Final Price ÷ (1 ± (P ÷ 100))</p>
+                <p className="text-slate-400">Extracts original wholesale cost from discounted totals or VAT-inclusive invoices.</p>
+              </div>
             </div>
           </div>
 
+          {/* Section 3: Step-by-Step Practical Usage Guide */}
           <div className="space-y-4">
-            <h2 className="text-2xl font-bold text-white">Practical Everyday Applications of Percentages</h2>
-            <ul className="list-disc pl-6 space-y-2">
-              <li><strong>Sales & Discounts:</strong> Quickly calculate how much money you save during store clearance events.</li>
-              <li><strong>Tax Calculations:</strong> Add sales tax (VAT/GST) to wholesale unit prices.</li>
-              <li><strong>Restaurant Gratuity:</strong> Compute a standard 15% or 20% waiter tip on the subtotal.</li>
-              <li><strong>Finance & Interest:</strong> Estimate interest yields on investments or interest penalties on loans.</li>
-            </ul>
+            <h2 className="text-2xl md:text-3xl font-bold text-white">
+              Step-by-Step Guide: How to Select and Solve Your Problem
+            </h2>
+            <ol className="list-decimal list-inside space-y-3 pl-2 text-slate-300 text-sm md:text-base">
+              <li>
+                <strong className="text-white">Determine Your Goal:</strong> Identify whether you need to extract a specific dollar amount (e.g., 20% off $80), calculate what fraction an item represents of the total, or calculate how much a metric increased or decreased over time.
+              </li>
+              <li>
+                <strong className="text-white">Choose the Appropriate Tab:</strong> 
+                Select <em>P% of X</em> for simple cuts and taxes, <em>X is what % of Y</em> for relative ratios and grade percentages, or <em>Increase/Decrease</em> for comparative timeline analysis.
+              </li>
+              <li>
+                <strong className="text-white">Enter Clean Numerical Values:</strong> 
+                Input numbers without currency symbols, commas, or percent signs. Our calculator natively processes decimals and floating-point values.
+              </li>
+              <li>
+                <strong className="text-white">Click Calculate & Interpret Results:</strong> 
+                The calculated figure displays instantly with high precision. For percentage change calculations, the engine highlights whether the result represents positive growth (green) or a decrease (red).
+              </li>
+            </ol>
+          </div>
+
+          {/* Section 4: Real-World Numerical Worked Examples */}
+          <div className="space-y-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-white">
+              Real-World Numerical Worked Examples
+            </h2>
+            <div className="grid md:grid-cols-2 gap-6 pt-2">
+              <div className="bg-slate-900/70 p-6 rounded-xl border border-slate-700/80 space-y-3">
+                <div className="flex items-center gap-2 text-emerald-400 font-semibold text-lg">
+                  <CheckCircle className="w-5 h-5" /> Example 1: Multi-Step Retail Clearance Discount
+                </div>
+                <p className="text-sm text-slate-300">
+                  <strong>Scenario:</strong> A premium winter jacket with an original retail price of $240.00 is placed on a 35% seasonal markdown. Local sales tax of 8% is applied at checkout.
+                </p>
+                <div className="space-y-1 text-xs font-mono text-slate-400 bg-slate-950 p-3 rounded-lg border border-slate-800">
+                  <p>1. Dollar Discount = (35 ÷ 100) × 240 = $84.00</p>
+                  <p>2. Discounted Price = $240.00 − $84.00 = $156.00</p>
+                  <p>3. Sales Tax = (8 ÷ 100) × $156.00 = $12.48</p>
+                  <p className="text-emerald-400 font-bold">Final Register Cost: $156.00 + $12.48 = $168.48</p>
+                </div>
+                <p className="text-xs text-slate-400">
+                  Notice that the effective net savings is 29.8% off the original price, illustrating the interplay of discounts and taxes.
+                </p>
+              </div>
+
+              <div className="bg-slate-900/70 p-6 rounded-xl border border-slate-700/80 space-y-3">
+                <div className="flex items-center gap-2 text-sky-400 font-semibold text-lg">
+                  <TrendingUp className="w-5 h-5" /> Example 2: Quarterly SaaS Revenue Growth Analysis
+                </div>
+                <p className="text-sm text-slate-300">
+                  <strong>Scenario:</strong> A software startup records recurring monthly revenue of $42,500 in Q1. Following product expansion, Q2 revenue climbs to $58,650.
+                </p>
+                <div className="space-y-1 text-xs font-mono text-slate-400 bg-slate-950 p-3 rounded-lg border border-slate-800">
+                  <p>1. Absolute Growth = $58,650 − $42,500 = $16,150</p>
+                  <p>2. Relative Growth = ($16,150 ÷ $42,500) = 0.38</p>
+                  <p>3. Percentage Change = 0.38 × 100 = +38.00%</p>
+                  <p className="text-sky-400 font-bold">Quarterly Revenue Growth: +38.00%</p>
+                </div>
+                <p className="text-xs text-slate-400">
+                  The executive team can formally report a 38% quarter-over-quarter expansion in recurring revenue.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Section 5: Common Calculation Mistakes & Pitfalls */}
+          <div className="space-y-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-white">
+              Common Calculation Mistakes & Pitfalls to Avoid
+            </h2>
+            <div className="space-y-3 text-sm text-slate-300">
+              <div className="p-4 bg-slate-900/50 rounded-xl border-l-4 border-amber-500 space-y-1">
+                <p className="font-bold text-white">1. Confusing Percentage Points With Percentage Change</p>
+                <p>
+                  If an interest rate or unemployment metric rises from 4% to 5%, that is an increase of <strong>1 percentage point</strong>, but a <strong>25% relative increase</strong> ((5 − 4) ÷ 4 × 100 = 25%). Using these terms interchangeably causes significant distortion in financial and legal reporting.
+                </p>
+              </div>
+              <div className="p-4 bg-slate-900/50 rounded-xl border-l-4 border-rose-500 space-y-1">
+                <p className="font-bold text-white">2. Assuming Symmetrical Percentage Increases and Decreases</p>
+                <p>
+                  A 50% loss requires a 100% gain just to break even. If a $100 stock portfolio drops 50%, it sits at $50. A subsequent 50% gain only lifts the balance to $75 ($50 × 1.50), leaving you 25% below your starting capital. Always compute changes against their current base.
+                </p>
+              </div>
+              <div className="p-4 bg-slate-900/50 rounded-xl border-l-4 border-sky-500 space-y-1">
+                <p className="font-bold text-white">3. Adding Stacked Percentage Discounts Directly</p>
+                <p>
+                  If a store offers &quot;20% off storewide plus an additional 20% loyalty coupon,&quot; the total discount is not 40%. The first 20% lowers a $100 price to $80. The second 20% cuts $16 (20% of $80), making the net price $64—representing a 36% compound discount, not 40%.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Section 6: In-Depth FAQ Component is rendered below */}
+          <div className="space-y-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-white flex items-center gap-3">
+              <HelpCircle className="text-sky-400 w-7 h-7" /> Frequently Asked Questions
+            </h2>
+            <p className="text-slate-300 text-sm">
+              Explore thorough answers to everyday percentage questions, conversion formulas, and mathematical nuances.
+            </p>
+          </div>
+
+          <Faq items={faqItems} className="mt-4" />
+
+          {/* Section 7: Academic References & Internal Navigation */}
+          <div className="space-y-4 pt-6 border-t border-slate-700/60">
+            <h3 className="text-xl font-bold text-white">Standards, References & Companion Tools</h3>
+            <p className="text-xs text-slate-400 leading-relaxed">
+              Mathematical notations and percentage algorithms adhere to international specifications under <strong>ISO 80000-2:2019</strong> (Quantities and units — Mathematics) and standard algebraic guidelines outlined by the <em>National Institute of Standards and Technology (NIST)</em>.
+            </p>
+            <div className="flex flex-wrap gap-3 pt-2">
+              <Link href="/lifestyle/discount-calculator" className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 text-emerald-400 border border-slate-800 text-xs hover:border-emerald-500/50 transition-colors">
+                Discount Calculator <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+              <Link href="/lifestyle/tip-calculator" className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 text-emerald-400 border border-slate-800 text-xs hover:border-emerald-500/50 transition-colors">
+                Tip & Gratuity Calculator <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+              <Link href="/math/fraction-calculator" className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 text-emerald-400 border border-slate-800 text-xs hover:border-emerald-500/50 transition-colors">
+                Fraction Calculator <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+              <Link href="/financial/savings-calculator" className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 text-emerald-400 border border-slate-800 text-xs hover:border-emerald-500/50 transition-colors">
+                Savings Goal Calculator <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
           </div>
         </section>
 
-        <Faq items={faqItems} className="mt-12" />
-        <Disclaimer text="This calculator is for general calculation purposes. For financial decisions, always consult with a professional." />
+        <Disclaimer text="This calculator is for educational and general estimation purposes. For formal corporate accounting, statutory tax filing, or investment advisory, always consult with a certified financial planner or accountant." />
       </div>
     </>
   );

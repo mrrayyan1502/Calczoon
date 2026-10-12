@@ -1,6 +1,7 @@
-﻿'use client';
+'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
@@ -10,8 +11,9 @@ import Faq from '@/components/Faq';
 import Disclaimer from '@/components/Disclaimer';
 import ShareResults from '@/components/ShareResults';
 import Seo from '@/components/Seo';
+import PageHeader from '@/components/PageHeader';
 import RelatedTools from '@/components/calculators/tdee/RelatedTools';
-import { Scale, Ruler } from 'lucide-react';
+import { Scale, Ruler, BookOpen, CheckCircle, HelpCircle, ArrowRight, Compass } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 const lengthUnits = [
@@ -93,28 +95,45 @@ const UnitConverter = () => {
     });
   };
 
-  const pageTitle = "Free Unit Converter: Convert Length & Weight Online 2026";
-  const pageDescription = "Convert weight and length units instantly with our free online Unit Converter. Accurate conversions for kg, lbs, meters, feet, inches, and more.";
+  const pageTitle = "Free Unit Converter: Length & Weight Measurement Tool 2026";
+  const pageDescription = "Convert length and weight measurements with high precision. Convert meters to feet, kilograms to pounds, inches to cm, stones, and miles.";
 
   const faqItems = [
-    { question: "How do I convert kilograms to pounds?", answer: "To convert kilograms to pounds, multiply the weight value by 2.20462. For example, 10 kg converted to pounds is 10 * 2.20462 = 22.0462 lbs. Our weight converter handles this automatically." },
-    { question: "How many centimeters are in an inch?", answer: "There are exactly 2.54 centimeters in one inch. To convert inches to centimeters, multiply the number of inches by 2.54." },
-    { question: "Is this unit converter free and accurate?", answer: "Yes! Our online Unit Converter is 100% free to use. We use exact standard conversion factors (e.g., 0.45359237 kg per pound and 0.0254 meters per inch) to guarantee complete mathematical accuracy." },
-    { question: "Can I use this tool offline?", answer: "Once the website is loaded in your browser, the unit conversion logic runs client-side (locally on your device). This means it works extremely fast and maintains privacy by never sending your numbers to our servers." }
+    {
+      question: "How do you convert kilograms to pounds accurately?",
+      answer: "To convert kilograms to pounds, multiply the kilogram mass by 2.2046226218 (or divide by the exact international constant 0.45359237). For example, 70 kg converts to: 70 * 2.20462 = 154.32 lbs. To convert pounds to kilograms, multiply the pound value by 0.45359237."
+    },
+    {
+      question: "Why is one inch defined as exactly 2.54 centimeters?",
+      answer: "Under the 1959 International Yard and Pound Agreement signed by the United States, United Kingdom, Canada, Australia, New Zealand, and South Africa, the international yard was standardized to exactly 0.9144 meters. Because an international yard comprises exactly 36 inches, one inch was officially fixed to: 0.9144 / 36 = 0.0254 meters (exactly 2.54 cm)."
+    },
+    {
+      question: "What is the difference between standard avoirdupois ounces and precious metal troy ounces?",
+      answer: "Everyday grocery and postal items use the avoirdupois system, where 1 pound equals 16 ounces (1 oz ≈ 28.3495 grams). In contrast, precious metals (gold, silver, platinum) are weighed in troy ounces, where 1 troy ounce equals exactly 31.1034768 grams (approximately 9.7% heavier than an avoirdupois ounce)."
+    },
+    {
+      question: "What is a British stone and how does it convert to pounds and kilograms?",
+      answer: "The stone (st) is an imperial unit of mass widely used in the United Kingdom and Ireland for human bodyweight. Exactly 1 stone equals 14 avoirdupois pounds, which translates to 6.35029318 kilograms. A person weighing 11 stone 4 pounds weighs 158 lbs or approximately 71.67 kg."
+    },
+    {
+      question: "How does the base-unit conversion method eliminate multi-unit rounding errors?",
+      answer: "Rather than maintaining separate cross-conversion formulas for every pair of units (which would require N*(N-1) equations), our engine normalizes any input to the standard SI base unit (meters for length, kilograms for weight) before converting to the destination unit. This guarantees consistency across all conversions."
+    },
+    {
+      question: "Can I use this unit converter offline or on mobile devices?",
+      answer: "Yes! All mathematical conversions are executed client-side directly in your web browser. Once loaded, the converter runs with zero network lag and never sends your proprietary dimensions or weights across external servers."
+    }
   ];
 
   const appSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "WebApplication",
     "name": "CalcZoon Unit Converter",
     "operatingSystem": "All",
     "applicationCategory": "UtilityApplication",
     "browserRequirements": "Requires JavaScript. Requires HTML5.",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    }
+    "url": "https://calczoon.com/lifestyle/unit-converter",
+    "description": "High-precision unit conversion calculator for metric and imperial length, height, distance, weight, and mass."
   };
 
   const faqSchema = {
@@ -140,36 +159,27 @@ const UnitConverter = () => {
       />
 
       <div className="w-full max-w-7xl mx-auto py-8 px-4">
-        <header className="text-center mb-12">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl mb-6 shadow-lg">
-            {activeTab === 'length' ? <Ruler className="w-8 h-8 text-white" /> : <Scale className="w-8 h-8 text-white" />}
-          </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-teal-400">
-            {pageTitle}
-          </h1>
-          <p className="text-lg text-slate-300 max-w-4xl mx-auto">
-            {pageDescription}
-          </p>
-        </header>
+        <PageHeader title={pageTitle} description={pageDescription} icon={Ruler} />
 
         <div className="grid lg:grid-cols-3 gap-8 mb-12">
           <div className="lg:col-span-2">
             <Card className="bg-slate-800/40 backdrop-blur-md border-slate-700/60 shadow-xl rounded-2xl overflow-hidden">
               <CardHeader className="bg-slate-800/20 border-b border-slate-700/30">
-                <CardTitle className="text-white">Convert Measurement Units</CardTitle>
-                <CardDescription>Select conversion type and enter your values</CardDescription>
+                <CardTitle className="text-white">Convert Physical Units</CardTitle>
+                <CardDescription>Select unit type and convert between metric and imperial dimensions</CardDescription>
               </CardHeader>
               <CardContent className="p-6">
-                <Tabs value={activeTab} onValueChange={(val) => { setActiveTab(val); setResult(null); setWeightResult(null); }} className="w-full">
+                <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
                   <TabsList className="grid w-full grid-cols-2 bg-slate-900/50 p-1 rounded-xl">
-                    <TabsTrigger value="length" className="rounded-lg data-[state=active]:bg-emerald-600 data-[state=active]:text-white">
-                      <Ruler className="w-4 h-4 mr-2" /> Length Converter
+                    <TabsTrigger value="length" className="rounded-lg data-[state=active]:bg-emerald-600 data-[state=active]:text-white flex items-center gap-2">
+                      <Ruler className="w-4 h-4" /> Length & Distance
                     </TabsTrigger>
-                    <TabsTrigger value="weight" className="rounded-lg data-[state=active]:bg-emerald-600 data-[state=active]:text-white">
-                      <Scale className="w-4 h-4 mr-2" /> Weight Converter
+                    <TabsTrigger value="weight" className="rounded-lg data-[state=active]:bg-emerald-600 data-[state=active]:text-white flex items-center gap-2">
+                      <Scale className="w-4 h-4" /> Weight & Mass
                     </TabsTrigger>
                   </TabsList>
 
+                  {/* Length Tab */}
                   <TabsContent value="length" className="pt-6">
                     <form onSubmit={handleLengthConvert} className="space-y-6">
                       <div className="space-y-2">
@@ -180,37 +190,37 @@ const UnitConverter = () => {
                           step="any"
                           value={inputValue}
                           onChange={(e) => setInputValue(e.target.value)}
-                          placeholder="e.g. 100"
+                          placeholder="e.g., 10"
                           required
-                          className="bg-slate-900 border-slate-700 focus:ring-emerald-500 focus:border-emerald-500 text-white rounded-xl"
+                          className="bg-slate-900 border-slate-700 text-white rounded-xl text-lg focus:ring-emerald-500"
                         />
                       </div>
 
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div className="space-y-2">
-                          <Label htmlFor="fromUnit" className="text-slate-300 font-medium">From Unit</Label>
+                          <Label htmlFor="fromLength" className="text-slate-300 font-medium">Convert From</Label>
                           <select
-                            id="fromUnit"
+                            id="fromLength"
                             value={fromUnit}
                             onChange={(e) => setFromUnit(e.target.value)}
-                            className="w-full p-3 bg-slate-900 border border-slate-700 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 rounded-xl text-white outline-none"
+                            className="w-full p-3 bg-slate-900 border border-slate-700 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-emerald-500"
                           >
-                            {lengthUnits.map(unit => (
-                              <option key={unit.value} value={unit.value}>{unit.label}</option>
+                            {lengthUnits.map((u) => (
+                              <option key={u.value} value={u.value}>{u.label}</option>
                             ))}
                           </select>
                         </div>
 
                         <div className="space-y-2">
-                          <Label htmlFor="toUnit" className="text-slate-300 font-medium">To Unit</Label>
+                          <Label htmlFor="toLength" className="text-slate-300 font-medium">Convert To</Label>
                           <select
-                            id="toUnit"
+                            id="toLength"
                             value={toUnit}
                             onChange={(e) => setToUnit(e.target.value)}
-                            className="w-full p-3 bg-slate-900 border border-slate-700 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 rounded-xl text-white outline-none"
+                            className="w-full p-3 bg-slate-900 border border-slate-700 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-emerald-500"
                           >
-                            {lengthUnits.map(unit => (
-                              <option key={unit.value} value={unit.value}>{unit.label}</option>
+                            {lengthUnits.map((u) => (
+                              <option key={u.value} value={u.value}>{u.label}</option>
                             ))}
                           </select>
                         </div>
@@ -224,16 +234,16 @@ const UnitConverter = () => {
                       </Button>
                     </form>
 
-                    {result && (
-                      <div className="mt-8 p-6 bg-slate-800/30 border-t border-slate-700/40 rounded-b-2xl text-center space-y-4">
-                        <h3 className="text-lg font-bold text-slate-300">Conversion Result:</h3>
-                        <p className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-sky-400">
+                    {result !== null && (
+                      <div className="mt-6 p-6 bg-slate-900/60 rounded-2xl border border-slate-800 text-center space-y-2">
+                        <h3 className="text-sm font-semibold text-slate-400">Length Conversion Result:</h3>
+                        <p className="text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-sky-400">
                           {inputValue} {fromUnit} = {result} {toUnit}
                         </p>
-                        <div className="pt-2 w-full">
+                        <div className="pt-2">
                           <ShareResults
                             title="Length Conversion"
-                            text={`Converted length on CalcZoon! ${inputValue} ${fromUnit} is equal to ${result} ${toUnit}. Convert weight and length online for free:`}
+                            text={`Converted length on CalcZoon! ${inputValue} ${fromUnit} = ${result} ${toUnit}. Convert units online:`}
                             url="/lifestyle/unit-converter"
                           />
                         </div>
@@ -241,6 +251,7 @@ const UnitConverter = () => {
                     )}
                   </TabsContent>
 
+                  {/* Weight Tab */}
                   <TabsContent value="weight" className="pt-6">
                     <form onSubmit={handleWeightConvert} className="space-y-6">
                       <div className="space-y-2">
@@ -251,37 +262,37 @@ const UnitConverter = () => {
                           step="any"
                           value={weightInputValue}
                           onChange={(e) => setWeightInputValue(e.target.value)}
-                          placeholder="e.g. 70"
+                          placeholder="e.g., 70"
                           required
-                          className="bg-slate-900 border-slate-700 focus:ring-emerald-500 focus:border-emerald-500 text-white rounded-xl"
+                          className="bg-slate-900 border-slate-700 text-white rounded-xl text-lg focus:ring-emerald-500"
                         />
                       </div>
 
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div className="space-y-2">
-                          <Label htmlFor="fromWeightUnit" className="text-slate-300 font-medium">From Unit</Label>
+                          <Label htmlFor="fromWeight" className="text-slate-300 font-medium">Convert From</Label>
                           <select
-                            id="fromWeightUnit"
+                            id="fromWeight"
                             value={fromWeightUnit}
                             onChange={(e) => setFromWeightUnit(e.target.value)}
-                            className="w-full p-3 bg-slate-900 border border-slate-700 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 rounded-xl text-white outline-none"
+                            className="w-full p-3 bg-slate-900 border border-slate-700 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-emerald-500"
                           >
-                            {weightUnits.map(unit => (
-                              <option key={unit.value} value={unit.value}>{unit.label}</option>
+                            {weightUnits.map((u) => (
+                              <option key={u.value} value={u.value}>{u.label}</option>
                             ))}
                           </select>
                         </div>
 
                         <div className="space-y-2">
-                          <Label htmlFor="toWeightUnit" className="text-slate-300 font-medium">To Unit</Label>
+                          <Label htmlFor="toWeight" className="text-slate-300 font-medium">Convert To</Label>
                           <select
-                            id="toWeightUnit"
+                            id="toWeight"
                             value={toWeightUnit}
                             onChange={(e) => setToWeightUnit(e.target.value)}
-                            className="w-full p-3 bg-slate-900 border border-slate-700 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 rounded-xl text-white outline-none"
+                            className="w-full p-3 bg-slate-900 border border-slate-700 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-emerald-500"
                           >
-                            {weightUnits.map(unit => (
-                              <option key={unit.value} value={unit.value}>{unit.label}</option>
+                            {weightUnits.map((u) => (
+                              <option key={u.value} value={u.value}>{u.label}</option>
                             ))}
                           </select>
                         </div>
@@ -295,16 +306,16 @@ const UnitConverter = () => {
                       </Button>
                     </form>
 
-                    {weightResult && (
-                      <div className="mt-8 p-6 bg-slate-800/30 border-t border-slate-700/40 rounded-b-2xl text-center space-y-4">
-                        <h3 className="text-lg font-bold text-slate-300">Conversion Result:</h3>
-                        <p className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-sky-400">
+                    {weightResult !== null && (
+                      <div className="mt-6 p-6 bg-slate-900/60 rounded-2xl border border-slate-800 text-center space-y-2">
+                        <h3 className="text-sm font-semibold text-slate-400">Weight Conversion Result:</h3>
+                        <p className="text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-sky-400">
                           {weightInputValue} {fromWeightUnit} = {weightResult} {toWeightUnit}
                         </p>
-                        <div className="pt-2 w-full">
+                        <div className="pt-2">
                           <ShareResults
                             title="Weight Conversion"
-                            text={`Converted weight on CalcZoon! ${weightInputValue} ${fromWeightUnit} is equal to ${weightResult} ${toWeightUnit}. Try this easy converter:`}
+                            text={`Converted weight on CalcZoon! ${weightInputValue} ${fromWeightUnit} = ${weightResult} ${toWeightUnit}. Try it free:`}
                             url="/lifestyle/unit-converter"
                           />
                         </div>
@@ -319,23 +330,27 @@ const UnitConverter = () => {
           <aside className="lg:col-span-1 space-y-6">
             <Card className="bg-slate-800/40 backdrop-blur-md border-slate-700/60 shadow-xl rounded-2xl">
               <CardHeader>
-                <CardTitle className="text-white">Quick Conversion Ratios</CardTitle>
+                <CardTitle className="text-white flex items-center gap-2">
+                  <BookOpen className="w-5 h-5 text-emerald-400" /> Quick Conversion Sheet
+                </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4 text-slate-300 text-sm leading-relaxed">
                 <div>
-                  <h4 className="font-semibold text-white mb-1">Common Length Conversions</h4>
+                  <h4 className="font-semibold text-white mb-1">Length Equivalents</h4>
                   <ul className="list-disc list-inside text-xs text-slate-300 space-y-1">
-                    <li>1 Inch = 2.54 Centimeters (cm)</li>
-                    <li>1 Meter = 3.28084 Feet (ft)</li>
-                    <li>1 Mile = 1.60934 Kilometers (km)</li>
+                    <li>1 Inch = 2.54 Centimeters (exact)</li>
+                    <li>1 Foot = 0.3048 Meters (exact)</li>
+                    <li>1 Meter ≈ 3.28084 Feet</li>
+                    <li>1 Mile ≈ 1.60934 Kilometers</li>
                   </ul>
                 </div>
-                <div className="border-t border-slate-800 pt-4">
-                  <h4 className="font-semibold text-white mb-1">Common Weight Conversions</h4>
+                <div className="border-t border-slate-700/60 pt-3">
+                  <h4 className="font-semibold text-white mb-1">Weight Equivalents</h4>
                   <ul className="list-disc list-inside text-xs text-slate-300 space-y-1">
-                    <li>1 Kilogram = 2.20462 Pounds (lbs)</li>
-                    <li>1 Pound = 16 Ounces (oz)</li>
-                    <li>1 Stone = 14 Pounds (lbs)</li>
+                    <li>1 Kilogram ≈ 2.20462 Pounds</li>
+                    <li>1 Pound = 0.45359237 kg (exact)</li>
+                    <li>1 Stone = 14 Pounds (6.35029 kg)</li>
+                    <li>1 Ounce ≈ 28.3495 Grams</li>
                   </ul>
                 </div>
               </CardContent>
@@ -344,87 +359,184 @@ const UnitConverter = () => {
           </aside>
         </div>
 
-        {/* Detailed SEO Explanation Section */}
-        <section className="mt-16 bg-slate-800/20 rounded-2xl border border-slate-700/40 p-8 text-slate-300 leading-relaxed max-w-5xl mx-auto space-y-8">
+        {/* 7-Section Comprehensive Educational Guide (>1,200 words) */}
+        <section className="mt-16 bg-slate-800/30 rounded-2xl border border-slate-700/60 p-8 md:p-10 text-slate-300 leading-relaxed max-w-5xl mx-auto space-y-10 mb-12">
+          {/* Section 1: What is a Unit Converter */}
           <div className="space-y-4">
-            <h2 className="text-3xl font-bold text-white">What is a Unit Converter?</h2>
-            <p>
-              A **Unit Converter** is a tool that allows you to easily switch between different units of measurement for physical quantities such as weight, length, volume, speed, and temperature. Whether you're working on scientific calculations, building structures, managing recipes, or planning travel, conversions are necessary to standardise your numbers.
+            <h2 className="text-2xl md:text-3xl font-bold text-white flex items-center gap-3">
+              <Compass className="text-emerald-400 w-7 h-7" /> What is a Unit Converter & The Dual Systems of Measurement
+            </h2>
+            <p className="text-base md:text-lg">
+              A <strong>unit converter</strong> is a metrological computational utility designed to translate numerical expressions of physical quantities between disparate measurement systems without loss of physical integrity. The modern world relies primarily on two major measurement frameworks: the <strong>International System of Units (SI)</strong>, commonly referred to as the metric system, and the <strong>Imperial / United States Customary System</strong>.
             </p>
             <p>
-              This online unit converter tool specializes in length and weight conversions. It provides high-speed conversions utilizing precise scientific values to bridge metric and imperial unit differences instantly.
+              While nearly every nation and international scientific body conducts research and trade in SI base units (meters, kilograms, seconds), the United States, along with aspects of British and Canadian consumer culture, remains deeply invested in customary units (inches, feet, pounds, ounces, and stone). Converting between these standards is not merely a convenience for international travelers—it is a critical requirement in civil engineering, pharmaceutical dosing, global aviation, athletics, and international trade.
             </p>
           </div>
 
+          {/* Section 2: Mathematical Conversion Ratios & Normalization Architecture */}
           <div className="space-y-4">
-            <h2 className="text-2xl font-bold text-white">How to Use the Weight & Length Converter</h2>
-            <ol className="list-decimal pl-6 space-y-2">
+            <h2 className="text-2xl md:text-3xl font-bold text-white">
+              Mathematical Conversion Ratios & Base-Unit Normalization
+            </h2>
+            <p>
+              Our conversion architecture utilizes a <strong>base-unit normalization pipeline</strong>. Any input is first reduced to its fundamental SI base quantity (meters for length, kilograms for mass) through multiplication by its defined ratio, and then divided by the destination unit&apos;s ratio:
+            </p>
+            <div className="grid md:grid-cols-2 gap-4 my-4 font-mono text-xs">
+              <div className="bg-slate-900/60 p-4 rounded-xl border border-emerald-800/40 space-y-2">
+                <p className="text-emerald-400 font-bold uppercase tracking-wider">Length Base Normalization (SI Meter)</p>
+                <p className="text-white text-sm font-semibold">Value_m = Value_input × Ratio_from</p>
+                <p className="text-slate-400">Target Value = Value_m ÷ Ratio_to. Guaranteed identical across all metric and imperial pairs.</p>
+              </div>
+              <div className="bg-slate-900/60 p-4 rounded-xl border border-sky-800/40 space-y-2">
+                <p className="text-sky-400 font-bold uppercase tracking-wider">Weight Base Normalization (SI Kilogram)</p>
+                <p className="text-white text-sm font-semibold">Value_kg = Value_input × Ratio_from</p>
+                <p className="text-slate-400">Target Value = Value_kg ÷ Ratio_to. Exact constants: 1 lb = 0.45359237 kg; 1 st = 14 lb.</p>
+              </div>
+              <div className="bg-slate-900/60 p-4 rounded-xl border border-amber-800/40 space-y-2">
+                <p className="text-amber-400 font-bold uppercase tracking-wider">The 1959 International Yard Standard</p>
+                <p className="text-white text-sm font-semibold">1 yard = 0.9144 m (exact) ⇒ 1 in = 25.4 mm (exact)</p>
+                <p className="text-slate-400">Legally unified the British and American definitions of inches and feet worldwide.</p>
+              </div>
+              <div className="bg-slate-900/60 p-4 rounded-xl border border-purple-800/40 space-y-2">
+                <p className="text-purple-400 font-bold uppercase tracking-wider">Modern SI Quantum Base Definitions</p>
+                <p className="text-white text-sm font-semibold">c = 299,792,458 m/s | h = 6.62607015×10⁻³⁴ kg·m²/s</p>
+                <p className="text-slate-400">Meters and kilograms are tied directly to universal physical constants, not physical prototypes.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Section 3: Step-by-Step Practical Usage Guide */}
+          <div className="space-y-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-white">
+              Step-by-Step Guide: How to Perform High-Precision Unit Conversions
+            </h2>
+            <ol className="list-decimal list-inside space-y-3 pl-2 text-slate-300 text-sm md:text-base">
               <li>
-                <strong>Select the conversion type:</strong> Choose between the length tab or weight tab using the headers inside the tool.
+                <strong className="text-white">Select Measurement Category:</strong> Click the tab corresponding to your physical dimension—choose <em>Length & Distance</em> for blueprints and heights, or <em>Weight & Mass</em> for freight and bodyweight.
               </li>
               <li>
-                <strong>Input the value:</strong> Type the number you wish to convert in the "Value to Convert" input field.
+                <strong className="text-white">Enter the Numerical Value:</strong> Type the magnitude you wish to translate into the input field. The engine natively accepts integers, decimals, and fractional values.
               </li>
               <li>
-                <strong>Choose origin and target units:</strong> Select the unit you are converting from and the unit you wish to convert to from the dropdown menus.
+                <strong className="text-white">Select Origin and Target Units:</strong> Choose your source unit from the &quot;Convert From&quot; dropdown and desired destination from the &quot;Convert To&quot; menu.
               </li>
               <li>
-                <strong>Convert:</strong> Press the convert button to instantly view the calculated result. You can share your result or verify your calculation in the Recent History tab.
+                <strong className="text-white">Execute Conversion & Verify Precision:</strong> Click the Convert button. The system formats answers with up to four decimal places, automatically invoking scientific notation for microscopic values.
               </li>
             </ol>
           </div>
 
+          {/* Section 4: Real-World Numerical Worked Examples */}
           <div className="space-y-4">
-            <h2 className="text-2xl font-bold text-white">Mathematical Conversion Formulas Used</h2>
-            <p>
-              Our unit converter performs calculations using standard scientific conversion factors. It converts the input unit to a base unit (meters for length, kilograms for weight) before converting it to the final unit.
-            </p>
-            
-            <div className="bg-slate-900/50 p-6 rounded-xl border border-slate-800 space-y-4 font-mono text-emerald-400">
-              <p>Length Base Formula: Base (meters) = Value Ã— Factor_From</p>
-              <p>Length Target Formula: Converted = Base (meters) Ã· Factor_To</p>
-              <p>Weight Base Formula: Base (kg) = Value Ã— Factor_From</p>
-              <p>Weight Target Formula: Converted = Base (kg) Ã· Factor_To</p>
+            <h2 className="text-2xl md:text-3xl font-bold text-white">
+              Real-World Numerical Worked Examples
+            </h2>
+            <div className="grid md:grid-cols-2 gap-6 pt-2">
+              <div className="bg-slate-900/70 p-6 rounded-xl border border-slate-700/80 space-y-3">
+                <div className="flex items-center gap-2 text-emerald-400 font-semibold text-lg">
+                  <CheckCircle className="w-5 h-5" /> Example 1: Architectural Beam Height Conversion
+                </div>
+                <p className="text-sm text-slate-300">
+                  <strong>Scenario:</strong> An American structural engineering drawing specifies an I-beam height of 8 feet 6 inches (8.5 feet). A European manufacturing fabricator requires the dimension in metric millimeters.
+                </p>
+                <div className="space-y-1 text-xs font-mono text-slate-400 bg-slate-950 p-3 rounded-lg border border-slate-800">
+                  <p>1. Total Feet: 8.5 ft</p>
+                  <p>2. Normalization to Meters: 8.5 × 0.3048 = 2.5908 m</p>
+                  <p>3. Convert to Millimeters: 2.5908 × 1,000</p>
+                  <p className="text-emerald-400 font-bold">Fabrication Height: 2,590.8 mm (or 259.08 cm)</p>
+                </div>
+                <p className="text-xs text-slate-400">
+                  Exact conversion prevents costly machining errors during cross-border fabrication.
+                </p>
+              </div>
+
+              <div className="bg-slate-900/70 p-6 rounded-xl border border-slate-700/80 space-y-3">
+                <div className="flex items-center gap-2 text-sky-400 font-semibold text-lg">
+                  <Scale className="w-5 h-5" /> Example 2: Medical Patient Body Mass Conversion
+                </div>
+                <p className="text-sm text-slate-300">
+                  <strong>Scenario:</strong> A clinical patient in an international hospital states their bodyweight as 12 stone 4 pounds (172 lbs). The medical team needs kilograms for weight-based medication dosing.
+                </p>
+                <div className="space-y-1 text-xs font-mono text-slate-400 bg-slate-950 p-3 rounded-lg border border-slate-800">
+                  <p>1. Total Pounds: (12 st × 14) + 4 lb = 172 lbs</p>
+                  <p>2. Exact Constant: 1 lb = 0.45359237 kg</p>
+                  <p>3. Multiplication: 172 × 0.45359237 = 78.017887 kg</p>
+                  <p className="text-sky-400 font-bold">Clinical Dosing Mass: 78.02 kg (Rounded)</p>
+                </div>
+                <p className="text-xs text-slate-400">
+                  Weight-based intravenous pharmacological dosages require rigorous metric mass accuracy.
+                </p>
+              </div>
             </div>
-
-            <h3 className="text-lg font-bold text-white mt-4">Length Conversion Factors (Meters per Unit):</h3>
-            <ul className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-slate-300 pl-4 list-disc">
-              <li>Centimeter: 0.01 m</li>
-              <li>Millimeter: 0.001 m</li>
-              <li>Kilometer: 1,000 m</li>
-              <li>Inch: 0.0254 m</li>
-              <li>Foot: 0.3048 m</li>
-              <li>Yard: 0.9144 m</li>
-              <li>Mile: 1,609.344 m</li>
-            </ul>
-
-            <h3 className="text-lg font-bold text-white mt-4">Weight Conversion Factors (Kilograms per Unit):</h3>
-            <ul className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-slate-300 pl-4 list-disc">
-              <li>Gram: 0.001 kg</li>
-              <li>Ounce: 0.0283495 kg</li>
-              <li>Pound: 0.453592 kg</li>
-              <li>Stone: 6.35029 kg</li>
-            </ul>
           </div>
 
+          {/* Section 5: Common Calculation Mistakes & Pitfalls */}
           <div className="space-y-4">
-            <h2 className="text-2xl font-bold text-white">Benefits of Using an Online Unit Converter</h2>
-            <ul className="list-disc pl-6 space-y-2">
-              <li><strong>Eliminates Manual Errors:</strong> Hand conversions are prone to math slips. Our tool uses precise, computer-verified equations.</li>
-              <li><strong>Time Saving:</strong> Get instant metrics instead of digging through conversion tables.</li>
-              <li><strong>Cross-Regional Utility:</strong> Easily translate US/UK imperial metrics to metric equivalents standard across the rest of the world.</li>
-            </ul>
+            <h2 className="text-2xl md:text-3xl font-bold text-white">
+              Common Calculation Mistakes & Pitfalls to Avoid
+            </h2>
+            <div className="space-y-3 text-sm text-slate-300">
+              <div className="p-4 bg-slate-900/50 rounded-xl border-l-4 border-amber-500 space-y-1">
+                <p className="font-bold text-white">1. The Historic Mars Climate Orbiter Disaster ($327 Million Error)</p>
+                <p>
+                  In September 1999, NASA lost the Mars Climate Orbiter spacecraft due to a unit conversion failure. The flight navigation software expected impulse thruster data in metric Newton-seconds ($N\cdot s$), but subcontractor Lockheed Martin transmitted data in imperial pound-force seconds ($lbf\cdot s$). The resulting trajectory discrepancy caused the spacecraft to disintegrate in the Martian atmosphere.
+                </p>
+              </div>
+              <div className="p-4 bg-slate-900/50 rounded-xl border-l-4 border-rose-500 space-y-1">
+                <p className="font-bold text-white">2. Conflating Metric Tonnes with US Short Tons and UK Long Tons</p>
+                <p>
+                  A metric tonne ($t$) is exactly 1,000 kg (2,204.6 lbs). A US short ton is exactly 2,000 lbs (907.18 kg). A British imperial long ton is 2,240 lbs (1,016.05 kg). Confusing these three distinct ton definitions causes severe shipping freight and logistics errors.
+                </p>
+              </div>
+              <div className="p-4 bg-slate-900/50 rounded-xl border-l-4 border-sky-500 space-y-1">
+                <p className="font-bold text-white">3. Conflating Mass with Weight in Physics</p>
+                <p>
+                  In everyday speech, weight and mass are used synonymously. However, in scientific calculations, mass (measured in kilograms) is an invariant property of matter, while weight (measured in Newtons or pound-force) represents gravitational force ($W = m \cdot g$) and varies with local gravity.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Section 6: In-Depth FAQ Component */}
+          <div className="space-y-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-white flex items-center gap-3">
+              <HelpCircle className="text-sky-400 w-7 h-7" /> Frequently Asked Questions
+            </h2>
+            <p className="text-slate-300 text-sm">
+              Explore thorough answers to unit conversion questions, international standards, and measurement history.
+            </p>
+          </div>
+
+          <Faq items={faqItems} className="mt-4" />
+
+          {/* Section 7: Academic References & Companion Tools */}
+          <div className="space-y-4 pt-6 border-t border-slate-700/60">
+            <h3 className="text-xl font-bold text-white">Metrological Standards, References & Companion Tools</h3>
+            <p className="text-xs text-slate-400 leading-relaxed">
+              Unit definitions and conversion ratios adhere to standards established by the <strong>Bureau International des Poids et Mesures (BIPM)</strong> and the <em>National Institute of Standards and Technology (NIST) Special Publication 811</em> (Guide for the Use of the International System of Units).
+            </p>
+            <div className="flex flex-wrap gap-3 pt-2">
+              <Link href="/lifestyle/fuel-cost-calculator" className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 text-emerald-400 border border-slate-800 text-xs hover:border-emerald-500/50 transition-colors">
+                Fuel Cost & MPG Calculator <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+              <Link href="/health/bmi-calculator" className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 text-emerald-400 border border-slate-800 text-xs hover:border-emerald-500/50 transition-colors">
+                BMI Calculator <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+              <Link href="/math/percentage-calculator" className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 text-emerald-400 border border-slate-800 text-xs hover:border-emerald-500/50 transition-colors">
+                Percentage Calculator <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+              <Link href="/lifestyle/discount-calculator" className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 text-emerald-400 border border-slate-800 text-xs hover:border-emerald-500/50 transition-colors">
+                Discount Calculator <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
           </div>
         </section>
 
-        <div className="max-w-5xl mx-auto mt-8">
-          <Faq items={faqItems} />
-          <Disclaimer text="While this converter uses exact standard constants, always double-check values for safety-critical building, medical, or engineering projects." />
-        </div>
+        <Disclaimer text="While this unit converter operates with exact international metrological constants, always verify calculations for safety-critical aerospace engineering, structural load bearing, or pharmacological medical dosing." />
       </div>
     </>
   );
 };
 
 export default UnitConverter;
-

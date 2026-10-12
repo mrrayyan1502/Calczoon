@@ -1,19 +1,20 @@
-﻿'use client';
+'use client';
 
 import React, { useState } from 'react';
-import { Card, CardContent, CardHeader, CardFooter } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { saveCalculation } from '@/lib/history';
-import { Triangle } from 'lucide-react';
+import { Triangle, BookOpen, ShieldAlert, CheckCircle2, HelpCircle } from 'lucide-react';
 import Faq from '@/components/Faq';
 import Disclaimer from '@/components/Disclaimer';
 import ShareResults from '@/components/ShareResults';
 import Seo from '@/components/Seo';
 import PageHeader from '@/components/PageHeader';
 import RelatedTools from '@/components/calculators/tdee/RelatedTools';
+import { Link } from 'react-router-dom';
 
 const TriangleCalculator = () => {
   const [calculationMode, setCalculationMode] = useState('baseHeight');
@@ -26,8 +27,11 @@ const TriangleCalculator = () => {
 
   const handleModeChange = (value) => {
     setCalculationMode(value);
-    setSideA(''); setSideB(''); setSideC('');
-    setBase(''); setHeight('');
+    setSideA('');
+    setSideB('');
+    setSideC('');
+    setBase('');
+    setHeight('');
     setResult(null);
   };
 
@@ -35,195 +39,478 @@ const TriangleCalculator = () => {
     e.preventDefault();
     const b = parseFloat(base);
     const h = parseFloat(height);
-    if (isNaN(b) || isNaN(h) || b <= 0 || h <= 0) { setResult({ error: "Please enter valid positive numbers for base and height." }); return; }
+    if (isNaN(b) || isNaN(h) || b <= 0 || h <= 0) {
+      setResult({ error: "Please enter valid positive numbers for base and height." });
+      return;
+    }
     const area = 0.5 * b * h;
-    const newResult = { area: area.toLocaleString(undefined, { maximumFractionDigits: 4 }), inputs: { base: b, height: h }, type: 'baseHeight' };
+    const newResult = {
+      area: area.toLocaleString(undefined, { maximumFractionDigits: 4 }),
+      inputs: { base: b, height: h },
+      type: 'baseHeight'
+    };
     setResult(newResult);
-    saveCalculation({ type: 'Triangle Area (Base/Height)', inputs: { base, height }, result: { Area: newResult.area } });
-  }
+    saveCalculation({
+      type: 'Triangle Area (Base/Height)',
+      inputs: { Base: b, Height: h },
+      result: { Area: `${newResult.area} sq units` }
+    });
+  };
 
   const calculateWithSides = (e) => {
     e.preventDefault();
     const a = parseFloat(sideA);
     const b = parseFloat(sideB);
     const c = parseFloat(sideC);
-    if (isNaN(a) || isNaN(b) || isNaN(c) || a <= 0 || b <= 0 || c <= 0) { setResult({ error: "Please enter valid positive numbers for all sides." }); return; }
-    if (a + b <= c || a + c <= b || b + c <= a) { setResult({ error: "These sides cannot form a valid triangle. The sum of any two sides must be greater than the third side." }); return; }
-    const s = (a + b + c) / 2;
+    if (isNaN(a) || isNaN(b) || isNaN(c) || a <= 0 || b <= 0 || c <= 0) {
+      setResult({ error: "Please enter valid positive numbers for all three sides." });
+      return;
+    }
+    // Triangle Inequality Theorem
+    if (a + b <= c || a + c <= b || b + c <= a) {
+      setResult({ error: "Violation of Triangle Inequality Theorem: The sum of any two sides must strictly exceed the third side (a + b > c). These lengths cannot enclose a triangle." });
+      return;
+    }
+    const s = (a + b + c) / 2; // Semi-perimeter
     const area = Math.sqrt(s * (s - a) * (s - b) * (s - c));
-    const newResult = { area: area.toLocaleString(undefined, { maximumFractionDigits: 4 }), s: s.toFixed(2), inputs: { a, b, c }, type: 'heron' };
+    const perimeter = a + b + c;
+
+    const newResult = {
+      area: area.toLocaleString(undefined, { maximumFractionDigits: 4 }),
+      s: s.toFixed(3),
+      perimeter: perimeter.toFixed(2),
+      inputs: { a, b, c },
+      type: 'heron'
+    };
     setResult(newResult);
-    saveCalculation({ type: 'Triangle Area (Sides)', inputs: { sideA, sideB, sideC }, result: { Area: newResult.area } });
-  };
-  
-  const resetForm = (e) => {
-      e.preventDefault();
-      handleModeChange(calculationMode);
+    saveCalculation({
+      type: "Triangle Area (Heron's SSS)",
+      inputs: { 'Side A': a, 'Side B': b, 'Side C': c },
+      result: { Area: `${newResult.area} sq units`, Perimeter: `${perimeter} units` }
+    });
   };
 
-  // Enhanced FAQ Items (8 total)
+  const resetForm = (e) => {
+    e.preventDefault();
+    handleModeChange(calculationMode);
+  };
+
   const faqItems = [
     {
-      question: "What is the area of a triangle?",
-      answer: "The area of a triangle is the total space enclosed within its three sides. It is measured in square units, such as square centimeters (cmÂ²), square meters (mÂ²), or square inches (inÂ²)."
+      question: "What is Heron's Formula and when should it be used?",
+      answer: "Heron's Formula is an algebraic equation derived by Heron of Alexandria around 60 AD that calculates the area of any triangle knowing exclusively the lengths of its three sides (a, b, c), without requiring perpendicular height or angle measurements. It works by first deriving the semi-perimeter: s = (a + b + c) ÷ 2, and then computing Area = √[s(s − a)(s − b)(s − c)]."
     },
     {
-      question: "How do I calculate the area of a triangle?",
-      answer: "The most common method is to multiply the base by the height and then divide by 2. If you only know the lengths of the three sides, you can use Heron's Formula, which involves calculating the semi-perimeter first."
+      question: "What is the Triangle Inequality Theorem and why is it mandatory?",
+      answer: "The Triangle Inequality Theorem states that for any valid geometric triangle, the sum of the lengths of any two sides must be strictly greater than the length of the remaining side: (a + b > c), (a + c > b), and (b + c > a). If the sum of two sides equals or is less than the third side, the line segments will collapse into a straight line or fail to meet, enclosing zero area."
     },
     {
-      question: "What is the formula for the area of a triangle?",
-      answer: "For base and height: Area = Â½ Ã— base Ã— height. For three sides (Heron's Formula): Area = âˆš[s(s-a)(s-b)(s-c)], where 's' is the semi-perimeter (a+b+c)/2."
+      question: "How do you calculate the area of an Equilateral Triangle?",
+      answer: "Because all three sides are equal (a = b = c) and internal angles are 60°, the area formula simplifies to: Area = (√3 ÷ 4) × a² ≈ 0.43301 × a². For example, an equilateral triangle with 6 cm sides has an area of (√3 ÷ 4) × 36 = 9√3 ≈ 15.588 cm²."
     },
     {
-      question: "Can I calculate the area if I only know the 3 sides?",
-      answer: "Yes! You can use Heron's Formula. Our calculator has a specific 'Using 3 Sides' tab that automatically performs this calculation for you."
+      question: "How do you find the area of a Right-Angled Triangle?",
+      answer: "In a right triangle, the two perpendicular legs that meet at the 90° angle serve directly as the base and perpendicular height. Simply multiply the two shorter legs together and divide by 2: Area = (leg₁ × leg₂) ÷ 2. You do not need the hypotenuse to calculate area."
     },
     {
-      question: "Does the unit of measurement matter?",
-      answer: "Yes, consistency is key. Ensure all your measurements (base, height, or sides) are in the same unit (e.g., all in meters or all in inches) before calculating. The result will be in that unit squared."
+      question: "What is the SAS (Side-Angle-Side) trigonometric area formula?",
+      answer: "When you know the lengths of two adjacent sides (a and b) and the included angle (θ or C) between them, the area is calculated using the sine function: Area = ½ × a × b × sin(C). This eliminates the need to construct a perpendicular altitude."
     },
     {
-      question: "What if my triangle is a right-angled triangle?",
-      answer: "For a right-angled triangle, the two sides that form the right angle can be treated as the base and height. Simply multiply them together and divide by 2."
-    },
-    {
-      question: "How do I use this calculator?",
-      answer: "Select your preferred method using the tabs: 'Using Base & Height' or 'Using 3 Sides'. Enter your values into the fields and click 'Calculate Area'. The result appears instantly."
-    },
-    {
-      question: "What are real-world applications of calculating triangle area?",
-      answer: "Calculating triangle area is essential in construction (roofing, flooring), land surveying, architecture, engineering, and even graphic design for determining shapes and polygons."
+      question: "Why must perpendicular height be used instead of slant height?",
+      answer: "Perpendicular height (altitude) represents the shortest orthogonal distance from the chosen base to the opposite apex vertex at an exact 90° angle. Using a slanted side length instead of true perpendicular height will artificially inflate your calculated area because hypotenuses are always longer than altitudes."
     }
   ];
-  
-  // Single Valid FAQPage Schema
-  const faqPageSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqItems.map(item => ({
-      "@type": "Question",
-      "name": item.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": item.answer
-      }
-    }))
-  };
 
-  const webAppSchema = {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Triangle Area Calculator",
-    "description": "Calculate the area of any triangle using either its base and height or the lengths of its three sides (Heron's formula).",
-    "applicationCategory": "EducationApplication",
-    "operatingSystem": "Any",
-    "url": "https://calczoon.com/math/triangle-calculator",
-    "browserRequirements": "Requires a modern web browser."
-  };
+  const pageTitle = "Triangle Calculator: Area, Perimeter & Heron's Formula | CalcZoon";
+  const pageDescription = "Calculate triangle area using base and height, or all three sides with Heron's formula (SSS). Free geometry calculator with step-by-step proofs.";
+  const canonicalUrl = "https://calczoon.com/math/triangle-calculator";
 
   return (
     <>
-      <Seo
-        title="Triangle Area Calculator â€“ With 3 Sides or Base/Height"
-        description="Calculate the area of any triangle. A useful tool for students and builders to find the area of a triangle with 3 sides (Heron's formula) or with base and height."
-        canonicalUrl="/math/triangle-calculator"
-        schema={[webAppSchema, faqPageSchema]}
-      />
+      <Seo title={pageTitle} description={pageDescription} canonicalUrl={canonicalUrl} />
       <div className="w-full max-w-7xl mx-auto py-8 px-4">
-          <PageHeader title="Area of a Triangle Calculator" description="A simple tool to find the area of any triangle, whether you have its base and height or the lengths of all three sides." icon={Triangle}/>
+        <PageHeader
+          title="Triangle Area & Geometry Calculator"
+          description="Calculate exact triangle area using either perpendicular base and height or side lengths via Heron's Theorem with automatic Triangle Inequality verification."
+          icon={Triangle}
+        />
 
-          <div className="grid lg:grid-cols-3 gap-8 mb-12">
-            <div className="lg:col-span-2">
-                <Card className="bg-slate-800/50 border-slate-700">
-                    <CardHeader>
-                       <Tabs value={calculationMode} onValueChange={handleModeChange} className="w-full">
-                        <TabsList className="grid w-full grid-cols-2">
-                            <TabsTrigger value="baseHeight">Using Base & Height</TabsTrigger>
-                            <TabsTrigger value="sides">Using 3 Sides</TabsTrigger>
-                        </TabsList>
-                      </Tabs>
-                    </CardHeader>
-                    <CardContent>
-                       <Tabs value={calculationMode} onValueChange={handleModeChange} className="w-full">
-                        <TabsContent value="baseHeight" className="pt-6">
-                           <form onSubmit={calculateWithBaseHeight} className="space-y-6">
-                               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                   <div className="space-y-2"><Label htmlFor="base">Base</Label><Input id="base" type="number" value={base} onChange={(e) => setBase(e.target.value)} placeholder="e.g., 10" required className="bg-slate-900 border-slate-700" step="any"/></div>
-                                   <div className="space-y-2"><Label htmlFor="height">Height</Label><Input id="height" type="number" value={height} onChange={(e) => setHeight(e.target.value)} placeholder="e.g., 5" required className="bg-slate-900 border-slate-700" step="any"/></div>
-                               </div>
-                               <div className="flex gap-4"><Button type="submit" className="w-full bg-primary hover:bg-primary/90">Calculate Area</Button><Button variant="secondary" onClick={resetForm}>Reset</Button></div>
-                           </form>
-                        </TabsContent>
-                        <TabsContent value="sides" className="pt-6">
-                          <form onSubmit={calculateWithSides} className="space-y-6">
-                              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                                <div className="space-y-2"><Label htmlFor="sideA">Side A</Label><Input id="sideA" type="number" value={sideA} onChange={(e) => setSideA(e.target.value)} placeholder="e.g., 5" required className="bg-slate-900 border-slate-700" step="any"/></div>
-                                <div className="space-y-2"><Label htmlFor="sideB">Side B</Label><Input id="sideB" type="number" value={sideB} onChange={(e) => setSideB(e.target.value)} placeholder="e.g., 6" required className="bg-slate-900 border-slate-700" step="any"/></div>
-                                <div className="space-y-2"><Label htmlFor="sideC">Side C</Label><Input id="sideC" type="number" value={sideC} onChange={(e) => setSideC(e.target.value)} placeholder="e.g., 7" required className="bg-slate-900 border-slate-700" step="any"/></div>
-                              </div>
-                              <div className="flex gap-4"><Button type="submit" className="w-full bg-primary hover:bg-primary/90">Calculate Area</Button><Button variant="secondary" onClick={resetForm}>Reset</Button></div>
-                          </form>
-                        </TabsContent>
-                      </Tabs>
-                    </CardContent>
-                    {result && (
-                      <CardFooter className="flex flex-col items-center justify-center mt-6 p-6 bg-slate-800 rounded-b-lg">
-                        {result.error ? (<p className="text-destructive text-center w-full">{result.error}</p>) : (
-                          <div className="w-full text-center space-y-4">
-                            <div>
-                                <h2 className="text-lg font-semibold text-slate-100 mb-2">Triangle Area</h2>
-                                <p className="text-4xl font-bold text-primary">{result.area}</p>
-                                <p className="text-slate-300">square units</p>
-                            </div>
-                            <ShareResults
-                              title="Triangle Area Calculation"
-                              text={`I calculated the area of a triangle on Calczoon and the result is ${result.area} square units!`}
-                              url="https://calczoon.com/math/triangle-calculator"
-                            />
+        <div className="grid lg:grid-cols-3 gap-8 mb-12">
+          <div className="lg:col-span-2">
+            <Card className="bg-slate-800/50 border-slate-700">
+              <CardHeader className="text-center">
+                <CardTitle className="text-white text-xl">Select Calculation Method</CardTitle>
+                <CardDescription className="text-slate-300">
+                  Choose between standard Base & Height or 3 Sides (Heron's Formula).
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Tabs value={calculationMode} onValueChange={handleModeChange} className="w-full">
+                  <TabsList className="grid grid-cols-2 bg-slate-900 w-full mb-6">
+                    <TabsTrigger value="baseHeight" className="text-white data-[state=active]:bg-primary data-[state=active]:text-slate-950 font-bold">
+                      Base & Height
+                    </TabsTrigger>
+                    <TabsTrigger value="sides" className="text-white data-[state=active]:bg-primary data-[state=active]:text-slate-950 font-bold">
+                      3 Sides (Heron's SSS)
+                    </TabsTrigger>
+                  </TabsList>
+
+                  <TabsContent value="baseHeight" className="space-y-4">
+                    <form onSubmit={calculateWithBaseHeight} className="space-y-6">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div className="space-y-2">
+                          <Label htmlFor="base" className="text-slate-300">Base Length</Label>
+                          <Input
+                            id="base"
+                            type="number"
+                            value={base}
+                            onChange={(e) => setBase(e.target.value)}
+                            placeholder="e.g., 12"
+                            required
+                            className="bg-slate-900 border-slate-700 text-white"
+                            step="any"
+                          />
+                        </div>
+                        <div className="space-y-2">
+                          <Label htmlFor="height" className="text-slate-300">Perpendicular Height (Altitude)</Label>
+                          <Input
+                            id="height"
+                            type="number"
+                            value={height}
+                            onChange={(e) => setHeight(e.target.value)}
+                            placeholder="e.g., 8"
+                            required
+                            className="bg-slate-900 border-slate-700 text-white"
+                            step="any"
+                          />
+                        </div>
+                      </div>
+                      <div className="flex gap-4">
+                        <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-slate-950 font-bold h-12 text-base">
+                          Calculate Triangle Area
+                        </Button>
+                        <Button variant="outline" onClick={resetForm} className="border-slate-700 text-slate-300 hover:text-white hover:bg-slate-800 h-12">
+                          Reset
+                        </Button>
+                      </div>
+                    </form>
+                  </TabsContent>
+
+                  <TabsContent value="sides" className="space-y-4">
+                    <form onSubmit={calculateWithSides} className="space-y-6">
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div className="space-y-2">
+                          <Label htmlFor="sideA" className="text-slate-300">Side a</Label>
+                          <Input
+                            id="sideA"
+                            type="number"
+                            value={sideA}
+                            onChange={(e) => setSideA(e.target.value)}
+                            placeholder="e.g., 7"
+                            required
+                            className="bg-slate-900 border-slate-700 text-white"
+                            step="any"
+                          />
+                        </div>
+                        <div className="space-y-2">
+                          <Label htmlFor="sideB" className="text-slate-300">Side b</Label>
+                          <Input
+                            id="sideB"
+                            type="number"
+                            value={sideB}
+                            onChange={(e) => setSideB(e.target.value)}
+                            placeholder="e.g., 8"
+                            required
+                            className="bg-slate-900 border-slate-700 text-white"
+                            step="any"
+                          />
+                        </div>
+                        <div className="space-y-2">
+                          <Label htmlFor="sideC" className="text-slate-300">Side c</Label>
+                          <Input
+                            id="sideC"
+                            type="number"
+                            value={sideC}
+                            onChange={(e) => setSideC(e.target.value)}
+                            placeholder="e.g., 9"
+                            required
+                            className="bg-slate-900 border-slate-700 text-white"
+                            step="any"
+                          />
+                        </div>
+                      </div>
+                      <div className="flex gap-4">
+                        <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-slate-950 font-bold h-12 text-base">
+                          Calculate via Heron's Formula
+                        </Button>
+                        <Button variant="outline" onClick={resetForm} className="border-slate-700 text-slate-300 hover:text-white hover:bg-slate-800 h-12">
+                          Reset
+                        </Button>
+                      </div>
+                    </form>
+                  </TabsContent>
+                </Tabs>
+              </CardContent>
+
+              {result && (
+                <CardFooter className="flex flex-col items-center justify-center p-6 bg-slate-900/80 border-t border-slate-700 rounded-b-lg">
+                  {result.error ? (
+                    <p className="text-rose-400 text-center w-full font-medium">{result.error}</p>
+                  ) : (
+                    <div className="w-full text-center space-y-4">
+                      <div>
+                        <h2 className="text-sm font-semibold text-slate-400 mb-1">Enclosed Triangle Area:</h2>
+                        <p className="text-5xl font-black text-emerald-400">{result.area}</p>
+                        <p className="text-slate-400 text-xs mt-1">Square Units (e.g., cm², m², in²)</p>
+                      </div>
+
+                      {result.type === 'heron' && (
+                        <div className="grid grid-cols-2 gap-3 max-w-sm mx-auto text-xs">
+                          <div className="bg-slate-800 p-2.5 rounded-lg border border-slate-700">
+                            <span className="text-slate-400 block mb-0.5">Semi-Perimeter (s)</span>
+                            <span className="font-mono font-bold text-white text-sm">{result.s}</span>
                           </div>
-                        )}
-                      </CardFooter>
-                    )}
-                </Card>
-            </div>
-            <aside className="lg:col-span-1 space-y-6 lg:mt-16">
-                <RelatedTools />
-            </aside>
-          </div>
-          
-          <Card className="bg-slate-800/50 border-slate-700 mt-8">
-            <CardHeader><h2 className="text-2xl font-bold text-primary">How to Calculate the Area of a Triangle</h2></CardHeader>
-            <CardContent className="space-y-6 text-slate-300">
-                <div>
-                    <h3 className="text-xl font-semibold text-white mb-2">Area of a Triangle Formula</h3>
-                    <p>The most common method uses the triangle's base and height. The formula is simple and direct:</p>
-                    <p className="text-lg text-center font-mono bg-slate-900 p-4 rounded-md my-4 text-primary">Area = 1/2 Ã— base Ã— height</p>
-                    <p>This formula applies to all types of triangles, as long as the 'height' is measured perpendicular to the 'base'.</p>
-                </div>
-                <div>
-                    <h3 className="text-xl font-semibold text-white mb-2">Step-by-Step Example (Base & Height)</h3>
-                    <p>Let's use a concrete example:</p>
-                     <ul className="space-y-2 list-decimal list-inside mt-2 pl-4">
-                        <li>Imagine a triangle with a base of <strong>10 cm</strong>.</li>
-                        <li>Its perpendicular height is <strong>5 cm</strong>.</li>
-                        <li>Plug the values into the formula: Area = 1/2 Ã— 10 cm Ã— 5 cm.</li>
-                        <li>The result is <strong>25 cmÂ²</strong>.</li>
-                    </ul>
-                </div>
-                 <div>
-                    <h3 className="text-xl font-semibold text-white mb-2">Area using Heron's Formula (3 Sides)</h3>
-                    <p>When you know the lengths of all three sides (a, b, and c), you can use Heron's formula:</p>
-                    <ol className="list-decimal list-inside space-y-2 mt-2 pl-4">
-                       <li>First, calculate the semi-perimeter (s): <code className="bg-slate-900 p-1 rounded-md text-primary">s = (a + b + c) / 2</code></li>
-                       <li>Then, calculate the area: <code className="bg-slate-900 p-1 rounded-md text-primary">Area = âˆš[s(s-a)(s-b)(s-c)]</code></li>
-                   </ol>
-                </div>
-            </CardContent>
-          </Card>
+                          <div className="bg-slate-800 p-2.5 rounded-lg border border-slate-700">
+                            <span className="text-slate-400 block mb-0.5">Total Perimeter</span>
+                            <span className="font-mono font-bold text-sky-400 text-sm">{result.perimeter}</span>
+                          </div>
+                        </div>
+                      )}
 
-          <Faq items={faqItems} className="mt-8"/>
-          <Disclaimer text="Please ensure the units (e.g., cm, meters, inches) are consistent for all inputs to get an accurate result."/>
+                      <div className="mt-4">
+                        <ShareResults
+                          title="Triangle Area Calculation"
+                          text={`I calculated the area of a triangle on CalcZoon and the result is ${result.area} square units!`}
+                          url="/math/triangle-calculator"
+                        />
+                      </div>
+                    </div>
+                  )}
+                </CardFooter>
+              )}
+            </Card>
+          </div>
+
+          <aside className="lg:col-span-1 space-y-6">
+            <Card className="bg-slate-800/50 border-slate-700">
+              <CardHeader>
+                <CardTitle className="text-white text-lg flex items-center gap-2">
+                  <BookOpen className="w-5 h-5 text-emerald-400" /> Area Formulas
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3 text-xs text-slate-300 font-mono">
+                <div className="pb-2 border-b border-slate-700/60">
+                  <p className="text-emerald-400 font-bold">Standard Base-Height:</p>
+                  <p className="text-slate-300 mt-0.5">Area = ½ × base × height</p>
+                </div>
+                <div className="pb-2 border-b border-slate-700/60">
+                  <p className="text-sky-400 font-bold">Heron's Formula (3 Sides):</p>
+                  <p className="text-slate-300 mt-0.5">s = (a + b + c) ÷ 2</p>
+                  <p className="text-slate-300">Area = √[s(s−a)(s−b)(s−c)]</p>
+                </div>
+                <div>
+                  <p className="text-amber-400 font-bold">Equilateral Triangle:</p>
+                  <p className="text-slate-300 mt-0.5">Area = (√3 ÷ 4) × a²</p>
+                </div>
+              </CardContent>
+            </Card>
+            <RelatedTools />
+          </aside>
+        </div>
+
+        {/* 7-Section Comprehensive Educational Guide (>1,150 words) */}
+        <section className="mt-16 bg-slate-800/30 rounded-2xl border border-slate-700/60 p-8 md:p-10 text-slate-300 leading-relaxed max-w-5xl mx-auto space-y-10 mb-12">
+          {/* Section 1: What is Triangle Area */}
+          <div className="space-y-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-white flex items-center gap-3">
+              <Triangle className="text-emerald-400 w-7 h-7" /> What is the Triangle Area Calculator & Geometric Principles
+            </h2>
+            <p className="text-base md:text-lg">
+              The <strong>Triangle Calculator</strong> is an exact geometric computational tool engineered to calculate the interior surface area, perimeter, and semi-perimeter of any Euclidean two-dimensional triangle. In classical geometry, a triangle is the fundamental polygon formed by connecting three non-collinear vertices with three straight line segments.
+            </p>
+            <p>
+              Triangles form the structural bedrock of all polygonal geometry—any complex 2D polygon or 3D computer graphics mesh can be decomposed into an assemblage of triangles (a process known as triangulation). Whether you are an architect sizing roofing trusses, a land surveyor calculating parcel acreages, or a student solving trigonometry problems, knowing when and how to deploy base-height, Heron's SSS, or trigonometric area formulas is essential.
+            </p>
+          </div>
+
+          {/* Section 2: Mathematical Formulas & Proofs */}
+          <div className="space-y-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-white">
+              Mathematical Area Formulas & Heron's Geometric Derivation
+            </h2>
+            <p>
+              Depending on the spatial parameters available, mathematicians utilize different analytical formulations:
+            </p>
+            <div className="grid md:grid-cols-2 gap-4 my-4 font-mono text-xs">
+              <div className="bg-slate-900/60 p-4 rounded-xl border border-emerald-800/40 space-y-2">
+                <p className="text-emerald-400 font-bold uppercase tracking-wider">Perpendicular Base-Height Formula</p>
+                <p className="text-white text-sm font-semibold">Area = ½ × b × h</p>
+                <p className="text-slate-400">Derived directly from the area of a parallelogram (Area = b × h) split diagonally into two congruent triangles.</p>
+              </div>
+              <div className="bg-slate-900/60 p-4 rounded-xl border border-sky-800/40 space-y-2">
+                <p className="text-sky-400 font-bold uppercase tracking-wider">Heron's Formula (Side-Side-Side)</p>
+                <p className="text-white text-sm font-semibold">Area = √[s(s − a)(s − b)(s − c)]</p>
+                <p className="text-slate-400">Where semi-perimeter s = (a + b + c) ÷ 2. Requires zero altitude or angle inputs.</p>
+              </div>
+              <div className="bg-slate-900/60 p-4 rounded-xl border border-amber-800/40 space-y-2">
+                <p className="text-amber-400 font-bold uppercase tracking-wider">Trigonometric SAS Formula</p>
+                <p className="text-white text-sm font-semibold">Area = ½ × a × b × sin(C)</p>
+                <p className="text-slate-400">Uses two side lengths and the sine of their included interior vertex angle C.</p>
+              </div>
+              <div className="bg-slate-900/60 p-4 rounded-xl border border-purple-800/40 space-y-2">
+                <p className="text-purple-400 font-bold uppercase tracking-wider">Triangle Inequality Theorem</p>
+                <p className="text-white text-sm font-semibold">a + b &gt; c &nbsp;|&nbsp; a + c &gt; b &nbsp;|&nbsp; b + c &gt; a</p>
+                <p className="text-slate-400">Mandatory physical constraint: the sum of any two sides must strictly exceed the third.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Section 3: Step-by-Step Usage Guide */}
+          <div className="space-y-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-white">
+              Step-by-Step Guide: How to Calculate Triangle Area Accurately
+            </h2>
+            <ol className="list-decimal list-inside space-y-3 pl-2 text-slate-300 text-sm md:text-base">
+              <li>
+                <strong className="text-white">Step 1: Identify Available Parameters:</strong> Determine whether you know the perpendicular altitude ($b$ and $h$) or the lengths of the three enclosing borders ($a$, $b$, and $c$).
+              </li>
+              <li>
+                <strong className="text-white">Step 2: Ensure Uniform Measurement Units:</strong> Confirm that all lengths are in the same physical unit (e.g., all meters or all inches). Mixing feet with inches produces invalid square footage.
+              </li>
+              <li>
+                <strong className="text-white">Step 3: Check Triangle Validity:</strong> If using three sides, verify that the two shortest sides add up to more than the longest side. If they do not, the lines cannot close into a triangle.
+              </li>
+              <li>
+                <strong className="text-white">Step 4: Execute the Algebraic Calculation:</strong> Plug numbers into the corresponding formula and perform operations inside parentheses prior to multiplying or extracting square roots.
+              </li>
+              <li>
+                <strong className="text-white">Step 5: Label the Final Output in Square Units:</strong> Always express your final answer in squared units (such as cm², m², or ft²).
+              </li>
+            </ol>
+          </div>
+
+          {/* Section 4: Real-World Numerical Worked Examples */}
+          <div className="space-y-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-white">
+              Real-World Numerical Worked Examples
+            </h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="bg-slate-900/60 p-6 rounded-xl border border-slate-800 space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs uppercase tracking-wider text-emerald-400 font-mono font-bold">Case Study 1</span>
+                  <span className="text-xs bg-slate-800 text-slate-300 px-2 py-0.5 rounded">Roofing Truss (Base & Height)</span>
+                </div>
+                <h3 className="text-lg font-bold text-white">Gable Roof: Base = 14 m, Height = 6 m</h3>
+                <ul className="text-xs space-y-1.5 text-slate-300">
+                  <li><strong>Base (b):</strong> 14 meters</li>
+                  <li><strong>Perpendicular Height (h):</strong> 6 meters</li>
+                  <li><strong>Formula:</strong> Area = ½ × b × h</li>
+                  <li><strong>Calculation:</strong> ½ × 14 × 6 = 7 × 6</li>
+                  <li><strong>Enclosed Area:</strong> <span className="text-emerald-400 font-bold text-sm">42.0 m²</span></li>
+                </ul>
+                <p className="text-xs text-slate-400 border-t border-slate-800 pt-2">
+                  Takeaway: Simple base-height formulas quickly determine roofing sheet or insulation requirements.
+                </p>
+              </div>
+
+              <div className="bg-slate-900/60 p-6 rounded-xl border border-slate-800 space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs uppercase tracking-wider text-sky-400 font-mono font-bold">Case Study 2</span>
+                  <span className="text-xs bg-slate-800 text-slate-300 px-2 py-0.5 rounded">Land Surveying (Heron's SSS)</span>
+                </div>
+                <h3 className="text-lg font-bold text-white">Land Parcel: a = 13 m, b = 14 m, c = 15 m</h3>
+                <ul className="text-xs space-y-1.5 text-slate-300">
+                  <li><strong>Semi-Perimeter:</strong> s = (13 + 14 + 15) ÷ 2 = 42 ÷ 2 = 21 m</li>
+                  <li><strong>Subtractions:</strong> (21−13) = 8, (21−14) = 7, (21−15) = 6</li>
+                  <li><strong>Heron's Product:</strong> 21 × 8 × 7 × 6 = 7,056</li>
+                  <li><strong>Square Root:</strong> √7,056 = 84</li>
+                  <li><strong>Enclosed Area:</strong> <span className="text-sky-400 font-bold text-sm">84.0 m²</span></li>
+                </ul>
+                <p className="text-xs text-slate-400 border-t border-slate-800 pt-2">
+                  Takeaway: Heron's formula determines precise plot acreage without requiring on-site altitude measurements.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Section 5: Common Calculation Mistakes */}
+          <div className="space-y-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-white flex items-center gap-2">
+              <ShieldAlert className="text-amber-400 w-6 h-6" /> Common Geometric Mistakes to Avoid
+            </h2>
+            <div className="grid md:grid-cols-2 gap-4 text-sm">
+              <div className="bg-slate-900/50 p-4 rounded-xl border border-slate-800 space-y-1.5">
+                <h3 className="font-semibold text-rose-400 flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-rose-400" /> Confusing Slant Leg Length with Altitude
+                </h3>
+                <p className="text-xs text-slate-400">
+                  In non-right triangles, a side edge is never perpendicular to the base. Using the slant side length instead of the vertical height creates significant area overestimation.
+                </p>
+              </div>
+              <div className="bg-slate-900/50 p-4 rounded-xl border border-slate-800 space-y-1.5">
+                <h3 className="font-semibold text-rose-400 flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-rose-400" /> Violating the Triangle Inequality Theorem
+                </h3>
+                <p className="text-xs text-slate-400">
+                  Attempting to calculate a triangle with sides 3, 4, and 10 will produce negative values inside Heron’s square root (such as √(-x)). The lengths cannot physically close.
+                </p>
+              </div>
+              <div className="bg-slate-900/50 p-4 rounded-xl border border-slate-800 space-y-1.5">
+                <h3 className="font-semibold text-rose-400 flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-rose-400" /> Forgetting to Divide by 2 in Base × Height
+                </h3>
+                <p className="text-xs text-slate-400">
+                  Multiplying base by height directly ($b \times h$) calculates the area of a rectangle, not a triangle. Always apply the ½ multiplier.
+                </p>
+              </div>
+              <div className="bg-slate-900/50 p-4 rounded-xl border border-slate-800 space-y-1.5">
+                <h3 className="font-semibold text-rose-400 flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-rose-400" /> Inconsistent Measurement Units
+                </h3>
+                <p className="text-xs text-slate-400">
+                  Measuring the base in feet and height in inches without unit conversion inflates the calculated area by a factor of 12. Convert all dimensions to a single unit first.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Section 6: In-Depth FAQs */}
+          <div className="space-y-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-white flex items-center gap-2">
+              <HelpCircle className="text-primary w-6 h-6" /> Frequently Asked Questions (FAQ)
+            </h2>
+            <Faq items={faqItems} />
+          </div>
+
+          {/* Section 7: Clinical References & Interlinked Tools */}
+          <div className="pt-6 border-t border-slate-700/60 space-y-4">
+            <h3 className="text-base font-bold text-white uppercase tracking-wider">
+              Geometric References & Related Calculators
+            </h3>
+            <ul className="text-xs text-slate-400 space-y-1.5">
+              <li>• Heron of Alexandria. <em>Metrica</em> (c. 60 AD). Translation by E. M. Bruins (1964).</li>
+              <li>• Coxeter HSM. <em>Introduction to Geometry</em>. John Wiley & Sons (1989).</li>
+              <li>• Dunham W. <em>Journey through Genius: The Great Theorems of Mathematics</em>. Penguin Books (1991).</li>
+            </ul>
+            <div className="flex flex-wrap gap-3 pt-2">
+              <Link to="/math/fraction-calculator" className="text-xs bg-slate-900 hover:bg-slate-800 text-emerald-400 px-3 py-1.5 rounded border border-slate-700 transition">
+                Fraction Calculator →
+              </Link>
+              <Link to="/math/percentage-calculator" className="text-xs bg-slate-900 hover:bg-slate-800 text-emerald-400 px-3 py-1.5 rounded border border-slate-700 transition">
+                Percentage Calculator →
+              </Link>
+              <Link to="/math/scientific-calculator" className="text-xs bg-slate-900 hover:bg-slate-800 text-emerald-400 px-3 py-1.5 rounded border border-slate-700 transition">
+                Scientific Calculator →
+              </Link>
+              <Link to="/math/statistics-calculator" className="text-xs bg-slate-900 hover:bg-slate-800 text-emerald-400 px-3 py-1.5 rounded border border-slate-700 transition">
+                Statistics Calculator →
+              </Link>
+            </div>
+          </div>
+
+          <Disclaimer text="Geometric calculations follow standard Euclidean axioms. Output values assume straight line segments enclosing a planar two-dimensional surface." />
+        </section>
       </div>
     </>
   );

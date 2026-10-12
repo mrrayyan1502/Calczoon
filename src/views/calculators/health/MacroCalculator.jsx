@@ -1,8 +1,7 @@
-﻿'use client';
+'use client';
 
 import React, { useState } from 'react';
-import { Helmet } from 'react-helmet-async';
-import { Target, PieChart, Info, Weight, Utensils, BrainCircuit } from 'lucide-react';
+import { Target, PieChart, Weight, Utensils, HelpCircle, ShieldAlert, CheckCircle2 } from 'lucide-react';
 import PageHeader from '@/components/PageHeader';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -12,9 +11,11 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { useToast } from '@/components/ui/use-toast';
 import { saveCalculation } from '@/lib/history';
 import Faq from '@/components/Faq';
+import Disclaimer from '@/components/Disclaimer';
 import RelatedTools from '@/components/calculators/tdee/RelatedTools';
 import ShareResults from '@/components/ShareResults';
-import AdPlaceholder from '@/components/AdPlaceholder';
+import Seo from '@/components/Seo';
+import { Link } from 'react-router-dom';
 
 const MacroCalculator = () => {
   const [calories, setCalories] = useState('');
@@ -23,11 +24,11 @@ const MacroCalculator = () => {
   const { toast } = useToast();
 
   const dietPlans = {
-    balanced: { p: 0.30, c: 0.40, f: 0.30, label: 'Balanced' },
-    lowCarb: { p: 0.40, c: 0.20, f: 0.40, label: 'Low Carb' },
-    lowFat: { p: 0.30, c: 0.50, f: 0.20, label: 'Low Fat' },
-    highProtein: { p: 0.40, c: 0.30, f: 0.30, label: 'High Protein / Bulking' },
-    keto: { p: 0.25, c: 0.05, f: 0.70, label: 'Ketogenic' },
+    balanced: { p: 0.30, c: 0.40, f: 0.30, label: 'Balanced (30P / 40C / 30F)' },
+    highProtein: { p: 0.40, c: 0.35, f: 0.25, label: 'High Protein / Lean Muscle (40P / 35C / 25F)' },
+    lowCarb: { p: 0.35, c: 0.20, f: 0.45, label: 'Low Carb / Fat Adaptation (35P / 20C / 45F)' },
+    lowFat: { p: 0.25, c: 0.55, f: 0.20, label: 'Low Fat / High Endurance (25P / 55C / 20F)' },
+    keto: { p: 0.25, c: 0.05, f: 0.70, label: 'Ketogenic (25P / 5C / 70F)' },
   };
 
   const calculateMacros = (e) => {
@@ -47,12 +48,12 @@ const MacroCalculator = () => {
     setResult(newResult);
     saveCalculation({
       type: 'Macronutrients',
-      inputs: { calories, dietType },
+      inputs: { calories: `${cal} kcal`, dietType: plan.label },
       result: { Protein: `${proteinGrams}g`, Carbs: `${carbsGrams}g`, Fat: `${fatGrams}g` }
     });
     toast({ title: "Macros Calculated!", description: "Your daily macronutrient targets are ready." });
   };
-  
+
   const resetForm = () => {
     setCalories('');
     setDietType('balanced');
@@ -60,98 +61,155 @@ const MacroCalculator = () => {
     toast({ title: "Form Reset", description: "All fields have been cleared." });
   };
 
-  const pageTitle = "Macro Calculator: Find Your Optimal Macronutrient Ratio";
-  const pageDescription = "Calculate your ideal daily intake of protein, carbs, and fats based on your fitness goals (lose weight, gain muscle, or maintain). Get a personalized macronutrient split.";
+  const pageTitle = "Free Macro Calculator: Plan Daily Protein, Carbs & Fats | CalcZoon";
+  const pageDescription = "Calculate your optimal macronutrient breakdown (protein, carbohydrates, fats) for cutting, bulking, or body recomposition based on your daily calorie goal.";
   const canonicalUrl = "https://calczoon.com/health/macro-calculator";
-  
+
   const faqItems = [
-    { question: "What are macronutrients?", answer: "Macronutrients, or 'macros', are the three primary nutrients your body needs in large amounts: protein, carbohydrates, and fats. Each provides energy and serves different functions in the body." },
-    { question: "Why is tracking macros important for weight loss?", answer: "While calorie intake determines weight change, the macronutrient composition of your diet can significantly affect body composition (muscle vs. fat), energy levels, and overall health. A higher protein intake, for example, increases satiety and helps preserve muscle during a calorie deficit." },
-    { question: "How much protein do I need for muscle gain?", answer: "For building muscle, a general guideline is to consume about 1.6 to 2.2 grams of protein per kilogram of body weight (or around 0.7 to 1.0 grams per pound). This provides the necessary amino acids for muscle repair and growth." },
-    { question: "What's a good macro split for muscle gain?", answer: "A common macro split for a lean bulk is 40% protein, 30% carbohydrates, and 30% fat. This provides ample protein for muscle synthesis, enough carbs to fuel intense workouts, and sufficient fats for hormone regulation." },
-    { question: "Should I adjust my macros on rest days?", answer: "Some people practice 'carb cycling', where they consume fewer carbs on rest days and more on training days. While it can be effective, it's not necessary for most people. Maintaining a consistent daily macro target is often simpler and yields great results as long as your weekly calorie and protein goals are met." },
+    {
+      question: "What is the biological difference between macros and total calories?",
+      answer: "Calories determine whether you gain, lose, or maintain body weight (energy balance). Macronutrients determine the quality of that weight change—specifically, whether you lose pure adipose tissue while preserving skeletal muscle, or lose muscle while retaining stubborn fat. Protein provides amino acids for muscle protein synthesis (MPS), carbohydrates replenish muscle glycogen for high-intensity training, and fats sustain steroid hormone synthesis (testosterone, estrogen)."
+    },
+    {
+      question: "Why does fat contain 9 kcal/gram while protein and carbs only contain 4 kcal/gram?",
+      answer: "Fat molecules (triglycerides) have a significantly higher ratio of carbon-hydrogen bonds and fewer oxygen atoms than carbohydrates or amino acids. This chemical structure makes fats more energy-dense, releasing 9 kilocalories of metabolic heat per gram upon oxidative phosphorylation, compared to 4 kcal/gram for glucose and proteins."
+    },
+    {
+      question: "How much protein is scientifically necessary for muscle preservation during a cut?",
+      answer: "A comprehensive meta-analysis by Morton et al. in the British Journal of Sports Medicine and ISSN position stands indicate that 1.6 to 2.2 grams of protein per kilogram of total body weight (0.7 to 1.0 g/lb) is optimal for muscle protein synthesis. In a caloric deficit (cutting phase), increasing protein up to 2.3–2.8 g/kg of lean body mass prevents muscle catabolism and elevates satiety via peptide YY and GLP-1 secretion."
+    },
+    {
+      question: "What is 'Carb Cycling' and should beginners use it?",
+      answer: "Carb cycling involves alternating between high-carbohydrate days (scheduled on heavy training days like legs or back) and low-carbohydrate, higher-fat days (on rest days). While it can optimize insulin sensitivity and training performance for advanced competitors, total weekly caloric deficit and consistent daily protein intake govern 90% of fat loss outcomes."
+    },
+    {
+      question: "Should I weigh my food raw or cooked when tracking macronutrients?",
+      answer: "Always weigh foods raw when possible. Cooking alters water and moisture content drastically. For example, 100 grams of raw chicken breast contains ~23g of protein. After cooking, moisture loss shrinks it to ~75 grams while retaining the same 23g of protein. If you log 100g of cooked chicken as raw, you significantly miscalculate your protein and calorie intake."
+    },
+    {
+      question: "How does alcohol fit into daily macronutrient tracking?",
+      answer: "Alcohol is often called the 'fourth macronutrient' because it yields 7 kcal per gram. However, it cannot be stored as glycogen or muscle tissue. When alcohol is present, hepatic liver enzymes prioritize acetate oxidation over fatty acid breakdown, temporarily arresting lipolysis (fat burning). To track alcohol, divide its total calories by 4 to log as carbs, or by 9 to log as dietary fat."
+    }
   ];
 
   return (
     <>
-      <Helmet>
-        <title>{pageTitle}</title>
-        <meta name="description" content={pageDescription} />
-        <link rel="canonical" href={canonicalUrl} />
-      </Helmet>
-      
+      <Seo
+        title={pageTitle}
+        description={pageDescription}
+        canonicalUrl={canonicalUrl}
+      />
+
       <div className="w-full max-w-7xl mx-auto py-8 px-4">
-        <PageHeader title={pageTitle} description={pageDescription} icon={Target} />
-        
+        <PageHeader title="Macro Calculator" description={pageDescription} icon={Target} />
+
         <div className="grid lg:grid-cols-3 gap-8 mb-12">
           <div className="lg:col-span-2">
             <Card className="bg-slate-800/50 border-slate-700">
               <CardHeader>
-                <CardTitle>Calculate Your Daily Macros</CardTitle>
-                <CardDescription>Enter your daily calorie target and choose a diet plan to get your personalized macronutrient breakdown.</CardDescription>
+                <CardTitle className="text-white text-xl">Calculate Your Daily Macronutrient Targets</CardTitle>
+                <CardDescription className="text-slate-300">
+                  Enter your daily target calorie budget to compute the exact grams of protein, carbohydrates, and dietary fats required.
+                </CardDescription>
               </CardHeader>
               <CardContent>
                 <form onSubmit={calculateMacros} className="space-y-6">
                   <div className="space-y-2">
-                    <Label htmlFor="calories">Daily Calorie Goal (kcal)</Label>
-                    <Input id="calories" type="number" value={calories} onChange={(e) => setCalories(e.target.value)} placeholder="e.g., 2000" required className="bg-slate-900 border-slate-700" />
-                    <p className="text-xs text-slate-300">Tip: Use our <a href="/health/tdee-calculator" className="text-primary hover:underline">TDEE Calculator</a> to find your calorie goal.</p>
+                    <Label htmlFor="calories" className="text-slate-200">Daily Calorie Target (kcal)</Label>
+                    <Input
+                      id="calories"
+                      type="number"
+                      step="1"
+                      value={calories}
+                      onChange={(e) => setCalories(e.target.value)}
+                      placeholder="e.g., 2200"
+                      required
+                      className="bg-slate-900 border-slate-700 text-white"
+                    />
+                    <p className="text-xs text-slate-400">
+                      Need your target calorie budget? Calculate your maintenance calories first with our{' '}
+                      <Link to="/health/tdee-calculator" className="text-primary hover:underline font-semibold">
+                        TDEE Calculator
+                      </Link>.
+                    </p>
                   </div>
+
                   <div className="space-y-2">
-                    <Label htmlFor="dietType">Choose a Diet Plan</Label>
+                    <Label htmlFor="dietType" className="text-slate-200">Nutritional Strategy / Split</Label>
                     <Select value={dietType} onValueChange={setDietType}>
-                      <SelectTrigger className="w-full bg-slate-900 border-slate-700"><SelectValue /></SelectTrigger>
-                      <SelectContent>
-                        {Object.entries(dietPlans).map(([key, {label}]) => (
-                          <SelectItem key={key} value={key}>{label}</SelectItem>
+                      <SelectTrigger className="w-full bg-slate-900 border-slate-700 text-white">
+                        <SelectValue />
+                      </SelectTrigger>
+                      <SelectContent className="bg-slate-900 border-slate-700 text-slate-100">
+                        {Object.entries(dietPlans).map(([key, plan]) => (
+                          <SelectItem key={key} value={key} className="focus:bg-slate-800">
+                            {plan.label}
+                          </SelectItem>
                         ))}
                       </SelectContent>
                     </Select>
                   </div>
+
                   <div className="flex gap-4">
-                    <Button type="submit" className="w-full bg-primary hover:bg-primary/90">Calculate Macros</Button>
-                    <Button type="button" variant="secondary" onClick={resetForm}>Reset</Button>
+                    <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-slate-950 font-bold h-12 text-base">
+                      Calculate Macros
+                    </Button>
+                    <Button type="button" variant="outline" onClick={resetForm} className="border-slate-700 text-slate-300 hover:text-white hover:bg-slate-800">
+                      Reset
+                    </Button>
                   </div>
                 </form>
               </CardContent>
+
               {result && (
-                <CardFooter className="flex-col items-center mt-6">
-                    <h3 className="text-xl font-bold mb-4">Your Daily Macro Targets for {result.planLabel}</h3>
-                    <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
-                        <div className="p-4 bg-blue-900/50 rounded-lg border border-blue-700">
-                            <p className="text-blue-400 font-bold">Protein</p>
-                            <p className="text-3xl font-bold text-white">{result.proteinGrams}g</p>
-                        </div>
-                        <div className="p-4 bg-green-900/50 rounded-lg border border-green-700">
-                            <p className="text-green-400 font-bold">Carbohydrates</p>
-                            <p className="text-3xl font-bold text-white">{result.carbsGrams}g</p>
-                        </div>
-                        <div className="p-4 bg-yellow-900/50 rounded-lg border border-yellow-700">
-                            <p className="text-yellow-400 font-bold">Fat</p>
-                            <p className="text-3xl font-bold text-white">{result.fatGrams}g</p>
-                        </div>
+                <CardFooter className="flex-col items-center mt-6 p-6 bg-slate-900/80 border-t border-slate-700 rounded-b-lg">
+                  <div className="w-full space-y-4">
+                    <h3 className="text-center text-lg font-bold text-white">
+                      Your Daily Targets ({result.calories} kcal Budget):
+                    </h3>
+                    <div className="grid grid-cols-3 gap-4 text-center">
+                      <div className="bg-slate-800/80 p-4 rounded-xl border border-sky-800/40">
+                        <p className="text-xs uppercase tracking-wider text-sky-400 font-bold">Protein (4 kcal/g)</p>
+                        <p className="text-4xl font-black text-sky-300 mt-1">{result.proteinGrams}g</p>
+                        <p className="text-xs text-slate-400 mt-1">{Math.round(result.proteinGrams * 4)} kcal</p>
+                      </div>
+                      <div className="bg-slate-800/80 p-4 rounded-xl border border-emerald-800/40">
+                        <p className="text-xs uppercase tracking-wider text-emerald-400 font-bold">Carbs (4 kcal/g)</p>
+                        <p className="text-4xl font-black text-emerald-300 mt-1">{result.carbsGrams}g</p>
+                        <p className="text-xs text-slate-400 mt-1">{Math.round(result.carbsGrams * 4)} kcal</p>
+                      </div>
+                      <div className="bg-slate-800/80 p-4 rounded-xl border border-amber-800/40">
+                        <p className="text-xs uppercase tracking-wider text-amber-400 font-bold">Fat (9 kcal/g)</p>
+                        <p className="text-4xl font-black text-amber-300 mt-1">{result.fatGrams}g</p>
+                        <p className="text-xs text-slate-400 mt-1">{Math.round(result.fatGrams * 9)} kcal</p>
+                      </div>
                     </div>
-                     <div className="mt-4 w-full">
-                        <ShareResults 
-                            title="My Daily Macros" 
-                            text={`My macro targets for a ${result.calories} kcal diet are: Protein ${result.proteinGrams}g, Carbs ${result.carbsGrams}g, Fat ${result.fatGrams}g. Calculated via Calczoon!`}
-                            url={canonicalUrl}
-                        />
+                    <div className="mt-4">
+                      <ShareResults
+                        title="My Macro Targets"
+                        text={`My daily macro breakdown: ${result.proteinGrams}g Protein, ${result.carbsGrams}g Carbs, ${result.fatGrams}g Fat (${result.calories} kcal). Calculate yours on CalcZoon:`}
+                        url="/health/macro-calculator"
+                      />
                     </div>
+                  </div>
                 </CardFooter>
               )}
             </Card>
           </div>
+
           <aside className="lg:col-span-1 space-y-6">
-            <AdPlaceholder className="h-60"/>
             <Card className="bg-slate-800/50 border-slate-700">
-              <CardHeader><CardTitle className="flex items-center gap-2"><PieChart/> Macro Ratios</CardTitle></CardHeader>
-              <CardContent className="space-y-3">
+              <CardHeader>
+                <CardTitle className="text-white text-lg flex items-center gap-2">
+                  <PieChart className="text-primary w-5 h-5" /> Diet Presets Guide
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3 text-sm text-slate-300">
                 {Object.values(dietPlans).map(plan => (
-                  <div key={plan.label}>
-                    <p className="font-semibold text-white">{plan.label}</p>
-                    <p className="text-xs text-slate-300">
-                      P: {plan.p*100}% | C: {plan.c*100}% | F: {plan.f*100}%
+                  <div key={plan.label} className="pb-2 border-b border-slate-700/60 last:border-0">
+                    <p className="font-semibold text-white text-xs">{plan.label}</p>
+                    <p className="text-xs text-slate-400">
+                      P: {Math.round(plan.p * 100)}% | C: {Math.round(plan.c * 100)}% | F: {Math.round(plan.f * 100)}%
                     </p>
                   </div>
                 ))}
@@ -161,73 +219,199 @@ const MacroCalculator = () => {
           </aside>
         </div>
 
-        {/* Deep SEO Informational Section with Scientific References */}
-        <section className="mt-16 bg-slate-800/20 rounded-2xl border border-slate-700/40 p-8 text-slate-300 leading-relaxed max-w-5xl mx-auto space-y-8 mb-12">
+        {/* 7-Section Comprehensive Educational Guide (>1,100 words) */}
+        <section className="mt-16 bg-slate-800/30 rounded-2xl border border-slate-700/60 p-8 md:p-10 text-slate-300 leading-relaxed max-w-5xl mx-auto space-y-10 mb-12">
+          {/* Section 1: The Physiology of Macronutrients */}
           <div className="space-y-4">
-            <h2 className="flex items-center gap-2 text-2xl font-bold text-white"><Weight className="text-primary"/> The Science of Macronutrients</h2>
-            <p>
-              Macronutrientsâ€”protein, carbohydrates, and fatsâ€”are the primary structural and energy-providing components of the human diet. Unlike micronutrients (vitamins and minerals) which are required in trace amounts, macronutrients are necessary in large quantities to sustain metabolic function, cellular repair, and daily activity.
+            <h2 className="flex items-center gap-3 text-2xl md:text-3xl font-bold text-white">
+              <Weight className="text-primary w-7 h-7" /> What is a Macro Calculator & The Science of Flexible Dieting
+            </h2>
+            <p className="text-base md:text-lg">
+              A <strong>Macronutrient (Macro) Calculator</strong> translates gross daily energy targets (calories) into precise gram requirements for the three core biological macronutrients: <strong>Protein, Carbohydrates, and Dietary Fats</strong>. In sports nutrition and clinical dietetics, this paradigm is recognized as "Flexible Dieting" or "IIFYM" (If It Fits Your Macros).
             </p>
             <p>
-              By scientifically tracking and optimizing the ratio of these macronutrients (often referred to as "Flexible Dieting" or "IIFYM - If It Fits Your Macros"), individuals can achieve precise body composition goals, ranging from clinical weight loss to athletic hypertrophy (muscle gain).
+              Unlike restrictive fad diets that arbitrarily eliminate entire food groups, macro tracking acknowledges that thermodynamic energy balance (calories in vs calories out) dictates total weight fluctuations, while the specific distribution of macronutrients directs body composition (the ratio of lean skeletal muscle mass to adipose fat mass). By synchronizing macro splits with resistance training, athletes preserve metabolic rate and prevent lean tissue catabolism during caloric deficits.
             </p>
           </div>
 
+          {/* Section 2: Mathematical Formulas & Energy Densities */}
           <div className="space-y-4">
-            <h2 className="text-2xl font-bold text-white">Understanding The Big Three</h2>
-            <div className="grid md:grid-cols-3 gap-6 mt-4">
-              <div className="bg-slate-900/50 p-6 border border-blue-900/50 rounded-xl">
-                <h3 className="text-blue-400 font-bold mb-2">Protein (4 kcal/g)</h3>
-                <p className="text-sm">The primary building block for muscle tissue, enzymes, and hormones. High-protein diets increase thermogenesis and satiety, making them highly effective for fat loss and muscle preservation.</p>
+            <h2 className="text-2xl md:text-3xl font-bold text-white">
+              Mathematical Formulas & Caloric Densities
+            </h2>
+            <p>
+              Each macronutrient yields a specific enthalpy of combustion (energy density per gram). Converting total daily calories into grams relies on standard Atwater physiological factors:
+            </p>
+            <div className="grid md:grid-cols-3 gap-4 my-4 font-mono text-xs">
+              <div className="bg-slate-900/60 p-4 rounded-xl border border-sky-800/40 space-y-2">
+                <p className="text-sky-400 font-bold uppercase tracking-wider">Protein Formula (4 kcal/g)</p>
+                <p className="text-white text-sm font-semibold">Protein (g) = (Calories × P%) ÷ 4</p>
+                <p className="text-slate-400">Thermic Effect of Food: ~20–30% of energy expended during assimilation.</p>
               </div>
-              <div className="bg-slate-900/50 p-6 border border-green-900/50 rounded-xl">
-                <h3 className="text-green-400 font-bold mb-2">Carbohydrates (4 kcal/g)</h3>
-                <p className="text-sm">The body's preferred and most efficient energy source. Carbohydrates are stored as glycogen in muscles and the liver, powering intense physical exertion and central nervous system function.</p>
+              <div className="bg-slate-900/60 p-4 rounded-xl border border-emerald-800/40 space-y-2">
+                <p className="text-emerald-400 font-bold uppercase tracking-wider">Carb Formula (4 kcal/g)</p>
+                <p className="text-white text-sm font-semibold">Carbs (g) = (Calories × C%) ÷ 4</p>
+                <p className="text-slate-400">Primary fuel for central nervous system and muscular glycogen stores.</p>
               </div>
-              <div className="bg-slate-900/50 p-6 border border-yellow-900/50 rounded-xl">
-                <h3 className="text-yellow-400 font-bold mb-2">Fats (9 kcal/g)</h3>
-                <p className="text-sm">Essential for endocrine (hormonal) health, vitamin absorption (A, D, E, K), and cellular membrane integrity. Fats are the most calorie-dense macronutrient.</p>
+              <div className="bg-slate-900/60 p-4 rounded-xl border border-amber-800/40 space-y-2">
+                <p className="text-amber-400 font-bold uppercase tracking-wider">Fat Formula (9 kcal/g)</p>
+                <p className="text-white text-sm font-semibold">Fat (g) = (Calories × F%) ÷ 9</p>
+                <p className="text-slate-400">Essential for cell wall lipid bilayers and fat-soluble vitamin absorption (A, D, E, K).</p>
               </div>
             </div>
           </div>
 
+          {/* Section 3: Strategic Bulking vs Cutting Ratios */}
           <div className="space-y-4">
-            <h2 className="flex items-center gap-2 text-2xl font-bold text-white"><Utensils className="text-primary"/> Strategic Bulking vs. Cutting</h2>
+            <h2 className="flex items-center gap-3 text-2xl md:text-3xl font-bold text-white">
+              <Utensils className="text-primary w-7 h-7" /> Strategic Bulking vs Cutting Protocol Breakdown
+            </h2>
             <div className="grid md:grid-cols-2 gap-6 mt-4">
-                <div className="bg-slate-800/40 p-6 rounded-xl border border-slate-700">
-                    <h4 className="flex items-center gap-2 text-lg font-semibold text-emerald-400 mb-2">Hypertrophy (Bulking)</h4>
-                    <p className="text-sm mb-2">To build muscle mass, a caloric surplus (consuming more than your TDEE) combined with a high protein intake is required. A balanced ratio of 40% Carbs, 30% Protein, and 30% Fat ensures adequate recovery and growth.</p>
-                    <ul className="text-xs text-slate-300 space-y-1 list-disc list-inside">
-                        <li>Focus on progressive overload</li>
-                        <li>Maintain a +300 to +500 kcal surplus</li>
-                        <li>High carbohydrate availability for training</li>
-                    </ul>
-                </div>
-                <div className="bg-slate-800/40 p-6 rounded-xl border border-slate-700">
-                    <h4 className="flex items-center gap-2 text-lg font-semibold text-rose-400 mb-2">Fat Loss (Cutting)</h4>
-                    <p className="text-sm mb-2">Requires a caloric deficit (consuming less than your TDEE). Protein intake must remain high (often 40% of total calories) to prevent muscle catabolism while losing fat tissue.</p>
-                     <ul className="text-xs text-slate-300 space-y-1 list-disc list-inside">
-                        <li>Maintain a -300 to -500 kcal deficit</li>
-                        <li>Prioritize high-satiety foods</li>
-                        <li>Moderate to lower carbohydrates</li>
-                    </ul>
-                </div>
+              <div className="bg-slate-900/50 p-6 rounded-xl border border-emerald-800/40 space-y-3">
+                <h3 className="text-lg font-bold text-emerald-400">Hypertrophy & Muscle Gain (Bulking)</h3>
+                <p className="text-sm">
+                  To synthesize new contractile muscle tissue, consume a controlled caloric surplus (+250 to +400 kcal above maintenance). High carbohydrate availability powers high-volume lifting sessions and spikes insulin, which helps drive amino acids into muscle cells.
+                </p>
+                <ul className="text-xs text-slate-300 space-y-1 list-disc list-inside">
+                  <li><strong>Target Split:</strong> 30% Protein / 45–50% Carbs / 20–25% Fat</li>
+                  <li><strong>Protein Intake:</strong> 1.6 to 2.2 g/kg body weight</li>
+                  <li><strong>Carb Density:</strong> Ample complex starches around workout windows</li>
+                </ul>
+              </div>
+
+              <div className="bg-slate-900/50 p-6 rounded-xl border border-rose-800/40 space-y-3">
+                <h3 className="text-lg font-bold text-rose-400">Fat Loss & Muscle Retention (Cutting)</h3>
+                <p className="text-sm">
+                  Requires a moderate caloric deficit (-350 to -500 kcal below maintenance). Protein must be elevated to prevent muscle breakdown when glycogen stores are depleted, while high protein also enhances fullness and satiety.
+                </p>
+                <ul className="text-xs text-slate-300 space-y-1 list-disc list-inside">
+                  <li><strong>Target Split:</strong> 40% Protein / 30–35% Carbs / 25–30% Fat</li>
+                  <li><strong>Protein Intake:</strong> 2.0 to 2.6 g/kg of lean body mass</li>
+                  <li><strong>Satiety Focus:</strong> High-volume, fibrous vegetables and lean poultry/fish</li>
+                </ul>
+              </div>
             </div>
           </div>
 
-          {/* Scientific References Section */}
-          <div className="mt-10 pt-6 border-t border-slate-700/50">
-            <h3 className="text-lg font-bold text-slate-300 mb-3 uppercase tracking-wider text-sm">Scientific References & Sources</h3>
-            <ul className="text-xs text-slate-400 space-y-2">
-              <li>1. JÃ¤ger, R., Kerksick, C. M., Campbell, B. I., et al. (2017). International Society of Sports Nutrition Position Stand: protein and exercise. <em>Journal of the International Society of Sports Nutrition</em>, 14(1), 20.</li>
-              <li>2. Helms, E. R., Aragon, A. A., & Fitschen, P. J. (2014). Evidence-based recommendations for natural bodybuilding contest preparation: nutrition and supplementation. <em>Journal of the International Society of Sports Nutrition</em>, 11(1), 20.</li>
-              <li>3. Morton, R. W., Murphy, K. T., McKellar, S. R., et al. (2018). A systematic review, meta-analysis and meta-regression of the effect of protein supplementation on resistance training-induced gains in muscle mass and strength in healthy adults. <em>British Journal of Sports Medicine</em>, 52(6), 376-384.</li>
-              <li>4. Dietary Guidelines for Americans, 2020-2025. U.S. Department of Agriculture and U.S. Department of Health and Human Services.</li>
-            </ul>
-          </div>
-        </section>
+          {/* Section 4: Real-World Numerical Worked Examples */}
+          <div className="space-y-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-white">
+              Real-World Numerical Worked Examples
+            </h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="bg-slate-900/60 p-6 rounded-xl border border-slate-800 space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs uppercase tracking-wider text-rose-400 font-mono font-bold">Cutting Scenario</span>
+                  <span className="text-xs bg-slate-800 text-slate-300 px-2 py-0.5 rounded">80 kg Lifter</span>
+                </div>
+                <h3 className="text-lg font-bold text-white">Target: 2,000 kcal Cutting Diet</h3>
+                <ul className="text-xs space-y-1.5 text-slate-300">
+                  <li><strong>Diet Split:</strong> High Protein (40% P / 35% C / 25% F)</li>
+                  <li><strong>Protein Grams:</strong> (2000 × 0.40) ÷ 4 = <span className="text-sky-400 font-bold">200g (800 kcal)</span></li>
+                  <li><strong>Carb Grams:</strong> (2000 × 0.35) ÷ 4 = <span className="text-emerald-400 font-bold">175g (700 kcal)</span></li>
+                  <li><strong>Fat Grams:</strong> (2000 × 0.25) ÷ 9 = <span className="text-amber-400 font-bold">56g (500 kcal)</span></li>
+                </ul>
+                <p className="text-xs text-slate-400 border-t border-slate-800 pt-2">
+                  Outcome: At 2.5g protein per kg of body mass, muscle retention is prioritized while a 500 kcal deficit ensures consistent fat loss.
+                </p>
+              </div>
 
-        <Faq items={faqItems} />
+              <div className="bg-slate-900/60 p-6 rounded-xl border border-slate-800 space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs uppercase tracking-wider text-emerald-400 font-mono font-bold">Bulking Scenario</span>
+                  <span className="text-xs bg-slate-800 text-slate-300 px-2 py-0.5 rounded">70 kg Athlete</span>
+                </div>
+                <h3 className="text-lg font-bold text-white">Target: 2,800 kcal Lean Bulk</h3>
+                <ul className="text-xs space-y-1.5 text-slate-300">
+                  <li><strong>Diet Split:</strong> Balanced Hypertrophy (30% P / 45% C / 25% F)</li>
+                  <li><strong>Protein Grams:</strong> (2800 × 0.30) ÷ 4 = <span className="text-sky-400 font-bold">210g (840 kcal)</span></li>
+                  <li><strong>Carb Grams:</strong> (2800 × 0.45) ÷ 4 = <span className="text-emerald-400 font-bold">315g (1,260 kcal)</span></li>
+                  <li><strong>Fat Grams:</strong> (2800 × 0.25) ÷ 9 = <span className="text-amber-400 font-bold">78g (700 kcal)</span></li>
+                </ul>
+                <p className="text-xs text-slate-400 border-t border-slate-800 pt-2">
+                  Outcome: 315g of carbohydrates saturates muscle glycogen, maximizing progressive overload and performance in the gym.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Section 5: Common Tracking Pitfalls */}
+          <div className="space-y-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-white flex items-center gap-2">
+              <ShieldAlert className="text-amber-400 w-6 h-6" /> Common Macro Tracking Pitfalls to Avoid
+            </h2>
+            <div className="grid md:grid-cols-2 gap-4 text-sm">
+              <div className="bg-slate-900/50 p-4 rounded-xl border border-slate-800 space-y-1.5">
+                <h3 className="font-semibold text-rose-400 flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-rose-400" /> Eyeballing Cooking Oils and Dressings
+                </h3>
+                <p className="text-xs text-slate-400">
+                  A single tablespoon of olive oil or butter contains ~14g of pure fat (126 kcal). Free-pouring oil directly into a skillet can inadvertently add 300 unrecorded calories, erasing an entire daily caloric deficit.
+                </p>
+              </div>
+              <div className="bg-slate-900/50 p-4 rounded-xl border border-slate-800 space-y-1.5">
+                <h3 className="font-semibold text-rose-400 flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-rose-400" /> Confusing Net Carbs with Total Carbs
+                </h3>
+                <p className="text-xs text-slate-400">
+                  Processed "keto" snacks often subtract large quantities of synthetic fibers and sugar alcohols. While pure insoluble fiber is indigestible, certain modified starches still provide ~2 kcal/g and can stall weight loss.
+                </p>
+              </div>
+              <div className="bg-slate-900/50 p-4 rounded-xl border border-slate-800 space-y-1.5">
+                <h3 className="font-semibold text-rose-400 flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-rose-400" /> Dropping Fats Below 15% of Calories
+                </h3>
+                <p className="text-xs text-slate-400">
+                  Excessively low-fat diets impair endocrine function, leading to suppressed free testosterone, disrupted menstrual regulation in females, dry skin, and impaired absorption of vitamins A, D, E, and K.
+                </p>
+              </div>
+              <div className="bg-slate-900/50 p-4 rounded-xl border border-slate-800 space-y-1.5">
+                <h3 className="font-semibold text-rose-400 flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-rose-400" /> Neglecting Dietary Micronutrients
+                </h3>
+                <p className="text-xs text-slate-400">
+                  "If It Fits Your Macros" does not mean eating junk food exclusively. Processed foods lack potassium, magnesium, and dietary fiber, which are critical for cardiovascular health, gut microbiome diversity, and blood pressure control.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Section 6: In-Depth FAQs */}
+          <div className="space-y-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-white flex items-center gap-2">
+              <HelpCircle className="text-primary w-6 h-6" /> Frequently Asked Questions (FAQ)
+            </h2>
+            <Faq items={faqItems} />
+          </div>
+
+          {/* Section 7: Scientific References & Interlinked Tools */}
+          <div className="pt-6 border-t border-slate-700/60 space-y-4">
+            <h3 className="text-base font-bold text-white uppercase tracking-wider">
+              Clinical References & Related Health Calculators
+            </h3>
+            <ul className="text-xs text-slate-400 space-y-1.5">
+              <li>• Morton RW, et al. A systematic review and meta-analysis of protein supplementation on resistance training gains. <em>British Journal of Sports Medicine</em>, 52(6):376-384 (2018).</li>
+              <li>• Jäger R, et al. International Society of Sports Nutrition Position Stand: protein and exercise. <em>Journal of the International Society of Sports Nutrition</em>, 14(1):20 (2017).</li>
+              <li>• Helms ER, et al. Evidence-based recommendations for natural bodybuilding contest preparation: nutrition and supplementation. <em>JISSN</em>, 11(1):20 (2014).</li>
+            </ul>
+            <div className="flex flex-wrap gap-3 pt-2">
+              <Link to="/health/tdee-calculator" className="text-xs bg-slate-900 hover:bg-slate-800 text-primary px-3 py-1.5 rounded border border-slate-700 transition">
+                Find Your Maintenance Calories (TDEE) →
+              </Link>
+              <Link to="/health/body-fat-calculator" className="text-xs bg-slate-900 hover:bg-slate-800 text-primary px-3 py-1.5 rounded border border-slate-700 transition">
+                Measure Lean Body Mass & Body Fat % →
+              </Link>
+              <Link to="/health/calories-burned-calculator" className="text-xs bg-slate-900 hover:bg-slate-800 text-primary px-3 py-1.5 rounded border border-slate-700 transition">
+                Calculate Workout Calories Burned →
+              </Link>
+              <Link to="/health/bmi-calculator" className="text-xs bg-slate-900 hover:bg-slate-800 text-primary px-3 py-1.5 rounded border border-slate-700 transition">
+                Check Body Mass Index (BMI) →
+              </Link>
+            </div>
+          </div>
+
+          <Disclaimer text="Macronutrient recommendations generated by this tool are designed for general fitness and educational purposes. Individuals with clinical renal disease, metabolic syndrome, or specific medical dietary constraints should seek guidance from a registered dietitian or licensed physician." />
+        </section>
       </div>
     </>
   );
