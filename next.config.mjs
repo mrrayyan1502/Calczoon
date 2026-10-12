@@ -269,7 +269,28 @@ const nextConfig = {
       },
       {
         source: '/blog/20-free-online-calculators',
-        destination: '/tools',
+        destination: '/calculators',
+        permanent: true,
+      },
+      // Category Root 301s -> Resolves 4 Soft 404s
+      {
+        source: '/health',
+        destination: '/health-fitness-calculators',
+        permanent: true,
+      },
+      {
+        source: '/financial',
+        destination: '/financial-calculators',
+        permanent: true,
+      },
+      {
+        source: '/math',
+        destination: '/math-science-calculators',
+        permanent: true,
+      },
+      {
+        source: '/lifestyle',
+        destination: '/lifestyle-everyday-calculators',
         permanent: true,
       },
       {

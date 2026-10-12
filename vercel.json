@@ -30,6 +30,26 @@
       "source": "/tools",
       "destination": "/calculators",
       "permanent": true
+    },
+    {
+      "source": "/health",
+      "destination": "/health-fitness-calculators",
+      "permanent": true
+    },
+    {
+      "source": "/financial",
+      "destination": "/financial-calculators",
+      "permanent": true
+    },
+    {
+      "source": "/math",
+      "destination": "/math-science-calculators",
+      "permanent": true
+    },
+    {
+      "source": "/lifestyle",
+      "destination": "/lifestyle-everyday-calculators",
+      "permanent": true
     }
   ],
   "headers": [
