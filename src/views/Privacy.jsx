@@ -141,7 +141,7 @@ const Privacy = () => {
                   <div className="bg-slate-800/60 p-4 rounded-lg border border-slate-700 text-sm space-y-1">
                     <p className="font-semibold text-white">CalcZoon (Data Controller)</p>
                     <p className="text-slate-300">Location: Operating from the United Kingdom</p>
-                    <p className="text-slate-300">General Inquiries: <a href="mailto:contact@calczoon.com" className="text-primary hover:underline">contact@calczoon.com</a> | Editorial &amp; Support: <a href="mailto:support@calczoon.com" className="text-primary hover:underline">support@calczoon.com</a></p>
+                    <p className="text-slate-300">Official Contact &amp; Support: <a href="mailto:calczy2025@gmail.com" className="text-primary hover:underline">calczy2025@gmail.com</a></p>
                     <p className="text-slate-300">Website: <Link to="/contact" className="text-primary hover:underline">calczoon.com/contact</Link></p>
                   </div>
                 </div>

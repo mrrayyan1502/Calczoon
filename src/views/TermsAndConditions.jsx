@@ -92,7 +92,7 @@ const TermsAndConditions = () => {
                 <div className="bg-slate-800/50 p-4 rounded-lg border border-slate-700/60 text-sm mt-2 space-y-1">
                   <p className="font-semibold text-white">CalcZoon</p>
                   <p className="text-slate-300">Location: Operating from the United Kingdom</p>
-                  <p className="text-slate-300">General Inquiries: <a href="mailto:contact@calczoon.com" className="text-primary hover:underline">contact@calczoon.com</a> | Editorial &amp; Support: <a href="mailto:support@calczoon.com" className="text-primary hover:underline">support@calczoon.com</a></p>
+                  <p className="text-slate-300">Official Contact &amp; Support: <a href="mailto:calczy2025@gmail.com" className="text-primary hover:underline">calczy2025@gmail.com</a></p>
                 </div>
               </div>
             </div>

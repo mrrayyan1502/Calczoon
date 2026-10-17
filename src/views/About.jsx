@@ -91,10 +91,10 @@ const AboutPage = () => {
                         <div className="bg-slate-900/40 border border-slate-800 p-6 rounded-xl mt-6">
                             <h3 className="text-lg font-bold text-white mb-2">Publisher &amp; Operator Information</h3>
                             <div className="text-slate-300 text-sm space-y-1">
-                                <p><strong>Platform:</strong> CalcZoon (Independent Digital Web Utilities Portal)</p>
-                                <p><strong>Location:</strong> Operating from the United Kingdom</p>
+                                <p><strong>Platform:</strong> CalcZoon (Independent Web Utilities Portal)</p>
+                                <p><strong>Location:</strong> United Kingdom</p>
                                 <p>
-                                    <strong>General Inquiries:</strong> <a href="mailto:contact@calczoon.com" className="text-primary hover:underline">contact@calczoon.com</a> | <strong>Editorial &amp; Support:</strong> <a href="mailto:support@calczoon.com" className="text-primary hover:underline">support@calczoon.com</a>
+                                    <strong>Official Contact &amp; Support:</strong> <a href="mailto:calczy2025@gmail.com" className="text-primary hover:underline">calczy2025@gmail.com</a>
                                 </p>
                             </div>
                         </div>

@@ -115,7 +115,7 @@ const Disclaimer = () => {
 
             <p className="text-center text-slate-400 text-sm pt-6 border-t border-slate-800">
               If you have any questions about this disclaimer, please reach out to us at{' '}
-              <a href="mailto:contact@calczoon.com" className="text-primary hover:underline">contact@calczoon.com</a> or visit our{' '}
+              <a href="mailto:calczy2025@gmail.com" className="text-primary hover:underline">calczy2025@gmail.com</a> or visit our{' '}
               <Link to="/contact" className="text-primary hover:underline">Contact Page</Link>.
             </p>
           </CardContent>

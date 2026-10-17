@@ -177,13 +177,11 @@ const Contact = () => {
                     <Mail className="h-6 w-6" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-white">Direct Email Addresses</h3>
+                    <h3 className="font-semibold text-white">Direct Email Contact</h3>
                     <div className="mt-1 space-y-1 text-sm">
                       <p className="text-slate-300">
-                        General: <a href="mailto:contact@calczoon.com" className="text-primary hover:underline font-medium">contact@calczoon.com</a>
-                      </p>
-                      <p className="text-slate-300">
-                        Support: <a href="mailto:support@calczoon.com" className="text-primary hover:underline font-medium">support@calczoon.com</a>
+                        Official Contact &amp; Support:{' '}
+                        <a href="mailto:calczy2025@gmail.com" className="text-primary hover:underline font-medium">calczy2025@gmail.com</a>
                       </p>
                     </div>
                   </div>
@@ -207,12 +205,11 @@ const Contact = () => {
                     <MapPin className="h-6 w-6" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-white">Operations &amp; Location</h3>
-                    <p className="text-slate-300 text-sm mt-1 leading-relaxed">
-                      <strong>CalcZoon</strong><br />
-                      Operating from the United Kingdom<br />
-                      Independent Digital Web Utilities Portal
-                    </p>
+                    <h3 className="font-semibold text-white">Platform &amp; Location</h3>
+                    <div className="text-slate-300 text-sm mt-1 leading-relaxed space-y-0.5">
+                      <p><strong>Platform:</strong> CalcZoon (Independent Web Utilities Portal)</p>
+                      <p><strong>Location:</strong> United Kingdom</p>
+                    </div>
                   </div>
                 </div>
 

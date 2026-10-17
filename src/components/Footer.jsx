@@ -66,10 +66,10 @@ const Footer = () => {
                         <p className="text-xs text-slate-400 leading-relaxed">
                             Fast, free, and mathematically verified online calculators for finance, health, math, and everyday decision making.
                         </p>
-                        <div className="text-xs text-slate-400">
-                            <strong>CalcZoon</strong><br />
-                            Operating from the United Kingdom<br />
-                            <a href="mailto:contact@calczoon.com" className="hover:text-primary transition-colors">contact@calczoon.com</a>
+                        <div className="text-xs text-slate-400 space-y-0.5">
+                            <p><strong>CalcZoon</strong> (Independent Web Utilities Portal)</p>
+                            <p><strong>Location:</strong> United Kingdom</p>
+                            <p><strong>Contact:</strong> <a href="mailto:calczy2025@gmail.com" className="hover:text-primary transition-colors">calczy2025@gmail.com</a></p>
                         </div>
                         <div className="flex space-x-4 pt-1">
                             {socialLinks.map((social, index) => (

@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React from 'react';
 import RelatedBlogs from '@/components/blog/RelatedBlogs';
@@ -54,7 +54,7 @@ const FractionBlog = () => {
                     <p>Our calculator is designed for ease of use, breaking down any fraction problem into a few simple steps. Here's how it works:</p>
                     <ol>
                         <li><strong>Enter Your First Fraction:</strong> Input the numerator and denominator for the first fraction in the designated fields.</li>
-                        <li><strong>Select the Operation:</strong> Choose the arithmetic operation you wish to perform (+, -, Ã—, Ã·) from the available options.</li>
+                        <li><strong>Select the Operation:</strong> Choose the arithmetic operation you wish to perform (+, -, ×, ÷) from the available options.</li>
                         <li><strong>Enter Your Second Fraction:</strong> Input the numerator and denominator for the second fraction.</li>
                         <li><strong>Calculate and View the Result:</strong> Click the "Calculate" button. The calculator will instantly display the result in its simplest form. For example, to add 1/2 and 1/3, you would enter the fractions, select '+', and the tool would output 5/6. If you were to multiply 2/3 by 3/4, it would correctly calculate the result and simplify it to 1/2. The tool handles all the background work for you.</li>
                     </ol>
