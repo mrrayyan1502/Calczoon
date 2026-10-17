@@ -89,12 +89,14 @@ const AboutPage = () => {
                             </div>
                         </div>
                         <div className="bg-slate-900/40 border border-slate-800 p-6 rounded-xl mt-6">
-                            <h3 className="text-lg font-bold text-white mb-2">Publisher & Operator Information</h3>
-                            <p className="text-slate-300 text-sm">
-                                <strong>CalcZoon Ltd.</strong><br />
-                                124 City Road, London, EC1V 2NX, United Kingdom<br />
-                                General Inquiries: <a href="mailto:contact@calczoon.com" className="text-primary hover:underline">contact@calczoon.com</a> | Editorial Inquiries: <a href="mailto:support@calczoon.com" className="text-primary hover:underline">support@calczoon.com</a>
-                            </p>
+                            <h3 className="text-lg font-bold text-white mb-2">Publisher &amp; Operator Information</h3>
+                            <div className="text-slate-300 text-sm space-y-1">
+                                <p><strong>Platform:</strong> CalcZoon (Independent Digital Web Utilities Portal)</p>
+                                <p><strong>Location:</strong> Operating from the United Kingdom</p>
+                                <p>
+                                    <strong>General Inquiries:</strong> <a href="mailto:contact@calczoon.com" className="text-primary hover:underline">contact@calczoon.com</a> | <strong>Editorial &amp; Support:</strong> <a href="mailto:support@calczoon.com" className="text-primary hover:underline">support@calczoon.com</a>
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -108,7 +108,7 @@ const Disclaimer = () => {
                   <h2 className="text-xl font-bold text-white">4. Limitation of Liability</h2>
                 </div>
                 <p className="text-sm text-slate-300">
-                  By using CalcZoon.com, you expressly agree that CalcZoon Ltd., its founders, developers, and contributors shall not be liable for any direct, indirect, incidental, or consequential damages resulting from reliance on the calculations, estimates, or content provided on this website. You assume sole responsibility for any actions taken based on our tools.
+                  By using CalcZoon.com, you expressly agree that CalcZoon, its operators, developers, and contributors shall not be liable for any direct, indirect, incidental, or consequential damages resulting from reliance on the calculations, estimates, or content provided on this website. You assume sole responsibility for any actions taken based on our tools.
                 </p>
               </div>
             </div>

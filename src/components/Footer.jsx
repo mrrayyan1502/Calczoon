@@ -67,8 +67,8 @@ const Footer = () => {
                             Fast, free, and mathematically verified online calculators for finance, health, math, and everyday decision making.
                         </p>
                         <div className="text-xs text-slate-400">
-                            <strong>CalcZoon Ltd.</strong><br />
-                            124 City Road, London, EC1V 2NX<br />
+                            <strong>CalcZoon</strong><br />
+                            Operating from the United Kingdom<br />
                             <a href="mailto:contact@calczoon.com" className="hover:text-primary transition-colors">contact@calczoon.com</a>
                         </div>
                         <div className="flex space-x-4 pt-1">
@@ -102,7 +102,7 @@ const Footer = () => {
                     <p className="max-w-3xl mx-auto leading-relaxed">
                         <strong>Disclaimer:</strong> Results and tools on CalcZoon are provided for informational and educational purposes only. They do not constitute financial, investment, legal, tax, or medical advice. Always consult a qualified professional before making major financial or health decisions.
                     </p>
-                    <p>&copy; {year} CalcZoon Ltd. All rights reserved.</p>
+                    <p>&copy; {year} CalcZoon. All rights reserved.</p>
                 </div>
             </div>
         </footer>

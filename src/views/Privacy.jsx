@@ -138,10 +138,10 @@ const Privacy = () => {
                   <p className="text-sm leading-relaxed">
                     If you have questions regarding this Privacy Policy, our advertising practices, or wish to exercise your data rights, please contact our designated Data Protection officer:
                   </p>
-                  <div className="bg-slate-800/60 p-4 rounded-lg border border-slate-700 text-sm">
-                    <p className="font-semibold text-white">CalcZoon Ltd. (Data Controller)</p>
-                    <p className="text-slate-300">124 City Road, London, EC1V 2NX, United Kingdom</p>
-                    <p className="text-slate-300">Email: <a href="mailto:contact@calczoon.com" className="text-primary hover:underline">contact@calczoon.com</a></p>
+                  <div className="bg-slate-800/60 p-4 rounded-lg border border-slate-700 text-sm space-y-1">
+                    <p className="font-semibold text-white">CalcZoon (Data Controller)</p>
+                    <p className="text-slate-300">Location: Operating from the United Kingdom</p>
+                    <p className="text-slate-300">General Inquiries: <a href="mailto:contact@calczoon.com" className="text-primary hover:underline">contact@calczoon.com</a> | Editorial &amp; Support: <a href="mailto:support@calczoon.com" className="text-primary hover:underline">support@calczoon.com</a></p>
                     <p className="text-slate-300">Website: <Link to="/contact" className="text-primary hover:underline">calczoon.com/contact</Link></p>
                   </div>
                 </div>

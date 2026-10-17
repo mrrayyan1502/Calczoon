@@ -101,7 +101,7 @@ const Contact = () => {
                       <Label htmlFor="name" className="text-slate-200">Full Name</Label>
                       <Input 
                         id="name" 
-                        placeholder="e.g. Sarah Jenkins" 
+                        placeholder="e.g. Alex Morgan" 
                         className="bg-slate-900 border-slate-700 text-white mt-1.5 focus:border-primary" 
                         required 
                         value={formData.name}
@@ -207,12 +207,11 @@ const Contact = () => {
                     <MapPin className="h-6 w-6" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-white">Registered Address</h3>
+                    <h3 className="font-semibold text-white">Operations &amp; Location</h3>
                     <p className="text-slate-300 text-sm mt-1 leading-relaxed">
-                      <strong>CalcZoon Ltd.</strong><br />
-                      124 City Road<br />
-                      London, EC1V 2NX<br />
-                      United Kingdom
+                      <strong>CalcZoon</strong><br />
+                      Operating from the United Kingdom<br />
+                      Independent Digital Web Utilities Portal
                     </p>
                   </div>
                 </div>

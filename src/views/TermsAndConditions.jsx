@@ -55,7 +55,7 @@ const TermsAndConditions = () => {
               <div className="pt-4 space-y-2">
                 <h2 className="text-xl font-bold text-white">3. Intellectual Property Rights</h2>
                 <p className="text-sm">
-                  The design, structure, graphics, interface elements, source code, formulas implementations, and original editorial content on CalcZoon are the exclusive property of CalcZoon Ltd. and are protected by international copyright and intellectual property laws. You may not scrape, frame, reverse-engineer, or republish our calculator algorithms or content without prior written permission.
+                  The design, structure, graphics, interface elements, source code, formulas implementations, and original editorial content on CalcZoon are the exclusive property of CalcZoon and are protected by international copyright and intellectual property laws. You may not scrape, frame, reverse-engineer, or republish our calculator algorithms or content without prior written permission.
                 </p>
               </div>
 
@@ -73,7 +73,7 @@ const TermsAndConditions = () => {
               <div className="pt-4 space-y-2">
                 <h2 className="text-xl font-bold text-white">5. Disclaimer of Warranties & Limitation of Liability</h2>
                 <p className="text-sm">
-                  CalcZoon is provided on an "AS IS" and "AS AVAILABLE" basis without warranties of any kind, whether express or implied. In no event shall CalcZoon Ltd., its directors, employees, or developers be liable for any indirect, incidental, punitive, or consequential damages resulting from the use or inability to use our tools or information.
+                  CalcZoon is provided on an "AS IS" and "AS AVAILABLE" basis without warranties of any kind, whether express or implied. In no event shall CalcZoon, its operators, or developers be liable for any indirect, incidental, punitive, or consequential damages resulting from the use or inability to use our tools or information.
                 </p>
               </div>
 
@@ -89,10 +89,10 @@ const TermsAndConditions = () => {
                 <p className="text-sm">
                   These Terms of Service are governed by and construed in accordance with the laws of the United Kingdom, without regard to conflict of law principles. If you have any questions, please contact us at:
                 </p>
-                <div className="bg-slate-800/50 p-4 rounded-lg border border-slate-700/60 text-sm mt-2">
-                  <p className="font-semibold text-white">CalcZoon Ltd.</p>
-                  <p className="text-slate-300">124 City Road, London, EC1V 2NX, United Kingdom</p>
-                  <p className="text-slate-300">Email: <a href="mailto:contact@calczoon.com" className="text-primary hover:underline">contact@calczoon.com</a></p>
+                <div className="bg-slate-800/50 p-4 rounded-lg border border-slate-700/60 text-sm mt-2 space-y-1">
+                  <p className="font-semibold text-white">CalcZoon</p>
+                  <p className="text-slate-300">Location: Operating from the United Kingdom</p>
+                  <p className="text-slate-300">General Inquiries: <a href="mailto:contact@calczoon.com" className="text-primary hover:underline">contact@calczoon.com</a> | Editorial &amp; Support: <a href="mailto:support@calczoon.com" className="text-primary hover:underline">support@calczoon.com</a></p>
                 </div>
               </div>
             </div>
