@@ -236,6 +236,13 @@ const TipCalculator = () => {
                       </div>
                     </div>
                     
+                    <div className="w-full p-4 rounded-xl bg-gradient-to-r from-emerald-950/40 to-slate-900/60 border border-emerald-500/30 flex items-start gap-3 text-left my-3">
+                      <div className="text-xs text-slate-300 leading-relaxed">
+                        <strong className="text-emerald-400 block mb-1">Recommended Dining Etiquette: Pre-Tax Tipping</strong>
+                        Always calculate gratuity on the pre-tax food and beverage subtotal to prevent paying gratuity on government sales tax levies.
+                      </div>
+                    </div>
+                    
                     <ShareResults title="Tip & Bill Split Calculation" text={`Total bill: $${result.totalAmount}. Per person: $${result.perPerson}. Calculated using CalcZoon!`} url="/lifestyle/tip-calculator" />
                   </div>
                 </CardFooter>
@@ -424,6 +431,40 @@ const TipCalculator = () => {
                   Calculating 20% on a bill that includes 10% sales tax means you are paying gratuity on government tax revenue. Always apply your tip percentage to the food and beverage subtotal.
                 </p>
               </div>
+            </div>
+          </div>
+
+          {/* Static HTML Reference Benchmark Table */}
+          <div className="space-y-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-white">Restaurant Gratuity &amp; Group Bill Splitting Benchmark Table</h2>
+            <p className="text-sm text-slate-400">
+              The reference table below illustrates tip dollar allocations at common gratuity percentages and equal four-person bill breakdowns across standard dining check amounts.
+            </p>
+            <div className="overflow-x-auto border border-slate-800 rounded-2xl shadow-xl">
+              <table className="w-full text-left text-xs sm:text-sm border-collapse bg-slate-950">
+                <thead>
+                  <tr className="bg-slate-900 border-b border-slate-800 text-slate-300">
+                    <th className="p-3 font-semibold">Pre-Tax Bill Subtotal</th>
+                    <th className="p-3 font-semibold text-emerald-400">15% Tip (Standard)</th>
+                    <th className="p-3 font-semibold text-sky-400">18% Tip (Customary)</th>
+                    <th className="p-3 font-semibold text-amber-400">20% Tip (Attentive)</th>
+                    <th className="p-3 font-semibold">Total with 18% Tip</th>
+                    <th className="p-3 font-semibold text-emerald-400">4-Person Split (Each)</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-800/60 text-slate-300">
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">$25.00</td><td className="p-3 font-mono text-emerald-400">$3.75</td><td className="p-3 font-mono text-sky-400">$4.50</td><td className="p-3 font-mono text-amber-400">$5.00</td><td className="p-3 font-mono">$29.50</td><td className="p-3 font-mono font-bold text-emerald-400">$7.38 / person</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">$50.00</td><td className="p-3 font-mono text-emerald-400">$7.50</td><td className="p-3 font-mono text-sky-400">$9.00</td><td className="p-3 font-mono text-amber-400">$10.00</td><td className="p-3 font-mono">$59.00</td><td className="p-3 font-mono font-bold text-emerald-400">$14.75 / person</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">$75.00</td><td className="p-3 font-mono text-emerald-400">$11.25</td><td className="p-3 font-mono text-sky-400">$13.50</td><td className="p-3 font-mono text-amber-400">$15.00</td><td className="p-3 font-mono">$88.50</td><td className="p-3 font-mono font-bold text-emerald-400">$22.13 / person</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">$100.00</td><td className="p-3 font-mono text-emerald-400">$15.00</td><td className="p-3 font-mono text-sky-400">$18.00</td><td className="p-3 font-mono text-amber-400">$20.00</td><td className="p-3 font-mono">$118.00</td><td className="p-3 font-mono font-bold text-emerald-400">$29.50 / person</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">$150.00</td><td className="p-3 font-mono text-emerald-400">$22.50</td><td className="p-3 font-mono text-sky-400">$27.00</td><td className="p-3 font-mono text-amber-400">$30.00</td><td className="p-3 font-mono">$177.00</td><td className="p-3 font-mono font-bold text-emerald-400">$44.25 / person</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">$200.00</td><td className="p-3 font-mono text-emerald-400">$30.00</td><td className="p-3 font-mono text-sky-400">$36.00</td><td className="p-3 font-mono text-amber-400">$40.00</td><td className="p-3 font-mono">$236.00</td><td className="p-3 font-mono font-bold text-emerald-400">$59.00 / person</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">$250.00</td><td className="p-3 font-mono text-emerald-400">$37.50</td><td className="p-3 font-mono text-sky-400">$45.00</td><td className="p-3 font-mono text-amber-400">$50.00</td><td className="p-3 font-mono">$295.00</td><td className="p-3 font-mono font-bold text-emerald-400">$73.75 / person</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">$300.00</td><td className="p-3 font-mono text-emerald-400">$45.00</td><td className="p-3 font-mono text-sky-400">$54.00</td><td className="p-3 font-mono text-amber-400">$60.00</td><td className="p-3 font-mono">$354.00</td><td className="p-3 font-mono font-bold text-emerald-400">$88.50 / person</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">$400.00</td><td className="p-3 font-mono text-emerald-400">$60.00</td><td className="p-3 font-mono text-sky-400">$72.00</td><td className="p-3 font-mono text-amber-400">$80.00</td><td className="p-3 font-mono">$472.00</td><td className="p-3 font-mono font-bold text-emerald-400">$118.00 / person</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">$500.00</td><td className="p-3 font-mono text-emerald-400">$75.00</td><td className="p-3 font-mono text-sky-400">$90.00</td><td className="p-3 font-mono text-amber-400">$100.00</td><td className="p-3 font-mono">$590.00</td><td className="p-3 font-mono font-bold text-emerald-400">$147.50 / person</td></tr>
+                </tbody>
+              </table>
             </div>
           </div>
 

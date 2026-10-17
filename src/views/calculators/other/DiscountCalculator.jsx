@@ -280,13 +280,20 @@ const DiscountCalculator = () => {
                     </div>
                   </div>
 
-                  <div className="mt-8 flex justify-center pt-2">
-                    <ShareResults 
-                      title="My Discount Savings" 
-                      text={`I saved $${result.savings} (${result.effectiveDiscountPercent}%) on a $${originalPrice} purchase using CalcZoon's Discount Calculator!`} 
-                      url={canonicalUrl} 
-                    />
-                  </div>
+                    <div className="w-full p-4 rounded-xl bg-gradient-to-r from-emerald-950/40 to-slate-900/60 border border-emerald-500/30 flex items-start gap-3 text-left my-3">
+                      <div className="text-xs text-slate-300 leading-relaxed">
+                        <strong className="text-emerald-400 block mb-1">Recommended Smart Shopper Tip: Cash Back &amp; Stacking</strong>
+                        Pair retail markdown sales with store loyalty cash-back cards and manufacturer rebates to unlock additional 2% to 5% net compounding savings.
+                      </div>
+                    </div>
+
+                    <div className="mt-8 flex justify-center pt-2">
+                      <ShareResults 
+                        title="My Discount Savings" 
+                        text={`I saved $${result.savings} (${result.effectiveDiscountPercent}%) on a $${originalPrice} purchase using CalcZoon's Discount Calculator!`} 
+                        url={canonicalUrl} 
+                      />
+                    </div>
                 </motion.div>
               )}
             </Card>
@@ -455,6 +462,40 @@ const DiscountCalculator = () => {
                   Taking 20% off an item and then adding 20% does not restore the original price. A 20% discount on $100 drops it to $80; adding 20% to $80 brings it to only $96 ($80 × 1.20).
                 </p>
               </div>
+            </div>
+          </div>
+
+          {/* Static HTML Reference Benchmark Table */}
+          <div className="space-y-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-white">Retail Clearance Discount &amp; Stackable Savings Matrix Benchmark Table</h2>
+            <p className="text-sm text-slate-400">
+              The reference benchmark table below illustrates pre-tax sale prices, stacked coupon deductions, effective percentage savings, and net consumer savings across standard price points.
+            </p>
+            <div className="overflow-x-auto border border-slate-800 rounded-2xl shadow-xl">
+              <table className="w-full text-left text-xs sm:text-sm border-collapse bg-slate-950">
+                <thead>
+                  <tr className="bg-slate-900 border-b border-slate-800 text-slate-300">
+                    <th className="p-3 font-semibold">Original Retail Price</th>
+                    <th className="p-3 font-semibold text-emerald-400">Primary Discount</th>
+                    <th className="p-3 font-semibold text-sky-400">Stacked Promo</th>
+                    <th className="p-3 font-semibold text-amber-400">Net Sale Subtotal</th>
+                    <th className="p-3 font-semibold">Effective Total Discount</th>
+                    <th className="p-3 font-semibold text-emerald-400">Total Dollar Savings</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-800/60 text-slate-300">
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">$25.00</td><td className="p-3 font-mono text-emerald-400">20% Off</td><td className="p-3 font-mono text-slate-400">None</td><td className="p-3 font-mono text-amber-400">$20.00</td><td className="p-3 font-mono">20.0%</td><td className="p-3 font-mono font-bold text-emerald-400">$5.00</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">$50.00</td><td className="p-3 font-mono text-emerald-400">25% Off</td><td className="p-3 font-mono text-sky-400">10% Extra</td><td className="p-3 font-mono text-amber-400">$33.75</td><td className="p-3 font-mono">32.5%</td><td className="p-3 font-mono font-bold text-emerald-400">$16.25</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">$75.00</td><td className="p-3 font-mono text-emerald-400">30% Off</td><td className="p-3 font-mono text-slate-400">None</td><td className="p-3 font-mono text-amber-400">$52.50</td><td className="p-3 font-mono">30.0%</td><td className="p-3 font-mono font-bold text-emerald-400">$22.50</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">$100.00</td><td className="p-3 font-mono text-emerald-400">40% Off</td><td className="p-3 font-mono text-sky-400">15% Extra</td><td className="p-3 font-mono text-amber-400">$51.00</td><td className="p-3 font-mono">49.0%</td><td className="p-3 font-mono font-bold text-emerald-400">$49.00</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">$150.00</td><td className="p-3 font-mono text-emerald-400">50% Off</td><td className="p-3 font-mono text-slate-400">None</td><td className="p-3 font-mono text-amber-400">$75.00</td><td className="p-3 font-mono">50.0%</td><td className="p-3 font-mono font-bold text-emerald-400">$75.00</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">$200.00</td><td className="p-3 font-mono text-emerald-400">50% Off</td><td className="p-3 font-mono text-sky-400">20% Extra</td><td className="p-3 font-mono text-amber-400">$80.00</td><td className="p-3 font-mono">60.0%</td><td className="p-3 font-mono font-bold text-emerald-400">$120.00</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">$250.00</td><td className="p-3 font-mono text-emerald-400">60% Off</td><td className="p-3 font-mono text-slate-400">None</td><td className="p-3 font-mono text-amber-400">$100.00</td><td className="p-3 font-mono">60.0%</td><td className="p-3 font-mono font-bold text-emerald-400">$150.00</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">$300.00</td><td className="p-3 font-mono text-emerald-400">60% Off</td><td className="p-3 font-mono text-sky-400">10% Extra</td><td className="p-3 font-mono text-amber-400">$108.00</td><td className="p-3 font-mono">64.0%</td><td className="p-3 font-mono font-bold text-emerald-400">$192.00</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">$400.00</td><td className="p-3 font-mono text-emerald-400">70% Off</td><td className="p-3 font-mono text-slate-400">None</td><td className="p-3 font-mono text-amber-400">$120.00</td><td className="p-3 font-mono">70.0%</td><td className="p-3 font-mono font-bold text-emerald-400">$280.00</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">$500.00</td><td className="p-3 font-mono text-emerald-400">70% Off</td><td className="p-3 font-mono text-sky-400">15% Extra</td><td className="p-3 font-mono text-amber-400">$127.50</td><td className="p-3 font-mono">74.5%</td><td className="p-3 font-mono font-bold text-emerald-400">$372.50</td></tr>
+                </tbody>
+              </table>
             </div>
           </div>
 

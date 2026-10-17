@@ -202,6 +202,12 @@ const MortgageCalculator = () => {
                         <p className="font-semibold text-slate-200">{getCurrencySymbol()}{Number(result.totalPayment).toLocaleString()}</p>
                       </div>
                     </div>
+                    <div className="w-full p-4 rounded-xl bg-gradient-to-r from-emerald-950/40 to-slate-900/60 border border-emerald-500/30 flex items-start gap-3">
+                      <div className="text-xs text-slate-300 leading-relaxed">
+                        <strong className="text-emerald-400 block mb-1">Recommended Mortgage Resource: Down Payment & PMI Thresholds</strong>
+                        Reaching a 20% down payment ({getCurrencySymbol()}{(parseFloat(homePrice || 0) * 0.2).toLocaleString()}) eliminates Private Mortgage Insurance (PMI), immediately saving an average of $150 to $250 monthly on your loan costs.
+                      </div>
+                    </div>
                     <ShareResults title="Mortgage Payment Calculation" text={`Calculated my monthly mortgage payment on CalcZoon! Estimated: ${getCurrencySymbol()}${Number(result.monthlyPayment).toLocaleString()}/month.`} url="/financial/mortgage-calculator" />
                   </div>
                 </CardFooter>
@@ -348,6 +354,47 @@ const MortgageCalculator = () => {
                   Refinancing replaces your existing loan with a new loan at a lower interest rate or different term. If current market rates drop by 1% or more below your existing rate, refinancing can substantially lower your monthly obligations.
                 </p>
               </div>
+
+              <div className="bg-slate-900/50 p-5 rounded-xl border border-slate-700/60">
+                <h3 className="font-bold text-white text-base mb-1">6. What is the difference between mortgage interest rate and APR?</h3>
+                <p className="text-sm text-slate-300">
+                  The nominal interest rate is the base percentage charged on your principal balance, whereas the Annual Percentage Rate (APR) incorporates upfront closing costs, discount points, broker fees, and lender origination fees, representing your true annual borrowing cost.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Static HTML Reference Benchmark Table */}
+          <div className="space-y-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-white">30-Year Fixed-Rate Mortgage Benchmark Table (6.75% APR)</h2>
+            <p className="text-sm text-slate-400">
+              The benchmark table below illustrates standard 30-year fixed mortgage scenarios with a 20% down payment (eliminating PMI) at an average market interest rate of 6.75% APR.
+            </p>
+            <div className="overflow-x-auto border border-slate-800 rounded-2xl shadow-xl">
+              <table className="w-full text-left text-xs sm:text-sm border-collapse bg-slate-950">
+                <thead>
+                  <tr className="bg-slate-900 border-b border-slate-800 text-slate-300">
+                    <th className="p-3 font-semibold">Home Price</th>
+                    <th className="p-3 font-semibold">20% Down Payment</th>
+                    <th className="p-3 font-semibold">Loan Principal</th>
+                    <th className="p-3 font-semibold text-emerald-400">Monthly P&amp;I</th>
+                    <th className="p-3 font-semibold text-rose-400">Total 30-Yr Interest</th>
+                    <th className="p-3 font-semibold">Total Repaid</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-800/60 text-slate-300">
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono text-white">$200,000</td><td className="p-3">$40,000</td><td className="p-3 font-mono">$160,000</td><td className="p-3 text-emerald-400 font-bold">$1,037.69</td><td className="p-3 text-rose-400">$213,568</td><td className="p-3 font-mono">$373,568</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono text-white">$250,000</td><td className="p-3">$50,000</td><td className="p-3 font-mono">$200,000</td><td className="p-3 text-emerald-400 font-bold">$1,297.11</td><td className="p-3 text-rose-400">$266,960</td><td className="p-3 font-mono">$466,960</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono text-white">$300,000</td><td className="p-3">$60,000</td><td className="p-3 font-mono">$240,000</td><td className="p-3 text-emerald-400 font-bold">$1,556.53</td><td className="p-3 text-rose-400">$320,351</td><td className="p-3 font-mono">$560,351</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono text-white">$350,000</td><td className="p-3">$70,000</td><td className="p-3 font-mono">$280,000</td><td className="p-3 text-emerald-400 font-bold">$1,815.96</td><td className="p-3 text-rose-400">$373,745</td><td className="p-3 font-mono">$653,745</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono text-white">$400,000</td><td className="p-3">$80,000</td><td className="p-3 font-mono">$320,000</td><td className="p-3 text-emerald-400 font-bold">$2,075.38</td><td className="p-3 text-rose-400">$427,137</td><td className="p-3 font-mono">$747,137</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono text-white">$500,000</td><td className="p-3">$100,000</td><td className="p-3 font-mono">$400,000</td><td className="p-3 text-emerald-400 font-bold">$2,594.22</td><td className="p-3 text-rose-400">$533,919</td><td className="p-3 font-mono">$933,919</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono text-white">$600,000</td><td className="p-3">$120,000</td><td className="p-3 font-mono">$480,000</td><td className="p-3 text-emerald-400 font-bold">$3,113.07</td><td className="p-3 text-rose-400">$640,705</td><td className="p-3 font-mono">$1,120,705</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono text-white">$750,000</td><td className="p-3">$150,000</td><td className="p-3 font-mono">$600,000</td><td className="p-3 text-emerald-400 font-bold">$3,891.34</td><td className="p-3 text-rose-400">$800,882</td><td className="p-3 font-mono">$1,400,882</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono text-white">$900,000</td><td className="p-3">$180,000</td><td className="p-3 font-mono">$720,000</td><td className="p-3 text-emerald-400 font-bold">$4,669.60</td><td className="p-3 text-rose-400">$961,058</td><td className="p-3 font-mono">$1,681,058</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono text-white">$1,000,000</td><td className="p-3">$200,000</td><td className="p-3 font-mono">$800,000</td><td className="p-3 text-emerald-400 font-bold">$5,188.45</td><td className="p-3 text-rose-400">$1,067,842</td><td className="p-3 font-mono">$1,867,842</td></tr>
+                </tbody>
+              </table>
             </div>
           </div>
 

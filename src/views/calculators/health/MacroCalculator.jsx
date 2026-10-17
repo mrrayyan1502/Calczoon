@@ -184,6 +184,13 @@ const MacroCalculator = () => {
                         <p className="text-xs text-slate-400 mt-1">{Math.round(result.fatGrams * 9)} kcal</p>
                       </div>
                     </div>
+
+                    <div className="w-full p-4 rounded-xl bg-gradient-to-r from-sky-950/40 to-slate-900/60 border border-sky-500/30 flex items-start gap-3 text-left my-3">
+                      <div className="text-xs text-slate-300 leading-relaxed">
+                        <strong className="text-sky-400 block mb-1">Recommended Macro Tracking Tool: Digital Food Scale</strong>
+                        Tracking macros using volumetric cups or visual guessing carries an average error rate of 25% to 35%. Using a precision digital food scale to weigh portions in raw grams ensures exact caloric alignment.
+                      </div>
+                    </div>
                     <div className="mt-4">
                       <ShareResults
                         title="My Macro Targets"
@@ -373,6 +380,40 @@ const MacroCalculator = () => {
                   "If It Fits Your Macros" does not mean eating junk food exclusively. Processed foods lack potassium, magnesium, and dietary fiber, which are critical for cardiovascular health, gut microbiome diversity, and blood pressure control.
                 </p>
               </div>
+            </div>
+          </div>
+
+          {/* Static HTML Reference Benchmark Table */}
+          <div className="space-y-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-white">Daily Macronutrient Targets Benchmark Table (Balanced vs High-Protein)</h2>
+            <p className="text-sm text-slate-400">
+              The nutritional benchmark table below outlines precise daily gram targets for protein, carbohydrates, and fats across various daily energy intake levels based on standard Atwater factors (4 kcal/g for protein &amp; carbs, 9 kcal/g for fats).
+            </p>
+            <div className="overflow-x-auto border border-slate-800 rounded-2xl shadow-xl">
+              <table className="w-full text-left text-xs sm:text-sm border-collapse bg-slate-950">
+                <thead>
+                  <tr className="bg-slate-900 border-b border-slate-800 text-slate-300">
+                    <th className="p-3 font-semibold">Daily Calories</th>
+                    <th className="p-3 font-semibold">Diet Architecture</th>
+                    <th className="p-3 font-semibold text-sky-400">Protein (g)</th>
+                    <th className="p-3 font-semibold text-emerald-400">Carbohydrates (g)</th>
+                    <th className="p-3 font-semibold text-amber-400">Fats (g)</th>
+                    <th className="p-3 font-semibold">Primary Fitness Objective</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-800/60 text-slate-300">
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono text-white">1,500 kcal</td><td className="p-3">Balanced (30/40/30)</td><td className="p-3 text-sky-400 font-mono">113g (450 kcal)</td><td className="p-3 text-emerald-400 font-mono">150g (600 kcal)</td><td className="p-3 text-amber-400 font-mono">50g (450 kcal)</td><td className="p-3">Female Caloric Deficit (Fat Loss)</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono text-white">1,500 kcal</td><td className="p-3">High Protein (40/35/25)</td><td className="p-3 text-sky-400 font-bold">150g (600 kcal)</td><td className="p-3 text-emerald-400 font-mono">131g (525 kcal)</td><td className="p-3 text-amber-400 font-mono">42g (375 kcal)</td><td className="p-3">Aggressive Lean Tissue Retention</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono text-white">1,800 kcal</td><td className="p-3">Balanced (30/40/30)</td><td className="p-3 text-sky-400 font-mono">135g (540 kcal)</td><td className="p-3 text-emerald-400 font-mono">180g (720 kcal)</td><td className="p-3 text-amber-400 font-mono">60g (540 kcal)</td><td className="p-3">Moderate Deficit / Recomposition</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono text-white">2,000 kcal</td><td className="p-3">Balanced (30/40/30)</td><td className="p-3 text-sky-400 font-mono">150g (600 kcal)</td><td className="p-3 text-emerald-400 font-mono">200g (800 kcal)</td><td className="p-3 text-amber-400 font-mono">67g (600 kcal)</td><td className="p-3">Standard Adult Maintenance</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono text-white">2,000 kcal</td><td className="p-3">High Protein (40/35/25)</td><td className="p-3 text-sky-400 font-bold">200g (800 kcal)</td><td className="p-3 text-emerald-400 font-mono">175g (700 kcal)</td><td className="p-3 text-amber-400 font-mono">56g (500 kcal)</td><td className="p-3">Athletic Cutting &amp; Muscle Hardening</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono text-white">2,200 kcal</td><td className="p-3">Balanced (30/40/30)</td><td className="p-3 text-sky-400 font-mono">165g (660 kcal)</td><td className="p-3 text-emerald-400 font-mono">220g (880 kcal)</td><td className="p-3 text-amber-400 font-mono">73g (660 kcal)</td><td className="p-3">Active Male Deficit / Female Maintenance</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono text-white">2,500 kcal</td><td className="p-3">Balanced (30/40/30)</td><td className="p-3 text-sky-400 font-mono">188g (750 kcal)</td><td className="p-3 text-emerald-400 font-mono">250g (1000 kcal)</td><td className="p-3 text-amber-400 font-mono">83g (750 kcal)</td><td className="p-3">Active Training Maintenance</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono text-white">2,500 kcal</td><td className="p-3">High Protein (40/35/25)</td><td className="p-3 text-sky-400 font-bold">250g (1000 kcal)</td><td className="p-3 text-emerald-400 font-mono">219g (875 kcal)</td><td className="p-3 text-amber-400 font-mono">69g (625 kcal)</td><td className="p-3">Strength Athlete Recomposition</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono text-white">3,000 kcal</td><td className="p-3">Balanced (30/40/30)</td><td className="p-3 text-sky-400 font-mono">225g (900 kcal)</td><td className="p-3 text-emerald-400 font-mono">300g (1200 kcal)</td><td className="p-3 text-amber-400 font-mono">100g (900 kcal)</td><td className="p-3">Hypertrophy / Lean Muscle Bulking</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono text-white">3,500 kcal</td><td className="p-3">High Carb Performance (25/55/20)</td><td className="p-3 text-sky-400 font-mono">219g (875 kcal)</td><td className="p-3 text-emerald-400 font-bold">481g (1925 kcal)</td><td className="p-3 text-amber-400 font-mono">78g (700 kcal)</td><td className="p-3">Endurance / Heavy Volume Mass Building</td></tr>
+                </tbody>
+              </table>
             </div>
           </div>
 

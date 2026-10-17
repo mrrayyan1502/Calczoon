@@ -235,6 +235,12 @@ const SavingsCalculator = () => {
                         </span>
                       </div>
                     </div>
+                    <div className="w-full p-4 rounded-xl bg-gradient-to-r from-emerald-950/40 to-slate-900/60 border border-emerald-500/30 flex items-start gap-3 text-left">
+                      <div className="text-xs text-slate-300 leading-relaxed">
+                        <strong className="text-emerald-400 block mb-1">Recommended Savings Strategy: High-Yield Cash Reserves</strong>
+                        Moving idle cash reserves from traditional 0.01% brick-and-mortar savings accounts into a 4.5% to 5.0% APY High-Yield Savings Account (HYSA) generates an extra $450 to $500 per year on every $10,000 deposited completely risk-free.
+                      </div>
+                    </div>
                   </div>
 
                   <div className="mt-6 w-full">
@@ -441,6 +447,39 @@ const SavingsCalculator = () => {
                   Certificates of Deposit penalize you (typically 3 to 6 months of interest) if you withdraw early. Never place funds you might need unexpectedly into locked CD terms.
                 </p>
               </div>
+            </div>
+          </div>
+
+          {/* Static HTML Reference Benchmark Table */}
+          <div className="space-y-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-white">Savings Goal Benchmark Table: Monthly Deposits Required (4.50% APY)</h2>
+            <p className="text-sm text-slate-400">
+              The benchmark reference table below demonstrates the exact fixed monthly contribution required to reach milestone savings goals across 1, 3, and 5-year accumulation timeframes in a high-yield interest account.
+            </p>
+            <div className="overflow-x-auto border border-slate-800 rounded-2xl shadow-xl">
+              <table className="w-full text-left text-xs sm:text-sm border-collapse bg-slate-950">
+                <thead>
+                  <tr className="bg-slate-900 border-b border-slate-800 text-slate-300">
+                    <th className="p-3 font-semibold">Target Goal</th>
+                    <th className="p-3 font-semibold text-sky-400">1-Year Horizon (Mo)</th>
+                    <th className="p-3 font-semibold text-emerald-400">3-Year Horizon (Mo)</th>
+                    <th className="p-3 font-semibold text-amber-400">5-Year Horizon (Mo)</th>
+                    <th className="p-3 font-semibold text-rose-400">Total Interest Earned (5-Yr)</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-800/60 text-slate-300">
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono text-white">$5,000</td><td className="p-3 text-sky-400 font-mono">$408/mo</td><td className="p-3 text-emerald-400 font-bold">$130/mo</td><td className="p-3 text-amber-400 font-mono">$74/mo</td><td className="p-3 text-rose-400 font-mono">+$536</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono text-white">$10,000</td><td className="p-3 text-sky-400 font-mono">$816/mo</td><td className="p-3 text-emerald-400 font-bold">$260/mo</td><td className="p-3 text-amber-400 font-mono">$149/mo</td><td className="p-3 text-rose-400 font-mono">+$1,072</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono text-white">$15,000</td><td className="p-3 text-sky-400 font-mono">$1,225/mo</td><td className="p-3 text-emerald-400 font-bold">$390/mo</td><td className="p-3 text-amber-400 font-mono">$223/mo</td><td className="p-3 text-rose-400 font-mono">+$1,608</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono text-white">$20,000</td><td className="p-3 text-sky-400 font-mono">$1,633/mo</td><td className="p-3 text-emerald-400 font-bold">$520/mo</td><td className="p-3 text-amber-400 font-mono">$298/mo</td><td className="p-3 text-rose-400 font-mono">+$2,144</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono text-white">$25,000</td><td className="p-3 text-sky-400 font-mono">$2,041/mo</td><td className="p-3 text-emerald-400 font-bold">$650/mo</td><td className="p-3 text-amber-400 font-mono">$372/mo</td><td className="p-3 text-rose-400 font-mono">+$2,680</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono text-white">$35,000</td><td className="p-3 text-sky-400 font-mono">$2,858/mo</td><td className="p-3 text-emerald-400 font-bold">$910/mo</td><td className="p-3 text-amber-400 font-mono">$521/mo</td><td className="p-3 text-rose-400 font-mono">+$3,752</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono text-white">$50,000</td><td className="p-3 text-sky-400 font-mono">$4,083/mo</td><td className="p-3 text-emerald-400 font-bold">$1,300/mo</td><td className="p-3 text-amber-400 font-mono">$745/mo</td><td className="p-3 text-rose-400 font-mono">+$5,360</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono text-white">$75,000</td><td className="p-3 text-sky-400 font-mono">$6,124/mo</td><td className="p-3 text-emerald-400 font-bold">$1,950/mo</td><td className="p-3 text-amber-400 font-mono">$1,117/mo</td><td className="p-3 text-rose-400 font-mono">+$8,040</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono text-white">$100,000</td><td className="p-3 text-sky-400 font-mono">$8,165/mo</td><td className="p-3 text-emerald-400 font-bold">$2,600/mo</td><td className="p-3 text-amber-400 font-mono">$1,489/mo</td><td className="p-3 text-rose-400 font-mono">+$10,720</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono text-white">$150,000</td><td className="p-3 text-sky-400 font-mono">$12,248/mo</td><td className="p-3 text-emerald-400 font-bold">$3,900/mo</td><td className="p-3 text-amber-400 font-mono">$2,234/mo</td><td className="p-3 text-rose-400 font-mono">+$16,080</td></tr>
+                </tbody>
+              </table>
             </div>
           </div>
 

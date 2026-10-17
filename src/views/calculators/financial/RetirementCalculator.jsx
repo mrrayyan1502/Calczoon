@@ -271,6 +271,13 @@ const RetirementCalculator = () => {
                         </span>
                       </div>
                     </div>
+
+                    <div className="w-full p-4 rounded-xl bg-gradient-to-r from-emerald-950/40 to-slate-900/60 border border-emerald-500/30 flex items-start gap-3 text-left">
+                      <div className="text-xs text-slate-300 leading-relaxed">
+                        <strong className="text-emerald-400 block mb-1">Recommended Retirement Resource: Safe Withdrawal Planning</strong>
+                        Academic research (Trinity Study) confirms that maintaining an equity allocation of 50% to 75% alongside high-grade bonds substantially reduces sequence-of-returns risk during your first decade of retirement.
+                      </div>
+                    </div>
                   </div>
 
                   <div className="mt-6 w-full">
@@ -479,6 +486,39 @@ const RetirementCalculator = () => {
                   An employer 401(k) dollar-for-dollar match represents an immediate, risk-free 100% return on invested capital. Never contribute less than the full percentage required to unlock your employer match.
                 </p>
               </div>
+            </div>
+          </div>
+
+          {/* Pre-Calculated Benchmark Table */}
+          <div className="space-y-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-white">Retirement Nest Egg &amp; Safe Withdrawal Rate Benchmark Table</h2>
+            <p className="text-sm text-slate-400">
+              The benchmark table below compares annual and monthly retirement cash flows under conservative (3.5%), standard Trinity Study (4.0%), and flexible (4.5%) safe withdrawal rates across common portfolio balances.
+            </p>
+            <div className="overflow-x-auto border border-slate-800 rounded-2xl shadow-xl">
+              <table className="w-full text-left text-xs sm:text-sm border-collapse bg-slate-950">
+                <thead>
+                  <tr className="bg-slate-900 border-b border-slate-800 text-slate-300">
+                    <th className="p-3 font-semibold">Total Nest Egg</th>
+                    <th className="p-3 font-semibold text-sky-400">3.5% Conservative (Mo)</th>
+                    <th className="p-3 font-semibold text-emerald-400">4.0% Benchmark (Yr)</th>
+                    <th className="p-3 font-semibold text-emerald-400">4.0% Benchmark (Mo)</th>
+                    <th className="p-3 font-semibold text-amber-400">4.5% Flexible (Mo)</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-800/60 text-slate-300">
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono text-white">$250,000</td><td className="p-3 text-sky-400 font-mono">$729/mo</td><td className="p-3 font-mono text-white">$10,000/yr</td><td className="p-3 text-emerald-400 font-bold">$833/mo</td><td className="p-3 text-amber-400 font-mono">$938/mo</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono text-white">$400,000</td><td className="p-3 text-sky-400 font-mono">$1,167/mo</td><td className="p-3 font-mono text-white">$16,000/yr</td><td className="p-3 text-emerald-400 font-bold">$1,333/mo</td><td className="p-3 text-amber-400 font-mono">$1,500/mo</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono text-white">$500,000</td><td className="p-3 text-sky-400 font-mono">$1,458/mo</td><td className="p-3 font-mono text-white">$20,000/yr</td><td className="p-3 text-emerald-400 font-bold">$1,667/mo</td><td className="p-3 text-amber-400 font-mono">$1,875/mo</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono text-white">$650,000</td><td className="p-3 text-sky-400 font-mono">$1,896/mo</td><td className="p-3 font-mono text-white">$26,000/yr</td><td className="p-3 text-emerald-400 font-bold">$2,167/mo</td><td className="p-3 text-amber-400 font-mono">$2,438/mo</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono text-white">$750,000</td><td className="p-3 text-sky-400 font-mono">$2,188/mo</td><td className="p-3 font-mono text-white">$30,000/yr</td><td className="p-3 text-emerald-400 font-bold">$2,500/mo</td><td className="p-3 text-amber-400 font-mono">$2,813/mo</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono text-white">$1,000,000</td><td className="p-3 text-sky-400 font-mono">$2,917/mo</td><td className="p-3 font-mono text-white">$40,000/yr</td><td className="p-3 text-emerald-400 font-bold">$3,333/mo</td><td className="p-3 text-amber-400 font-mono">$3,750/mo</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono text-white">$1,250,000</td><td className="p-3 text-sky-400 font-mono">$3,646/mo</td><td className="p-3 font-mono text-white">$50,000/yr</td><td className="p-3 text-emerald-400 font-bold">$4,167/mo</td><td className="p-3 text-amber-400 font-mono">$4,688/mo</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono text-white">$1,500,000</td><td className="p-3 text-sky-400 font-mono">$4,375/mo</td><td className="p-3 font-mono text-white">$60,000/yr</td><td className="p-3 text-emerald-400 font-bold">$5,000/mo</td><td className="p-3 text-amber-400 font-mono">$5,625/mo</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono text-white">$2,000,000</td><td className="p-3 text-sky-400 font-mono">$5,833/mo</td><td className="p-3 font-mono text-white">$80,000/yr</td><td className="p-3 text-emerald-400 font-bold">$6,667/mo</td><td className="p-3 text-amber-400 font-mono">$7,500/mo</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono text-white">$2,500,000</td><td className="p-3 text-sky-400 font-mono">$7,292/mo</td><td className="p-3 font-mono text-white">$100,000/yr</td><td className="p-3 text-emerald-400 font-bold">$8,333/mo</td><td className="p-3 text-amber-400 font-mono">$9,375/mo</td></tr>
+                </tbody>
+              </table>
             </div>
           </div>
 

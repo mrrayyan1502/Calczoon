@@ -210,6 +210,13 @@ const PercentageCalculator = () => {
                     </form>
                   </TabsContent>
                 </Tabs>
+
+                <div className="w-full p-4 rounded-xl bg-gradient-to-r from-emerald-950/40 to-slate-900/60 border border-emerald-500/30 flex items-start gap-3 text-left mt-6">
+                  <div className="text-xs text-slate-300 leading-relaxed">
+                    <strong className="text-emerald-400 block mb-1">Recommended Financial &amp; STEM Resource: Percentage Optimization</strong>
+                    Whether calculating corporate margin expansions or compounding portfolio returns, always distinguish between absolute percentage changes and nominal percentage points.
+                  </div>
+                </div>
               </CardContent>
             </Card>
           </div>
@@ -378,6 +385,39 @@ const PercentageCalculator = () => {
                   If a store offers &quot;20% off storewide plus an additional 20% loyalty coupon,&quot; the total discount is not 40%. The first 20% lowers a $100 price to $80. The second 20% cuts $16 (20% of $80), making the net price $64—representing a 36% compound discount, not 40%.
                 </p>
               </div>
+            </div>
+          </div>
+
+          {/* Static HTML Reference Benchmark Table */}
+          <div className="space-y-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-white">Common Percentage Multipliers, Fractions &amp; Increase Equivalents Table</h2>
+            <p className="text-sm text-slate-400">
+              The benchmark reference table below demonstrates common percentages, their exact decimal multipliers, standard fractional equivalents, and their mathematical impact on base values.
+            </p>
+            <div className="overflow-x-auto border border-slate-800 rounded-2xl shadow-xl">
+              <table className="w-full text-left text-xs sm:text-sm border-collapse bg-slate-950">
+                <thead>
+                  <tr className="bg-slate-900 border-b border-slate-800 text-slate-300">
+                    <th className="p-3 font-semibold">Percentage</th>
+                    <th className="p-3 font-semibold text-emerald-400">Decimal Multiplier</th>
+                    <th className="p-3 font-semibold text-sky-400">Fractional Value</th>
+                    <th className="p-3 font-semibold">Impact on $100 Base</th>
+                    <th className="p-3 font-semibold text-rose-400">+P% Increase Factor</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-800/60 text-slate-300">
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">5%</td><td className="p-3 font-mono text-emerald-400">0.05</td><td className="p-3 font-mono text-sky-400">1/20</td><td className="p-3 font-mono">$5.00</td><td className="p-3 font-mono text-rose-400">1.05× ($105.00)</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">10%</td><td className="p-3 font-mono text-emerald-400">0.10</td><td className="p-3 font-mono text-sky-400">1/10</td><td className="p-3 font-mono">$10.00</td><td className="p-3 font-mono text-rose-400">1.10× ($110.00)</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">15%</td><td className="p-3 font-mono text-emerald-400">0.15</td><td className="p-3 font-mono text-sky-400">3/20</td><td className="p-3 font-mono">$15.00</td><td className="p-3 font-mono text-rose-400">1.15× ($115.00)</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">20%</td><td className="p-3 font-mono text-emerald-400">0.20</td><td className="p-3 font-mono text-sky-400">1/5</td><td className="p-3 font-mono">$20.00</td><td className="p-3 font-mono text-rose-400">1.20× ($120.00)</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">25%</td><td className="p-3 font-mono text-emerald-400">0.25</td><td className="p-3 font-mono text-sky-400">1/4</td><td className="p-3 font-mono">$25.00</td><td className="p-3 font-mono text-rose-400">1.25× ($125.00)</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">33.33%</td><td className="p-3 font-mono text-emerald-400">0.3333</td><td className="p-3 font-mono text-sky-400">1/3</td><td className="p-3 font-mono">$33.33</td><td className="p-3 font-mono text-rose-400">1.3333× ($133.33)</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">50%</td><td className="p-3 font-mono text-emerald-400">0.50</td><td className="p-3 font-mono text-sky-400">1/2</td><td className="p-3 font-mono">$50.00</td><td className="p-3 font-mono text-rose-400">1.50× ($150.00)</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">75%</td><td className="p-3 font-mono text-emerald-400">0.75</td><td className="p-3 font-mono text-sky-400">3/4</td><td className="p-3 font-mono">$75.00</td><td className="p-3 font-mono text-rose-400">1.75× ($175.00)</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">100%</td><td className="p-3 font-mono text-emerald-400">1.00</td><td className="p-3 font-mono text-sky-400">1/1</td><td className="p-3 font-mono">$100.00</td><td className="p-3 font-mono text-rose-400">2.00× ($200.00)</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">200%</td><td className="p-3 font-mono text-emerald-400">2.00</td><td className="p-3 font-mono text-sky-400">2/1</td><td className="p-3 font-mono">$200.00</td><td className="p-3 font-mono text-rose-400">3.00× ($300.00)</td></tr>
+                </tbody>
+              </table>
             </div>
           </div>
 

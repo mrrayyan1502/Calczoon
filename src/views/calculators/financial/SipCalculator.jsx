@@ -255,15 +255,22 @@ const SipCalculator = () => {
                     </div>
                   </div>
 
-                  <div className="mt-6 flex justify-center border-t border-slate-800 pt-4">
-                    <ShareResults
-                      title="My SIP Investment Results"
-                      text={`For ${getCurrencySymbol()}${monthlyInvestment}/month at ${expectedReturn}%, my projected future value in ${years} years is ${getCurrencySymbol()}${Number(result.total).toLocaleString()}! Calculated via CalcZoon:`}
-                      url="/financial/sip-calculator"
-                    />
+                    <div className="w-full p-4 rounded-xl bg-gradient-to-r from-emerald-950/40 to-slate-900/60 border border-emerald-500/30 flex items-start gap-3 text-left my-4">
+                      <div className="text-xs text-slate-300 leading-relaxed">
+                        <strong className="text-emerald-400 block mb-1">Recommended SIP Acceleration Strategy: Step-Up SIP</strong>
+                        Increasing your monthly SIP contribution by just 10% each year (matching annual salary raises) can more than double your total 20-year accumulated wealth compared to maintaining a static fixed contribution.
+                      </div>
+                    </div>
+
+                    <div className="mt-6 flex justify-center border-t border-slate-800 pt-4">
+                      <ShareResults
+                        title="My SIP Investment Results"
+                        text={`For ${getCurrencySymbol()}${monthlyInvestment}/month at ${expectedReturn}%, my projected future value in ${years} years is ${getCurrencySymbol()}${Number(result.total).toLocaleString()}! Calculated via CalcZoon:`}
+                        url="/financial/sip-calculator"
+                      />
+                    </div>
                   </div>
-                </div>
-              )}
+                )}
             </Card>
           </div>
 
@@ -450,6 +457,39 @@ const SipCalculator = () => {
                   Failing to scale contributions as your career earnings grow wastes peak earning years. Make an annual habit of stepping up your SIP contributions by at least 10% each year.
                 </p>
               </div>
+            </div>
+          </div>
+
+          {/* Pre-Calculated Benchmark Table */}
+          <div className="space-y-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-white">Monthly SIP Wealth Accumulation Benchmark Table (12% Annualized Return)</h2>
+            <p className="text-sm text-slate-400">
+              The benchmark reference table below demonstrates projected portfolio growth across various regular monthly investment amounts at a benchmark 12% equity index CAGR.
+            </p>
+            <div className="overflow-x-auto border border-slate-800 rounded-2xl shadow-xl">
+              <table className="w-full text-left text-xs sm:text-sm border-collapse bg-slate-950">
+                <thead>
+                  <tr className="bg-slate-900 border-b border-slate-800 text-slate-300">
+                    <th className="p-3 font-semibold">Monthly Deposit</th>
+                    <th className="p-3 font-semibold">Investment Term</th>
+                    <th className="p-3 font-semibold">Total Invested</th>
+                    <th className="p-3 font-semibold text-emerald-400">Projected Portfolio</th>
+                    <th className="p-3 font-semibold text-rose-400">Compound Wealth Gain</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-800/60 text-slate-300">
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono text-white">$100/mo</td><td className="p-3">5 Years</td><td className="p-3 font-mono">$6,000</td><td className="p-3 text-emerald-400 font-bold">$8,249</td><td className="p-3 text-rose-400 font-mono">+$2,249</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono text-white">$100/mo</td><td className="p-3">10 Years</td><td className="p-3 font-mono">$12,000</td><td className="p-3 text-emerald-400 font-bold">$23,234</td><td className="p-3 text-rose-400 font-mono">+$11,234</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono text-white">$250/mo</td><td className="p-3">5 Years</td><td className="p-3 font-mono">$15,000</td><td className="p-3 text-emerald-400 font-bold">$20,622</td><td className="p-3 text-rose-400 font-mono">+$5,622</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono text-white">$250/mo</td><td className="p-3">10 Years</td><td className="p-3 font-mono">$30,000</td><td className="p-3 text-emerald-400 font-bold">$58,085</td><td className="p-3 text-rose-400 font-mono">+$28,085</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono text-white">$250/mo</td><td className="p-3">15 Years</td><td className="p-3 font-mono">$45,000</td><td className="p-3 text-emerald-400 font-bold">$126,143</td><td className="p-3 text-rose-400 font-mono">+$81,143</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono text-white">$500/mo</td><td className="p-3">10 Years</td><td className="p-3 font-mono">$60,000</td><td className="p-3 text-emerald-400 font-bold">$116,170</td><td className="p-3 text-rose-400 font-mono">+$56,170</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono text-white">$500/mo</td><td className="p-3">15 Years</td><td className="p-3 font-mono">$90,000</td><td className="p-3 text-emerald-400 font-bold">$252,286</td><td className="p-3 text-rose-400 font-mono">+$162,286</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono text-white">$500/mo</td><td className="p-3">20 Years</td><td className="p-3 font-mono">$120,000</td><td className="p-3 text-emerald-400 font-bold">$499,574</td><td className="p-3 text-rose-400 font-mono">+$379,574</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono text-white">$1,000/mo</td><td className="p-3">15 Years</td><td className="p-3 font-mono">$180,000</td><td className="p-3 text-emerald-400 font-bold">$504,572</td><td className="p-3 text-rose-400 font-mono">+$324,572</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono text-white">$1,000/mo</td><td className="p-3">20 Years</td><td className="p-3 font-mono">$240,000</td><td className="p-3 text-emerald-400 font-bold">$999,148</td><td className="p-3 text-rose-400 font-mono">+$759,148</td></tr>
+                </tbody>
+              </table>
             </div>
           </div>
 

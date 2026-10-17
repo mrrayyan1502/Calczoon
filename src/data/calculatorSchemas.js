@@ -6,14 +6,16 @@ export const calculatorFaqs = {
     { q: "Is BMI accurate for muscular athletes?", a: "BMI does not distinguish between lean muscle and fat tissue. Highly muscular individuals often score in the overweight range despite having low body fat." },
     { q: "How is BMI calculated?", a: "In the metric system, BMI is calculated as weight in kilograms divided by height in meters squared (kg/m²). In the imperial system, multiply weight in pounds by 703 and divide by height in inches squared." },
     { q: "Can BMI diagnose medical conditions?", a: "No, BMI is a clinical screening tool, not a diagnostic measure. It should be used alongside waist circumference, body fat percentage, and blood panels." },
-    { q: "How often should I measure my BMI?", a: "Checking your BMI once every few months or when your weight fluctuates by more than 2-3 kg is sufficient for general tracking." }
+    { q: "How often should I measure my BMI?", a: "Checking your BMI once every few months or when your weight fluctuates by more than 2-3 kg is sufficient for general tracking." },
+    { q: "What are the health risks of an elevated BMI?", a: "A BMI above 30 (obesity) is clinically associated with heightened risk for hypertension, type 2 diabetes, coronary heart disease, osteoarthritis, and sleep apnea." }
   ],
   'tdee-calculator': [
     { q: "What is the difference between BMR and TDEE?", a: "BMR is the base energy burned at complete rest, while TDEE includes all physical movement, exercise, and the thermic effect of food consumed throughout the day." },
     { q: "How large of a calorie deficit is recommended for fat loss?", a: "A moderate deficit of 300 to 500 calories below your TDEE produces sustainable fat loss of approximately 0.5 to 1 lb per week without excessive hunger or muscle loss." },
     { q: "Which activity multiplier should I select?", a: "Select the option that reflects your general week conservatively. If you work a sedentary desk job and exercise 3 times a week, 'Lightly Active' or 'Moderately Active' is typically appropriate." },
     { q: "Should I eat back the calories I burn during exercise?", a: "No, because the TDEE activity multiplier already accounts for workout energy expenditure. Adding exercise calories back can erase your intended deficit." },
-    { q: "How often should I recalculate my TDEE?", a: "Recalculate your TDEE after every 5-10 lbs of weight loss, as a lighter body requires fewer calories to maintain and operate." }
+    { q: "How often should I recalculate my TDEE?", a: "Recalculate your TDEE after every 5-10 lbs of weight loss, as a lighter body requires fewer calories to maintain and operate." },
+    { q: "Why do metabolic adaptations slow weight loss over time?", a: "As you lose mass, both your resting metabolic rate and the energy cost of moving decrease, requiring periodic adjustments to your daily caloric intake." }
   ],
   'macro-calculator': [
     { q: "What are macronutrients?", a: "Macronutrients are the three primary nutritional categories providing energy: proteins (4 calories/gram), carbohydrates (4 calories/gram), and fats (9 calories/gram)." },
@@ -48,21 +50,24 @@ export const calculatorFaqs = {
     { q: "What is Private Mortgage Insurance (PMI)?", a: "PMI is insurance required by lenders when your down payment is less than 20% on a conventional loan. It protects the lender in case of default." },
     { q: "How much can I save with a 15-year mortgage vs 30-year?", a: "A 15-year mortgage typically saves over 50% in total interest costs and features lower interest rates, although monthly payments are significantly higher." },
     { q: "Does this calculator include property taxes and hazard insurance?", a: "This calculator calculates the fundamental Principal and Interest (P&I). Local property taxes and insurance should be added to estimate total monthly housing costs." },
-    { q: "Can I make extra principal payments to pay off the mortgage early?", a: "Yes, making extra principal payments directly reduces your remaining balance, saving thousands in future interest and shortening your repayment term." }
+    { q: "Can I make extra principal payments to pay off the mortgage early?", a: "Yes, making extra principal payments directly reduces your remaining balance, saving thousands in future interest and shortening your repayment term." },
+    { q: "What is the difference between mortgage interest rate and APR?", a: "The interest rate is the base cost of borrowing, while the Annual Percentage Rate (APR) includes lender fees, points, and administrative origination costs." }
   ],
   'loan-calculator': [
     { q: "What is an Equated Monthly Installment (EMI)?", a: "An EMI is a fixed monthly payment made to a lender on a specific date, covering both interest accrued and principal reduction so the debt reaches zero at maturity." },
     { q: "How does the loan term affect total borrowing costs?", a: "Longer loan terms reduce your monthly installment but significantly increase total interest paid over the life of the loan." },
     { q: "What is the difference between interest rate and APR?", a: "The interest rate is the base cost of borrowing, while the Annual Percentage Rate (APR) includes lender fees, points, and administrative origination costs." },
     { q: "Can I pay off my loan early without penalty?", a: "Most modern personal and auto loans permit early repayment without penalties, but you should review your specific credit contract for prepayment clauses." },
-    { q: "How does my credit score impact the interest rate?", a: "Borrowers with prime credit scores (740+) qualify for the lowest rates, while subprime borrowers pay higher risk premiums, increasing overall debt expense." }
+    { q: "How does my credit score impact the interest rate?", a: "Borrowers with prime credit scores (740+) qualify for the lowest rates, while subprime borrowers pay higher risk premiums, increasing overall debt expense." },
+    { q: "Can I refinance an existing loan to a lower interest rate?", a: "Yes, refinancing allows you to replace an existing debt with a new loan featuring a lower APR or shorter repayment term, lowering your monthly EMI." }
   ],
   'compound-interest-calculator': [
     { q: "What is compound interest?", a: "Compound interest is interest calculated on both the initial principal deposit and the accumulated interest from prior periods, allowing wealth to grow exponentially." },
     { q: "What is the Rule of 72?", a: "The Rule of 72 estimates the years needed to double an investment: divide 72 by your annual interest rate (e.g., at 8% return, your money doubles in ~9 years)." },
     { q: "Does more frequent compounding make a big difference?", a: "Compounding monthly produces slightly higher returns than compounding annually, but the difference between monthly and daily compounding is minimal for retail sums." },
     { q: "Why is starting early so critical for compound growth?", a: "Because compounding is exponential, the final 5-10 years of an investment timeframe produce the largest gains. Delaying by just 5 years can cost a significant portion of final wealth." },
-    { q: "How does inflation affect compound growth?", a: "Inflation erodes the purchasing power of your returns. To measure real wealth expansion, subtract the inflation rate from your nominal return rate." }
+    { q: "How does inflation affect compound growth?", a: "Inflation erodes the purchasing power of your returns. To measure real wealth expansion, subtract the inflation rate from your nominal return rate." },
+    { q: "What is the difference between APR and APY in compounding?", a: "APR reflects the stated annual interest rate without compounding, whereas APY (Annual Percentage Yield) reflects the true annual return taking compound frequency into account." }
   ],
   'currency-converter': [
     { q: "How frequently are foreign exchange rates updated?", a: "Foreign exchange market benchmark rates fluctuate continuously during global trading hours based on international monetary supply and demand." },
@@ -76,21 +81,24 @@ export const calculatorFaqs = {
     { q: "What is a High-Yield Savings Account (HYSA)?", a: "An HYSA is an insured deposit account that pays interest rates 10 to 12 times higher than traditional checking and brick-and-mortar savings accounts." },
     { q: "How large should an emergency fund be?", a: "Financial planners typically recommend 3 to 6 months of essential living expenses (rent, food, insurance, utilities) stored in liquid, risk-free savings." },
     { q: "Are savings accounts protected against bank failure?", a: "In the US, FDIC insurance covers up to $250,000 per depositor per institution. In the UK, the FSCS covers up to £85,000." },
-    { q: "Should I pay off high-interest debt or save money first?", a: "Prioritize building a basic starter emergency fund ($1,000 to 1 month's expenses), then aggressively eliminate high-interest debt (like credit cards) before building large savings." }
+    { q: "Should I pay off high-interest debt or save money first?", a: "Prioritize building a basic starter emergency fund ($1,000 to 1 month's expenses), then aggressively eliminate high-interest debt (like credit cards) before building large savings." },
+    { q: "How does automated recurring deposit saving help?", a: "Setting up automated transfers on payday removes cognitive friction and ensures consistent wealth accumulation before discretionary spending occurs." }
   ],
   'retirement-calculator': [
     { q: "What is the 4% safe withdrawal rule?", a: "The 4% rule suggests that a retiree can withdraw 4% of their initial portfolio value in year one, adjusted for inflation each subsequent year, with high probability of lasting 30 years." },
     { q: "How much money do I need to retire comfortably?", a: "A common benchmark is accumulating 25 times your anticipated annual retirement expenses (the inverse of the 4% rule) alongside state pension benefits." },
     { q: "What is the difference between a traditional 401(k) and a Roth IRA?", a: "Traditional accounts provide an upfront tax deduction with taxes paid on withdrawal, whereas Roth accounts use after-tax money with 100% tax-free withdrawals in retirement." },
     { q: "How does inflation impact retirement planning?", a: "Inflation erodes fixed pensions. A 3% annual inflation rate cuts purchasing power in half over 24 years, making equity growth investments essential." },
-    { q: "When should I begin planning for retirement?", a: "Starting in your 20s or 30s allows compounding interest to do the heavy lifting, requiring substantially lower monthly savings than starting in your 40s or 50s." }
+    { q: "When should I begin planning for retirement?", a: "Starting in your 20s or 30s allows compounding interest to do the heavy lifting, requiring substantially lower monthly savings than starting in your 40s or 50s." },
+    { q: "What is a dynamic withdrawal strategy in retirement?", a: "A dynamic strategy adjusts annual spending downward during bear markets and upward during bull markets to extend portfolio longevity beyond static fixed rules." }
   ],
   'sip-calculator': [
     { q: "What is a Systematic Investment Plan (SIP)?", a: "A SIP allows you to invest a fixed amount of money regularly (typically monthly) into mutual funds or index ETFs rather than investing a lump sum." },
     { q: "What is Rupee Cost Averaging / Dollar Cost Averaging?", a: "By investing a fixed sum periodically, you automatically buy more units when market prices are low and fewer units when prices are high, lowering your average cost per unit." },
     { q: "Can I stop or pause a SIP at any time?", a: "Yes, SIPs offer complete flexibility. You can pause, modify the monthly contribution amount, or stop contributions without penalty." },
     { q: "What is the difference between a SIP and a lump-sum investment?", a: "A lump-sum invests a single large capital amount at once, which is vulnerable to market timing. A SIP spreads market entry risk over time." },
-    { q: "What expected returns should I model for equity SIPs?", a: "Historical broad-market equity index funds average between 10% and 13% annualized returns over 10+ year time horizons, though returns fluctuate yearly." }
+    { q: "What expected returns should I model for equity SIPs?", a: "Historical broad-market equity index funds average between 10% and 13% annualized returns over 10+ year time horizons, though returns fluctuate yearly." },
+    { q: "What is a Step-Up SIP?", a: "A Step-Up SIP automatically increases your monthly investment contribution by a set percentage (e.g., 10%) each year as your salary increases, exponentially boosting your final corpus." }
   ],
   'percentage-calculator': [
     { q: "How do you calculate percentage increase or decrease?", a: "Subtract the old value from the new value, divide by the absolute old value, and multiply by 100: [(New – Old) ÷ Old] × 100." },

@@ -298,6 +298,13 @@ const FuelCostCalculator = () => {
                       </div>
                     </div>
 
+                    <div className="w-full p-4 rounded-xl bg-gradient-to-r from-emerald-950/40 to-slate-900/60 border border-emerald-500/30 flex items-start gap-3 text-left my-3">
+                      <div className="text-xs text-slate-300 leading-relaxed">
+                        <strong className="text-emerald-400 block mb-1">Recommended Driver Resource: Fuel Economy Maximization</strong>
+                        Maintaining proper cold tire pressure and limiting continuous highway speeds to 65 mph can improve overall highway MPG by 7% to 14%.
+                      </div>
+                    </div>
+
                     <ShareResults
                       title="Road Trip Fuel Cost"
                       text={`Estimated fuel expense for my trip is ${getCurrencySymbol()}${result.totalCost} (${getCurrencySymbol()}${result.costPerPerson} per person)! Calculated via CalcZoon.`}
@@ -477,6 +484,40 @@ const FuelCostCalculator = () => {
                   Aerodynamic air resistance increases with the square of velocity. Cruising at 80 mph (129 km/h) consumes approximately 25% more fuel per mile than cruising at 65 mph (105 km/h). Maintaining moderate highway speeds saves dozens of dollars per road trip.
                 </p>
               </div>
+            </div>
+          </div>
+
+          {/* Static HTML Reference Benchmark Table */}
+          <div className="space-y-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-white">Road Trip Distance &amp; Vehicle Fuel Expense Benchmark Table ($3.50/Gallon Base)</h2>
+            <p className="text-sm text-slate-400">
+              The benchmark table below compares road trip gasoline expenses across common automobile classes for various travel distances assuming regular unleaded gas at $3.50 per US gallon.
+            </p>
+            <div className="overflow-x-auto border border-slate-800 rounded-2xl shadow-xl">
+              <table className="w-full text-left text-xs sm:text-sm border-collapse bg-slate-950">
+                <thead>
+                  <tr className="bg-slate-900 border-b border-slate-800 text-slate-300">
+                    <th className="p-3 font-semibold">Vehicle Category</th>
+                    <th className="p-3 font-semibold text-emerald-400">Average Efficiency</th>
+                    <th className="p-3 font-semibold text-sky-400">100-Mile Commute</th>
+                    <th className="p-3 font-semibold text-amber-400">300-Mile Weekend</th>
+                    <th className="p-3 font-semibold text-rose-400">600-Mile Interstate</th>
+                    <th className="p-3 font-semibold text-emerald-400">1,000-Mile Cross-Country</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-800/60 text-slate-300">
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">Full Hybrid (Prius, Ioniq)</td><td className="p-3 font-mono text-emerald-400">52 MPG (4.5 L/100km)</td><td className="p-3 font-mono text-sky-400">$6.73</td><td className="p-3 font-mono text-amber-400">$20.19</td><td className="p-3 font-mono text-rose-400">$40.38</td><td className="p-3 font-mono font-bold text-emerald-400">$67.31</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">Compact Sedan (Civic, Corolla)</td><td className="p-3 font-mono text-emerald-400">36 MPG (6.5 L/100km)</td><td className="p-3 font-mono text-sky-400">$9.72</td><td className="p-3 font-mono text-amber-400">$29.17</td><td className="p-3 font-mono text-rose-400">$58.33</td><td className="p-3 font-mono font-bold text-emerald-400">$97.22</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">Midsize Sedan (Camry, Accord)</td><td className="p-3 font-mono text-emerald-400">32 MPG (7.4 L/100km)</td><td className="p-3 font-mono text-sky-400">$10.94</td><td className="p-3 font-mono text-amber-400">$32.81</td><td className="p-3 font-mono text-rose-400">$65.63</td><td className="p-3 font-mono font-bold text-emerald-400">$109.38</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">Compact Crossover (RAV4, CR-V)</td><td className="p-3 font-mono text-emerald-400">28 MPG (8.4 L/100km)</td><td className="p-3 font-mono text-sky-400">$12.50</td><td className="p-3 font-mono text-amber-400">$37.50</td><td className="p-3 font-mono text-rose-400">$75.00</td><td className="p-3 font-mono font-bold text-emerald-400">$125.00</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">Midsize 3-Row SUV (Highlander)</td><td className="p-3 font-mono text-emerald-400">24 MPG (9.8 L/100km)</td><td className="p-3 font-mono text-sky-400">$14.58</td><td className="p-3 font-mono text-amber-400">$43.75</td><td className="p-3 font-mono text-rose-400">$87.50</td><td className="p-3 font-mono font-bold text-emerald-400">$145.83</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">Full-Size SUV (Tahoe, Expedition)</td><td className="p-3 font-mono text-emerald-400">18 MPG (13.1 L/100km)</td><td className="p-3 font-mono text-sky-400">$19.44</td><td className="p-3 font-mono text-amber-400">$58.33</td><td className="p-3 font-mono text-rose-400">$116.67</td><td className="p-3 font-mono font-bold text-emerald-400">$194.44</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">Light Truck (F-150, Silverado V6)</td><td className="p-3 font-mono text-emerald-400">20 MPG (11.8 L/100km)</td><td className="p-3 font-mono text-sky-400">$17.50</td><td className="p-3 font-mono text-amber-400">$52.50</td><td className="p-3 font-mono text-rose-400">$105.00</td><td className="p-3 font-mono font-bold text-emerald-400">$175.00</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">Heavy Duty Truck (V8 / Towing)</td><td className="p-3 font-mono text-emerald-400">14 MPG (16.8 L/100km)</td><td className="p-3 font-mono text-sky-400">$25.00</td><td className="p-3 font-mono text-amber-400">$75.00</td><td className="p-3 font-mono text-rose-400">$150.00</td><td className="p-3 font-mono font-bold text-emerald-400">$250.00</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">Sports Car (Mustang GT, Corvette)</td><td className="p-3 font-mono text-emerald-400">19 MPG (12.4 L/100km)</td><td className="p-3 font-mono text-sky-400">$18.42</td><td className="p-3 font-mono text-amber-400">$55.26</td><td className="p-3 font-mono text-rose-400">$110.53</td><td className="p-3 font-mono font-bold text-emerald-400">$184.21</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">European Turbodiesel Sedan</td><td className="p-3 font-mono text-emerald-400">44 MPG (5.3 L/100km)</td><td className="p-3 font-mono text-sky-400">$7.95</td><td className="p-3 font-mono text-amber-400">$23.86</td><td className="p-3 font-mono text-rose-400">$47.73</td><td className="p-3 font-mono font-bold text-emerald-400">$79.55</td></tr>
+                </tbody>
+              </table>
             </div>
           </div>
 

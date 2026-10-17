@@ -223,15 +223,21 @@ const CaloriesBurnedCalculator = () => {
                         Duration: {result.durationMin} mins
                       </span>
                     </div>
+                  <div className="w-full p-4 rounded-xl bg-gradient-to-r from-rose-950/40 to-slate-900/60 border border-rose-500/30 flex items-start gap-3 text-left my-3">
+                    <div className="text-xs text-slate-300 leading-relaxed">
+                      <strong className="text-rose-400 block mb-1">Recommended Workout Resource: Fueling &amp; Recovery</strong>
+                      Replenishing glycogen within 45 minutes post-workout with a 3:1 ratio of fast-digesting carbohydrates to lean protein accelerates muscular recovery and curbs compensatory hunger spikes.
+                    </div>
                   </div>
-                  <div className="mt-6 w-full">
+                  <div className="mt-4 w-full">
                     <ShareResults
                       title="My Workout Calorie Burn"
                       text={`I burned an estimated ${result.calories} kcal during my workout session! Calculate your exercise energy expenditure on CalcZoon:`}
                       url="/health/calories-burned-calculator"
                     />
                   </div>
-                </CardFooter>
+                </div>
+              </CardFooter>
               )}
               {error && (
                 <CardFooter className="mt-6 p-4 bg-red-900/20 border-t border-red-800/40 rounded-b-lg">
@@ -441,6 +447,40 @@ const CaloriesBurnedCalculator = () => {
                   After an exhausting workout, many people become unusually sedentary for the rest of the day—sitting on the couch and skipping stairs. This subconscious NEAT drop can erase up to 200–300 kcal of the workout burn.
                 </p>
               </div>
+            </div>
+          </div>
+
+          {/* Static HTML Reference Benchmark Table */}
+          <div className="space-y-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-white">Exercise Energy Expenditure Benchmark Table (60-Minute Session)</h2>
+            <p className="text-sm text-slate-400">
+              The clinical benchmark table below demonstrates estimated calories burned across popular activities for adults of varying body weights based on the 2011 Compendium of Physical Activities.
+            </p>
+            <div className="overflow-x-auto border border-slate-800 rounded-2xl shadow-xl">
+              <table className="w-full text-left text-xs sm:text-sm border-collapse bg-slate-950">
+                <thead>
+                  <tr className="bg-slate-900 border-b border-slate-800 text-slate-300">
+                    <th className="p-3 font-semibold">Activity</th>
+                    <th className="p-3 font-semibold">MET Score</th>
+                    <th className="p-3 font-semibold text-sky-400">130 lbs (59 kg)</th>
+                    <th className="p-3 font-semibold text-emerald-400">160 lbs (73 kg)</th>
+                    <th className="p-3 font-semibold text-rose-400">190 lbs (86 kg)</th>
+                    <th className="p-3 font-semibold">Primary Energy System</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-800/60 text-slate-300">
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-medium text-white">Walking (3.0 mph, moderate pace)</td><td className="p-3 font-mono">3.3</td><td className="p-3 text-sky-400 font-mono">195 kcal</td><td className="p-3 text-emerald-400 font-mono">241 kcal</td><td className="p-3 text-rose-400 font-bold">284 kcal</td><td className="p-3">Aerobic Lipolysis (Fat Oxidation)</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-medium text-white">Brisk Walking (4.0 mph, uphill grade)</td><td className="p-3 font-mono">5.0</td><td className="p-3 text-sky-400 font-mono">295 kcal</td><td className="p-3 text-emerald-400 font-mono">365 kcal</td><td className="p-3 text-rose-400 font-bold">430 kcal</td><td className="p-3">Aerobic Base Endurance</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-medium text-white">Weight Training (General / Circuit)</td><td className="p-3 font-mono">5.0</td><td className="p-3 text-sky-400 font-mono">295 kcal</td><td className="p-3 text-emerald-400 font-mono">365 kcal</td><td className="p-3 text-rose-400 font-bold">430 kcal</td><td className="p-3">Anaerobic Glycolysis</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-medium text-white">Weight Training (Heavy Powerlifting)</td><td className="p-3 font-mono">6.0</td><td className="p-3 text-sky-400 font-mono">354 kcal</td><td className="p-3 text-emerald-400 font-mono">438 kcal</td><td className="p-3 text-rose-400 font-bold">516 kcal</td><td className="p-3">Phosphagen (ATP-CP) &amp; Glycolytic</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-medium text-white">Stationary Cycling (Moderate 100W)</td><td className="p-3 font-mono">6.8</td><td className="p-3 text-sky-400 font-mono">401 kcal</td><td className="p-3 text-emerald-400 font-mono">496 kcal</td><td className="p-3 text-rose-400 font-bold">585 kcal</td><td className="p-3">Aerobic Cardiovascular</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-medium text-white">Jogging / Running (5.0 mph / 12 min mile)</td><td className="p-3 font-mono">8.3</td><td className="p-3 text-sky-400 font-mono">490 kcal</td><td className="p-3 text-emerald-400 font-mono">606 kcal</td><td className="p-3 text-rose-400 font-bold">714 kcal</td><td className="p-3">Cardiovascular Aerobic Capacity</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-medium text-white">Swimming Laps (Freestyle, vigorous)</td><td className="p-3 font-mono">9.8</td><td className="p-3 text-sky-400 font-mono">578 kcal</td><td className="p-3 text-emerald-400 font-mono">715 kcal</td><td className="p-3 text-rose-400 font-bold">843 kcal</td><td className="p-3">Full-Body Aerobic &amp; Muscular Endurance</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-medium text-white">Running (7.0 mph / 8.5 min mile)</td><td className="p-3 font-mono">11.0</td><td className="p-3 text-sky-400 font-mono">649 kcal</td><td className="p-3 text-emerald-400 font-mono">803 kcal</td><td className="p-3 text-rose-400 font-bold">946 kcal</td><td className="p-3">Lactate Threshold Endurance</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-medium text-white">Jump Rope (Fast Pace / Double Unders)</td><td className="p-3 font-mono">12.3</td><td className="p-3 text-sky-400 font-mono">726 kcal</td><td className="p-3 text-emerald-400 font-mono">898 kcal</td><td className="p-3 text-rose-400 font-bold">1,058 kcal</td><td className="p-3">Anaerobic Capacity &amp; Plyometric</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-medium text-white">HIIT / Sprint Interval Conditioning</td><td className="p-3 font-mono">13.0</td><td className="p-3 text-sky-400 font-mono">767 kcal</td><td className="p-3 text-emerald-400 font-mono">949 kcal</td><td className="p-3 text-rose-400 font-bold">1,118 kcal</td><td className="p-3">High-Lactate Anaerobic + EPOC</td></tr>
+                </tbody>
+              </table>
             </div>
           </div>
 

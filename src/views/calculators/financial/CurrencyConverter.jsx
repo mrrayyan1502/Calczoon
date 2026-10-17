@@ -249,6 +249,13 @@ const CurrencyConverter = () => {
                     <p className="text-xs text-slate-400 pt-1 font-mono">
                       Mid-market rate: 1 {fromCurrency} = {result.rate} {toCurrency}
                     </p>
+                    <div className="w-full p-4 rounded-xl bg-gradient-to-r from-emerald-950/40 to-slate-900/60 border border-emerald-500/30 flex items-start gap-3 text-left my-3">
+                      <div className="text-xs text-slate-300 leading-relaxed">
+                        <strong className="text-emerald-400 block mb-1">Recommended Forex Strategy: Minimize Conversion Drag</strong>
+                        Avoid airport exchange booths and dynamic currency conversion (DCC) prompts at foreign POS terminals to save 3% to 8% in hidden foreign transaction markups.
+                      </div>
+                    </div>
+
                     <div className="mt-4">
                       <ShareResults
                         title="Currency Conversion Result"
@@ -449,6 +456,39 @@ const CurrencyConverter = () => {
                   Because international forex markets close on weekends, many digital fintech cards and trading apps add an extra 0.5% to 1.0% markup between Friday evening and Sunday night to protect themselves against market open gaps.
                 </p>
               </div>
+            </div>
+          </div>
+
+          {/* Static HTML Reference Benchmark Table */}
+          <div className="space-y-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-white">Major Global Currency Pairs &amp; Typical Retail FX Spread Benchmark Table</h2>
+            <p className="text-sm text-slate-400">
+              The benchmark table below outlines standard interbank spreads versus retail bank and foreign exchange kiosk markups across major global currency pairings.
+            </p>
+            <div className="overflow-x-auto border border-slate-800 rounded-2xl shadow-xl">
+              <table className="w-full text-left text-xs sm:text-sm border-collapse bg-slate-950">
+                <thead>
+                  <tr className="bg-slate-900 border-b border-slate-800 text-slate-300">
+                    <th className="p-3 font-semibold">Currency Pair</th>
+                    <th className="p-3 font-semibold text-emerald-400">Pair Classification</th>
+                    <th className="p-3 font-semibold text-sky-400">Typical Interbank Spread</th>
+                    <th className="p-3 font-semibold text-rose-400">Retail Bank / Kiosk Markup</th>
+                    <th className="p-3 font-semibold">Effective Cost per $10,000 Transacted</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-800/60 text-slate-300">
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">EUR / USD</td><td className="p-3 font-mono text-emerald-400">G10 Major</td><td className="p-3 font-mono text-sky-400">0.5 – 1.2 pips</td><td className="p-3 font-mono text-rose-400">2.50% – 4.00%</td><td className="p-3 font-mono">$250 – $400 markup</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">GBP / USD</td><td className="p-3 font-mono text-emerald-400">G10 Major (Cable)</td><td className="p-3 font-mono text-sky-400">0.8 – 1.8 pips</td><td className="p-3 font-mono text-rose-400">2.75% – 4.50%</td><td className="p-3 font-mono">$275 – $450 markup</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">USD / JPY</td><td className="p-3 font-mono text-emerald-400">G10 Major</td><td className="p-3 font-mono text-sky-400">0.6 – 1.5 pips</td><td className="p-3 font-mono text-rose-400">2.00% – 3.80%</td><td className="p-3 font-mono">$200 – $380 markup</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">USD / CAD</td><td className="p-3 font-mono text-emerald-400">Commodity Major (Loonie)</td><td className="p-3 font-mono text-sky-400">1.0 – 2.2 pips</td><td className="p-3 font-mono text-rose-400">2.50% – 4.25%</td><td className="p-3 font-mono">$250 – $425 markup</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">AUD / USD</td><td className="p-3 font-mono text-emerald-400">Commodity Major (Aussie)</td><td className="p-3 font-mono text-sky-400">0.9 – 2.0 pips</td><td className="p-3 font-mono text-rose-400">2.50% – 4.25%</td><td className="p-3 font-mono">$250 – $425 markup</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">USD / CHF</td><td className="p-3 font-mono text-emerald-400">Safe-Haven Major (Swissy)</td><td className="p-3 font-mono text-sky-400">1.2 – 2.5 pips</td><td className="p-3 font-mono text-rose-400">3.00% – 5.00%</td><td className="p-3 font-mono">$300 – $500 markup</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">EUR / GBP</td><td className="p-3 font-mono text-emerald-400">Cross Currency</td><td className="p-3 font-mono text-sky-400">1.0 – 2.0 pips</td><td className="p-3 font-mono text-rose-400">2.80% – 4.50%</td><td className="p-3 font-mono">$280 – $450 markup</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">USD / INR</td><td className="p-3 font-mono text-emerald-400">Emerging Market (Exotic)</td><td className="p-3 font-mono text-sky-400">4.0 – 10.0 pips</td><td className="p-3 font-mono text-rose-400">3.50% – 6.50%</td><td className="p-3 font-mono">$350 – $650 markup</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">USD / AED</td><td className="p-3 font-mono text-emerald-400">Pegged Currency</td><td className="p-3 font-mono text-sky-400">Fixed Central Peg</td><td className="p-3 font-mono text-rose-400">1.50% – 3.00%</td><td className="p-3 font-mono">$150 – $300 markup</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">USD / SGD</td><td className="p-3 font-mono text-emerald-400">Asian Financial Hub</td><td className="p-3 font-mono text-sky-400">1.5 – 3.0 pips</td><td className="p-3 font-mono text-rose-400">2.25% – 3.75%</td><td className="p-3 font-mono">$225 – $375 markup</td></tr>
+                </tbody>
+              </table>
             </div>
           </div>
 

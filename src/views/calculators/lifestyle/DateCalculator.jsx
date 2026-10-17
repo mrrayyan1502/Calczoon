@@ -223,6 +223,13 @@ const DateCalculator = () => {
                       </div>
                     </div>
 
+                    <div className="w-full p-4 rounded-xl bg-gradient-to-r from-emerald-950/40 to-slate-900/60 border border-emerald-500/30 flex items-start gap-3 text-left my-3">
+                      <div className="text-xs text-slate-300 leading-relaxed">
+                        <strong className="text-emerald-400 block mb-1">Recommended Productivity Tool: Milestone Planning</strong>
+                        When managing project deadlines or legal contracts, ensure you confirm whether delivery terms require working business days or calendar inclusive days.
+                      </div>
+                    </div>
+
                     <ShareResults
                       title="Date Difference Calculation"
                       text={`There are ${result.totalDays} days between ${startDate} and ${endDate}. Calculated via CalcZoon!`}
@@ -402,6 +409,39 @@ const DateCalculator = () => {
                   When computer scripts naively divide local timestamp differences by 86,400,000 ms, a 23-hour spring daylight saving shift will yield 0.958 days, which can round down to 0 days if using `Math.floor`. Using UTC normalization eliminates this hazard.
                 </p>
               </div>
+            </div>
+          </div>
+
+          {/* Static HTML Reference Benchmark Table */}
+          <div className="space-y-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-white">Standard Calendar Intervals &amp; Business Day Duration Benchmark Table</h2>
+            <p className="text-sm text-slate-400">
+              The reference table below compares standard calendar spans, estimated Monday-through-Friday working business days, and total hourly durations for corporate and legal scheduling.
+            </p>
+            <div className="overflow-x-auto border border-slate-800 rounded-2xl shadow-xl">
+              <table className="w-full text-left text-xs sm:text-sm border-collapse bg-slate-950">
+                <thead>
+                  <tr className="bg-slate-900 border-b border-slate-800 text-slate-300">
+                    <th className="p-3 font-semibold">Calendar Interval</th>
+                    <th className="p-3 font-semibold text-emerald-400">Elapsed Days</th>
+                    <th className="p-3 font-semibold text-sky-400">Business Days (Avg)</th>
+                    <th className="p-3 font-semibold text-amber-400">Elapsed Hours</th>
+                    <th className="p-3 font-semibold">Typical Scheduling / Contract Usage</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-800/60 text-slate-300">
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">1 Week</td><td className="p-3 font-mono text-emerald-400">7 Days</td><td className="p-3 font-mono text-sky-400">5 Days</td><td className="p-3 font-mono text-amber-400">168 Hours</td><td className="p-3">Agile sprint cycle &amp; weekly deliverable checkpoints</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">2 Weeks (Fortnight)</td><td className="p-3 font-mono text-emerald-400">14 Days</td><td className="p-3 font-mono text-sky-400">10 Days</td><td className="p-3 font-mono text-amber-400">336 Hours</td><td className="p-3">Standard corporate payroll &amp; bi-weekly software releases</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">30 Days (Net 30)</td><td className="p-3 font-mono text-emerald-400">30 Days</td><td className="p-3 font-mono text-sky-400">~21.7 Days</td><td className="p-3 font-mono text-amber-400">720 Hours</td><td className="p-3">Standard commercial trade credit &amp; vendor invoicing</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">60 Days (Two Months)</td><td className="p-3 font-mono text-emerald-400">60 Days</td><td className="p-3 font-mono text-sky-400">~43.5 Days</td><td className="p-3 font-mono text-amber-400">1,440 Hours</td><td className="p-3">Tenant lease termination notice &amp; statutory appeal periods</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">90 Days (Quarter Q1-Q4)</td><td className="p-3 font-mono text-emerald-400">90–92 Days</td><td className="p-3 font-mono text-sky-400">~65 Days</td><td className="p-3 font-mono text-amber-400">2,160 Hours</td><td className="p-3">SEC 10-Q corporate quarterly reporting &amp; fiscal reviews</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">180 Days (Half-Year)</td><td className="p-3 font-mono text-emerald-400">180–183 Days</td><td className="p-3 font-mono text-sky-400">~130 Days</td><td className="p-3 font-mono text-amber-400">4,320 Hours</td><td className="p-3">Academic semester terms &amp; semi-annual bond coupon dates</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">365 Days (Common Year)</td><td className="p-3 font-mono text-emerald-400">365 Days</td><td className="p-3 font-mono text-sky-400">260–261 Days</td><td className="p-3 font-mono text-amber-400">8,760 Hours</td><td className="p-3">Annual residential real estate leases &amp; recurring contracts</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">366 Days (Leap Year)</td><td className="p-3 font-mono text-emerald-400">366 Days</td><td className="p-3 font-mono text-sky-400">261–262 Days</td><td className="p-3 font-mono text-amber-400">8,784 Hours</td><td className="p-3">Intercalary astronomical calendar synchronization year</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">500 Days Milestone</td><td className="p-3 font-mono text-emerald-400">500 Days</td><td className="p-3 font-mono text-sky-400">~357 Days</td><td className="p-3 font-mono text-amber-400">12,000 Hours</td><td className="p-3">Civil engineering construction phase 1 delivery milestone</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">1,000 Days Milestone</td><td className="p-3 font-mono text-emerald-400">1,000 Days</td><td className="p-3 font-mono text-sky-400">~714 Days</td><td className="p-3 font-mono text-amber-400">24,000 Hours</td><td className="p-3">Multi-year enterprise ERP cloud digital transformation</td></tr>
+                </tbody>
+              </table>
             </div>
           </div>
 

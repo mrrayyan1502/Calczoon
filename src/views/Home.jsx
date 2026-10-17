@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -10,7 +10,7 @@ import Seo from '@/components/Seo';
 import NewsletterCTA from '@/components/NewsletterCTA';
 import Faq from '@/components/Faq';
 import AboutSection from '@/components/AboutSection';
-import TestimonialsSection from '@/components/TestimonialsSection';
+import AccuracyStandardsSection from '@/components/AccuracyStandardsSection';
 
 const tools = [
   {
@@ -326,7 +326,7 @@ const Home = () => {
         </section>
 
         <AboutSection />
-        <TestimonialsSection />
+        <AccuracyStandardsSection />
         <NewsletterCTA />
         <Faq items={faqs} />
       </div>

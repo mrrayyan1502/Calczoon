@@ -278,6 +278,13 @@ const TriangleCalculator = () => {
                         </div>
                       )}
 
+                      <div className="w-full p-4 rounded-xl bg-gradient-to-r from-emerald-950/40 to-slate-900/60 border border-emerald-500/30 flex items-start gap-3 text-left my-3">
+                        <div className="text-xs text-slate-300 leading-relaxed">
+                          <strong className="text-emerald-400 block mb-1">Recommended STEM Resource: Trigonometry &amp; Structural Design</strong>
+                          In civil architecture and land surveying, triangulation delivers rigid load distribution that prevents shear failure in bridges, trusses, and roofs.
+                        </div>
+                      </div>
+
                       <div className="mt-4">
                         <ShareResults
                           title="Triangle Area Calculation"
@@ -472,6 +479,41 @@ const TriangleCalculator = () => {
                   Measuring the base in feet and height in inches without unit conversion inflates the calculated area by a factor of 12. Convert all dimensions to a single unit first.
                 </p>
               </div>
+            </div>
+          </div>
+
+          {/* Static HTML Reference Benchmark Table */}
+          <div className="space-y-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-white">Special Right Triangles &amp; Pythagorean Triples Benchmark Table</h2>
+            <p className="text-sm text-slate-400">
+              The geometric benchmark table below catalogues fundamental integer Pythagorean triples and special right triangle proportions alongside their exact area, perimeter, and interior angles.
+            </p>
+            <div className="overflow-x-auto border border-slate-800 rounded-2xl shadow-xl">
+              <table className="w-full text-left text-xs sm:text-sm border-collapse bg-slate-950">
+                <thead>
+                  <tr className="bg-slate-900 border-b border-slate-800 text-slate-300">
+                    <th className="p-3 font-semibold">Triple / Type</th>
+                    <th className="p-3 font-semibold text-emerald-400">Side a</th>
+                    <th className="p-3 font-semibold text-emerald-400">Side b</th>
+                    <th className="p-3 font-semibold text-sky-400">Hypotenuse c</th>
+                    <th className="p-3 font-semibold text-amber-400">Enclosed Area</th>
+                    <th className="p-3 font-semibold">Perimeter</th>
+                    <th className="p-3 font-semibold">Angles (α, β, γ)</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-800/60 text-slate-300">
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">3-4-5 Primitive Triple</td><td className="p-3 font-mono text-emerald-400">3</td><td className="p-3 font-mono text-emerald-400">4</td><td className="p-3 font-mono text-sky-400">5</td><td className="p-3 font-mono text-amber-400">6.0000</td><td className="p-3 font-mono">12</td><td className="p-3">36.87°, 53.13°, 90°</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">5-12-13 Primitive Triple</td><td className="p-3 font-mono text-emerald-400">5</td><td className="p-3 font-mono text-emerald-400">12</td><td className="p-3 font-mono text-sky-400">13</td><td className="p-3 font-mono text-amber-400">30.0000</td><td className="p-3 font-mono">30</td><td className="p-3">22.62°, 67.38°, 90°</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">8-15-17 Primitive Triple</td><td className="p-3 font-mono text-emerald-400">8</td><td className="p-3 font-mono text-emerald-400">15</td><td className="p-3 font-mono text-sky-400">17</td><td className="p-3 font-mono text-amber-400">60.0000</td><td className="p-3 font-mono">40</td><td className="p-3">28.07°, 61.93°, 90°</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">7-24-25 Primitive Triple</td><td className="p-3 font-mono text-emerald-400">7</td><td className="p-3 font-mono text-emerald-400">24</td><td className="p-3 font-mono text-sky-400">25</td><td className="p-3 font-mono text-amber-400">84.0000</td><td className="p-3 font-mono">56</td><td className="p-3">16.26°, 73.74°, 90°</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">9-40-41 Primitive Triple</td><td className="p-3 font-mono text-emerald-400">9</td><td className="p-3 font-mono text-emerald-400">40</td><td className="p-3 font-mono text-sky-400">41</td><td className="p-3 font-mono text-amber-400">180.0000</td><td className="p-3 font-mono">90</td><td className="p-3">12.68°, 77.32°, 90°</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">11-60-61 Primitive Triple</td><td className="p-3 font-mono text-emerald-400">11</td><td className="p-3 font-mono text-emerald-400">60</td><td className="p-3 font-mono text-sky-400">61</td><td className="p-3 font-mono text-amber-400">330.0000</td><td className="p-3 font-mono">132</td><td className="p-3">10.39°, 79.61°, 90°</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">12-35-37 Primitive Triple</td><td className="p-3 font-mono text-emerald-400">12</td><td className="p-3 font-mono text-emerald-400">35</td><td className="p-3 font-mono text-sky-400">37</td><td className="p-3 font-mono text-amber-400">210.0000</td><td className="p-3 font-mono">84</td><td className="p-3">18.92°, 71.08°, 90°</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">20-21-29 Primitive Triple</td><td className="p-3 font-mono text-emerald-400">20</td><td className="p-3 font-mono text-emerald-400">21</td><td className="p-3 font-mono text-sky-400">29</td><td className="p-3 font-mono text-amber-400">210.0000</td><td className="p-3 font-mono">70</td><td className="p-3">43.60°, 46.40°, 90°</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">45°-45°-90° Isosceles Right</td><td className="p-3 font-mono text-emerald-400">1</td><td className="p-3 font-mono text-emerald-400">1</td><td className="p-3 font-mono text-sky-400">√2 (1.414)</td><td className="p-3 font-mono text-amber-400">0.5000</td><td className="p-3 font-mono">3.414</td><td className="p-3">45°, 45°, 90°</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">30°-60°-90° Half-Equilateral</td><td className="p-3 font-mono text-emerald-400">1</td><td className="p-3 font-mono text-emerald-400">√3 (1.732)</td><td className="p-3 font-mono text-sky-400">2</td><td className="p-3 font-mono text-amber-400">0.8660</td><td className="p-3 font-mono">4.732</td><td className="p-3">30°, 60°, 90°</td></tr>
+                </tbody>
+              </table>
             </div>
           </div>
 

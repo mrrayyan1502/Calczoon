@@ -235,6 +235,13 @@ const AgeCalculator = () => {
                         </div>
                       </div>
 
+                      <div className="w-full p-4 rounded-xl bg-gradient-to-r from-emerald-950/40 to-slate-900/60 border border-emerald-500/30 flex items-start gap-3 text-left my-3">
+                        <div className="text-xs text-slate-300 leading-relaxed">
+                          <strong className="text-emerald-400 block mb-1">Recommended Longevity Resource: Biological Health Optimization</strong>
+                          Track health biomarkers, cardiovascular conditioning, and restorative sleep architecture to align biological vitality with your chronological timeline.
+                        </div>
+                      </div>
+
                       <div className="w-full">
                         <ShareResults
                           title="My Exact Age"
@@ -409,6 +416,40 @@ const AgeCalculator = () => {
                   For individuals born near midnight, local Daylight Saving Time or international flight travel across timezones can create a one-day discrepancy if birth certificates record UTC vs local solar time.
                 </p>
               </div>
+            </div>
+          </div>
+
+          {/* Static HTML Reference Benchmark Table */}
+          <div className="space-y-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-white">Chronological Life Milestone &amp; Cumulative Longevity Benchmark Table</h2>
+            <p className="text-sm text-slate-400">
+              The reference table below illustrates lifetime developmental milestones, estimated cumulative biological metrics, and legal benchmarks based on standard Gregorian calendar algorithms.
+            </p>
+            <div className="overflow-x-auto border border-slate-800 rounded-2xl shadow-xl">
+              <table className="w-full text-left text-xs sm:text-sm border-collapse bg-slate-950">
+                <thead>
+                  <tr className="bg-slate-900 border-b border-slate-800 text-slate-300">
+                    <th className="p-3 font-semibold">Age Milestone</th>
+                    <th className="p-3 font-semibold text-emerald-400">Days Lived (Avg)</th>
+                    <th className="p-3 font-semibold text-sky-400">Total Weeks</th>
+                    <th className="p-3 font-semibold text-purple-400">Est. Heartbeats</th>
+                    <th className="p-3 font-semibold text-amber-400">Est. Breaths</th>
+                    <th className="p-3 font-semibold">Developmental / Legal Milestone</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-800/60 text-slate-300">
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">1 Year (Infancy)</td><td className="p-3 font-mono text-emerald-400">365</td><td className="p-3 font-mono text-sky-400">52.1</td><td className="p-3 font-mono text-purple-400">~37.8M</td><td className="p-3 font-mono text-amber-400">~8.4M</td><td className="p-3">Tripling of birth weight &amp; neural synapse formation</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">5 Years (Early Childhood)</td><td className="p-3 font-mono text-emerald-400">1,826</td><td className="p-3 font-mono text-sky-400">260.9</td><td className="p-3 font-mono text-purple-400">~189M</td><td className="p-3 font-mono text-amber-400">~42M</td><td className="p-3">Brain reaches 90% of adult cranial volume</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">10 Years (Preadolescence)</td><td className="p-3 font-mono text-emerald-400">3,652</td><td className="p-3 font-mono text-sky-400">521.7</td><td className="p-3 font-mono text-purple-400">~378M</td><td className="p-3 font-mono text-amber-400">~84M</td><td className="p-3">Onset of adolescent bone mineralization</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">18 Years (Legal Majority)</td><td className="p-3 font-mono text-emerald-400">6,574</td><td className="p-3 font-mono text-sky-400">939.1</td><td className="p-3 font-mono text-purple-400">~681M</td><td className="p-3 font-mono text-amber-400">~151M</td><td className="p-3">Attainment of legal adult majority &amp; voting rights</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">25 Years (Prefrontal Cortex)</td><td className="p-3 font-mono text-emerald-400">9,131</td><td className="p-3 font-mono text-sky-400">1,304.4</td><td className="p-3 font-mono text-purple-400">~946M</td><td className="p-3 font-mono text-amber-400">~210M</td><td className="p-3">Complete structural myelination of frontal cognitive lobes</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">30 Years (Peak Bone Mass)</td><td className="p-3 font-mono text-emerald-400">10,957</td><td className="p-3 font-mono text-sky-400">1,565.3</td><td className="p-3 font-mono text-purple-400">~1.13B</td><td className="p-3 font-mono text-amber-400">~252M</td><td className="p-3">Peak adult bone mineral density &amp; skeletal stabilization</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">40 Years (Midlife Prime)</td><td className="p-3 font-mono text-emerald-400">14,610</td><td className="p-3 font-mono text-sky-400">2,087.1</td><td className="p-3 font-mono text-purple-400">~1.51B</td><td className="p-3 font-mono text-amber-400">~336M</td><td className="p-3">Baseline cardiovascular &amp; cellular metabolic calibration</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">50 Years (Longevity Half-Century)</td><td className="p-3 font-mono text-emerald-400">18,262</td><td className="p-3 font-mono text-sky-400">2,608.9</td><td className="p-3 font-mono text-purple-400">~1.89B</td><td className="p-3 font-mono text-amber-400">~420M</td><td className="p-3">Cardiovascular screening &amp; preventative health protocols</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">65 Years (Retirement Benchmark)</td><td className="p-3 font-mono text-emerald-400">23,741</td><td className="p-3 font-mono text-sky-400">3,391.6</td><td className="p-3 font-mono text-purple-400">~2.46B</td><td className="p-3 font-mono text-amber-400">~546M</td><td className="p-3">Medicare statutory eligibility &amp; retirement transition</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">80 Years (Octogenarian Longevity)</td><td className="p-3 font-mono text-emerald-400">29,220</td><td className="p-3 font-mono text-sky-400">4,174.3</td><td className="p-3 font-mono text-purple-400">~3.02B</td><td className="p-3 font-mono text-amber-400">~673M</td><td className="p-3">Exceptional longevity surpassing global life expectancy</td></tr>
+                </tbody>
+              </table>
             </div>
           </div>
 

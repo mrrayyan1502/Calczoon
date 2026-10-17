@@ -11,6 +11,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { useToast } from '@/components/ui/use-toast';
 import { saveCalculation } from '@/lib/history';
+import Faq from '@/components/Faq';
 import RelatedTools from '@/components/calculators/tdee/RelatedTools';
 import ShareResults from '@/components/ShareResults';
 
@@ -76,6 +77,33 @@ const BMICalculator = () => {
   const pageTitle = "Free BMI Calculator: Check Body Mass Index Online 2026";
   const pageDescription = "Calculate your Body Mass Index (BMI) instantly. Understand your weight category with our free, easy-to-use BMI checker for men and women.";
 
+  const faqItems = [
+    {
+      question: "Is the healthy BMI range identical for men and women?",
+      answer: "Yes, standard WHO guidelines define 18.5 to 24.9 as the normal range for both adult men and women. However, women naturally maintain a higher biological percentage of essential body fat (10-13% vs 3-5% for men) at the exact same numerical BMI."
+    },
+    {
+      question: "Can you be metabolically fit while classified as overweight?",
+      answer: "Yes. Individuals with strong cardiovascular endurance, high skeletal muscle mass, and normal blood pressure, fasting glucose, and lipid profiles frequently exhibit 'metabolically healthy overweight' phenotypes."
+    },
+    {
+      question: "How many kilograms or pounds equal 1 point on the BMI scale?",
+      answer: "For an adult of average height (5'7\" or 170 cm), approximately 2.9 kilograms (6.4 lbs) of body mass corresponds to exactly 1 BMI point."
+    },
+    {
+      question: "Does BMI criteria change for senior citizens over age 65?",
+      answer: "Geriatric nutritionists and clinical studies recommend that seniors maintain a slightly higher BMI range of 23.0 to 27.0, as modest nutritional reserves provide vital protection against osteoporosis, fall injuries, and hospital convalescence."
+    },
+    {
+      question: "What tools should I consult alongside my BMI score?",
+      answer: "Combine your BMI score with our Body Fat Calculator (using the U.S. Navy method for fat vs. lean mass analysis) and our TDEE Calculator to establish your precise daily maintenance caloric baseline."
+    },
+    {
+      question: "Why does BMI misclassify muscular athletes and bodybuilders?",
+      answer: "BMI calculates total body mass relative to height without distinguishing between lean skeletal muscle and adipose tissue. Because muscle tissue is 18% denser than fat, muscular athletes often register in the overweight or obese ranges despite having low body fat."
+    }
+  ];
+
   const appSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
@@ -90,13 +118,26 @@ const BMICalculator = () => {
     }
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqItems.map(item => ({
+      "@type": "Question",
+      "name": item.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.answer
+      }
+    }))
+  };
+
   return (
     <>
       <Seo
         title={pageTitle}
         description={pageDescription}
         canonicalUrl="/health/bmi-calculator"
-        schema={[appSchema]}
+        schema={[appSchema, faqSchema]}
       />
       
       <div className="w-full max-w-7xl mx-auto py-8 px-4">
@@ -143,7 +184,13 @@ const BMICalculator = () => {
                   <h3 className="text-xl font-bold text-white">Your BMI is:</h3>
                   <p className={`text-6xl font-bold my-2 ${result.color}`}>{result.bmi}</p>
                   <p className={`text-xl font-semibold ${result.color}`}>{result.category}</p>
-                  <div className="mt-4 w-full">
+                  <div className="w-full p-4 rounded-xl bg-gradient-to-r from-emerald-950/40 to-slate-900/60 border border-emerald-500/30 flex items-start gap-3 text-left my-4">
+                    <div className="text-xs text-slate-300 leading-relaxed">
+                      <strong className="text-emerald-400 block mb-1">Recommended Health Resource: Beyond BMI Screening</strong>
+                      Pairing your BMI check with waist-to-hip ratio and an accurate body fat percentage test provides a far more complete clinical picture of cardiovascular and metabolic fitness than scale weight alone.
+                    </div>
+                  </div>
+                  <div className="mt-2 w-full">
                     <ShareResults title="BMI Calculation" text={`Just calculated my BMI on CalcZoon: ${result.bmi} (${result.category}). Free check:`} url="/health/bmi-calculator" />
                   </div>
                 </CardFooter>
@@ -177,6 +224,9 @@ const BMICalculator = () => {
             </p>
             <p>
               Major health institutions, including the World Health Organization (WHO) and the U.S. Centers for Disease Control and Prevention (CDC), use BMI as an initial population-level assessment tool. Although BMI does not directly measure body fat percentage, extensive epidemiological studies demonstrate that higher BMI figures correlate strongly with elevated risks for hypertension, cardiovascular disease, dyslipidemia, and type 2 diabetes.
+            </p>
+            <p>
+              Importantly, modern medical consensus recognizes ethnic variations in metabolic risk. The World Health Organization recommends lower BMI thresholds for populations of Asian descent, where an elevated risk of cardiovascular disease and type 2 diabetes begins at a BMI of 23.0 kg/m² (overweight) and 27.5 kg/m² (obesity), due to higher baseline proportions of visceral adipose tissue at lower body weights.
             </p>
           </div>
 
@@ -266,45 +316,43 @@ const BMICalculator = () => {
             </ul>
           </div>
 
-          {/* 6. 5 FAQs */}
+          {/* Static HTML Reference Benchmark Table */}
           <div className="space-y-4">
-            <h2 className="text-2xl md:text-3xl font-bold text-white">5 Frequently Asked Questions (FAQs)</h2>
-            <div className="space-y-4">
-              <div className="bg-slate-900/50 p-5 rounded-xl border border-slate-700/60">
-                <h3 className="font-bold text-white text-base mb-1">1. Is the healthy BMI range identical for men and women?</h3>
-                <p className="text-sm text-slate-300">
-                  Yes, standard WHO guidelines define 18.5 to 24.9 as the normal range for both adult men and women. However, women naturally maintain a higher biological percentage of essential body fat at the same numerical BMI.
-                </p>
-              </div>
-
-              <div className="bg-slate-900/50 p-5 rounded-xl border border-slate-700/60">
-                <h3 className="font-bold text-white text-base mb-1">2. Can you be metabolically fit while classified as overweight?</h3>
-                <p className="text-sm text-slate-300">
-                  Yes. Individuals with good cardiovascular conditioning, high muscle mass, and normal blood pressure, glucose, and lipid profiles frequently exhibit "metabolically healthy overweight" profiles.
-                </p>
-              </div>
-
-              <div className="bg-slate-900/50 p-5 rounded-xl border border-slate-700/60">
-                <h3 className="font-bold text-white text-base mb-1">3. How many kilograms equal 1 point on the BMI scale?</h3>
-                <p className="text-sm text-slate-300">
-                  For an adult of average height (5'7" or 170 cm), approximately 2.9 kilograms (6.4 lbs) corresponds to exactly 1 BMI point.
-                </p>
-              </div>
-
-              <div className="bg-slate-900/50 p-5 rounded-xl border border-slate-700/60">
-                <h3 className="font-bold text-white text-base mb-1">4. Does BMI criteria change for senior citizens (over 65)?</h3>
-                <p className="text-sm text-slate-300">
-                  Geriatric nutritionists often suggest that seniors maintain a slightly higher BMI (23.0 to 27.0) because modest nutritional reserves provide protection against osteoporosis, falls, and recovery from acute illnesses.
-                </p>
-              </div>
-
-              <div className="bg-slate-900/50 p-5 rounded-xl border border-slate-700/60">
-                <h3 className="font-bold text-white text-base mb-1">5. What tools should I consult alongside my BMI score?</h3>
-                <p className="text-sm text-slate-300">
-                  Combine your BMI with our Body Fat Calculator (to analyze body composition) and our TDEE Calculator (to discover your precise daily energy expenditure).
-                </p>
-              </div>
+            <h2 className="text-2xl md:text-3xl font-bold text-white">WHO Adult BMI Reference Benchmark Table</h2>
+            <p className="text-sm text-slate-400">
+              The clinical benchmark table below outlines the standard World Health Organization (WHO) Body Mass Index classifications, corresponding healthy weight ranges for a 5'9" (175 cm) adult, and associated cardiometabolic risk profiles.
+            </p>
+            <div className="overflow-x-auto border border-slate-800 rounded-2xl shadow-xl">
+              <table className="w-full text-left text-xs sm:text-sm border-collapse bg-slate-950">
+                <thead>
+                  <tr className="bg-slate-900 border-b border-slate-800 text-slate-300">
+                    <th className="p-3 font-semibold">Classification</th>
+                    <th className="p-3 font-semibold text-emerald-400">BMI Range (kg/m²)</th>
+                    <th className="p-3 font-semibold">Weight Range (5'9" / 175 cm)</th>
+                    <th className="p-3 font-semibold text-rose-400">Cardiometabolic Health Risk</th>
+                    <th className="p-3 font-semibold">Primary Clinical Recommendation</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-800/60 text-slate-300">
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-medium text-blue-400">Severe Thinness</td><td className="p-3 font-mono text-blue-400">&lt; 16.0</td><td className="p-3">&lt; 108 lbs (&lt; 49.0 kg)</td><td className="p-3 text-rose-400">Very High (Immune / Endocrine)</td><td className="p-3">Clinical nutritional intervention</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-medium text-blue-300">Moderate Thinness</td><td className="p-3 font-mono text-blue-300">16.0 – 16.9</td><td className="p-3">108 – 115 lbs (49.0 – 52.1 kg)</td><td className="p-3 text-amber-400">Moderate (Nutrient deficiency)</td><td className="p-3">Caloric surplus and resistance training</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-medium text-sky-400">Mild Thinness</td><td className="p-3 font-mono text-sky-400">17.0 – 18.4</td><td className="p-3">116 – 125 lbs (52.2 – 56.6 kg)</td><td className="p-3 text-yellow-400">Low to Mild</td><td className="p-3">Gradual dietary calorie increase</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-medium text-emerald-400">Optimal Normal (Lower)</td><td className="p-3 font-mono text-emerald-400">18.5 – 21.9</td><td className="p-3">126 – 149 lbs (56.7 – 67.3 kg)</td><td className="p-3 text-emerald-400">Lowest (Average longevity)</td><td className="p-3">Maintain balanced diet &amp; aerobic fitness</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-medium text-emerald-400">Optimal Normal (Upper)</td><td className="p-3 font-mono text-emerald-400">22.0 – 24.9</td><td className="p-3">150 – 169 lbs (67.4 – 76.5 kg)</td><td className="p-3 text-emerald-400">Lowest (Healthy baseline)</td><td className="p-3">Maintain habitual physical activity</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-medium text-yellow-400">Pre-Obese (Overweight)</td><td className="p-3 font-mono text-yellow-400">25.0 – 29.9</td><td className="p-3">170 – 203 lbs (76.6 – 91.8 kg)</td><td className="p-3 text-yellow-400">Increased (Elevated blood pressure)</td><td className="p-3">Moderate 300-500 kcal deficit</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-medium text-amber-400">Obese Class I (Moderate)</td><td className="p-3 font-mono text-amber-400">30.0 – 34.9</td><td className="p-3">204 – 237 lbs (91.9 – 107.1 kg)</td><td className="p-3 text-amber-400">High (Type 2 diabetes risk)</td><td className="p-3">Structured lifestyle &amp; diet plan</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-medium text-rose-400">Obese Class II (Severe)</td><td className="p-3 font-mono text-rose-400">35.0 – 39.9</td><td className="p-3">238 – 271 lbs (107.2 – 122.5 kg)</td><td className="p-3 text-rose-400">Very High (Coronary artery disease)</td><td className="p-3">Physician-guided medical management</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-medium text-rose-500">Obese Class III (Very Severe)</td><td className="p-3 font-mono text-rose-500">40.0 – 49.9</td><td className="p-3">272 – 339 lbs (122.6 – 153.1 kg)</td><td className="p-3 text-rose-500">Extremely High (Sleep apnea / stroke)</td><td className="p-3">Comprehensive multidisciplinary care</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-medium text-purple-400">Super Obese</td><td className="p-3 font-mono text-purple-400">≥ 50.0</td><td className="p-3">≥ 340 lbs (≥ 153.2 kg)</td><td className="p-3 text-purple-400">Critical Immediate Medical Risk</td><td className="p-3">Specialized bariatric intervention</td></tr>
+                </tbody>
+              </table>
             </div>
+          </div>
+
+          {/* 6. Frequently Asked Questions (FAQs) */}
+          <div className="space-y-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-white">Frequently Asked Questions (FAQs)</h2>
+            <Faq items={faqItems} />
           </div>
 
           {/* 7. Related Calculators (Internal Links) */}

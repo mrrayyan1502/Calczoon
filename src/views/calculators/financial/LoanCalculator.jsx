@@ -182,6 +182,12 @@ const LoanCalculator = () => {
                         <p className="font-semibold text-slate-200">{getCurrencySymbol()}{Number(result.totalPayment).toLocaleString()}</p>
                       </div>
                     </div>
+                    <div className="w-full p-4 rounded-xl bg-gradient-to-r from-emerald-950/40 to-slate-900/60 border border-emerald-500/30 flex items-start gap-3">
+                      <div className="text-xs text-slate-300 leading-relaxed">
+                        <strong className="text-emerald-400 block mb-1">Recommended Financial Resource: Debt Payoff Acceleration</strong>
+                        Making even one extra monthly payment per year or rounding up your EMI from {getCurrencySymbol()}{Number(result.monthlyPayment).toLocaleString()} can cut your repayment term by up to 18 months and save substantial interest costs.
+                      </div>
+                    </div>
                     <ShareResults
                       title="Loan Payment Calculation"
                       text={`Calculated my monthly loan payment on CalcZoon! Estimated payment: ${getCurrencySymbol()}${Number(result.monthlyPayment).toLocaleString()}/month for a principal of ${getCurrencySymbol()}${Number(result.loanAmount).toLocaleString()}. Try this tool:`}
@@ -332,6 +338,46 @@ const LoanCalculator = () => {
                   Borrowers with excellent credit scores (740+) generally qualify for the lowest benchmark interest rates, while subprime scores (under 620) may result in rates two to four times higher, adding thousands of dollars to borrowing costs.
                 </p>
               </div>
+
+              <div className="bg-slate-900/50 p-5 rounded-xl border border-slate-700/60">
+                <h3 className="font-bold text-white text-base mb-1">6. Can I refinance an existing loan to a lower interest rate?</h3>
+                <p className="text-sm text-slate-300">
+                  Yes, refinancing allows you to replace an existing debt with a new loan featuring a lower APR or shorter repayment term, lowering your monthly EMI and eliminating hundreds or thousands in lifetime interest expense.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Static HTML Reference Benchmark Table */}
+          <div className="space-y-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-white">Pre-Calculated Loan Repayment Benchmark Table (7.5% APR)</h2>
+            <p className="text-sm text-slate-400">
+              The benchmark table below compares monthly installments (EMI) and total borrowing expenses across common personal and auto loan amounts at 7.50% APR.
+            </p>
+            <div className="overflow-x-auto border border-slate-800 rounded-2xl shadow-xl">
+              <table className="w-full text-left text-xs sm:text-sm border-collapse bg-slate-950">
+                <thead>
+                  <tr className="bg-slate-900 border-b border-slate-800 text-slate-300">
+                    <th className="p-3 font-semibold">Loan Amount</th>
+                    <th className="p-3 font-semibold">Term</th>
+                    <th className="p-3 font-semibold text-emerald-400">Monthly EMI</th>
+                    <th className="p-3 font-semibold text-rose-400">Total Interest</th>
+                    <th className="p-3 font-semibold">Total Repaid</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-800/60 text-slate-300">
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono text-white">$5,000</td><td className="p-3">3 Years (36m)</td><td className="p-3 text-emerald-400 font-bold">$155.53</td><td className="p-3 text-rose-400">$599.08</td><td className="p-3 font-mono">$5,599.08</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono text-white">$10,000</td><td className="p-3">3 Years (36m)</td><td className="p-3 text-emerald-400 font-bold">$311.06</td><td className="p-3 text-rose-400">$1,198.16</td><td className="p-3 font-mono">$11,198.16</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono text-white">$15,000</td><td className="p-3">4 Years (48m)</td><td className="p-3 text-emerald-400 font-bold">$362.66</td><td className="p-3 text-rose-400">$2,407.68</td><td className="p-3 font-mono">$17,407.68</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono text-white">$20,000</td><td className="p-3">4 Years (48m)</td><td className="p-3 text-emerald-400 font-bold">$483.54</td><td className="p-3 text-rose-400">$3,210.12</td><td className="p-3 font-mono">$23,210.12</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono text-white">$25,000</td><td className="p-3">5 Years (60m)</td><td className="p-3 text-emerald-400 font-bold">$500.95</td><td className="p-3 text-rose-400">$5,057.00</td><td className="p-3 font-mono">$30,057.00</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono text-white">$30,000</td><td className="p-3">5 Years (60m)</td><td className="p-3 text-emerald-400 font-bold">$601.14</td><td className="p-3 text-rose-400">$6,068.40</td><td className="p-3 font-mono">$36,068.40</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono text-white">$35,000</td><td className="p-3">5 Years (60m)</td><td className="p-3 text-emerald-400 font-bold">$701.33</td><td className="p-3 text-rose-400">$7,079.80</td><td className="p-3 font-mono">$42,079.80</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono text-white">$40,000</td><td className="p-3">6 Years (72m)</td><td className="p-3 text-emerald-400 font-bold">$691.80</td><td className="p-3 text-rose-400">$9,809.60</td><td className="p-3 font-mono">$49,809.60</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono text-white">$45,000</td><td className="p-3">6 Years (72m)</td><td className="p-3 text-emerald-400 font-bold">$778.28</td><td className="p-3 text-rose-400">$11,036.16</td><td className="p-3 font-mono">$56,036.16</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono text-white">$50,000</td><td className="p-3">7 Years (84m)</td><td className="p-3 text-emerald-400 font-bold">$767.12</td><td className="p-3 text-rose-400">$14,438.08</td><td className="p-3 font-mono">$64,438.08</td></tr>
+                </tbody>
+              </table>
             </div>
           </div>
 

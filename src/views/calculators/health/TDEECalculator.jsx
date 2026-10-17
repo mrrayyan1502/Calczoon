@@ -5,6 +5,7 @@ import Seo from '@/components/Seo';
 import { Link } from 'react-router-dom';
 import PageHeader from '@/components/PageHeader';
 import { Dumbbell } from 'lucide-react';
+import Faq from '@/components/Faq';
 import TDEE_Intro from '@/components/calculators/tdee/TDEE_Intro';
 import TDEE_CalculatorForm from '@/components/calculators/tdee/TDEE_CalculatorForm';
 import TDEE_Results from '@/components/calculators/tdee/TDEE_Results';
@@ -25,12 +26,53 @@ const TDEECalculator = () => {
     const pageDescription = "Calculate your Total Daily Energy Expenditure (TDEE) and BMR online. Find your daily maintenance calories for weight loss, muscle gain, or maintenance.";
     const canonicalUrl = "/health/tdee-calculator";
 
+    const faqItems = [
+      {
+        question: "What is the fundamental difference between BMR and TDEE?",
+        answer: "Basal Metabolic Rate (BMR) is the bare minimum energy your body requires to stay alive at complete rest (breathing, cellular repair, heartbeat). Total Daily Energy Expenditure (TDEE) accounts for all daily movement, digestion, walking, and physical exercise."
+      },
+      {
+        question: "How large of a calorie deficit is safe for fat loss?",
+        answer: "A deficit of 300 to 500 calories below your maintenance TDEE is universally recommended. This produces a safe, sustainable fat loss rate of 0.35 to 0.5 kg (0.75 to 1 lb) per week without causing muscle wasting or hormonal disruption."
+      },
+      {
+        question: "What is NEAT and how does it affect my TDEE?",
+        answer: "NEAT (Non-Exercise Activity Thermogenesis) encompasses all energy expended outside of sleeping, eating, and sports—such as pacing, typing, climbing stairs, and fidgeting. NEAT can vary by up to 800 calories between individuals of the same weight!"
+      },
+      {
+        question: "Why has my weight loss stalled even though I eat below my TDEE?",
+        answer: "Plateaus are commonly caused by temporary water retention (cortisol from dieting), unmeasured weekend caloric splurges, or decreased unconscious NEAT movement. Weigh yourself daily and compare weekly averages over three to four weeks."
+      },
+      {
+        question: "How should I distribute my TDEE into macronutrients?",
+        answer: "Once your calorie target is determined, use our Macro Calculator to split your calories into protein (1.6 to 2.2g per kg of bodyweight to preserve muscle), healthy fats (20% to 30% of total calories), and carbohydrates for workout performance."
+      },
+      {
+        question: "Should I eat back the calories burned during workouts?",
+        answer: "No, you should not eat back workout calories. Your TDEE activity multiplier already incorporates your weekly exercise energy expenditure into your baseline maintenance figure. Adding tracked exercise calories back on top will erase your planned caloric deficit."
+      }
+    ];
+
+    const faqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqItems.map(item => ({
+        "@type": "Question",
+        "name": item.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.answer
+        }
+      }))
+    };
+
     return (
         <>
             <Seo
                 title={pageTitle}
                 description={pageDescription}
                 canonicalUrl={canonicalUrl}
+                schema={[faqSchema]}
             />
             <div className="w-full max-w-7xl mx-auto py-8 px-4">
                 <PageHeader
@@ -43,7 +85,17 @@ const TDEECalculator = () => {
                     <div className="lg:col-span-2 space-y-8">
                         <TDEE_Intro />
                         <TDEE_CalculatorForm onCalculate={handleCalculation} />
-                        {result && <TDEE_Results result={result} />}
+                        {result && (
+                          <>
+                            <TDEE_Results result={result} />
+                            <div className="w-full p-4 rounded-xl bg-gradient-to-r from-emerald-950/40 to-slate-900/60 border border-emerald-500/30 flex items-start gap-3 text-left">
+                              <div className="text-xs text-slate-300 leading-relaxed">
+                                <strong className="text-emerald-400 block mb-1">Recommended Fitness Resource: Caloric Deficit &amp; Protein Intake</strong>
+                                To ensure fat loss rather than muscle loss during a caloric deficit, maintain a high protein intake of 1.6 to 2.2 grams per kilogram of body weight combined with progressive resistance training.
+                              </div>
+                            </div>
+                          </>
+                        )}
                     </div>
                     <aside className="lg:col-span-1 space-y-6">
                         <RelatedTools />
@@ -145,45 +197,44 @@ const TDEECalculator = () => {
                         </ul>
                     </div>
 
-                    {/* 6. 5 FAQs */}
+                    {/* Static HTML Reference Benchmark Table */}
                     <div className="space-y-4">
-                        <h2 className="text-2xl md:text-3xl font-bold text-white">5 Frequently Asked Questions (FAQs)</h2>
-                        <div className="space-y-4">
-                            <div className="bg-slate-900/50 p-5 rounded-xl border border-slate-700/60">
-                                <h3 className="font-bold text-white text-base mb-1">1. What is the fundamental difference between BMR and TDEE?</h3>
-                                <p className="text-sm text-slate-300">
-                                    Basal Metabolic Rate (BMR) is the bare minimum energy your body requires to stay alive in a coma (breathing, cellular repair, heartbeat). Total Daily Energy Expenditure (TDEE) accounts for all daily movement, digestion, walking, and physical exercise.
-                                </p>
-                            </div>
-
-                            <div className="bg-slate-900/50 p-5 rounded-xl border border-slate-700/60">
-                                <h3 className="font-bold text-white text-base mb-1">2. How large of a calorie deficit is safe for fat loss?</h3>
-                                <p className="text-sm text-slate-300">
-                                    A deficit of 300 to 500 calories below maintenance is universally recommended. This produces a safe, sustainable fat loss rate of 0.35 to 0.5 kg (0.75 to 1 lb) per week without causing muscle wasting or hormonal disruption.
-                                </p>
-                            </div>
-
-                            <div className="bg-slate-900/50 p-5 rounded-xl border border-slate-700/60">
-                                <h3 className="font-bold text-white text-base mb-1">3. What is NEAT and how does it affect my TDEE?</h3>
-                                <p className="text-sm text-slate-300">
-                                    NEAT (Non-Exercise Activity Thermogenesis) encompasses all energy expended outside of sleeping, eating, and sports—such as pacing, typing, climbing stairs, and fidgeting. NEAT can vary by up to 800 calories between individuals of the same weight!
-                                </p>
-                            </div>
-
-                            <div className="bg-slate-900/50 p-5 rounded-xl border border-slate-700/60">
-                                <h3 className="font-bold text-white text-base mb-1">4. Why has my weight loss stalled even though I eat below my TDEE?</h3>
-                                <p className="text-sm text-slate-300">
-                                    Plateaus are commonly caused by temporary water retention (cortisol from dieting), unmeasured weekend caloric splurges, or decreased unconscious NEAT movement. Weigh yourself daily and compare weekly averages over three to four weeks.
-                                </p>
-                            </div>
-
-                            <div className="bg-slate-900/50 p-5 rounded-xl border border-slate-700/60">
-                                <h3 className="font-bold text-white text-base mb-1">5. How should I distribute my TDEE into macronutrients?</h3>
-                                <p className="text-sm text-slate-300">
-                                    Once your calorie target is determined, use our Macro Calculator to split your calories into protein (1.6 to 2.2g per kg of bodyweight to preserve muscle), healthy fats (20% to 30% of total calories), and carbohydrates for workout performance.
-                                </p>
-                            </div>
+                        <h2 className="text-2xl md:text-3xl font-bold text-white">Daily Caloric Expenditure Benchmark Table Across Activity Levels</h2>
+                        <p className="text-sm text-slate-400">
+                            The benchmark reference table below demonstrates estimated BMR and TDEE maintenance requirements across 5 standardized physical activity tiers for adult men (75 kg, 178 cm, age 30) and adult women (62 kg, 165 cm, age 30).
+                        </p>
+                        <div className="overflow-x-auto border border-slate-800 rounded-2xl shadow-xl">
+                            <table className="w-full text-left text-xs sm:text-sm border-collapse bg-slate-950">
+                                <thead>
+                                    <tr className="bg-slate-900 border-b border-slate-800 text-slate-300">
+                                        <th className="p-3 font-semibold">Activity Classification</th>
+                                        <th className="p-3 font-semibold">Multiplier (PAL)</th>
+                                        <th className="p-3 font-semibold">Weekly Exercise Volume</th>
+                                        <th className="p-3 font-semibold text-sky-400">Men TDEE (kcal/day)</th>
+                                        <th className="p-3 font-semibold text-emerald-400">Women TDEE (kcal/day)</th>
+                                        <th className="p-3 font-semibold text-amber-400">Fat Loss Target (-500 kcal)</th>
+                                    </tr>
+                                </thead>
+                                <tbody className="divide-y divide-slate-800/60 text-slate-300">
+                                    <tr className="hover:bg-slate-900/50"><td className="p-3 font-medium text-white">Basal Metabolic Rate (BMR)</td><td className="p-3 font-mono">1.000</td><td className="p-3">Zero movement / bed rest</td><td className="p-3 text-sky-400 font-mono">1,718 kcal</td><td className="p-3 text-emerald-400 font-mono">1,340 kcal</td><td className="p-3 text-amber-400 font-mono">N/A (Below BMR)</td></tr>
+                                    <tr className="hover:bg-slate-900/50"><td className="p-3 font-medium text-white">Sedentary (Desk Job)</td><td className="p-3 font-mono">1.200</td><td className="p-3">&lt; 3,000 steps, no structured exercise</td><td className="p-3 text-sky-400 font-mono">2,062 kcal</td><td className="p-3 text-emerald-400 font-mono">1,608 kcal</td><td className="p-3 text-amber-400 font-mono">1,562 / 1,200 kcal</td></tr>
+                                    <tr className="hover:bg-slate-900/50"><td className="p-3 font-medium text-white">Lightly Active (Walking)</td><td className="p-3 font-mono">1.375</td><td className="p-3">1 to 2 light workouts, 5k steps/day</td><td className="p-3 text-sky-400 font-mono">2,362 kcal</td><td className="p-3 text-emerald-400 font-mono">1,843 kcal</td><td className="p-3 text-amber-400 font-mono">1,862 / 1,343 kcal</td></tr>
+                                    <tr className="hover:bg-slate-900/50"><td className="p-3 font-medium text-white">Lightly Active (Gym)</td><td className="p-3 font-mono">1.425</td><td className="p-3">2 to 3 weightlifting sessions/week</td><td className="p-3 text-sky-400 font-mono">2,448 kcal</td><td className="p-3 text-emerald-400 font-mono">1,910 kcal</td><td className="p-3 text-amber-400 font-mono">1,948 / 1,410 kcal</td></tr>
+                                    <tr className="hover:bg-slate-900/50"><td className="p-3 font-medium text-white">Moderately Active (Recreational)</td><td className="p-3 font-mono">1.550</td><td className="p-3">3 to 5 moderate workouts, 8k steps</td><td className="p-3 text-sky-400 font-mono">2,663 kcal</td><td className="p-3 text-emerald-400 font-mono">2,077 kcal</td><td className="p-3 text-amber-400 font-mono">2,163 / 1,577 kcal</td></tr>
+                                    <tr className="hover:bg-slate-900/50"><td className="p-3 font-medium text-white">Moderately Active (CrossFit / HIIT)</td><td className="p-3 font-mono">1.625</td><td className="p-3">4 to 5 high-intensity conditioning days</td><td className="p-3 text-sky-400 font-mono">2,792 kcal</td><td className="p-3 text-emerald-400 font-mono">2,178 kcal</td><td className="p-3 text-amber-400 font-mono">2,292 / 1,678 kcal</td></tr>
+                                    <tr className="hover:bg-slate-900/50"><td className="p-3 font-medium text-white">Very Active (Heavy Training)</td><td className="p-3 font-mono">1.725</td><td className="p-3">6 to 7 intense workouts/week</td><td className="p-3 text-sky-400 font-mono">2,964 kcal</td><td className="p-3 text-emerald-400 font-mono">2,312 kcal</td><td className="p-3 text-amber-400 font-mono">2,464 / 1,812 kcal</td></tr>
+                                    <tr className="hover:bg-slate-900/50"><td className="p-3 font-medium text-white">Very Active (Active Occupation)</td><td className="p-3 font-mono">1.800</td><td className="p-3">Construction / trades + training</td><td className="p-3 text-sky-400 font-mono">3,092 kcal</td><td className="p-3 text-emerald-400 font-mono">2,412 kcal</td><td className="p-3 text-amber-400 font-mono">2,592 / 1,912 kcal</td></tr>
+                                    <tr className="hover:bg-slate-900/50"><td className="p-3 font-medium text-white">Extra Active (Endurance Athlete)</td><td className="p-3 font-mono">1.900</td><td className="p-3">Marathon / triathlon 2x daily training</td><td className="p-3 text-sky-400 font-mono">3,264 kcal</td><td className="p-3 text-emerald-400 font-mono">2,546 kcal</td><td className="p-3 text-amber-400 font-mono">2,764 / 2,046 kcal</td></tr>
+                                    <tr className="hover:bg-slate-900/50"><td className="p-3 font-medium text-white">Extreme / Elite Professional</td><td className="p-3 font-mono">2.000</td><td className="p-3">Competitive athletics &gt; 3 hours daily</td><td className="p-3 text-sky-400 font-mono">3,436 kcal</td><td className="p-3 text-emerald-400 font-mono">2,680 kcal</td><td className="p-3 text-amber-400 font-mono">2,936 / 2,180 kcal</td></tr>
+                                </tbody>
+                            </table>
                         </div>
+                    </div>
+
+                    {/* 6. Frequently Asked Questions (FAQs) */}
+                    <div className="space-y-4">
+                        <h2 className="text-2xl md:text-3xl font-bold text-white">Frequently Asked Questions (FAQs)</h2>
+                        <Faq items={faqItems} />
                     </div>
 
                     {/* 7. Related Calculators (Internal Links) */}

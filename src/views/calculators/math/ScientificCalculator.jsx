@@ -256,6 +256,13 @@ const ScientificCalculator = () => {
                 ))}
               </div>
             </Card>
+
+            <div className="w-full max-w-lg p-4 mt-4 rounded-xl bg-gradient-to-r from-sky-950/40 to-slate-900/60 border border-sky-500/30 flex items-start gap-3 text-left">
+              <div className="text-xs text-slate-300 leading-relaxed">
+                <strong className="text-sky-400 block mb-1">Recommended STEM Resource: Scientific &amp; Engineering Computation</strong>
+                Verify precision when running complex multi-step physics, trigonometry, or exponential models. Ensure matching trigonometric angle modes (DEG vs RAD) to eliminate computational discrepancies.
+              </div>
+            </div>
           </div>
 
           <aside className="lg:col-span-1 space-y-6">
@@ -421,6 +428,39 @@ const ScientificCalculator = () => {
                   Evaluating exponential decay equations using `log` instead of `ln` will cause an error by a factor of $\ln(10) \approx 2.3026$. Remember: `log` assumes base 10; `ln` assumes Euler&apos;s base $e$.
                 </p>
               </div>
+            </div>
+          </div>
+
+          {/* Static HTML Reference Benchmark Table */}
+          <div className="space-y-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-white">Fundamental Mathematical &amp; Physical Constants Reference Table</h2>
+            <p className="text-sm text-slate-400">
+              The benchmark reference table below details universal mathematical and physical constants defined by CODATA and NIST, essential for advanced scientific, engineering, and calculus calculations.
+            </p>
+            <div className="overflow-x-auto border border-slate-800 rounded-2xl shadow-xl">
+              <table className="w-full text-left text-xs sm:text-sm border-collapse bg-slate-950">
+                <thead>
+                  <tr className="bg-slate-900 border-b border-slate-800 text-slate-300">
+                    <th className="p-3 font-semibold">Constant Name</th>
+                    <th className="p-3 font-semibold text-emerald-400">Symbol</th>
+                    <th className="p-3 font-semibold text-sky-400">Standard Value</th>
+                    <th className="p-3 font-semibold">SI Dimension</th>
+                    <th className="p-3 font-semibold">Scientific Application</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-800/60 text-slate-300">
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">Archimedes&apos; Constant (Pi)</td><td className="p-3 font-mono text-emerald-400">π</td><td className="p-3 font-mono text-sky-400">3.1415926535</td><td className="p-3">Dimensionless</td><td className="p-3">Trigonometry, Circular Geometry</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">Euler&apos;s Number</td><td className="p-3 font-mono text-emerald-400">e</td><td className="p-3 font-mono text-sky-400">2.7182818284</td><td className="p-3">Dimensionless</td><td className="p-3">Calculus, Continuous Compound Growth</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">Golden Ratio</td><td className="p-3 font-mono text-emerald-400">φ</td><td className="p-3 font-mono text-sky-400">1.6180339887</td><td className="p-3">Dimensionless</td><td className="p-3">Fibonacci Sequences, Fractals</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">Speed of Light in Vacuum</td><td className="p-3 font-mono text-emerald-400">c</td><td className="p-3 font-mono text-sky-400">299,792,458</td><td className="p-3">m · s⁻¹</td><td className="p-3">Relativity, Electromagnetism</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">Planck&apos;s Constant</td><td className="p-3 font-mono text-emerald-400">h</td><td className="p-3 font-mono text-sky-400">6.62607015 × 10⁻³⁴</td><td className="p-3">J · s</td><td className="p-3">Quantum Mechanics, Photon Energy</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">Reduced Planck Constant</td><td className="p-3 font-mono text-emerald-400">ℏ</td><td className="p-3 font-mono text-sky-400">1.054571817 × 10⁻³⁴</td><td className="p-3">J · s</td><td className="p-3">Quantum Spin, Wave Equations</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">Gravitational Constant</td><td className="p-3 font-mono text-emerald-400">G</td><td className="p-3 font-mono text-sky-400">6.67430 × 10⁻¹¹</td><td className="p-3">m³ · kg⁻¹ · s⁻²</td><td className="p-3">Newtonian Gravity, Astrophysics</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">Avogadro&apos;s Number</td><td className="p-3 font-mono text-emerald-400">N_A</td><td className="p-3 font-mono text-sky-400">6.02214076 × 10²³</td><td className="p-3">mol⁻¹</td><td className="p-3">Chemistry, Molar Quantities</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">Boltzmann&apos;s Constant</td><td className="p-3 font-mono text-emerald-400">k_B</td><td className="p-3 font-mono text-sky-400">1.380649 × 10⁻²³</td><td className="p-3">J · K⁻¹</td><td className="p-3">Thermodynamics, Entropy</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">Elementary Charge</td><td className="p-3 font-mono text-emerald-400">e_c</td><td className="p-3 font-mono text-sky-400">1.602176634 × 10⁻¹⁹</td><td className="p-3">C</td><td className="p-3">Atomic Physics, Electronics</td></tr>
+                </tbody>
+              </table>
             </div>
           </div>
 

@@ -232,6 +232,13 @@ const StatisticsCalculator = () => {
                         </div>
                       </div>
 
+                      <div className="w-full p-4 rounded-xl bg-gradient-to-r from-emerald-950/40 to-slate-900/60 border border-emerald-500/30 flex items-start gap-3 text-left my-3">
+                        <div className="text-xs text-slate-300 leading-relaxed">
+                          <strong className="text-emerald-400 block mb-1">Recommended STEM Resource: Advanced Statistical Analysis</strong>
+                          Evaluate data distributions for skewness and outlier sensitivity before selecting parametric versus non-parametric modeling frameworks.
+                        </div>
+                      </div>
+
                       <div className="mt-4 text-center">
                         <ShareResults
                           title="Statistics Summary"
@@ -428,6 +435,39 @@ const StatisticsCalculator = () => {
                   When a dataset has two distinct clustering peaks (Bimodal), reporting a single mean places the average directly inside a valley where almost zero observations actually exist.
                 </p>
               </div>
+            </div>
+          </div>
+
+          {/* Static HTML Reference Benchmark Table */}
+          <div className="space-y-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-white">Standard Normal Distribution (Z-Score) &amp; Empirical Rule Confidence Table</h2>
+            <p className="text-sm text-slate-400">
+              The benchmark reference table below demonstrates key critical values ($z^*$), cumulative distribution areas, and standard deviation intervals under the Gaussian bell curve for statistical inference.
+            </p>
+            <div className="overflow-x-auto border border-slate-800 rounded-2xl shadow-xl">
+              <table className="w-full text-left text-xs sm:text-sm border-collapse bg-slate-950">
+                <thead>
+                  <tr className="bg-slate-900 border-b border-slate-800 text-slate-300">
+                    <th className="p-3 font-semibold">Confidence Level</th>
+                    <th className="p-3 font-semibold text-emerald-400">Critical Z-Score (z*)</th>
+                    <th className="p-3 font-semibold text-sky-400">Standard Deviation Range</th>
+                    <th className="p-3 font-semibold">Two-Tailed Alpha (α)</th>
+                    <th className="p-3 font-semibold">Scientific Application</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-800/60 text-slate-300">
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">50.0%</td><td className="p-3 font-mono text-emerald-400">0.674</td><td className="p-3 font-mono text-sky-400">μ ± 0.674σ</td><td className="p-3 font-mono">0.500</td><td className="p-3">Interquartile Range (IQR) Boundary</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">68.27%</td><td className="p-3 font-mono text-emerald-400">1.000</td><td className="p-3 font-mono text-sky-400">μ ± 1.000σ</td><td className="p-3 font-mono">0.3173</td><td className="p-3">1-Sigma Empirical Rule Baseline</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">80.0%</td><td className="p-3 font-mono text-emerald-400">1.282</td><td className="p-3 font-mono text-sky-400">μ ± 1.282σ</td><td className="p-3 font-mono">0.200</td><td className="p-3">Exploratory Pilot Research</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">90.0%</td><td className="p-3 font-mono text-emerald-400">1.645</td><td className="p-3 font-mono text-sky-400">μ ± 1.645σ</td><td className="p-3 font-mono">0.100</td><td className="p-3">Public Opinion Polling &amp; Demographics</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">95.0%</td><td className="p-3 font-mono text-emerald-400">1.960</td><td className="p-3 font-mono text-sky-400">μ ± 1.960σ</td><td className="p-3 font-mono">0.050</td><td className="p-3">Academic &amp; Clinical Trial Standard</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">95.45%</td><td className="p-3 font-mono text-emerald-400">2.000</td><td className="p-3 font-mono text-sky-400">μ ± 2.000σ</td><td className="p-3 font-mono">0.0455</td><td className="p-3">2-Sigma Empirical Rule Interval</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">98.0%</td><td className="p-3 font-mono text-emerald-400">2.326</td><td className="p-3 font-mono text-sky-400">μ ± 2.326σ</td><td className="p-3 font-mono">0.020</td><td className="p-3">Financial Risk &amp; Value at Risk (VaR)</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">99.0%</td><td className="p-3 font-mono text-emerald-400">2.576</td><td className="p-3 font-mono text-sky-400">μ ± 2.576σ</td><td className="p-3 font-mono">0.010</td><td className="p-3">Stringent Industrial Quality Control</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">99.73%</td><td className="p-3 font-mono text-emerald-400">3.000</td><td className="p-3 font-mono text-sky-400">μ ± 3.000σ</td><td className="p-3 font-mono">0.0027</td><td className="p-3">3-Sigma Empirical Rule Coverage</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">99.9%</td><td className="p-3 font-mono text-emerald-400">3.291</td><td className="p-3 font-mono text-sky-400">μ ± 3.291σ</td><td className="p-3 font-mono">0.001</td><td className="p-3">Six Sigma Tolerance &amp; Semiconductor Yield</td></tr>
+                </tbody>
+              </table>
             </div>
           </div>
 

@@ -284,6 +284,13 @@ const FractionCalculator = () => {
                         </div>
                       </div>
 
+                      <div className="w-full p-4 rounded-xl bg-gradient-to-r from-emerald-950/40 to-slate-900/60 border border-emerald-500/30 flex items-start gap-3 text-left my-3">
+                        <div className="text-xs text-slate-300 leading-relaxed">
+                          <strong className="text-emerald-400 block mb-1">Recommended STEM Resource: Mastering Fraction Algebra</strong>
+                          Convert fractions into decimal approximations or percentages instantly to check proportions in engineering, cooking, and financial allocations.
+                        </div>
+                      </div>
+
                       <div className="mt-4">
                         <ShareResults
                           title="Fraction Calculation"
@@ -477,6 +484,39 @@ const FractionCalculator = () => {
                   A negative fraction can be written as $-a/b$, $a/(-b)$, or $-(a/b)$—they are all mathematically identical. However, $(-a)/(-b)$ is positive $+a/b$.
                 </p>
               </div>
+            </div>
+          </div>
+
+          {/* Static HTML Reference Benchmark Table */}
+          <div className="space-y-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-white">Common Fraction to Decimal &amp; Percentage Conversion Table</h2>
+            <p className="text-sm text-slate-400">
+              The reference table below lists standard proper fraction values alongside their exact simplified forms, repeating or terminating decimal values, and corresponding percentage equivalencies.
+            </p>
+            <div className="overflow-x-auto border border-slate-800 rounded-2xl shadow-xl">
+              <table className="w-full text-left text-xs sm:text-sm border-collapse bg-slate-950">
+                <thead>
+                  <tr className="bg-slate-900 border-b border-slate-800 text-slate-300">
+                    <th className="p-3 font-semibold">Fraction</th>
+                    <th className="p-3 font-semibold">Name / Description</th>
+                    <th className="p-3 font-semibold text-emerald-400">Decimal Value</th>
+                    <th className="p-3 font-semibold text-sky-400">Percentage</th>
+                    <th className="p-3 font-semibold">Decimal Classification</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-800/60 text-slate-300">
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono font-bold text-white">1/2</td><td className="p-3">One Half</td><td className="p-3 font-mono text-emerald-400">0.5</td><td className="p-3 font-mono text-sky-400">50.0%</td><td className="p-3">Terminating Decimal</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono font-bold text-white">1/3</td><td className="p-3">One Third</td><td className="p-3 font-mono text-emerald-400">0.3333...</td><td className="p-3 font-mono text-sky-400">33.33%</td><td className="p-3">Repeating (Periodic) Decimal</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono font-bold text-white">1/4</td><td className="p-3">One Quarter</td><td className="p-3 font-mono text-emerald-400">0.25</td><td className="p-3 font-mono text-sky-400">25.0%</td><td className="p-3">Terminating Decimal</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono font-bold text-white">1/5</td><td className="p-3">One Fifth</td><td className="p-3 font-mono text-emerald-400">0.2</td><td className="p-3 font-mono text-sky-400">20.0%</td><td className="p-3">Terminating Decimal</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono font-bold text-white">1/6</td><td className="p-3">One Sixth</td><td className="p-3 font-mono text-emerald-400">0.1666...</td><td className="p-3 font-mono text-sky-400">16.67%</td><td className="p-3">Repeating Decimal</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono font-bold text-white">1/8</td><td className="p-3">One Eighth</td><td className="p-3 font-mono text-emerald-400">0.125</td><td className="p-3 font-mono text-sky-400">12.5%</td><td className="p-3">Terminating Decimal</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono font-bold text-white">3/8</td><td className="p-3">Three Eighths</td><td className="p-3 font-mono text-emerald-400">0.375</td><td className="p-3 font-mono text-sky-400">37.5%</td><td className="p-3">Terminating Decimal</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono font-bold text-white">5/8</td><td className="p-3">Five Eighths</td><td className="p-3 font-mono text-emerald-400">0.625</td><td className="p-3 font-mono text-sky-400">62.5%</td><td className="p-3">Terminating Decimal</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono font-bold text-white">7/8</td><td className="p-3">Seven Eighths</td><td className="p-3 font-mono text-emerald-400">0.875</td><td className="p-3 font-mono text-sky-400">87.5%</td><td className="p-3">Terminating Decimal</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-mono font-bold text-white">1/16</td><td className="p-3">One Sixteenth</td><td className="p-3 font-mono text-emerald-400">0.0625</td><td className="p-3 font-mono text-sky-400">6.25%</td><td className="p-3">Terminating Decimal</td></tr>
+                </tbody>
+              </table>
             </div>
           </div>
 

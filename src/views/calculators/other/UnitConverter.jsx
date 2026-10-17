@@ -323,6 +323,13 @@ const UnitConverter = () => {
                     )}
                   </TabsContent>
                 </Tabs>
+
+                <div className="w-full p-4 rounded-xl bg-gradient-to-r from-emerald-950/40 to-slate-900/60 border border-emerald-500/30 flex items-start gap-3 text-left mt-6">
+                  <div className="text-xs text-slate-300 leading-relaxed">
+                    <strong className="text-emerald-400 block mb-1">Recommended STEM Resource: Standardized Measurement Calibration</strong>
+                    When working across global engineering blueprints or international clinical data, always employ exact NIST/BIPM defined conversion constants to eliminate compounding rounding errors.
+                  </div>
+                </div>
               </CardContent>
             </Card>
           </div>
@@ -495,6 +502,39 @@ const UnitConverter = () => {
                   In everyday speech, weight and mass are used synonymously. However, in scientific calculations, mass (measured in kilograms) is an invariant property of matter, while weight (measured in Newtons or pound-force) represents gravitational force ($W = m \cdot g$) and varies with local gravity.
                 </p>
               </div>
+            </div>
+          </div>
+
+          {/* Static HTML Reference Benchmark Table */}
+          <div className="space-y-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-white">Metric to Imperial Standard Conversion Constants Reference Table</h2>
+            <p className="text-sm text-slate-400">
+              The benchmark metrology table below catalogs official international conversion factors between metric (SI) and US customary / imperial measurement units as codified by NIST and BIPM.
+            </p>
+            <div className="overflow-x-auto border border-slate-800 rounded-2xl shadow-xl">
+              <table className="w-full text-left text-xs sm:text-sm border-collapse bg-slate-950">
+                <thead>
+                  <tr className="bg-slate-900 border-b border-slate-800 text-slate-300">
+                    <th className="p-3 font-semibold">Physical Dimension</th>
+                    <th className="p-3 font-semibold text-emerald-400">Metric (SI) Unit</th>
+                    <th className="p-3 font-semibold text-sky-400">Imperial Equivalent</th>
+                    <th className="p-3 font-semibold text-amber-400">Exact Conversion Factor</th>
+                    <th className="p-3 font-semibold">Primary Engineering Application</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-800/60 text-slate-300">
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">Length / Distance</td><td className="p-3 font-mono text-emerald-400">1 Millimeter (mm)</td><td className="p-3 font-mono text-sky-400">0.039370 Inches</td><td className="p-3 font-mono text-amber-400">1 in = 25.4 mm (Exact)</td><td className="p-3">Mechanical CNC Machining &amp; PCB Design</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">Length / Distance</td><td className="p-3 font-mono text-emerald-400">1 Centimeter (cm)</td><td className="p-3 font-mono text-sky-400">0.393701 Inches</td><td className="p-3 font-mono text-amber-400">1 in = 2.54 cm (Exact)</td><td className="p-3">Consumer Electronics &amp; Textile Dimensions</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">Length / Distance</td><td className="p-3 font-mono text-emerald-400">1 Meter (m)</td><td className="p-3 font-mono text-sky-400">3.280840 Feet</td><td className="p-3 font-mono text-amber-400">1 ft = 0.3048 m (Exact)</td><td className="p-3">Architectural CAD Blueprints &amp; Track Athletics</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">Length / Distance</td><td className="p-3 font-mono text-emerald-400">1 Kilometer (km)</td><td className="p-3 font-mono text-sky-400">0.621371 Miles</td><td className="p-3 font-mono text-amber-400">1 mi = 1,609.344 m (Exact)</td><td className="p-3">Civil Highway Engineering &amp; Aviation Routes</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">Mass / Weight</td><td className="p-3 font-mono text-emerald-400">1 Gram (g)</td><td className="p-3 font-mono text-sky-400">0.035274 Ounces</td><td className="p-3 font-mono text-amber-400">1 oz ≈ 28.349523 g</td><td className="p-3">Pharmacological Compounding &amp; Food Recipes</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">Mass / Weight</td><td className="p-3 font-mono text-emerald-400">1 Kilogram (kg)</td><td className="p-3 font-mono text-sky-400">2.204623 Pounds</td><td className="p-3 font-mono text-amber-400">1 lb = 0.45359237 kg (Exact)</td><td className="p-3">Clinical Patient Weigh-ins &amp; Fitness Dosing</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">Mass / Weight</td><td className="p-3 font-mono text-emerald-400">1 Metric Tonne (t)</td><td className="p-3 font-mono text-sky-400">2,204.62 Pounds</td><td className="p-3 font-mono text-amber-400">1 t = 1,000 kg (Exact)</td><td className="p-3">Intermodal Maritime Shipping &amp; Bulk Freight</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">Liquid Volume</td><td className="p-3 font-mono text-emerald-400">1 Liter (L)</td><td className="p-3 font-mono text-sky-400">0.264172 US Gallons</td><td className="p-3 font-mono text-amber-400">1 US gal = 3.785411784 L</td><td className="p-3">Automotive Fuel Capacity &amp; Chemical Vats</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">Liquid Volume</td><td className="p-3 font-mono text-emerald-400">1 Milliliter (mL)</td><td className="p-3 font-mono text-sky-400">0.033814 US Fl Oz</td><td className="p-3 font-mono text-amber-400">1 fl oz ≈ 29.57353 mL</td><td className="p-3">Pediatric Oral Dosing &amp; Laboratory Pipettes</td></tr>
+                  <tr className="hover:bg-slate-900/50"><td className="p-3 font-bold text-white">Linear Velocity</td><td className="p-3 font-mono text-emerald-400">100 km/h</td><td className="p-3 font-mono text-sky-400">62.1371 mph</td><td className="p-3 font-mono text-amber-400">1 mph = 1.609344 km/h</td><td className="p-3">Automotive Speedometers &amp; Telematics Data</td></tr>
+                </tbody>
+              </table>
             </div>
           </div>
 
