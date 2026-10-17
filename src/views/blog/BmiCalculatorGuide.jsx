@@ -36,7 +36,7 @@ const BmiCalculatorGuide = () => {
             Body Mass Index (BMI) is a simple mathematical formula used globally to categorize an individual's weight in relation to their height. It is widely used by doctors and health professionals as a quick screening tool to identify possible weight problems for adults.
           </p>
           <div className="bg-slate-900 p-4 rounded-lg border border-slate-600 my-6 text-center font-mono text-lg text-blue-300">
-            BMI = Weight (kg) / [Height (m)]Â²
+            BMI = Weight (kg) / [Height (m)]²
           </div>
           <p className="text-slate-300 leading-relaxed">
             While BMI does not measure body fat directly, research has shown that it correlates strongly with more direct measures of body fat, such as underwater weighing and dual energy x-ray absorptiometry (DXA).

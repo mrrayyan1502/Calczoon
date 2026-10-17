@@ -78,7 +78,7 @@ const MathBlog = () => {
                           <h2 className="text-3xl font-bold text-primary mb-4 flex items-center"><Percent className="mr-3" />Everyday Arithmetic Made Easy</h2>
                           <p className="text-slate-300 mb-6">These tools are essential for daily life, from figuring out a discount while shopping to calculating a tip at a restaurant, or helping your kids with their homework.</p>
                           <div className="space-y-4">
-                              <p><strong className="text-white">Percentage Calculator:</strong> This is one of our most popular tools. Quickly figure out a discount, a tip, or a percentage increase or decrease. Itâ€™s perfect for both quick calculations and for understanding the underlying math. <Link to="/math/percentage-calculator" className="text-primary hover:underline">Calculate percentages now</Link>.</p>
+                              <p><strong className="text-white">Percentage Calculator:</strong> This is one of our most popular tools. Quickly figure out a discount, a tip, or a percentage increase or decrease. It's perfect for both quick calculations and for understanding the underlying math. <Link to="/math/percentage-calculator" className="text-primary hover:underline">Calculate percentages now</Link>.</p>
                               <p><strong className="text-white">Fraction Calculator:</strong> Add, subtract, multiply, or divide fractions without the headache. Our calculator provides step-by-step answers to help you understand the process, making it a great learning tool. <Link to="/math/fraction-calculator" className="text-primary hover:underline">Solve fractions here</Link>.</p>
                           </div>
                       </section>

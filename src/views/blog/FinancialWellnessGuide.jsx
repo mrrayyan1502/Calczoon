@@ -73,7 +73,7 @@ const FinancialWellnessGuide = () => {
 
                   <div className="max-w-3xl mx-auto p-6 md:p-8 space-y-12">
                       <p className="text-xl text-slate-300 leading-relaxed">
-                          Financial wellness isn't about being richâ€”it's about having a sense of security and freedom with your finances. It means you can meet your current and future financial obligations, feel secure in your financial future, and make choices that allow you to enjoy life. This guide, powered by Calczoon's tools, will walk you through the key pillars of financial wellness.
+                          Financial wellness isn't about being rich — it's about having a sense of security and freedom with your finances. It means you can meet your current and future financial obligations, feel secure in your financial future, and make choices that allow you to enjoy life. This guide, powered by Calczoon's tools, will walk you through the key pillars of financial wellness.
                       </p>
 
                       <section>

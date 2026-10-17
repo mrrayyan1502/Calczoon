@@ -78,7 +78,7 @@ const CompoundInterestBlog = () => {
 
                 <section>
                     <h2 className="text-2xl font-bold text-primary mb-4 flex items-center"><Brain className="mr-3" />What is Compound Interest?</h2>
-                    <p className="text-slate-300 mb-6">Compound interest is the interest you earn on both your initial investment (the principal) and the accumulated interest from previous periods. Itâ€™s "interest on your interest," and it's what makes a sum of money grow at an accelerating rate over time. Unlike <Link to="/financial/simple-interest-calculator" className="text-primary hover:underline">simple interest</Link>, which is calculated only on the principal amount, compounding allows your earnings to generate their own earnings.</p>
+                    <p className="text-slate-300 mb-6">Compound interest is the interest you earn on both your initial investment (the principal) and the accumulated interest from previous periods. It's "interest on your interest," and it's what makes a sum of money grow at an accelerating rate over time. Unlike <Link to="/financial/simple-interest-calculator" className="text-primary hover:underline">simple interest</Link>, which is calculated only on the principal amount, compounding allows your earnings to generate their own earnings.</p>
                 </section>
 
                 <section>

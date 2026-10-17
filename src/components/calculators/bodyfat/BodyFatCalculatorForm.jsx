@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
@@ -41,7 +41,7 @@ const BodyFatCalculatorForm = ({ onCalculate }) => {
         if (method !== 'navy') {
             toast({
                 title: "Feature Coming Soon!",
-                description: "ðŸš§ The 3-Site Skinfold method isn't implemented yet. Please use the U.S. Navy method for now. ðŸš€",
+                description: "The 3-Site Skinfold method is not implemented yet. Please use the U.S. Navy method for now.",
             });
             return;
         }

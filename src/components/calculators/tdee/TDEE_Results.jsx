@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React from 'react';
 import { useToast } from '@/components/ui/use-toast';
@@ -91,8 +91,7 @@ const SaveResultsForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         toast({
-            title: "Feature Coming Soon!",
-            description: "ðŸš§ This feature isn't implemented yetâ€”but don't worry! You can request it in your next prompt! ðŸš€",
+            description: "This feature is coming soon. Thank you for your patience!",
         });
     };
 
@@ -185,7 +184,7 @@ a.style.display = 'none';
                             <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2"><Minus className="w-5 h-5 text-emerald-400" />Weight Maintenance</h3>
                             <p className="text-slate-300 mb-4">To maintain your current weight, consume approximately <strong className="text-emerald-400">{results.tdee} calories per day</strong>.</p>
                             <div className="bg-emerald-500/10 border border-emerald-500/30 rounded-lg p-4">
-                                <p className="text-sm text-slate-300">ðŸ’¡ <strong className="text-white">Pro Tip:</strong> Track your weight for 2-3 weeks at this intake. If it changes, adjust by 100-200 calories and reassess.</p>
+                                <p className="text-sm text-slate-300"><strong className="text-white">Pro Tip:</strong> Track your weight for 2-3 weeks at this intake. If it changes, adjust by 100-200 calories and reassess.</p>
                             </div>
                         </div>
                     </TabsContent>
@@ -201,7 +200,7 @@ a.style.display = 'none';
                             <GoalCard title="Extreme Weight Loss" weeklyGoal="2 lbs / 1 kg per week" calories={results.extremeWeightLoss} icon={TrendingDown} color="red" description="Aggressive deficit, consult a professional first." />
                         </div>
                         <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-4 mt-6">
-                            <p className="text-sm text-slate-300">âš ï¸ <strong className="text-white">Important:</strong> Do not consume fewer than 1,200 (women) or 1,500 (men) calories per day without medical supervision.</p>
+                            <p className="text-sm text-slate-300"><strong className="text-white">Important:</strong> Do not consume fewer than 1,200 (women) or 1,500 (men) calories per day without medical supervision.</p>
                         </div>
                     </TabsContent>
 
@@ -216,7 +215,7 @@ a.style.display = 'none';
                             <GoalCard title="Aggressive Bulk" weeklyGoal="2 lbs / 1 kg per week" calories={results.extremeWeightGain} icon={TrendingUp} color="purple" description="For advanced lifters, expect some fat gain." />
                         </div>
                         <div className="bg-emerald-500/10 border border-emerald-500/30 rounded-lg p-4 mt-6">
-                            <p className="text-sm text-slate-300">ðŸ’ª <strong className="text-white">Pro Tip:</strong> Pair your surplus with a strength training program and 1.6-2.2g of protein per kg of body weight for optimal results.</p>
+                            <p className="text-sm text-slate-300"><strong className="text-white">Pro Tip:</strong> Pair your surplus with a strength training program and 1.6-2.2g of protein per kg of body weight for optimal results.</p>
                         </div>
                     </TabsContent>
                 </Tabs>

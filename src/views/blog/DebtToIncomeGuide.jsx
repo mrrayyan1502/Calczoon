@@ -67,7 +67,7 @@ const DebtToIncomeGuide = () => {
                         </p>
                         
                         <div className="bg-slate-800/50 p-6 rounded-xl border border-slate-700 my-8">
-                            <h3 className="text-xl font-bold text-white mb-2">Pro Tip ðŸ’¡</h3>
+                            <h3 className="text-xl font-bold text-white mb-2">Pro Tip </h3>
                             <p className="text-slate-300 text-sm">
                                 Always use a reliable calculator to double-check your figures. Financial planning relies heavily on accurate mathematical models. Our free tools on CalcZoon are designed to provide institutional-grade accuracy.
                             </p>

@@ -41,7 +41,7 @@ const BlogPost = () => {
             <p>Our calculator makes it easy to see your potential savings. Here's how to use it:</p>
             <ol>
               <li><strong>Enter Your Loan Details:</strong> Input your original loan amount, annual interest rate, and original loan term (e.g., 30 years).</li>
-              <li><strong>Specify Your Extra Payment:</strong> Add the extra amount you plan to pay each month. You can start smallâ€”even $50 or $100 can make a big difference.</li>
+              <li><strong>Specify Your Extra Payment:</strong> Add the extra amount you plan to pay each month. You can start small — even $50 or $100 can make a big difference.</li>
               <li><strong>Analyze Your Results:</strong> The calculator will instantly show you your new payoff date, how many years you've saved, and, most importantly, your total interest savings.</li>
             </ol>
             

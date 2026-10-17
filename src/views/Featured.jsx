@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React from 'react';
 import { Helmet } from 'react-helmet';
@@ -31,10 +31,10 @@ const Featured = () => {
   return (
     <>
       <Helmet>
-        <title>Featured In â€“ As Seen On | Calczoon</title>
+        <title>Featured In - As Seen On | Calczoon</title>
         <meta name="description" content="See where Calczoon.com has been featured and recognized. We're proud of our mentions in tech, finance, and health publications." />
         <link rel="canonical" href="https://calczoon.com/featured-in" />
-        <meta property="og:title" content="Featured In â€“ As Seen On | Calczoon" />
+        <meta property="og:title" content="Featured In - As Seen On | Calczoon" />
         <meta property="og:description" content="See where Calczoon.com has been featured and recognized by industry publications." />
       </Helmet>
       <motion.div

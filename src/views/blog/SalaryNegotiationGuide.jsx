@@ -58,7 +58,7 @@ const SalaryNegotiationGuide = () => {
 
                         <h2 className="text-2xl font-bold text-white mt-12 mb-6">Gross Pay vs. Net Pay</h2>
                         <p className="text-slate-300 leading-relaxed mb-6">
-                            When you receive a job offer, the salary quoted is your Gross Payâ€”the amount before any taxes or deductions are taken out. Your Net Pay (or take-home pay) is what actually lands in your bank account. The difference between these two numbers can be substantial, often ranging from 20% to 40% depending on your tax bracket.
+                            When you receive a job offer, the salary quoted is your Gross Pay — the amount before any taxes or deductions are taken out. Your Net Pay (or take-home pay) is what actually lands in your bank account. The difference between these two numbers can be substantial, often ranging from 20% to 40% depending on your tax bracket.
                         </p>
 
                         <h2 className="text-2xl font-bold text-white mt-12 mb-6">Hidden Deductions</h2>
@@ -67,7 +67,7 @@ const SalaryNegotiationGuide = () => {
                         </p>
                         
                         <div className="bg-slate-800/50 p-6 rounded-xl border border-slate-700 my-8">
-                            <h3 className="text-xl font-bold text-white mb-2">Pro Tip ðŸ’¡</h3>
+                            <h3 className="text-xl font-bold text-white mb-2">Pro Tip </h3>
                             <p className="text-slate-300 text-sm">
                                 Always use a reliable calculator to double-check your figures. Financial planning relies heavily on accurate mathematical models. Our free tools on CalcZoon are designed to provide institutional-grade accuracy.
                             </p>

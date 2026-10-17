@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React from 'react';
 import { Helmet } from 'react-helmet';
@@ -10,10 +10,10 @@ const Community = () => {
   return (
     <>
       <Helmet>
-        <title>Community & Partnerships â€“ Supporting New York | Calczoon</title>
+        <title>Community & Partnerships - Supporting New York | Calczoon</title>
         <meta name="description" content="Learn about Calczoon's commitment to the New York community through partnerships with local schools and non-profits. See how we're making a difference." />
         <link rel="canonical" href="https://calczoon.com/community" />
-        <meta property="og:title" content="Community & Partnerships â€“ Supporting New York | Calczoon" />
+        <meta property="og:title" content="Community & Partnerships - Supporting New York | Calczoon" />
         <meta property="og:description" content="Learn about Calczoon's commitment to the New York community through partnerships with local schools and non-profits." />
       </Helmet>
       <motion.div

@@ -34,7 +34,7 @@ const AccuracyStandardsSection = () => {
           Methodology & Trust
         </span>
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-          Our Accuracy Standards &amp; Verification Methodology
+          Accuracy Standards &amp; Formula Verification Methodology
         </h2>
         <p className="max-w-2xl mx-auto text-slate-300 text-sm md:text-base leading-relaxed">
           CalcZoon combines rigorous mathematical modeling with peer-reviewed scientific research to deliver transparent, reproducible calculation results.

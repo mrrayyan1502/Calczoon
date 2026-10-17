@@ -77,7 +77,7 @@ const BmiBlog = () => {
                 <section>
                     <h2 className="text-3xl font-bold text-primary mb-4 flex items-center"><Scale className="mr-3" />How is BMI Calculated?</h2>
                     <p className="text-slate-300 mb-4">
-                        The formula for BMI is straightforward: your weight in kilograms divided by the square of your height in meters (kg/mÂ²). While simple, it can be tedious to calculate manually, especially when converting from imperial units (pounds and inches). 
+                        The formula for BMI is straightforward: your weight in kilograms divided by the square of your height in meters (kg/m²). While simple, it can be tedious to calculate manually, especially when converting from imperial units (pounds and inches). 
                     </p>
                     <p className="text-slate-300 mb-6">
                         Our <Link to="/health/bmi-calculator" className="text-primary hover:underline font-semibold">BMI Calculator</Link> automates this process for you. Just enter your details, and it instantly provides your BMI number and what category it falls into.
@@ -89,8 +89,8 @@ const BmiBlog = () => {
                     <p className="text-slate-300 mb-6">The World Health Organization (WHO) defines the following categories for adults:</p>
                     <ul className="list-disc list-inside space-y-3 text-slate-300 bg-slate-800/40 p-6 rounded-lg border border-slate-700">
                         <li><strong>Below 18.5:</strong> Underweight. This may indicate malnutrition or other health issues.</li>
-                        <li><strong>18.5 â€“ 24.9:</strong> Normal weight. This range is associated with the lowest risk of weight-related health problems.</li>
-                        <li><strong>25.0 â€“ 29.9:</strong> Overweight. This indicates a higher risk for health conditions like heart disease and diabetes.</li>
+                        <li><strong>18.5  -  24.9:</strong> Normal weight. This range is associated with the lowest risk of weight-related health problems.</li>
+                        <li><strong>25.0  -  29.9:</strong> Overweight. This indicates a higher risk for health conditions like heart disease and diabetes.</li>
                         <li><strong>30.0 and above:</strong> Obesity. This category signifies a significantly increased risk of serious health issues.</li>
                     </ul>
                     <p className="mt-4 text-slate-300">It's crucial to remember that BMI is a screening tool, not a definitive diagnosis of body fatness or overall health. Athletes with high muscle mass may have a high BMI but low body fat.</p>
